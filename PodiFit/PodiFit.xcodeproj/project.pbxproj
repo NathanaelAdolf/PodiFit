@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09966E2542E977000363BE /* ReminderTableViewCell.swift */; };
+		8D0996712542EA80000363BE /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0996702542EA80000363BE /* ReminderModel.swift */; };
 		8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0B525402997002195C9 /* AppDelegate.swift */; };
 		8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0B725402997002195C9 /* SceneDelegate.swift */; };
 		8D13C0BA25402997002195C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0B925402997002195C9 /* ViewController.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D09966E2542E977000363BE /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		8D0996702542EA80000363BE /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		8D13C0B225402997002195C9 /* PodiFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodiFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D13C0B525402997002195C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D13C0B725402997002195C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,11 +206,13 @@
 			children = (
 				8D13C0F925402E81002195C9 /* Profile.storyboard */,
 				8D148C8C254140CF00571419 /* HomeProfileViewController.swift */,
+				8D09966E2542E977000363BE /* ReminderTableViewCell.swift */,
 				8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */,
 				8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */,
 				8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */,
 				8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */,
 				8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */,
+				8D0996702542EA80000363BE /* ReminderModel.swift */,
 			);
 			path = HomeProfile;
 			sourceTree = "<group>";
@@ -369,7 +375,9 @@
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
+				8D0996712542EA80000363BE /* ReminderModel.swift in Sources */,
 				8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */,
+				8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */,
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
 				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
 				8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */,

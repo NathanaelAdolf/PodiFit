@@ -11,6 +11,7 @@ import UIKit
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var completedData = [CompletedPlanModel]()
+    var reminderData = [ReminderModel]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
         //return 5 nanti bikin jadi 5 setelah semua cellnya jadi
@@ -91,9 +92,16 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             
             return cell
         }
-        else
+        else if indexPath.section == 3
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "completedPlanCell", for: indexPath) as! CompletedPlanTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
+            
+            
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
+            
             
             return cell
         }
@@ -160,6 +168,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4)
                 ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6)
             ]
+        
+        self.reminderData =
+        [
+            ReminderModel(Hour: "12:00", remindName: "Leg Workout", isMon: true, isTue: true, isWed: true, isThu: false, isFri: false, isSat: false, isSun: false, isReminderActive: true)
+        ]
         
         
     }
