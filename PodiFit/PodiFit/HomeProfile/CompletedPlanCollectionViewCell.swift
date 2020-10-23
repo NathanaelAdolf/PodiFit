@@ -13,4 +13,9 @@ class CompletedPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var periodLabel: UILabel!
+    
+    override func awakeFromNib() {
+        self.backgroundColor = .lightGray
+        self.layer.cornerRadius = 5
+    }
 }

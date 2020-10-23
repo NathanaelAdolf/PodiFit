@@ -47,7 +47,7 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
        
         completedPlanCollectionView.delegate = self
         completedPlanCollectionView.dataSource = self
-            
+                    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
