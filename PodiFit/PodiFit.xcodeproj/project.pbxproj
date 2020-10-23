@@ -24,6 +24,11 @@
 		8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F925402E81002195C9 /* Profile.storyboard */; };
 		8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0FE25402F2B002195C9 /* Survey.storyboard */; };
 		8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
+		8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */; };
+		8DC063EF25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */; };
+		8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */; };
+		8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */; };
+		8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +72,11 @@
 		8D13C0F925402E81002195C9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		8D13C0FE25402F2B002195C9 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		8D148C8C254140CF00571419 /* HomeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileViewController.swift; sourceTree = "<group>"; };
+		8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanTableViewCell.swift; sourceTree = "<group>"; };
+		8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanModel.swift; sourceTree = "<group>"; };
+		8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePersonTableViewCell.swift; sourceTree = "<group>"; };
+		8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +202,11 @@
 			children = (
 				8D13C0F925402E81002195C9 /* Profile.storyboard */,
 				8D148C8C254140CF00571419 /* HomeProfileViewController.swift */,
+				8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */,
+				8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */,
+				8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */,
+				8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */,
+				8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */,
 			);
 			path = HomeProfile;
 			sourceTree = "<group>";
@@ -348,12 +363,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */,
 				8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */,
 				8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
+				8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */,
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
+				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
+				8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */,
+				8DC063EF25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
