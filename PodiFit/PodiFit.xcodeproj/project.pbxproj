@@ -23,6 +23,13 @@
 		8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F625402D84002195C9 /* Exercise.storyboard */; };
 		8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F925402E81002195C9 /* Profile.storyboard */; };
 		8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0FE25402F2B002195C9 /* Survey.storyboard */; };
+		ABA29188254181FE001E6FA0 /* ChoosePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA29187254181FE001E6FA0 /* ChoosePlanViewController.swift */; };
+		ABA2919625418DDB001E6FA0 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2919425418DDB001E6FA0 /* ExerciseTableViewCell.swift */; };
+		ABA2919725418DDB001E6FA0 /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA2919525418DDB001E6FA0 /* ExerciseTableViewCell.xib */; };
+		ABA291A025419175001E6FA0 /* DescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2919E25419175001E6FA0 /* DescTableViewCell.swift */; };
+		ABA291A125419175001E6FA0 /* DescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */; };
+		ABA291A725419233001E6FA0 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */; };
+		ABA291A825419233001E6FA0 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,13 @@
 		8D13C0F625402D84002195C9 /* Exercise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercise.storyboard; sourceTree = "<group>"; };
 		8D13C0F925402E81002195C9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		8D13C0FE25402F2B002195C9 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
+		ABA29187254181FE001E6FA0 /* ChoosePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlanViewController.swift; sourceTree = "<group>"; };
+		ABA2919425418DDB001E6FA0 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		ABA2919525418DDB001E6FA0 /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
+		ABA2919E25419175001E6FA0 /* DescTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescTableViewCell.swift; sourceTree = "<group>"; };
+		ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescTableViewCell.xib; sourceTree = "<group>"; };
+		ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +179,13 @@
 			isa = PBXGroup;
 			children = (
 				8D13C0EF25402B7E002195C9 /* ChoosePlan.storyboard */,
+				ABA29187254181FE001E6FA0 /* ChoosePlanViewController.swift */,
+				ABA2919E25419175001E6FA0 /* DescTableViewCell.swift */,
+				ABA2919425418DDB001E6FA0 /* ExerciseTableViewCell.swift */,
+				ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */,
+				ABA2919525418DDB001E6FA0 /* ExerciseTableViewCell.xib */,
+				ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */,
+				ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */,
 			);
 			path = ChoosePlan;
 			sourceTree = "<group>";
@@ -318,7 +339,10 @@
 				8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */,
 				8D13C0C225402998002195C9 /* Assets.xcassets in Resources */,
 				8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */,
+				ABA291A125419175001E6FA0 /* DescTableViewCell.xib in Resources */,
+				ABA291A825419233001E6FA0 /* ButtonTableViewCell.xib in Resources */,
 				8D13C0EB25402AC4002195C9 /* Assesment.storyboard in Resources */,
+				ABA2919725418DDB001E6FA0 /* ExerciseTableViewCell.xib in Resources */,
 				8D13C0F325402C27002195C9 /* HomePlan.storyboard in Resources */,
 				8D13C0BD25402997002195C9 /* Main.storyboard in Resources */,
 			);
@@ -345,8 +369,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA291A725419233001E6FA0 /* ButtonTableViewCell.swift in Sources */,
+				ABA29188254181FE001E6FA0 /* ChoosePlanViewController.swift in Sources */,
+				ABA2919625418DDB001E6FA0 /* ExerciseTableViewCell.swift in Sources */,
 				8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
+				ABA291A025419175001E6FA0 /* DescTableViewCell.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
