@@ -25,6 +25,7 @@ class ExerciseTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        exerciseImage.image = UIImage.init(named: "IPA")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -16,7 +16,7 @@ class DescTableViewCell: UITableViewCell {
         return UINib(nibName: "DescTableViewCell", bundle: nil)
     }
 
-    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var planDesc: UILabel!
     
     
     
