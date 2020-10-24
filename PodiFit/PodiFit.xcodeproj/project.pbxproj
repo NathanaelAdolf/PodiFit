@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8EFAA2542754400783427 /* ExerciseViewController.swift */; };
+		48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8EFCE254277D800783427 /* ExerciseView.swift */; };
 		8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0B525402997002195C9 /* AppDelegate.swift */; };
 		8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0B725402997002195C9 /* SceneDelegate.swift */; };
 		8D13C0BA25402997002195C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0B925402997002195C9 /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48E8EFAA2542754400783427 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		48E8EFCE254277D800783427 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		8D13C0B225402997002195C9 /* PodiFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodiFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D13C0B525402997002195C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D13C0B725402997002195C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48E8EFD4254280E100783427 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				48E8EFAA2542754400783427 /* ExerciseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		48E8EFD5254280EB00783427 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D13C0F625402D84002195C9 /* Exercise.storyboard */,
+				48E8EFCE254277D800783427 /* ExerciseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8D13C0A925402997002195C9 = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +144,6 @@
 				8D13C0EE25402B57002195C9 /* ChoosePlan */,
 				8D13C0E925402AA4002195C9 /* Assesment */,
 				8D13C0B525402997002195C9 /* AppDelegate.swift */,
-				8D13C0B725402997002195C9 /* SceneDelegate.swift */,
 				8D13C0B925402997002195C9 /* ViewController.swift */,
 				8D13C0BB25402997002195C9 /* Main.storyboard */,
 				8D13C0C125402998002195C9 /* Assets.xcassets */,
@@ -164,6 +184,7 @@
 		8D13C0EE25402B57002195C9 /* ChoosePlan */ = {
 			isa = PBXGroup;
 			children = (
+				8D13C0B725402997002195C9 /* SceneDelegate.swift */,
 				8D13C0EF25402B7E002195C9 /* ChoosePlan.storyboard */,
 			);
 			path = ChoosePlan;
@@ -180,7 +201,8 @@
 		8D13C0F525402D6D002195C9 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				8D13C0F625402D84002195C9 /* Exercise.storyboard */,
+				48E8EFD5254280EB00783427 /* View */,
+				48E8EFD4254280E100783427 /* Controller */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -346,9 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */,
+				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
+				48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */,
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
