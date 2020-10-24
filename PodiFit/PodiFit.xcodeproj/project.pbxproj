@@ -30,6 +30,8 @@
 		ABA291A125419175001E6FA0 /* DescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */; };
 		ABA291A725419233001E6FA0 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */; };
 		ABA291A825419233001E6FA0 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */; };
+		ABC9C26F2543E98600F31674 /* StackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9C26D2543E98600F31674 /* StackedTableViewCell.swift */; };
+		ABC9C2702543E98600F31674 /* StackedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC9C26E2543E98600F31674 /* StackedTableViewCell.xib */; };
 		ABE248602542C87D00710BDE /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE2485F2542C87D00710BDE /* PlanViewController.swift */; };
 		ABE248662542CABC00710BDE /* PlanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE248652542CABC00710BDE /* PlanListTableViewCell.swift */; };
 		ABE2486E2542CF6900710BDE /* CustomizePlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE2486D2542CF6900710BDE /* CustomizePlanTableViewController.swift */; };
@@ -87,6 +89,8 @@
 		ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescTableViewCell.xib; sourceTree = "<group>"; };
 		ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
+		ABC9C26D2543E98600F31674 /* StackedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedTableViewCell.swift; sourceTree = "<group>"; };
+		ABC9C26E2543E98600F31674 /* StackedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedTableViewCell.xib; sourceTree = "<group>"; };
 		ABE2485F2542C87D00710BDE /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		ABE248652542CABC00710BDE /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
 		ABE2486D2542CF6900710BDE /* CustomizePlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizePlanTableViewController.swift; sourceTree = "<group>"; };
@@ -195,8 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				8D13C0EF25402B7E002195C9 /* ChoosePlan.storyboard */,
-				ABE2486B2542CEC600710BDE /* ChoosePlanOverview */,
 				ABE2486A2542CEA500710BDE /* PlanOverview */,
+				ABE2486B2542CEC600710BDE /* ChoosePlanOverview */,
 				ABE2486C2542CF2400710BDE /* CustomizePlan */,
 			);
 			path = ChoosePlan;
@@ -257,9 +261,11 @@
 				ABA2919E25419175001E6FA0 /* DescTableViewCell.swift */,
 				ABA2919425418DDB001E6FA0 /* ExerciseTableViewCell.swift */,
 				ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */,
+				ABC9C26D2543E98600F31674 /* StackedTableViewCell.swift */,
 				ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */,
 				ABA2919525418DDB001E6FA0 /* ExerciseTableViewCell.xib */,
 				ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */,
+				ABC9C26E2543E98600F31674 /* StackedTableViewCell.xib */,
 			);
 			path = ChoosePlanOverview;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 				8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */,
 				8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */,
 				8D13C0C225402998002195C9 /* Assets.xcassets in Resources */,
+				ABC9C2702543E98600F31674 /* StackedTableViewCell.xib in Resources */,
 				8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */,
 				ABA291A125419175001E6FA0 /* DescTableViewCell.xib in Resources */,
 				ABE248872542D53500710BDE /* MovementCollectionViewCell.xib in Resources */,
@@ -442,6 +449,7 @@
 				8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				ABE248662542CABC00710BDE /* PlanListTableViewCell.swift in Sources */,
+				ABC9C26F2543E98600F31674 /* StackedTableViewCell.swift in Sources */,
 				ABE2487A2542D32900710BDE /* CustomizePlanTableViewCell.swift in Sources */,
 				ABE248802542D41600710BDE /* MovementCollectionModel.swift in Sources */,
 				ABA291A025419175001E6FA0 /* DescTableViewCell.swift in Sources */,

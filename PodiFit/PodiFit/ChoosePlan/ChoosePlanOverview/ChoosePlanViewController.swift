@@ -32,6 +32,8 @@ class ChoosePlanViewController: UITableViewController {
         
         tableView.register(ButtonTableViewCell.nib(), forCellReuseIdentifier: ButtonTableViewCell.identifier)
         
+        tableView.register(StackedTableViewCell.nib(), forCellReuseIdentifier: StackedTableViewCell.identifier)
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
         // Do any additional setup after loading the view.
     }
