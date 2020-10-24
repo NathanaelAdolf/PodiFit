@@ -26,6 +26,9 @@ class ReminderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.black.cgColor
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

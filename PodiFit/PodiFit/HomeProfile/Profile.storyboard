@@ -203,14 +203,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw8-iW-m1Y">
-                                                    <rect key="frame" x="20" y="11" width="58" height="30"/>
+                                                    <rect key="frame" x="20" y="11" width="157" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReminderName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFp-lw-5vW">
-                                                    <rect key="frame" x="20" y="49" width="135" height="24"/>
+                                                    <rect key="frame" x="20" y="49" width="203" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -309,11 +309,45 @@
                     </view>
                     <connections>
                         <outlet property="completeRemindBadgeTableView" destination="ehN-7m-Ypk" id="2XL-Hq-ufK"/>
+                        <segue destination="iZP-wN-m9c" kind="show" identifier="toCompletedHistory" id="sJM-AI-XbM"/>
+                        <segue destination="gDJ-JG-XqF" kind="show" identifier="toAddReminder" id="3Mo-DN-erK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGL-yG-xVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4.3478260869565224" y="187.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Tqj-Mv-mDl">
+            <objects>
+                <viewController id="gDJ-JG-XqF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9YB-gO-RLI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WCq-iV-nCN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7yP-tk-mQW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="za2-nq-S3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="532"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GCc-es-75H">
+            <objects>
+                <viewController id="iZP-wN-m9c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lrv-SZ-zgO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QaD-6A-A2v"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FUG-5X-3v0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHP-1P-bpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="-179"/>
         </scene>
     </scenes>
     <resources>

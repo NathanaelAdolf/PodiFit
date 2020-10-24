@@ -13,10 +13,12 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     var completedData = [CompletedPlanModel]()
     var reminderData = [ReminderModel]()
     
+    var addButton = UIButton()
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         //return 5 nanti bikin jadi 5 setelah semua cellnya jadi
         
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,10 +33,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             return 1
         }
-        else
+        else if section == 3
         {
-            return 2
+            return reminderData.count
         }
+        else
+       {
+           return 1
+       }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,7 +58,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 3
         {
-            return 80
+            return 110
         }
         else
         {
@@ -96,6 +102,38 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
             
+            cell.hourLabel.text = reminderData[indexPath.row].Hour
+            cell.reminderNameLabel.text = reminderData[indexPath.row].reminderName
+            
+            if reminderData[indexPath.row].isMon == true {
+                cell.mondayLabel.textColor = .black
+            }
+             if reminderData[indexPath.row].isTue == true {
+                cell.TuesdayLabel.textColor = .black
+            }
+            if reminderData[indexPath.row].isWed == true {
+                cell.wednesdayLabel.textColor = .black
+               }
+             if reminderData[indexPath.row].isThu == true {
+                cell.thursdayLabel.textColor = .black
+               }
+            if reminderData[indexPath.row].isFri == true {
+                cell.fridayLabel.textColor = .black
+               }
+             if reminderData[indexPath.row].isSat == true {
+                cell.saturdayLabel.textColor = .black
+               }
+             if reminderData[indexPath.row].isSun == true {
+                cell.sundayLabel.textColor = .black
+               }
+            
+            if reminderData[indexPath.row].isReminderActive == true {
+                cell.reminderSwitch.setOn(true, animated: false)
+            }
+            else
+            {
+                cell.reminderSwitch.setOn(false, animated: false)
+            }
             
             return cell
         }
@@ -134,22 +172,59 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
     }
     
-    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
            
-             let headerView = UIView()
+        let headerView = UIView()
+        
+        if section == 2 || section == 3
+        {
              headerView.backgroundColor = UIColor.white
 
-             let sectionLabel = UILabel(frame: CGRect(x: 8, y: 28, width:
+             let sectionLabel = UILabel(frame: CGRect(x: 8, y: 10, width:
              tableView.bounds.size.width, height: tableView.bounds.size.height))
              sectionLabel.font = UIFont(name: "Helvetica", size: 20)
              sectionLabel.font = UIFont.boldSystemFont(ofSize: 20)
              sectionLabel.textColor = UIColor.black
-           sectionLabel.text = "Cook"
+  
+            addButton = UIButton(frame: CGRect(x: tableView.frame.size.width - 100, y: 5, width:
+            80, height: 33))
+            addButton.titleLabel?.textColor = .gray
+            
+            if section == 2 {
+                 sectionLabel.text = "Completed Plan"
+                addButton.setTitle("History", for: .normal)
+                addButton.setTitleColor(.gray, for: .normal)
+                
+                addButton.addTarget(self, action: #selector(completeButtonPressed), for: .touchUpInside)
+            }
+            if section == 3
+            {
+               addButton.setTitle("Add new", for: .normal)
+               addButton.setTitleColor(.gray, for: .normal)
+               addButton.addTarget(self, action: #selector(reminderButtonPressed), for: .touchUpInside)
+                sectionLabel.text = "Reminder"
+            }
+          
              sectionLabel.sizeToFit()
-             headerView.addSubview(sectionLabel)
-
+            
+            headerView.addSubview(sectionLabel)
+            headerView.addSubview(addButton)
+        
              return headerView
-       }*/
+        }
+            return headerView
+       }
+    
+    @objc func completeButtonPressed()
+    {
+        print("pressed complete button")
+        performSegue(withIdentifier: "toCompletedHistory", sender: self)
+    }
+    @objc func reminderButtonPressed()
+   {
+        print("pressed reminder button")
+       performSegue(withIdentifier: "toAddReminder", sender: self)
+   }
     
 
     @IBOutlet weak var completeRemindBadgeTableView: UITableView!
@@ -169,9 +244,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6)
             ]
         
+        //dummy data untuk reminder
         self.reminderData =
         [
-            ReminderModel(Hour: "12:00", remindName: "Leg Workout", isMon: true, isTue: true, isWed: true, isThu: false, isFri: false, isSat: false, isSun: false, isReminderActive: true)
+            ReminderModel(Hour: "12:00", remindName: "Leg Workout", isMon: true, isTue: true, isWed: true, isThu: false, isFri: false, isSat: false, isSun: false, isReminderActive: true),
+             ReminderModel(Hour: "13:30", remindName: "Wrist Workout", isMon: false, isTue: false, isWed: false, isThu: false, isFri: false, isSat: true, isSun: true, isReminderActive: false)
         ]
         
         
