@@ -58,7 +58,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 3
         {
-            return 110
+            return 90
         }
         else
         {

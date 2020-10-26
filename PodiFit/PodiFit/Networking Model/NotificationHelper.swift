@@ -36,7 +36,7 @@ class NotificationHelper: UIViewController {
                     })
                 case .authorized:
                                 print("The application is allowed to display notifications")
-                                self.scheduleNotification()
+                                //self.scheduleNotification()
                 case .denied:
                                 print("The application is not allowed to display notifications")
         
@@ -48,9 +48,8 @@ class NotificationHelper: UIViewController {
         }
     }
     
-    func scheduleNotification()
+    func scheduleNotification(reminderName: String, dateToPush: String)
     {
-        
     }
     
     private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
