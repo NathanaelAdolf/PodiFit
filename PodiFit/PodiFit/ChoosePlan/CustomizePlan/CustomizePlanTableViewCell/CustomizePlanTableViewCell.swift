@@ -15,12 +15,15 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var movementCollection: UICollectionView!
     
-    func configure (with models: [MovementModel]){
-        self.model = models
+    
+    
+    func configure (with model: [MovementModel]){
+        self.model = model
         movementCollection.reloadData()
     }
     
     var model = [MovementModel]()
+    
     
     static func nib() -> UINib{
         return UINib(nibName: "CustomizePlanTableViewCell", bundle: nil)
@@ -54,6 +57,6 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return CGSize(width: 160, height: 160)
     }
 }

@@ -26,6 +26,7 @@ class MovementCollectionViewCell: UICollectionViewCell {
     }
 
     public func configure(with model: MovementModel){
+        
         self.movementName.text = model.movementName
         self.movementDetails.text = model.movementDetail
         self.movementCollectionImage.image = UIImage(named: model.movementImage)

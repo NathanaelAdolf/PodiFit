@@ -82,16 +82,25 @@ class ChoosePlanViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if expandableData[indexPath.section].opened == true{
-            expandableData[indexPath.section].opened = false
-        }else{
-            expandableData[indexPath.section].opened = true
+        print("idx =\(indexPath.row)")
+        
+        if indexPath.row == 0 {
+            if expandableData[indexPath.section].opened == true{
+                expandableData[indexPath.section].opened = false
+                print("idx =\(indexPath.row)")
+            }else{
+                expandableData[indexPath.section].opened = true
+                
+                print("idx =\(indexPath.row)")
+            }
             
-            //print(indexPath)
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        }else{
+            performSegue(withIdentifier: "customPlanSegue", sender: self)
         }
         
-        let sections = IndexSet.init(integer: indexPath.section)
-        tableView.reloadSections(sections, with: .none)
+        
     }
     
     /*

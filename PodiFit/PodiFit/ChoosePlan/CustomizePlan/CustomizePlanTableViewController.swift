@@ -15,19 +15,29 @@ class CustomizePlanTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        model.append(MovementModel(movementName: "Step Up", movementImage: "1", movementDetail: "20x"))
+        
+        model.append(MovementModel(movementName: "Glute Bridge", movementImage: "2", movementDetail: "20x"))
+        
+        model.append(MovementModel(movementName: "Kneeling Squat", movementImage: "3", movementDetail: "20x"))
+        
+        model.append(MovementModel(movementName: "Frog Hold", movementImage: "1", movementDetail: "20x"))
+        
         tableView.register(CustomizePlanTableViewCell.nib(), forCellReuseIdentifier: CustomizePlanTableViewCell.identifier)
+        
+        print(model)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
     
