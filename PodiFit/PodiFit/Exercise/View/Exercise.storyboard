@@ -64,7 +64,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fcz-eL-Odb">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fcz-eL-Odb">
                                 <rect key="frame" x="168" y="476.5" width="78.5" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVh-7b-Cue">
@@ -155,6 +155,7 @@
                             <constraint firstItem="3jO-qS-RIj" firstAttribute="top" secondItem="Jgq-gr-Itg" secondAttribute="top" id="4xu-da-qK0"/>
                             <constraint firstItem="exe-Hz-tCe" firstAttribute="leading" secondItem="Jgq-gr-Itg" secondAttribute="leading" id="75i-FN-CVn"/>
                             <constraint firstAttribute="trailing" secondItem="3jO-qS-RIj" secondAttribute="trailing" id="7lu-Fp-2w3"/>
+                            <constraint firstItem="nNl-UW-mtA" firstAttribute="trailing" secondItem="fcz-eL-Odb" secondAttribute="trailing" constant="167.5" id="7v4-Vy-u4n"/>
                             <constraint firstItem="har-Ns-h0a" firstAttribute="centerX" secondItem="Jgq-gr-Itg" secondAttribute="centerX" id="AUi-3H-ZiI"/>
                             <constraint firstItem="exe-Hz-tCe" firstAttribute="top" secondItem="Jg3-wb-9gx" secondAttribute="bottom" id="OQN-r6-Elj"/>
                             <constraint firstAttribute="trailing" secondItem="Jg3-wb-9gx" secondAttribute="trailing" id="QXe-D9-yY2"/>
@@ -165,6 +166,7 @@
                             <constraint firstItem="Jg3-wb-9gx" firstAttribute="leading" secondItem="Jgq-gr-Itg" secondAttribute="leading" id="o1m-Ha-I3n"/>
                             <constraint firstItem="3jO-qS-RIj" firstAttribute="leading" secondItem="Jgq-gr-Itg" secondAttribute="leading" id="shS-VC-V1p"/>
                             <constraint firstAttribute="trailing" secondItem="exe-Hz-tCe" secondAttribute="trailing" id="vAp-an-nc5"/>
+                            <constraint firstItem="fcz-eL-Odb" firstAttribute="leading" secondItem="nNl-UW-mtA" secondAttribute="leading" constant="168" id="yl1-nm-MFL"/>
                         </constraints>
                         <connections>
                             <outlet property="addRestTimeBtn" destination="UVC-6H-Oi2" id="KWH-Rn-mc6"/>

@@ -28,8 +28,12 @@ class ExerciseView: UIView {
     @IBOutlet weak var warningView: ExerciseView!
     @IBOutlet weak var contentWarningLabel: UILabel!
     
+//    var count = 30
+    var timer: Timer?
+    
     public func videoView() {
         //for show webkit(video)
+        
         webKitView.isHidden = false
         restPageView.isHidden = true
         warningView.isHidden = false
@@ -39,7 +43,7 @@ class ExerciseView: UIView {
         let url = URL(string: "https://www.youtube.com/embed/bsM1qdGAVbU?playsinline=1")
         let request = URLRequest(url: url!)
         webKitView.load(request)
-        
+        warningExercise()
     }
     
     public func restView() {
@@ -47,6 +51,11 @@ class ExerciseView: UIView {
         webKitView.isHidden = true
         restPageView.isHidden = false
         warningView.isHidden = true
+        
+        addRestTimeBtn.layer.borderWidth = 1
+        addRestTimeBtn.layer.borderColor = UIColor.black.cgColor
+        addRestTimeBtn.layer.cornerRadius = 5
+        
         
         
         
@@ -64,10 +73,17 @@ class ExerciseView: UIView {
     
     public func warningExercise() {
         
+        warningView.layer.cornerRadius = 5
         contentWarningLabel?.text = "This exercise requires heavy rotation"
     }
     
     public func progressExercise() {
         
     }
+    
+    public func countDownView(count : Int) {
+        timeRest?.text = "00 : \(count)"
+    }
+    
+    
 }
