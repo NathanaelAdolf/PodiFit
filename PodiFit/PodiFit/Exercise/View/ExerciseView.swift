@@ -28,12 +28,9 @@ class ExerciseView: UIView {
     @IBOutlet weak var warningView: ExerciseView!
     @IBOutlet weak var contentWarningLabel: UILabel!
     
-//    var count = 30
-    var timer: Timer?
     
     public func videoView() {
         //for show webkit(video)
-        
         webKitView.isHidden = false
         restPageView.isHidden = true
         warningView.isHidden = false
@@ -55,9 +52,6 @@ class ExerciseView: UIView {
         addRestTimeBtn.layer.borderWidth = 1
         addRestTimeBtn.layer.borderColor = UIColor.black.cgColor
         addRestTimeBtn.layer.cornerRadius = 5
-        
-        
-        
         
         infoNextExerciseLabel?.text = "NEXT 3/4"
         nextExerciseLabel?.text = "Beginners - Lunge"
@@ -81,8 +75,10 @@ class ExerciseView: UIView {
         
     }
     
-    public func countDownView(count : Int) {
+    public func countDownView(count : String) {
         timeRest?.text = "00 : \(count)"
+        
+        
     }
     
     

@@ -16,7 +16,7 @@ class ExerciseViewController: UIViewController {
     var count = 30
     var timer: Timer?
     
-    var isVideo: Int = 1
+    var isVideo: Int = 3
     
     var contentWarning: String = "This Exercise so high"
     
@@ -25,9 +25,6 @@ class ExerciseViewController: UIViewController {
         
         // Setup View
         exerciseView.videoView()
-        
-        
-        
 
     }
     
@@ -40,34 +37,52 @@ class ExerciseViewController: UIViewController {
         if isVideo == 1 {
             isVideo = 2
             exerciseView.videoView()
-            
         }
     }
     
     @IBAction func next(_ sender: Any) {
-        if isVideo == 2 {
-            isVideo = 1
+        print(isVideo)
+        if isVideo % 2 == 1 {
             exerciseView.restView()
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
+            isVideo += 1
+        } else {
+            timer?.invalidate()
+            count = 30
+            exerciseView.countDownView(count: "30")
+            switch isVideo {
+            case 2:
+                exerciseView.videoView()
+                isVideo += 1
+            case 4:
+                exerciseView.videoView()
+                isVideo += 1
+                
+            case 6:
+                exerciseView.videoView()
+            case 8:
+                exerciseView.videoView()
+            case 10:
+                exerciseView.videoView()
+            default:
+                exerciseView.videoView()
+            }
         }
     }
     
     @objc func countDownTimer(){
-        if (count > 0) {
-            print("00 : \(count) ")
-            exerciseView.countDownView(count: count)
-            count -= 1
+        var countString = String(count)
+        if (count >= 0) {
+            if count >= 10 {
+                exerciseView.countDownView(count: countString)
+                count -= 1
+            } else {
+                countString = "0\(countString)"
+                exerciseView.countDownView(count: countString)
+                count -= 1
+            }
         }
-        
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
