@@ -19,7 +19,7 @@ class NotificationHelper: UIViewController {
         configureUserNotificationCenter()
     }
     
-    private func configureUserNotificationCenter()
+    public func configureUserNotificationCenter()
        {
            notificationCenter.delegate = self
        }
