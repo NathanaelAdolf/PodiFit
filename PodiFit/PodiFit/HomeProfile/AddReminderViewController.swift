@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AddReminderViewController: UIViewController {
 
@@ -174,15 +175,22 @@ class AddReminderViewController: UIViewController {
     
     func checkUserChoosenDate(arrayIndex: Int)->String
     {
-        if timePickerView.date.getHourMinute().hour > 9
-        {
-            return "\(userChoosenDayArray[arrayIndex]) \(timePickerView.date.getHourMinute().hour):\(timePickerView.date.getHourMinute().minute):00"
-        }
-        else
-        {
-            return "\(userChoosenDayArray[arrayIndex]) 0\(timePickerView.date.getHourMinute().hour):\(timePickerView.date.getHourMinute().minute):00"
-            
-        }
+      
+            if timePickerView.date.getHourMinute().minute > 9 && timePickerView.date.getHourMinute().hour > 9 {
+                return "\(userChoosenDayArray[arrayIndex]) \(timePickerView.date.getHourMinute().hour):\(timePickerView.date.getHourMinute().minute):00"
+            }
+
+           else if timePickerView.date.getHourMinute().minute > 9 && timePickerView.date.getHourMinute().hour <= 9 {
+                return "\(userChoosenDayArray[arrayIndex]) 0\(timePickerView.date.getHourMinute().hour):\(timePickerView.date.getHourMinute().minute):00"
+            }
+                
+           else if timePickerView.date.getHourMinute().minute < 9 && timePickerView.date.getHourMinute().hour <= 9 {
+               return "\(userChoosenDayArray[arrayIndex]) 0\(timePickerView.date.getHourMinute().hour):0\(timePickerView.date.getHourMinute().minute):00"
+                }
+                
+            else  {
+              return "\(userChoosenDayArray[arrayIndex]) \(timePickerView.date.getHourMinute().hour):0\(timePickerView.date.getHourMinute().minute):00"
+               }
         
     }
     
@@ -196,17 +204,23 @@ class AddReminderViewController: UIViewController {
         }
         else
         {
+            notifHelper.triggerNotification()
+            
+            userChoosenDayArray.removeAll()
             checkuserChoosenDay()
             tempReminderName = reminderNameTextField.text!
             
             //save ke core data notifnya
             for i in 0...userChoosenDayArray.count - 1 {
                 notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
+                print("\(tempReminderName)\(i) \(checkUserChoosenDate(arrayIndex: i))")
             }
-           
             
+ 
         }
     }
   
 
 }
+
+

@@ -50,6 +50,30 @@ class NotificationHelper: UIViewController {
     
     func scheduleNotification(reminderName: String, dateToPush: String)
     {
+        print("date to push \(dateToPush)")
+        //format tanggal seperti di dateFormatterGet
+           let dateFormatterGet = DateFormatter()
+           dateFormatterGet.dateFormat = "EEEE HH:mm:ss"
+           
+            //step 2 : create the notification content
+            let content = UNMutableNotificationContent()
+                content.title = "I am notification from fitness app"
+                content.body = "Let's workout today"
+
+            // step 3 : create the notification trigger
+          let date = dateFormatterGet.date(from: dateToPush)
+           
+           let dateComponents = Calendar.current.dateComponents([.weekday,.hour,.minute,.second], from: date!)
+           let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                
+            //step 4 : create the request
+                let request = UNNotificationRequest(identifier: reminderName, content: content, trigger: trigger)
+
+            // step 5 : register the request
+                notificationCenter.add(request) { (error) in
+                   
+                }
+        print("success")
     }
     
     private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
