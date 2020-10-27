@@ -33,9 +33,14 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         super.awakeFromNib()
         // Initialization code
         
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumInteritemSpacing = 1.0
+        
         movementCollection.register(MovementCollectionViewCell.nib(), forCellWithReuseIdentifier: MovementCollectionViewCell.identifier)
         movementCollection.delegate = self
         movementCollection.dataSource = self
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

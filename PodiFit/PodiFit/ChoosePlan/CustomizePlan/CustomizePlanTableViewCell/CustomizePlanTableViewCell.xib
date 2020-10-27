@@ -18,8 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="673" height="388"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VzI-Iv-MZB">
-                        <rect key="frame" x="20" y="28" width="633" height="333"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VzI-Iv-MZB">
+                        <rect key="frame" x="20" y="18" width="633" height="353"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ez1-ui-mtJ">

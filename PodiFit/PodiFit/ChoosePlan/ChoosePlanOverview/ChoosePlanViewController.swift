@@ -63,7 +63,12 @@ class ChoosePlanViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        /*
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
+            cell.planDesc.text = "Axtion Plan"
+        }
+        */
         if indexPath.row == 0 {
             //let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath)
             //cell.textLabel?.text = "Action plan"
