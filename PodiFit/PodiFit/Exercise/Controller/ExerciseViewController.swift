@@ -15,34 +15,23 @@ class ExerciseViewController: UIViewController {
     
     var count = 30
     var timer: Timer?
-    
     var isVideo: Int = 3
-    
-    var contentWarning: String = "This Exercise so high"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Setup View
         exerciseView.videoView()
-        
-
     }
-    
     
     @IBAction func informationExercise(_ sender: Any) {
         
     }
     
     @IBAction func previous(_ sender: Any) {
-        if isVideo == 1 {
-            isVideo = 2
-            exerciseView.videoView()
-        }
+        
     }
     
     @IBAction func next(_ sender: Any) {
-        
         if isVideo % 2 == 1 {
             exerciseView.restView()
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
@@ -84,6 +73,4 @@ class ExerciseViewController: UIViewController {
             }
         }
     }
-
-
 }
