@@ -12,15 +12,25 @@ class imagePersonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var persomImage: UIImageView!
     
+     weak var buttonProtocol: editButtonProtocol?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBAction func pressedEdit(_ sender: Any) {
+        buttonProtocol?.moveToEditPage()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
+}
+
+protocol editButtonProtocol: class {
+    func moveToEditPage()
 }

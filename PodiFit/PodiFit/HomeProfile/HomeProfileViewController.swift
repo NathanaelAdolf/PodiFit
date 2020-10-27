@@ -181,7 +181,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
              headerView.backgroundColor = UIColor.white
 
-             let sectionLabel = UILabel(frame: CGRect(x: 8, y: 10, width:
+             let sectionLabel = UILabel(frame: CGRect(x: 20, y: 10, width:
              tableView.bounds.size.width, height: tableView.bounds.size.height))
              sectionLabel.font = UIFont(name: "Helvetica", size: 20)
              sectionLabel.font = UIFont.boldSystemFont(ofSize: 20)
@@ -215,6 +215,34 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
             return headerView
        }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        if indexPath.section == 3
+        {
+            let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: (Bool)-> ()) in
+                
+                //perform segue
+                //self.performSegue(withIdentifier: "toEditTrainingSegue", sender:nil)
+                actionPerformed(true)
+            }
+            
+            let delete = UIContextualAction(style: .normal, title: "Delete") { (contextualAction, view, actionPerformed: (Bool)-> ()) in
+                
+                //perform segue
+                //self.performSegue(withIdentifier: "toEditTrainingSegue", sender:nil)
+                actionPerformed(true)
+            }
+            
+            edit.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+            delete.backgroundColor = .red
+            
+            return UISwipeActionsConfiguration(actions: [delete,edit])
+            
+        }
+        return nil
+        
+    }
     
     @objc func completeButtonPressed()
     {
@@ -259,5 +287,16 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
 }
+
+extension HomeProfileViewController: editButtonProtocol
+{
+    func moveToEditPage() {
+        performSegue(withIdentifier: "toEditProfile", sender: self)
+    }
+    
+    
+}
+
+
 
 

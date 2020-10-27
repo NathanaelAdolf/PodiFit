@@ -54,6 +54,7 @@ class AddReminderViewController: UIViewController {
         timePickerView.locale = Locale(identifier: "id_ID")
         
         notifHelper.configureUserNotificationCenter()
+        
       
     }
     

@@ -23,11 +23,15 @@ class ReminderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var reminderSwitch: UISwitch!
     
+    @IBOutlet var backgroundViewReminder: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColor.black.cgColor
+
+        self.backgroundViewReminder.layer.cornerRadius = 5
+        self.backgroundViewReminder.backgroundColor = .gray
+        
 
     }
 
