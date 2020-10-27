@@ -25,6 +25,7 @@ class ExerciseViewController: UIViewController {
         
         // Setup View
         exerciseView.videoView()
+        
 
     }
     
@@ -41,7 +42,7 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: Any) {
-        print(isVideo)
+        
         if isVideo % 2 == 1 {
             exerciseView.restView()
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)

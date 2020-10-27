@@ -29,11 +29,19 @@ class ExerciseView: UIView {
     @IBOutlet weak var contentWarningLabel: UILabel!
     
     
+   
     public func videoView() {
         //for show webkit(video)
         webKitView.isHidden = false
         restPageView.isHidden = true
         warningView.isHidden = false
+        
+        self.webKitView.alpha = 0.0
+        
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseOut, animations: {
+            self.webKitView.alpha = 1.0
+        })
+
         
         nameExerciseLabel?.text = "Normal Squat"
 
@@ -48,7 +56,11 @@ class ExerciseView: UIView {
         webKitView.isHidden = true
         restPageView.isHidden = false
         warningView.isHidden = true
+        self.restPageView.alpha = 0.0
         
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+            self.restPageView.alpha = 1.0
+        })
         addRestTimeBtn.layer.borderWidth = 1
         addRestTimeBtn.layer.borderColor = UIColor.black.cgColor
         addRestTimeBtn.layer.cornerRadius = 5
@@ -67,7 +79,7 @@ class ExerciseView: UIView {
     
     public func warningExercise() {
         
-        warningView.layer.cornerRadius = 5
+        warningView.layer.cornerRadius = 10
         contentWarningLabel?.text = "This exercise requires heavy rotation"
     }
     

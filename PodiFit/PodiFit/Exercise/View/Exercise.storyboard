@@ -106,13 +106,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-wb-9gx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="446"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI9-1J-PLP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI9-1J-PLP">
                                         <rect key="frame" x="175" y="79" width="64" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00 : 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8n-O9-gW9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8n-O9-gW9">
                                         <rect key="frame" x="149" y="123" width="126" height="41"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
                                         <nil key="textColor"/>
@@ -155,6 +155,7 @@
                                     <constraint firstItem="G8n-O9-gW9" firstAttribute="leading" secondItem="Jg3-wb-9gx" secondAttribute="leading" constant="149" id="9AF-tb-xMp"/>
                                     <constraint firstItem="7D5-Me-UU9" firstAttribute="leading" secondItem="Jg3-wb-9gx" secondAttribute="leading" constant="15" id="JgH-e4-jh4"/>
                                     <constraint firstItem="G8n-O9-gW9" firstAttribute="top" secondItem="zI9-1J-PLP" secondAttribute="bottom" constant="8" id="SGx-tu-Cws"/>
+                                    <constraint firstItem="zI9-1J-PLP" firstAttribute="top" secondItem="Jg3-wb-9gx" secondAttribute="top" constant="79" id="XMq-rC-qR3"/>
                                     <constraint firstItem="zI9-1J-PLP" firstAttribute="leading" secondItem="Jg3-wb-9gx" secondAttribute="leading" constant="175" id="f5X-gI-Gi6"/>
                                     <constraint firstAttribute="trailing" secondItem="G8n-O9-gW9" secondAttribute="trailing" constant="139" id="hPI-29-iKL"/>
                                     <constraint firstAttribute="trailing" secondItem="zI9-1J-PLP" secondAttribute="trailing" constant="175" id="jIl-5n-orR"/>
