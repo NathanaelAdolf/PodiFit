@@ -238,11 +238,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         completeRemindBadgeTableView.separatorStyle = .none
         
+        notifHelper.configureUserNotificationCenter()
+        
         //data dummy buat completedData
         self.completedData =
             [
                 CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4)
                 ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6)
+                
             ]
         
         //dummy data untuk reminder

@@ -9,6 +9,8 @@
 import UIKit
 import UserNotifications
 
+ var notifHelper = NotificationHelper()
+
 class AddReminderViewController: UIViewController {
 
     @IBOutlet weak var timePickerView: UIDatePicker!
@@ -35,7 +37,7 @@ class AddReminderViewController: UIViewController {
     
     var tempReminderName : String = ""
     
-    var notifHelper = NotificationHelper()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,8 @@ class AddReminderViewController: UIViewController {
         
         timePickerView.datePickerMode = .time
         timePickerView.locale = Locale(identifier: "id_ID")
+        
+        notifHelper.configureUserNotificationCenter()
       
     }
     
