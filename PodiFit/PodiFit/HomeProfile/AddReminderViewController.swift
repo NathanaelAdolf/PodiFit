@@ -252,32 +252,31 @@ class AddReminderViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func saveAction(_ sender: Any) {
-        if reminderNameTextField.text == "" {
-            //kasih pesan error
-        }
-        else
-        {
-            notifHelper.triggerNotification()
-            
-            userChoosenDayArray.removeAll()
-            checkuserChoosenDay()
-            checkDayState()
-            tempReminderName = reminderNameTextField.text!
-            
-            //save ke core data notifnya
-            for i in 0...userChoosenDayArray.count - 1 {
-                notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
-                print("\(tempReminderName)\(i) \(checkUserChoosenDate(arrayIndex: i))")
-            }
-            
-            notifHelper.storeNotificationToCoreData(reminderName: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
-            
- 
-        }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+          if reminderNameTextField.text == "" {
+                         //kasih pesan error
+                     }
+                     else
+                     {
+                         notifHelper.triggerNotification()
+                         
+                         userChoosenDayArray.removeAll()
+                         checkuserChoosenDay()
+                         checkDayState()
+                         tempReminderName = reminderNameTextField.text!
+                         
+                         //save ke core data notifnya
+                         for i in 0...userChoosenDayArray.count - 1 {
+                             notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
+                         }
+                         
+                         notifHelper.storeNotificationToCoreData(reminderName: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
+                         
+                      return true
+                    }
+        return false
     }
-  
-
+    
 }
 
 
