@@ -22,6 +22,8 @@ class PlanViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //notifHelper.configureUserNotificationCenter()
+        
         plans = [PlanType(title: "Easy Plan", subtitle: "2 weeks", image: "1"),
                  PlanType(title: "Intermediate Plan", subtitle: "4 weeks", image: "2"),
                  PlanType(title: "Advanced Plan", subtitle: "6 weeks", image: "3")]

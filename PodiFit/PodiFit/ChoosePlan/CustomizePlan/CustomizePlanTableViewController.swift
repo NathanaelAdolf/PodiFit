@@ -14,6 +14,8 @@ class CustomizePlanTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //notifHelper.configureUserNotificationCenter()
 
         model.append(MovementModel(movementName: "Step Up", movementImage: "1", movementDetail: "20x"))
         
@@ -23,9 +25,11 @@ class CustomizePlanTableViewController: UITableViewController {
         
         model.append(MovementModel(movementName: "Frog Hold", movementImage: "1", movementDetail: "20x"))
         
+        model.append(MovementModel(movementName: "Frog Hold 2", movementImage: "2", movementDetail: "20x"))
+        
         tableView.register(CustomizePlanTableViewCell.nib(), forCellReuseIdentifier: CustomizePlanTableViewCell.identifier)
         
-        print(model)
+        //print(model)
     }
 
     // MARK: - Table view data source
@@ -53,7 +57,7 @@ class CustomizePlanTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125.0
+        return 175
     }
     
     /*

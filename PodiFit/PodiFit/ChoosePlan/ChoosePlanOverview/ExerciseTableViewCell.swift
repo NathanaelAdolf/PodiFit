@@ -26,6 +26,7 @@ class ExerciseTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         exerciseImage.image = UIImage.init(named: "IPA")
+        exerciseDuration.text = "30 sec"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

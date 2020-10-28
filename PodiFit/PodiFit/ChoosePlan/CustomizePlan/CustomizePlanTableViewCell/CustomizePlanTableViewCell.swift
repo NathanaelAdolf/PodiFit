@@ -33,13 +33,12 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         super.awakeFromNib()
         // Initialization code
         
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumInteritemSpacing = 1.0
+
         
         movementCollection.register(MovementCollectionViewCell.nib(), forCellWithReuseIdentifier: MovementCollectionViewCell.identifier)
         movementCollection.delegate = self
         movementCollection.dataSource = self
+        //movementCollection.backgroundColor = UIColor.black
         
     }
 
@@ -51,17 +50,20 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.count
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
         cell.configure(with: model[indexPath.row])
+        //cell.backgroundColor = UIColor.black
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 160)
+        return CGSize(width: 168, height: 168)
     }
+ 
+     
 }

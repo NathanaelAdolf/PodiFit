@@ -26,6 +26,8 @@ class ChoosePlanViewController: UITableViewController {
         
         super.viewDidLoad()
 
+        //notifHelper.configureUserNotificationCenter()
+        
         tableView.register(DescTableViewCell.nib(), forCellReuseIdentifier: DescTableViewCell.identifier)
         
         tableView.register(ExerciseTableViewCell.nib(), forCellReuseIdentifier: ExerciseTableViewCell.identifier)
@@ -39,14 +41,27 @@ class ChoosePlanViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if expandableData[section].opened == true {
-            return expandableData[section].sectionData.count + 1
-        }
-        else{
+        
+        if section == 0 {
             return 1
         }
-        
-        //return 10
+        else if section == 1{
+            return 1
+        }
+        else if section == (expandableData.count + 2) {
+            return 1
+        }
+        else{
+            print("section: \(section)")
+            if expandableData[section-2].opened == true {
+              print("expdata count: \(expandableData[section-2].sectionData.count+1)")
+                
+              return expandableData[section-2].sectionData.count+1
+            }
+            else{
+                return 1
+            }
+        }
     }
     /*
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -58,49 +73,67 @@ class ChoosePlanViewController: UITableViewController {
     */
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return expandableData.count
+        return (expandableData.count + 3)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        if indexPath.row == 0 {
+        
+        if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
-            cell.planDesc.text = "Axtion Plan"
+            cell.planDesc.text = "Action Plan"
+            
+            return cell
         }
-        */
-        if indexPath.row == 0 {
-            //let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath)
-            //cell.textLabel?.text = "Action plan"
-            let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath)
-            cell.textLabel?.text = expandableData[indexPath.section].title
+        else if (indexPath.section == 1){
+            let cell = tableView.dequeueReusableCell(withIdentifier:StackedTableViewCell.identifier, for: indexPath) as! StackedTableViewCell
+            
+            return cell
+        }
+        else if (indexPath.section == (expandableData.count + 2)){
+            let cell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.identifier, for: indexPath) as! ButtonTableViewCell
             
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseTableViewCell.identifier, for: indexPath)
-            cell.textLabel?.text = expandableData[indexPath.section].sectionData[indexPath.row - 1]
-            return cell
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
+                cell.planDesc.text = expandableData[indexPath.section - 2].title
+                
+                return cell
+            }
+            else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseTableViewCell.identifier, for: indexPath) as! ExerciseTableViewCell
+                cell.exerciseName.text = expandableData[indexPath.section - 2].sectionData[indexPath.row - 1]
+                return cell
+            }
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
         
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("idx =\(indexPath.row)")
+        print("sct=\(indexPath.section) ,idx =\(indexPath.row)")
         
-        if indexPath.row == 0 {
-            if expandableData[indexPath.section].opened == true{
-                expandableData[indexPath.section].opened = false
-                print("idx =\(indexPath.row)")
+        //performSegue(withIdentifier: "customPlanSegue", sender: self)
+        
+        
+        if (indexPath.section > 1 && indexPath.section < (expandableData.count + 2) && indexPath.row == 0){
+            if expandableData[indexPath.section-2].opened == true{
+                expandableData[indexPath.section-2].opened = false
+                print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk if")
             }else{
-                expandableData[indexPath.section].opened = true
+                expandableData[indexPath.section-2].opened = true
                 
-                print("idx =\(indexPath.row)")
+                print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk else")
             }
             
             let sections = IndexSet.init(integer: indexPath.section)
             tableView.reloadSections(sections, with: .none)
+            //tableView.reloadData()
         }else{
             performSegue(withIdentifier: "customPlanSegue", sender: self)
         }
