@@ -255,6 +255,16 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
        performSegue(withIdentifier: "toAddReminder", sender: self)
    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reminderData = notifHelper.retrieveNotificationFromCoreData()
+        completeRemindBadgeTableView.reloadData()
+    }
+    
+    @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
+        reminderData = notifHelper.retrieveNotificationFromCoreData()
+        completeRemindBadgeTableView.reloadData()
+    }
+    
 
     @IBOutlet weak var completeRemindBadgeTableView: UITableView!
     
@@ -267,8 +277,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         completeRemindBadgeTableView.separatorStyle = .none
         
         notifHelper.configureUserNotificationCenter()
-        notifHelper.retrieveNotificationFromCoreData()
-        
+       
         //data dummy buat completedData
         self.completedData =
             [

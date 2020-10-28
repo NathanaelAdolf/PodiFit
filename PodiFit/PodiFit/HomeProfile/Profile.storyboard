@@ -353,7 +353,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="kwc-4y-bhs">
                                             <connections>
-                                                <action selector="saveAction:" destination="gDJ-JG-XqF" id="Kgu-CM-v0v"/>
+                                                <segue destination="HNd-QI-k8q" kind="unwind" unwindAction="unwindSegueFromAddReminderWithSender:" id="4jZ-PX-wUh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -471,6 +471,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="za2-nq-S3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="HNd-QI-k8q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="969.56521739130437" y="531.69642857142856"/>
         </scene>
@@ -579,14 +580,7 @@
                     <view key="view" contentMode="scaleToFill" id="Lrv-SZ-zgO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-Ds-l0H">
-                                <rect key="frame" x="0.0" y="327" width="414" height="515"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.10605736301369863" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QaD-6A-A2v"/>
                     </view>
                     <navigationItem key="navigationItem" id="FUG-5X-3v0"/>

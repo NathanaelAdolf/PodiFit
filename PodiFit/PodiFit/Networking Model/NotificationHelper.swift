@@ -123,9 +123,12 @@ class NotificationHelper: UIViewController {
         return message
     }
     
-    func retrieveNotificationFromCoreData()
+    func retrieveNotificationFromCoreData()->[ReminderModel]
     {
-        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        var tempReminderData =  [ReminderModel]()
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempReminderData}
                  let context = appDel.persistentContainer.viewContext
             
                  let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminder")
@@ -146,6 +149,8 @@ class NotificationHelper: UIViewController {
                         print("saturday : \(data.value(forKey: "saturday")as! Bool)")
                         print("sunday : \(data.value(forKey: "sunday")as! Bool)")
                         print("isActive : \(data.value(forKey: "isActive")as! Bool)")
+                        
+                        tempReminderData.append(ReminderModel(Hour: "\(data.value(forKey: "hour")!):\(data.value(forKey: "minute")!)", remindName: "\(data.value(forKey: "reminderName")as! String)", isMon: data.value(forKey: "monday")as! Bool, isTue: data.value(forKey: "tuesday")as! Bool, isWed: data.value(forKey: "wednesday")as! Bool, isThu: data.value(forKey: "thursday")as! Bool, isFri: data.value(forKey: "friday")as! Bool, isSat: data.value(forKey: "saturday")as! Bool, isSun: data.value(forKey: "sunday")as! Bool, isReminderActive: data.value(forKey: "isActive")as! Bool))
                             
                     }
               }
@@ -153,7 +158,10 @@ class NotificationHelper: UIViewController {
              {
                  print("Failed")
              }
+       return tempReminderData
     }
+    
+   
 
 }
 
