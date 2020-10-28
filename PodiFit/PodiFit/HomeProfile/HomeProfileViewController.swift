@@ -12,7 +12,7 @@ import UserNotifications
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var completedData = [CompletedPlanModel]()
-    var reminderData = [ReminderModel]()
+    var reminderData = [Reminder]()
     
     var addButton = UIButton()
     
@@ -103,32 +103,33 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
             
-            cell.hourLabel.text = reminderData[indexPath.row].Hour
+            cell.hourLabel.text = "\(reminderData[indexPath.row].hour!):\(reminderData[indexPath.row].minute!)"
+            
             cell.reminderNameLabel.text = reminderData[indexPath.row].reminderName
             
-            if reminderData[indexPath.row].isMon == true {
+            if reminderData[indexPath.row].monday == true {
                 cell.mondayLabel.textColor = .black
             }
-             if reminderData[indexPath.row].isTue == true {
+            if reminderData[indexPath.row].tuesday == true {
                 cell.TuesdayLabel.textColor = .black
             }
-            if reminderData[indexPath.row].isWed == true {
+            if reminderData[indexPath.row].wednesday == true {
                 cell.wednesdayLabel.textColor = .black
                }
-             if reminderData[indexPath.row].isThu == true {
+            if reminderData[indexPath.row].thursday == true {
                 cell.thursdayLabel.textColor = .black
                }
-            if reminderData[indexPath.row].isFri == true {
+            if reminderData[indexPath.row].friday == true {
                 cell.fridayLabel.textColor = .black
                }
-             if reminderData[indexPath.row].isSat == true {
+            if reminderData[indexPath.row].saturday == true {
                 cell.saturdayLabel.textColor = .black
                }
-             if reminderData[indexPath.row].isSun == true {
+            if reminderData[indexPath.row].sunday == true {
                 cell.sundayLabel.textColor = .black
                }
             
-            if reminderData[indexPath.row].isReminderActive == true {
+            if reminderData[indexPath.row].isActive == true {
                 cell.reminderSwitch.setOn(true, animated: false)
             }
             else
@@ -255,8 +256,19 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
        performSegue(withIdentifier: "toAddReminder", sender: self)
    }
     
+    @IBAction func unwindSegueFromModal(sender: UIStoryboardSegue){
+        
+        completeRemindBadgeTableView.reloadData()
+       }
 
     @IBOutlet weak var completeRemindBadgeTableView: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        notifHelper.retrieveNotificationFromCoreData { (models) in
+            self.reminderData = models
+        }
+       
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -267,8 +279,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         completeRemindBadgeTableView.separatorStyle = .none
         
         notifHelper.configureUserNotificationCenter()
-        notifHelper.retrieveNotificationFromCoreData()
-        
+       
         //data dummy buat completedData
         self.completedData =
             [
@@ -278,7 +289,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             ]
         
         //dummy data untuk reminder
-       /* self.reminderData =
+      /*  self.reminderData =
         [
             ReminderModel(Hour: "12:00", remindName: "Leg Workout", isMon: true, isTue: true, isWed: true, isThu: false, isFri: false, isSat: false, isSun: false, isReminderActive: true),
              ReminderModel(Hour: "13:30", remindName: "Wrist Workout", isMon: false, isTue: false, isWed: false, isThu: false, isFri: false, isSat: true, isSun: true, isReminderActive: false)

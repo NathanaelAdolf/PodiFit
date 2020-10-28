@@ -37,6 +37,8 @@
 		8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */; };
 		8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */; };
 		8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */; };
+		8DF5F72F2549381F002588C1 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF5F72D2549381F002588C1 /* Reminder+CoreDataClass.swift */; };
+		8DF5F7302549381F002588C1 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF5F72E2549381F002588C1 /* Reminder+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanModel.swift; sourceTree = "<group>"; };
 		8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePersonTableViewCell.swift; sourceTree = "<group>"; };
 		8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataTableViewCell.swift; sourceTree = "<group>"; };
+		8DF5F72D2549381F002588C1 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8DF5F72E2549381F002588C1 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		8D13C0B425402997002195C9 /* PodiFit */ = {
 			isa = PBXGroup;
 			children = (
+				8DF5F72C25493761002588C1 /* Model */,
 				8D13C101254035D8002195C9 /* Networking Model */,
 				8D13C0FB25402F02002195C9 /* Survey */,
 				8D13C0F825402E6E002195C9 /* HomeProfile */,
@@ -264,6 +269,15 @@
 				8D3D1E76254556A10070444C /* NotificationHelper.swift */,
 			);
 			path = "Networking Model";
+			sourceTree = "<group>";
+		};
+		8DF5F72C25493761002588C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DF5F72D2549381F002588C1 /* Reminder+CoreDataClass.swift */,
+				8DF5F72E2549381F002588C1 /* Reminder+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +429,7 @@
 				8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */,
 				8D8E6272254683BD005F445D /* DateExtension.swift in Sources */,
 				8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */,
+				8DF5F72F2549381F002588C1 /* Reminder+CoreDataClass.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
@@ -425,6 +440,7 @@
 				8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */,
 				8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */,
 				8DC063EF25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift in Sources */,
+				8DF5F7302549381F002588C1 /* Reminder+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
