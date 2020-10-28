@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-import CoreData
 
-class ReminderModel{
+class ReminderModel {
     
     var Hour: String!
     var reminderName: String!
@@ -28,7 +27,6 @@ class ReminderModel{
     init(Hour: String, remindName: String,isMon: Bool,isTue: Bool,isWed: Bool,isThu: Bool,isFri: Bool,isSat: Bool,
          isSun: Bool,isReminderActive: Bool) {
         
-        
         self.Hour = Hour
         self.reminderName = remindName
         
@@ -41,7 +39,6 @@ class ReminderModel{
         self.isSun = isSun
         
         self.isReminderActive = isReminderActive
-        
     }
     
 }
