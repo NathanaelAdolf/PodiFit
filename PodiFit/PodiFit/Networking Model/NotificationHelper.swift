@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import CoreData
 
 class NotificationHelper: UIViewController {
 
@@ -36,7 +37,6 @@ class NotificationHelper: UIViewController {
                     })
                 case .authorized:
                                 print("The application is allowed to display notifications")
-                                //self.scheduleNotification()
                 case .denied:
                                 print("The application is not allowed to display notifications")
         
@@ -84,6 +84,75 @@ class NotificationHelper: UIViewController {
             }
             completionHandler(success)
         }
+    }
+    
+    func storeNotificationToCoreData(reminderName: String,hour: String,minute: String, monday: Bool, tuesday: Bool, wednesday: Bool, thursday: Bool, friday: Bool, saturday: Bool,sunday: Bool, isReminderActive: Bool)->String
+    {
+      
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return ""}
+    
+          var message: String = ""
+
+          let context = appDelegate.persistentContainer.viewContext
+
+          let dataOfEntity = NSEntityDescription.entity(forEntityName: "Reminder", in: context)!
+          let listOfEntity = NSManagedObject(entity: dataOfEntity, insertInto: context)
+
+         listOfEntity.setValue(hour, forKey: "hour")
+         listOfEntity.setValue(minute, forKey: "minute")
+         listOfEntity.setValue(reminderName, forKey: "reminderName")
+         listOfEntity.setValue(monday, forKey: "monday")
+         listOfEntity.setValue(tuesday, forKey: "tuesday")
+         listOfEntity.setValue(wednesday, forKey: "wednesday")
+         listOfEntity.setValue(thursday, forKey: "thursday")
+         listOfEntity.setValue(friday, forKey: "friday")
+         listOfEntity.setValue(saturday, forKey: "saturday")
+         listOfEntity.setValue(sunday, forKey: "sunday")
+         listOfEntity.setValue(isReminderActive, forKey: "isActive")
+              
+          do {
+              
+             try context.save()
+              message = "00"
+          } catch let error as NSError {
+             
+              print("Gagal save context \(error), \(error.userInfo)")
+              message = "01"
+          }
+        
+        return message
+    }
+    
+    func retrieveNotificationFromCoreData()
+    {
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return }
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminder")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        
+                        print("reminderName : \(data.value(forKey: "reminderName")as! String)")
+                        print("hour : \(data.value(forKey: "hour")as! String)")
+                        print("minute : \(data.value(forKey: "minute")as! String)")
+                        print("monday : \(data.value(forKey: "monday")as! Bool)")
+                        print("tuesday : \(data.value(forKey: "tuesday")as! Bool)")
+                        print("wednesday : \(data.value(forKey: "wednesday")as! Bool)")
+                        print("thursday : \(data.value(forKey: "thursday")as! Bool)")
+                        print("friday : \(data.value(forKey: "friday")as! Bool)")
+                        print("saturday : \(data.value(forKey: "saturday")as! Bool)")
+                        print("sunday : \(data.value(forKey: "sunday")as! Bool)")
+                        print("isActive : \(data.value(forKey: "isActive")as! Bool)")
+                            
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
     }
 
 }

@@ -579,14 +579,21 @@
                     <view key="view" contentMode="scaleToFill" id="Lrv-SZ-zgO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-Ds-l0H">
+                                <rect key="frame" x="0.0" y="327" width="414" height="515"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.10605736301369863" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QaD-6A-A2v"/>
                     </view>
                     <navigationItem key="navigationItem" id="FUG-5X-3v0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHP-1P-bpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="-179"/>
+            <point key="canvasLocation" x="969.56521739130437" y="-179.46428571428569"/>
         </scene>
     </scenes>
     <resources>

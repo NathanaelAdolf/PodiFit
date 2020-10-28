@@ -267,6 +267,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         completeRemindBadgeTableView.separatorStyle = .none
         
         notifHelper.configureUserNotificationCenter()
+        notifHelper.retrieveNotificationFromCoreData()
         
         //data dummy buat completedData
         self.completedData =
@@ -277,11 +278,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             ]
         
         //dummy data untuk reminder
-        self.reminderData =
+       /* self.reminderData =
         [
             ReminderModel(Hour: "12:00", remindName: "Leg Workout", isMon: true, isTue: true, isWed: true, isThu: false, isFri: false, isSat: false, isSun: false, isReminderActive: true),
              ReminderModel(Hour: "13:30", remindName: "Wrist Workout", isMon: false, isTue: false, isWed: false, isThu: false, isFri: false, isSat: true, isSun: true, isReminderActive: false)
-        ]
+        ]*/
         
         
     }

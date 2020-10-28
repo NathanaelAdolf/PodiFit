@@ -31,13 +31,21 @@ class AddReminderViewController: UIViewController {
     var satFlag: Int = 0
     var sunFlag: Int = 0
     
+    var monState: Bool = false
+    var tueState: Bool = false
+    var wedState: Bool = false
+    var thuState: Bool = false
+    var friState: Bool = false
+    var satState: Bool = false
+    var sunState: Bool = false
+    
     @IBOutlet weak var reminderNameTextField: UITextField!
     
     var userChoosenDayArray: [String] = []
     
     var tempReminderName : String = ""
-    
-   
+    var userChoosenHour: String = ""
+    var userChoosenMinute: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +64,31 @@ class AddReminderViewController: UIViewController {
         notifHelper.configureUserNotificationCenter()
         
       
+    }
+    
+    func checkDayState()
+    {
+        if monFlag == 1 {
+            monState = true
+        }
+        if tueFlag == 1 {
+            tueState = true
+        }
+        if wedFlag == 1 {
+            wedState = true
+        }
+        if thuFlag == 1 {
+            thuState = true
+        }
+        if friFlag == 1 {
+            friState = true
+        }
+        if satFlag == 1 {
+            satState = true
+        }
+        if sunFlag == 1 {
+            sunState = true
+        }
     }
     
     @IBAction func mondayPressed(_ sender: Any) {
@@ -182,18 +215,34 @@ class AddReminderViewController: UIViewController {
     {
       
             if timePickerView.date.getHourMinute().minute > 9 && timePickerView.date.getHourMinute().hour > 9 {
+                
+                userChoosenHour = "\(timePickerView.date.getHourMinute().hour)"
+                userChoosenMinute = "\(timePickerView.date.getHourMinute().minute)"
+                
                 return "\(userChoosenDayArray[arrayIndex]) \(timePickerView.date.getHourMinute().hour):\(timePickerView.date.getHourMinute().minute):00"
             }
 
            else if timePickerView.date.getHourMinute().minute > 9 && timePickerView.date.getHourMinute().hour <= 9 {
+                
+                userChoosenHour = "0\(timePickerView.date.getHourMinute().hour)"
+                userChoosenMinute = "\(timePickerView.date.getHourMinute().minute)"
+                
                 return "\(userChoosenDayArray[arrayIndex]) 0\(timePickerView.date.getHourMinute().hour):\(timePickerView.date.getHourMinute().minute):00"
             }
                 
            else if timePickerView.date.getHourMinute().minute < 9 && timePickerView.date.getHourMinute().hour <= 9 {
+                
+                userChoosenHour = "0\(timePickerView.date.getHourMinute().hour)"
+                userChoosenMinute = "0\(timePickerView.date.getHourMinute().minute)"
+                
                return "\(userChoosenDayArray[arrayIndex]) 0\(timePickerView.date.getHourMinute().hour):0\(timePickerView.date.getHourMinute().minute):00"
                 }
                 
             else  {
+                
+                userChoosenHour = "\(timePickerView.date.getHourMinute().hour)"
+                userChoosenMinute = "0\(timePickerView.date.getHourMinute().minute)"
+                
               return "\(userChoosenDayArray[arrayIndex]) \(timePickerView.date.getHourMinute().hour):0\(timePickerView.date.getHourMinute().minute):00"
                }
         
@@ -213,6 +262,7 @@ class AddReminderViewController: UIViewController {
             
             userChoosenDayArray.removeAll()
             checkuserChoosenDay()
+            checkDayState()
             tempReminderName = reminderNameTextField.text!
             
             //save ke core data notifnya
@@ -220,6 +270,8 @@ class AddReminderViewController: UIViewController {
                 notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
                 print("\(tempReminderName)\(i) \(checkUserChoosenDate(arrayIndex: i))")
             }
+            
+            notifHelper.storeNotificationToCoreData(reminderName: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
             
  
         }
