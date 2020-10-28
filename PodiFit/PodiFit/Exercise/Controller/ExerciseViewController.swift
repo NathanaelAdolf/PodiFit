@@ -56,7 +56,12 @@ class ExerciseViewController: UIViewController {
                 exerciseView.videoView()
             default:
                 exerciseView.videoView()
+                
+                
             }
+            
+            // var x = 0
+            // if
         }
     }
     
