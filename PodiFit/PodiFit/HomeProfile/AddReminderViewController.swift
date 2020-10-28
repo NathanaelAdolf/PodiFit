@@ -266,12 +266,12 @@ class AddReminderViewController: UIViewController {
             tempReminderName = reminderNameTextField.text!
             
             //save ke core data notifnya
-            for i in 0...userChoosenDayArray.count - 1 {
+         /*   for i in 0...userChoosenDayArray.count - 1 {
                 notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
                 print("\(tempReminderName)\(i) \(checkUserChoosenDate(arrayIndex: i))")
             }
             
-            notifHelper.storeNotificationToCoreData(reminderName: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
+            notifHelper.storeNotificationToCoreData(reminderName: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)*/
             
  
         }
