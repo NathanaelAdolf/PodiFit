@@ -27,7 +27,6 @@
 		8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F625402D84002195C9 /* Exercise.storyboard */; };
 		8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F925402E81002195C9 /* Profile.storyboard */; };
 		8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0FE25402F2B002195C9 /* Survey.storyboard */; };
-<<<<<<< HEAD
 		8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
 		8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D1E70254550D10070444C /* AddReminderViewController.swift */; };
 		8D3D1E77254556A10070444C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D1E76254556A10070444C /* NotificationHelper.swift */; };
@@ -38,25 +37,6 @@
 		8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */; };
 		8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */; };
 		8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */; };
-=======
-		ABA29188254181FE001E6FA0 /* ChoosePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA29187254181FE001E6FA0 /* ChoosePlanViewController.swift */; };
-		ABA2919625418DDB001E6FA0 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2919425418DDB001E6FA0 /* ExerciseTableViewCell.swift */; };
-		ABA2919725418DDB001E6FA0 /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA2919525418DDB001E6FA0 /* ExerciseTableViewCell.xib */; };
-		ABA291A025419175001E6FA0 /* DescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2919E25419175001E6FA0 /* DescTableViewCell.swift */; };
-		ABA291A125419175001E6FA0 /* DescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */; };
-		ABA291A725419233001E6FA0 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */; };
-		ABA291A825419233001E6FA0 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */; };
-		ABC9C26F2543E98600F31674 /* StackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9C26D2543E98600F31674 /* StackedTableViewCell.swift */; };
-		ABC9C2702543E98600F31674 /* StackedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC9C26E2543E98600F31674 /* StackedTableViewCell.xib */; };
-		ABE248602542C87D00710BDE /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE2485F2542C87D00710BDE /* PlanViewController.swift */; };
-		ABE248662542CABC00710BDE /* PlanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE248652542CABC00710BDE /* PlanListTableViewCell.swift */; };
-		ABE2486E2542CF6900710BDE /* CustomizePlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE2486D2542CF6900710BDE /* CustomizePlanTableViewController.swift */; };
-		ABE2487A2542D32900710BDE /* CustomizePlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE248782542D32900710BDE /* CustomizePlanTableViewCell.swift */; };
-		ABE2487B2542D32900710BDE /* CustomizePlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE248792542D32900710BDE /* CustomizePlanTableViewCell.xib */; };
-		ABE248802542D41600710BDE /* MovementCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE2487F2542D41600710BDE /* MovementCollectionModel.swift */; };
-		ABE248862542D53500710BDE /* MovementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE248842542D53500710BDE /* MovementCollectionViewCell.swift */; };
-		ABE248872542D53500710BDE /* MovementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE248852542D53500710BDE /* MovementCollectionViewCell.xib */; };
->>>>>>> Griffin
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +83,6 @@
 		8D13C0F625402D84002195C9 /* Exercise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercise.storyboard; sourceTree = "<group>"; };
 		8D13C0F925402E81002195C9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		8D13C0FE25402F2B002195C9 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		8D148C8C254140CF00571419 /* HomeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileViewController.swift; sourceTree = "<group>"; };
 		8D3D1E70254550D10070444C /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		8D3D1E76254556A10070444C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
@@ -114,25 +93,6 @@
 		8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanModel.swift; sourceTree = "<group>"; };
 		8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePersonTableViewCell.swift; sourceTree = "<group>"; };
 		8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataTableViewCell.swift; sourceTree = "<group>"; };
-=======
-		ABA29187254181FE001E6FA0 /* ChoosePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlanViewController.swift; sourceTree = "<group>"; };
-		ABA2919425418DDB001E6FA0 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
-		ABA2919525418DDB001E6FA0 /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
-		ABA2919E25419175001E6FA0 /* DescTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescTableViewCell.swift; sourceTree = "<group>"; };
-		ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescTableViewCell.xib; sourceTree = "<group>"; };
-		ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
-		ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
-		ABC9C26D2543E98600F31674 /* StackedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedTableViewCell.swift; sourceTree = "<group>"; };
-		ABC9C26E2543E98600F31674 /* StackedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedTableViewCell.xib; sourceTree = "<group>"; };
-		ABE2485F2542C87D00710BDE /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
-		ABE248652542CABC00710BDE /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
-		ABE2486D2542CF6900710BDE /* CustomizePlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizePlanTableViewController.swift; sourceTree = "<group>"; };
-		ABE248782542D32900710BDE /* CustomizePlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizePlanTableViewCell.swift; sourceTree = "<group>"; };
-		ABE248792542D32900710BDE /* CustomizePlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizePlanTableViewCell.xib; sourceTree = "<group>"; };
-		ABE2487F2542D41600710BDE /* MovementCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCollectionModel.swift; sourceTree = "<group>"; };
-		ABE248842542D53500710BDE /* MovementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCollectionViewCell.swift; sourceTree = "<group>"; };
-		ABE248852542D53500710BDE /* MovementCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovementCollectionViewCell.xib; sourceTree = "<group>"; };
->>>>>>> Griffin
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,9 +242,6 @@
 			children = (
 				8D13C0B725402997002195C9 /* SceneDelegate.swift */,
 				8D13C0EF25402B7E002195C9 /* ChoosePlan.storyboard */,
-				ABE2486A2542CEA500710BDE /* PlanOverview */,
-				ABE2486B2542CEC600710BDE /* ChoosePlanOverview */,
-				ABE2486C2542CF2400710BDE /* CustomizePlan */,
 			);
 			path = ChoosePlan;
 			sourceTree = "<group>";
@@ -339,60 +296,6 @@
 				8D3D1E76254556A10070444C /* NotificationHelper.swift */,
 			);
 			path = "Networking Model";
-			sourceTree = "<group>";
-		};
-		ABE2486A2542CEA500710BDE /* PlanOverview */ = {
-			isa = PBXGroup;
-			children = (
-				ABE2485F2542C87D00710BDE /* PlanViewController.swift */,
-				ABE248652542CABC00710BDE /* PlanListTableViewCell.swift */,
-			);
-			path = PlanOverview;
-			sourceTree = "<group>";
-		};
-		ABE2486B2542CEC600710BDE /* ChoosePlanOverview */ = {
-			isa = PBXGroup;
-			children = (
-				ABA29187254181FE001E6FA0 /* ChoosePlanViewController.swift */,
-				ABA2919E25419175001E6FA0 /* DescTableViewCell.swift */,
-				ABA2919425418DDB001E6FA0 /* ExerciseTableViewCell.swift */,
-				ABA291A525419233001E6FA0 /* ButtonTableViewCell.swift */,
-				ABC9C26D2543E98600F31674 /* StackedTableViewCell.swift */,
-				ABA2919F25419175001E6FA0 /* DescTableViewCell.xib */,
-				ABA2919525418DDB001E6FA0 /* ExerciseTableViewCell.xib */,
-				ABA291A625419233001E6FA0 /* ButtonTableViewCell.xib */,
-				ABC9C26E2543E98600F31674 /* StackedTableViewCell.xib */,
-			);
-			path = ChoosePlanOverview;
-			sourceTree = "<group>";
-		};
-		ABE2486C2542CF2400710BDE /* CustomizePlan */ = {
-			isa = PBXGroup;
-			children = (
-				ABE2487F2542D41600710BDE /* MovementCollectionModel.swift */,
-				ABE2486D2542CF6900710BDE /* CustomizePlanTableViewController.swift */,
-				ABE248742542D2BF00710BDE /* CustomizePlanTableViewCell */,
-				ABE248732542D29B00710BDE /* MovementCollectionView */,
-			);
-			path = CustomizePlan;
-			sourceTree = "<group>";
-		};
-		ABE248732542D29B00710BDE /* MovementCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				ABE248842542D53500710BDE /* MovementCollectionViewCell.swift */,
-				ABE248852542D53500710BDE /* MovementCollectionViewCell.xib */,
-			);
-			path = MovementCollectionView;
-			sourceTree = "<group>";
-		};
-		ABE248742542D2BF00710BDE /* CustomizePlanTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				ABE248782542D32900710BDE /* CustomizePlanTableViewCell.swift */,
-				ABE248792542D32900710BDE /* CustomizePlanTableViewCell.xib */,
-			);
-			path = CustomizePlanTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,14 +407,8 @@
 				8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */,
 				8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */,
 				8D13C0C225402998002195C9 /* Assets.xcassets in Resources */,
-				ABC9C2702543E98600F31674 /* StackedTableViewCell.xib in Resources */,
 				8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */,
-				ABA291A125419175001E6FA0 /* DescTableViewCell.xib in Resources */,
-				ABE248872542D53500710BDE /* MovementCollectionViewCell.xib in Resources */,
-				ABA291A825419233001E6FA0 /* ButtonTableViewCell.xib in Resources */,
 				8D13C0EB25402AC4002195C9 /* Assesment.storyboard in Resources */,
-				ABA2919725418DDB001E6FA0 /* ExerciseTableViewCell.xib in Resources */,
-				ABE2487B2542D32900710BDE /* CustomizePlanTableViewCell.xib in Resources */,
 				8D13C0F325402C27002195C9 /* HomePlan.storyboard in Resources */,
 				8D13C0BD25402997002195C9 /* Main.storyboard in Resources */,
 			);
@@ -538,15 +435,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */,
 				8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */,
-=======
-				ABA291A725419233001E6FA0 /* ButtonTableViewCell.swift in Sources */,
-				ABE248602542C87D00710BDE /* PlanViewController.swift in Sources */,
-				ABA29188254181FE001E6FA0 /* ChoosePlanViewController.swift in Sources */,
-				ABA2919625418DDB001E6FA0 /* ExerciseTableViewCell.swift in Sources */,
->>>>>>> Griffin
 				8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */,
 				8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
@@ -559,19 +449,9 @@
 				8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
-				ABE248662542CABC00710BDE /* PlanListTableViewCell.swift in Sources */,
-				ABC9C26F2543E98600F31674 /* StackedTableViewCell.swift in Sources */,
-				ABE2487A2542D32900710BDE /* CustomizePlanTableViewCell.swift in Sources */,
-				ABE248802542D41600710BDE /* MovementCollectionModel.swift in Sources */,
-				ABA291A025419175001E6FA0 /* DescTableViewCell.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
-<<<<<<< HEAD
 				48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */,
-=======
-				ABE248862542D53500710BDE /* MovementCollectionViewCell.swift in Sources */,
-				ABE2486E2542CF6900710BDE /* CustomizePlanTableViewController.swift in Sources */,
->>>>>>> Griffin
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
 				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
 				8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */,
