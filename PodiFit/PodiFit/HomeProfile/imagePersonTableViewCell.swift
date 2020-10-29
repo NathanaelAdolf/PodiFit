@@ -17,6 +17,7 @@ class imagePersonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundColor = .none
     }
 
     @IBAction func pressedEdit(_ sender: Any) {

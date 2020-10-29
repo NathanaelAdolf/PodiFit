@@ -354,6 +354,9 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         completeRemindBadgeTableView.separatorStyle = .none
         
+        //self.view.backgroundColor = .black
+      //  self.completeRemindBadgeTableView.backgroundColor = .none
+        
         notifHelper.configureUserNotificationCenter()
         //notifHelper.deleteDataInReminder(uniqueReminderName: "Loni")
         //notifHelper.notificationCenter.removeAllDeliveredNotifications()

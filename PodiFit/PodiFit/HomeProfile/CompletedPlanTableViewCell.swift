@@ -48,6 +48,8 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
        
         completedPlanCollectionView.delegate = self
         completedPlanCollectionView.dataSource = self
+        
+        self.backgroundColor = .none
                     
     }
 
