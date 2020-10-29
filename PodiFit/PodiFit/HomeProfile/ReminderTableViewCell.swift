@@ -30,9 +30,17 @@ class ReminderTableViewCell: UITableViewCell {
         // Initialization code
 
         self.backgroundViewReminder.layer.cornerRadius = 5
-        self.backgroundViewReminder.backgroundColor = .gray
+        self.backgroundViewReminder.backgroundColor = .lightGray
         
-
+        mondayLabel.textColor = .gray
+         TuesdayLabel.textColor = .gray
+         wednesdayLabel.textColor = .gray
+         thursdayLabel.textColor = .gray
+         fridayLabel.textColor = .gray
+         saturdayLabel.textColor = .gray
+         sundayLabel.textColor = .gray
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

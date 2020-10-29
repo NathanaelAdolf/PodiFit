@@ -30,6 +30,7 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
         cell.titleLabel.text = collectionViewData[indexPath.row].titleMovement
         cell.levelLabel.text = collectionViewData[indexPath.row].level
         cell.periodLabel.text = String(collectionViewData[indexPath.row].period)
+        cell.movesLabel.text = String(collectionViewData[indexPath.row].movement)
         
         return cell
     }

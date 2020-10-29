@@ -57,8 +57,8 @@ class NotificationHelper: UIViewController {
            
             //step 2 : create the notification content
             let content = UNMutableNotificationContent()
-                content.title = "I am notification from fitness app"
-                content.body = "Let's workout today"
+                content.title = "Reminder"
+                content.body = "don't forget to workout today"
 
             // step 3 : create the notification trigger
           let date = dateFormatterGet.date(from: dateToPush)
@@ -137,8 +137,7 @@ class NotificationHelper: UIViewController {
                     let result = try context.fetch(fetch)
                     for data in result as! [NSManagedObject]
                      {
-                        
-                        print("reminderName : \(data.value(forKey: "reminderName")as! String)")
+                       print("reminderName : \(data.value(forKey: "reminderName")as! String)")
                         print("hour : \(data.value(forKey: "hour")as! String)")
                         print("minute : \(data.value(forKey: "minute")as! String)")
                         print("monday : \(data.value(forKey: "monday")as! Bool)")
@@ -151,7 +150,7 @@ class NotificationHelper: UIViewController {
                         print("isActive : \(data.value(forKey: "isActive")as! Bool)\n")
                         
                     tempReminderData.append(ReminderModel(Hour: "\(data.value(forKey: "hour")!):\(data.value(forKey: "minute")!)", remindName: "\(data.value(forKey: "reminderName")as! String)", isMon: data.value(forKey: "monday")as! Bool, isTue: data.value(forKey: "tuesday")as! Bool, isWed: data.value(forKey: "wednesday")as! Bool, isThu: data.value(forKey: "thursday")as! Bool, isFri: data.value(forKey: "friday")as! Bool, isSat: data.value(forKey: "saturday")as! Bool, isSun: data.value(forKey: "sunday")as! Bool, isReminderActive: data.value(forKey: "isActive")as! Bool))
-                            
+                        
                     }
               }
              catch
@@ -160,6 +159,24 @@ class NotificationHelper: UIViewController {
              }
         
         return tempReminderData
+    }
+    
+    func deleteDataInReminder(uniqueReminderName: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Reminder")
+        fetchRequest.predicate = NSPredicate(format: "reminderName = %@", uniqueReminderName)
+        
+        do{
+            let dataToDelete = try managedContext.fetch(fetchRequest)[0] as! NSManagedObject
+            managedContext.delete(dataToDelete)
+            
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
     }
 
 }

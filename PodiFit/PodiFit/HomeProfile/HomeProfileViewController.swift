@@ -16,6 +16,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     var addButton = UIButton()
     
+    var counter: Int = 0
+    
+    var reminderNameArray: [String] = []
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         //return 5 nanti bikin jadi 5 setelah semua cellnya jadi
         
@@ -109,23 +113,52 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             if reminderData[indexPath.row].isMon == true {
                 cell.mondayLabel.textColor = .black
             }
+            else
+            {
+                cell.mondayLabel.textColor = .gray
+            }
+            
              if reminderData[indexPath.row].isTue == true {
                 cell.TuesdayLabel.textColor = .black
             }
+            else
+           {
+               cell.TuesdayLabel.textColor = .gray
+           }
             if reminderData[indexPath.row].isWed == true {
                 cell.wednesdayLabel.textColor = .black
                }
+            else
+           {
+               cell.wednesdayLabel.textColor = .gray
+           }
              if reminderData[indexPath.row].isThu == true {
                 cell.thursdayLabel.textColor = .black
                }
+            else
+           {
+               cell.thursdayLabel.textColor = .gray
+           }
             if reminderData[indexPath.row].isFri == true {
                 cell.fridayLabel.textColor = .black
                }
+            else
+           {
+               cell.fridayLabel.textColor = .gray
+           }
              if reminderData[indexPath.row].isSat == true {
                 cell.saturdayLabel.textColor = .black
                }
+            else
+               {
+                   cell.saturdayLabel.textColor = .gray
+               }
              if reminderData[indexPath.row].isSun == true {
                 cell.sundayLabel.textColor = .black
+               }
+            else
+               {
+                   cell.sundayLabel.textColor = .gray
                }
             
             if reminderData[indexPath.row].isReminderActive == true {
@@ -228,9 +261,53 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             
             let delete = UIContextualAction(style: .normal, title: "Delete") { (contextualAction, view, actionPerformed: (Bool)-> ()) in
+                self.counter = 0
                 
-                //perform segue
-                //self.performSegue(withIdentifier: "toEditTrainingSegue", sender:nil)
+                if self.reminderData[indexPath.row].isMon == true
+                {
+                    self.counter += 1
+                }
+                if self.reminderData[indexPath.row].isTue == true
+                  {
+                      self.counter += 1
+                  }
+                if self.reminderData[indexPath.row].isWed == true
+                  {
+                      self.counter += 1
+                  }
+                if self.reminderData[indexPath.row].isThu == true
+                  {
+                      self.counter += 1
+                  }
+                if self.reminderData[indexPath.row].isFri == true
+                  {
+                      self.counter += 1
+                  }
+                if self.reminderData[indexPath.row].isSat == true
+                  {
+                      self.counter += 1
+                  }
+                if self.reminderData[indexPath.row].isSun == true
+                  {
+                      self.counter += 1
+                  }
+                
+                for i in 0...self.counter - 1
+                {
+                  self.reminderNameArray.append("\(self.reminderData[indexPath.row].reminderName!)\(i)")
+                }
+                  
+                for _ in 0...self.reminderNameArray.count - 1
+                {
+                    notifHelper.notificationCenter.removeDeliveredNotifications(withIdentifiers: self.reminderNameArray)
+                    notifHelper.notificationCenter.removePendingNotificationRequests(withIdentifiers: self.reminderNameArray)
+                    
+                }
+            
+                notifHelper.deleteDataInReminder(uniqueReminderName: self.reminderData[indexPath.row].reminderName)
+                self.reminderData.remove(at: indexPath.row)
+                self.completeRemindBadgeTableView.reloadData()
+                
                 actionPerformed(true)
             }
             
@@ -243,7 +320,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         return nil
         
     }
-    
+        
     @objc func completeButtonPressed()
     {
         print("pressed complete button")
@@ -257,12 +334,13 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         reminderData = notifHelper.retrieveNotificationFromCoreData()
-        completeRemindBadgeTableView.reloadData()
+        
     }
     
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
            reminderData = notifHelper.retrieveNotificationFromCoreData()
-           completeRemindBadgeTableView.reloadData()
+            completeRemindBadgeTableView.reloadData()
+          
        }
     
 
@@ -277,23 +355,17 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         completeRemindBadgeTableView.separatorStyle = .none
         
         notifHelper.configureUserNotificationCenter()
+        //notifHelper.deleteDataInReminder(uniqueReminderName: "Loni")
+        //notifHelper.notificationCenter.removeAllDeliveredNotifications()
+        //notifHelper.notificationCenter.removeAllPendingNotificationRequests()
         
         //data dummy buat completedData
         self.completedData =
             [
-                CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4)
-                ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6)
+                CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4, movement: 5)
+                ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6, movement: 8)
                 
             ]
-        
-        //dummy data untuk reminder
-       /* self.reminderData =
-        [
-            ReminderModel(Hour: "12:00", remindName: "Leg Workout", isMon: true, isTue: true, isWed: true, isThu: false, isFri: false, isSat: false, isSun: false, isReminderActive: true),
-             ReminderModel(Hour: "13:30", remindName: "Wrist Workout", isMon: false, isTue: false, isWed: false, isThu: false, isFri: false, isSat: true, isSun: true, isReminderActive: false)
-        ]*/
-        
-        
     }
     
 }

@@ -14,11 +14,13 @@ class CompletedPlanModel {
     var titleMovement: String!
     var level: String!
     var period: Int!
+    var movement: Int!
     
-    init(titleMovement: String, level: String, period: Int) {
+    init(titleMovement: String, level: String, period: Int,movement: Int) {
         self.titleMovement = titleMovement
         self.level = level
         self.period = period
+        self.movement = movement
     }
     
 }

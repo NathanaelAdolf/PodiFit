@@ -13,6 +13,8 @@ class CompletedPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var periodLabel: UILabel!
+    @IBOutlet var movesLabel: UILabel!
+    
     
     override func awakeFromNib() {
         self.backgroundColor = .lightGray
