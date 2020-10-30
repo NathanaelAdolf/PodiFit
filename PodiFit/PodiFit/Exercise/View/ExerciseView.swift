@@ -20,9 +20,11 @@ class ExerciseView: UIView {
     @IBOutlet weak var infoNextExerciseLabel: UILabel!
     @IBOutlet weak var nextExerciseLabel: UILabel!
     @IBOutlet weak var nameExerciseLabel: UILabel!
-    @IBOutlet weak var progressExercise: UILabel!
+    @IBOutlet weak var progressNumber: UILabel!
     @IBOutlet weak var warningView: UIView!
     @IBOutlet weak var contentWarningLabel: UILabel!
+    
+
     
     public func videoView() {
         //for show webkit(video)
@@ -39,6 +41,7 @@ class ExerciseView: UIView {
         nameExerciseLabel?.text = "Normal Squat"
         loadWebsite()
         warningExercise()
+        
     }
     
     public func restView() {

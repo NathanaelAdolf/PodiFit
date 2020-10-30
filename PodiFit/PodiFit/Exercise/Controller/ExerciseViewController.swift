@@ -12,22 +12,37 @@ import WebKit
 class ExerciseViewController: UIViewController {
 
     @IBOutlet weak var exerciseView : ExerciseView!
+    @IBOutlet weak var circularProgressView : CircularProgressView!
+
     
     var count = 30
     var timer: Timer?
-    var isVideo: Int = 3
+    var isVideo: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup View
+        circularProgressView.trackClr = UIColor.cyan
+        circularProgressView.progressClr = UIColor.purple
         exerciseView.videoView()
     }
     
     @IBAction func informationExercise(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "toInformationExercise", sender: nil)
     }
     
     @IBAction func previous(_ sender: Any) {
+        if isVideo == 1 {
+            timer?.invalidate()
+            exerciseView.countDownView(count: "30")
+            circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
+            exerciseView.videoView()
+            isVideo = 2
+        } else {
+            exerciseView.restView()
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
+            isVideo = 1
+        }
         
     }
     
@@ -38,7 +53,6 @@ class ExerciseViewController: UIViewController {
             isVideo += 1
         } else {
             timer?.invalidate()
-            count = 30
             exerciseView.countDownView(count: "30")
             switch isVideo {
             case 2:
@@ -59,9 +73,6 @@ class ExerciseViewController: UIViewController {
                 
                 
             }
-            
-            // var x = 0
-            // if
         }
     }
     
