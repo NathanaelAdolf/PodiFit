@@ -334,7 +334,13 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         reminderData = notifHelper.retrieveNotificationFromCoreData()
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       
     }
     
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
