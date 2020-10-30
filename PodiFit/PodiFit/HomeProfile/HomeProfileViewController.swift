@@ -255,8 +255,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: (Bool)-> ()) in
                 
-                //perform segue
-                //self.performSegue(withIdentifier: "toEditTrainingSegue", sender:nil)
+                
+                self.performSegue(withIdentifier: "toEditReminder", sender:nil)
                 actionPerformed(true)
             }
             
@@ -312,7 +312,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             
             edit.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-            delete.backgroundColor = .red
+            delete.backgroundColor = .gray
             
             return UISwipeActionsConfiguration(actions: [delete,edit])
             

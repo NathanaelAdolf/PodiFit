@@ -59,6 +59,7 @@ class AddReminderViewController: UIViewController {
         setUIButtonToUnselected(sender: sunButton)
         
         timePickerView.datePickerMode = .time
+        timePickerView.preferredDatePickerStyle = .wheels
         timePickerView.locale = Locale(identifier: "id_ID")
         
         notifHelper.configureUserNotificationCenter()

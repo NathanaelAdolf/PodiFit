@@ -348,6 +348,7 @@
                         <segue destination="iZP-wN-m9c" kind="show" identifier="toCompletedHistory" id="sJM-AI-XbM"/>
                         <segue destination="gDJ-JG-XqF" kind="presentation" identifier="toAddReminder" id="3Mo-DN-erK"/>
                         <segue destination="IrT-s9-wUx" kind="show" identifier="toEditProfile" id="q80-Hk-exw"/>
+                        <segue destination="gDJ-JG-XqF" kind="presentation" identifier="toEditReminder" id="Erq-IW-Yh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGL-yG-xVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -362,9 +363,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aud-ch-hfy">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aud-ch-hfy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="H16-qO-7Hz"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Add Reminder" id="LtG-XS-4Yy">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Nvb-DX-T2q">
@@ -380,9 +383,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q8F-I8-FKR">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q8F-I8-FKR">
                                 <rect key="frame" x="0.0" y="78" width="414" height="205"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="Vrp-6s-UhP"/>
+                                </constraints>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scu-Ed-ViC">
                                 <rect key="frame" x="31" y="321" width="138" height="32"/>
@@ -477,6 +482,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WCq-iV-nCN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q8F-I8-FKR" firstAttribute="top" secondItem="aud-ch-hfy" secondAttribute="bottom" constant="34" id="PUC-VB-b8u"/>
+                            <constraint firstItem="aud-ch-hfy" firstAttribute="top" secondItem="WCq-iV-nCN" secondAttribute="top" id="UIa-lg-2gC"/>
+                            <constraint firstItem="aud-ch-hfy" firstAttribute="trailing" secondItem="Q8F-I8-FKR" secondAttribute="trailing" id="Vo0-xp-nFw"/>
+                            <constraint firstItem="Q8F-I8-FKR" firstAttribute="leading" secondItem="WCq-iV-nCN" secondAttribute="leading" id="eHQ-jB-Fat"/>
+                            <constraint firstItem="aud-ch-hfy" firstAttribute="leading" secondItem="Q8F-I8-FKR" secondAttribute="leading" id="hcY-dV-akw"/>
+                            <constraint firstItem="Q8F-I8-FKR" firstAttribute="trailing" secondItem="WCq-iV-nCN" secondAttribute="trailing" id="np7-Bk-WQr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7yP-tk-mQW"/>
                     <connections>
@@ -505,7 +518,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit your profile picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDF-87-O0k">
-                                <rect key="frame" x="150" y="145" width="179" height="21"/>
+                                <rect key="frame" x="146" y="145" width="179" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -732,6 +745,9 @@
             <point key="canvasLocation" x="-549.27536231884062" y="265.84821428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Erq-IW-Yh0"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
