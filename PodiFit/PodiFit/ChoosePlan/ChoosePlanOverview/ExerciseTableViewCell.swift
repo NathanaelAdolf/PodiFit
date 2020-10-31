@@ -25,7 +25,7 @@ class ExerciseTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        exerciseImage.image = UIImage.init(named: "IPA")
+        exerciseImage.image = UIImage.init(named: "1")
         exerciseDuration.text = "30 sec"
     }
 
