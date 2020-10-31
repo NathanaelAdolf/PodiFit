@@ -50,6 +50,7 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
         completedPlanCollectionView.dataSource = self
         
         self.backgroundColor = .none
+        backgroundView?.backgroundColor = .none
                     
     }
 

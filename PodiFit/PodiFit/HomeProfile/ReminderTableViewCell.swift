@@ -30,7 +30,7 @@ class ReminderTableViewCell: UITableViewCell {
         // Initialization code
 
         self.backgroundViewReminder.layer.cornerRadius = 5
-        self.backgroundViewReminder.backgroundColor = .lightGray
+        self.backgroundViewReminder.backgroundColor = Colors.cellColor
         self.backgroundColor = .none
         
         mondayLabel.textColor = .gray

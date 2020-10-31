@@ -22,6 +22,8 @@ class CompletedPlanDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         completedDetailView.layer.cornerRadius = 5
+        contentView.backgroundColor = .none
+        self.backgroundColor = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

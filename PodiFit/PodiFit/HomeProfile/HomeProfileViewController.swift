@@ -20,13 +20,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     var counter: Int = 0
     
     var reminderNameArray: [String] = []
+    var badgesImageArray: [String] = []
     
     var swipeState: String = ""
     
     func numberOfSections(in tableView: UITableView) -> Int {
         //return 5 nanti bikin jadi 5 setelah semua cellnya jadi
         
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +45,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         else if section == 3
         {
             return reminderData.count
+        }
+        else if section == 4
+        {
+            return 1
         }
         else
        {
@@ -68,6 +73,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             return 90
         }
+        else if indexPath.section == 4
+        {
+            return 110
+        }
         else
         {
             return 100
@@ -81,6 +90,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
             cell.persomImage.image = UIImage(systemName: "folder")
+            cell.backgroundColor = .none
+            cell.contentView.backgroundColor = .none
             
             return cell
             
@@ -114,7 +125,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             cell.reminderNameLabel.text = reminderData[indexPath.row].reminderName
             
             if reminderData[indexPath.row].isMon == true {
-                cell.mondayLabel.textColor = .black
+                cell.mondayLabel.textColor = .white
             }
             else
             {
@@ -122,42 +133,42 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             
              if reminderData[indexPath.row].isTue == true {
-                cell.TuesdayLabel.textColor = .black
+                cell.TuesdayLabel.textColor = .white
             }
             else
            {
                cell.TuesdayLabel.textColor = .gray
            }
             if reminderData[indexPath.row].isWed == true {
-                cell.wednesdayLabel.textColor = .black
+                cell.wednesdayLabel.textColor = .white
                }
             else
            {
                cell.wednesdayLabel.textColor = .gray
            }
              if reminderData[indexPath.row].isThu == true {
-                cell.thursdayLabel.textColor = .black
+                cell.thursdayLabel.textColor = .white
                }
             else
            {
                cell.thursdayLabel.textColor = .gray
            }
             if reminderData[indexPath.row].isFri == true {
-                cell.fridayLabel.textColor = .black
+                cell.fridayLabel.textColor = .white
                }
             else
            {
                cell.fridayLabel.textColor = .gray
            }
              if reminderData[indexPath.row].isSat == true {
-                cell.saturdayLabel.textColor = .black
+                cell.saturdayLabel.textColor = .white
                }
             else
                {
                    cell.saturdayLabel.textColor = .gray
                }
              if reminderData[indexPath.row].isSun == true {
-                cell.sundayLabel.textColor = .black
+                cell.sundayLabel.textColor = .white
                }
             else
                {
@@ -175,8 +186,9 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "badgesCell", for: indexPath) as! BadgesTableViewCell
             
+            cell.loadCollectionView(data: badgesImageArray)
             
             return cell
         }
@@ -213,15 +225,15 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
            
         let headerView = UIView()
         
-        if section == 2 || section == 3
+        if section == 2 || section == 3 || section == 4
         {
-             headerView.backgroundColor = UIColor.white
+            headerView.backgroundColor = .none
 
              let sectionLabel = UILabel(frame: CGRect(x: 20, y: 10, width:
              tableView.bounds.size.width, height: tableView.bounds.size.height))
              sectionLabel.font = UIFont(name: "Helvetica", size: 20)
              sectionLabel.font = UIFont.boldSystemFont(ofSize: 20)
-             sectionLabel.textColor = UIColor.black
+            sectionLabel.textColor = UIColor.white
   
             addButton = UIButton(frame: CGRect(x: tableView.frame.size.width - 100, y: 5, width:
             80, height: 33))
@@ -230,17 +242,24 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             if section == 2 {
                  sectionLabel.text = "Completed Plan"
                 addButton.setTitle("History", for: .normal)
-                addButton.setTitleColor(.gray, for: .normal)
+                addButton.setTitleColor(.lightGray, for: .normal)
                 
                 addButton.addTarget(self, action: #selector(completeButtonPressed), for: .touchUpInside)
             }
             if section == 3
             {
                addButton.setTitle("Add new", for: .normal)
-               addButton.setTitleColor(.gray, for: .normal)
+                addButton.setTitleColor(.lightGray, for: .normal)
                 swipeState = ""
                addButton.addTarget(self, action: #selector(reminderButtonPressed), for: .touchUpInside)
                 sectionLabel.text = "Reminder"
+            }
+            if section == 4 {
+                addButton.setTitle("See more", for: .normal)
+                addButton.setTitleColor(.lightGray, for: .normal)
+                 swipeState = ""
+                addButton.addTarget(self, action: #selector(badgesButtonPressed), for: .touchUpInside)
+                 sectionLabel.text = "Badges"
             }
           
              sectionLabel.sizeToFit()
@@ -358,6 +377,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         print("pressed reminder button")
        performSegue(withIdentifier: "toAddReminder", sender: self)
    }
+    @objc func badgesButtonPressed()
+    {
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         reminderData = notifHelper.retrieveNotificationFromCoreData()
@@ -390,15 +413,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         completeRemindBadgeTableView.separatorStyle = .none
         
-        //self.view.backgroundColor = .black
-      //  self.completeRemindBadgeTableView.backgroundColor = .none
+        self.view.backgroundColor = Colors.backgroundBaseColor
+        self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
-        //notifHelper.updateDataInReminder(reminderNameToUpdate: "Leg workout", hour: "18", minute: "00", monday: true, tuesday: true, wednesday: true, thursday: true, friday: true, saturday: true, sunday: false, isReminderActive: true)
-        //notifHelper.deleteDataInReminder(uniqueReminderName: "Loni")
-        //notifHelper.notificationCenter.removeAllDeliveredNotifications()
-        //notifHelper.notificationCenter.removeAllPendingNotificationRequests()
-        
+       
         //data dummy buat completedData
         self.completedData =
             [
@@ -406,6 +425,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6, movement: 8)
                 
             ]
+        
+        //data dummy buat badges
+        badgesImageArray =
+        ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
     }
     
 }

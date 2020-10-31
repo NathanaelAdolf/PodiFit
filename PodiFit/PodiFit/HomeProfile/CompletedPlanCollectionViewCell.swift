@@ -17,7 +17,7 @@ class CompletedPlanCollectionViewCell: UICollectionViewCell {
     
     
     override func awakeFromNib() {
-        self.backgroundColor = .lightGray
+        self.backgroundColor = Colors.cellColor
         self.layer.cornerRadius = 5
     }
 }
