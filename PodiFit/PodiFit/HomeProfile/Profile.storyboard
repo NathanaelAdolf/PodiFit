@@ -372,7 +372,7 @@
                                     <navigationItem title="Add Reminder" id="LtG-XS-4Yy">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Nvb-DX-T2q">
                                             <connections>
-                                                <action selector="cancelAction:" destination="gDJ-JG-XqF" id="lt0-zx-ckY"/>
+                                                <action selector="cancelAction:" destination="gDJ-JG-XqF" id="xgz-M4-MfY"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="kwc-4y-bhs">
@@ -493,10 +493,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="7yP-tk-mQW"/>
                     <connections>
+                        <outlet property="cancelButton" destination="Nvb-DX-T2q" id="KfY-Jf-fvH"/>
                         <outlet property="friButton" destination="pS2-IX-ObJ" id="uPt-K8-as3"/>
                         <outlet property="monButton" destination="OA0-eh-HD7" id="dhe-rA-lKS"/>
                         <outlet property="reminderNameTextField" destination="NFe-cn-UxQ" id="gBL-wg-y44"/>
                         <outlet property="satButton" destination="ihS-5Y-qtq" id="iyG-gX-rMD"/>
+                        <outlet property="saveButton" destination="kwc-4y-bhs" id="Lka-T3-gmp"/>
                         <outlet property="sunButton" destination="wDm-Ix-lyX" id="4Hl-C1-Uro"/>
                         <outlet property="thuButton" destination="j6U-Xo-ThZ" id="Xa0-H9-GLM"/>
                         <outlet property="timePickerView" destination="Q8F-I8-FKR" id="QT7-gv-hfv"/>
@@ -616,7 +618,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-rz-QEg">
-                                <rect key="frame" x="0.0" y="121" width="414" height="654"/>
+                                <rect key="frame" x="0.0" y="121" width="414" height="692"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>

@@ -13,12 +13,15 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     var completedData = [CompletedPlanModel]()
     var reminderData = [ReminderModel]()
+    var tempDataToEdit = [ReminderModel]()
     
     var addButton = UIButton()
     
     var counter: Int = 0
     
     var reminderNameArray: [String] = []
+    
+    var swipeState: String = ""
     
     func numberOfSections(in tableView: UITableView) -> Int {
         //return 5 nanti bikin jadi 5 setelah semua cellnya jadi
@@ -235,6 +238,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             {
                addButton.setTitle("Add new", for: .normal)
                addButton.setTitleColor(.gray, for: .normal)
+                swipeState = ""
                addButton.addTarget(self, action: #selector(reminderButtonPressed), for: .touchUpInside)
                 sectionLabel.text = "Reminder"
             }
@@ -253,11 +257,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     {
         if indexPath.section == 3
         {
+            self.tempDataToEdit = []
             let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: (Bool)-> ()) in
                 
+                self.tempDataToEdit.append(ReminderModel(Hour: self.reminderData[indexPath.row].Hour, remindName: self.reminderData[indexPath.row].reminderName, isMon: self.reminderData[indexPath.row].isMon, isTue: self.reminderData[indexPath.row].isTue, isWed: self.reminderData[indexPath.row].isWed, isThu: self.reminderData[indexPath.row].isThu, isFri: self.reminderData[indexPath.row].isFri, isSat: self.reminderData[indexPath.row].isSat, isSun: self.reminderData[indexPath.row].isSun, isReminderActive: self.reminderData[indexPath.row].isReminderActive))
                 
                 self.performSegue(withIdentifier: "toEditReminder", sender:nil)
                 actionPerformed(true)
+                
             }
             
             let delete = UIContextualAction(style: .normal, title: "Delete") { (contextualAction, view, actionPerformed: (Bool)-> ()) in
@@ -311,13 +318,33 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 actionPerformed(true)
             }
             
-            edit.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-            delete.backgroundColor = .gray
+            edit.backgroundColor = UIColor.init(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
+            delete.backgroundColor = UIColor.init(red: 138/255, green: 138/255, blue: 138/255, alpha: 1)
             
             return UISwipeActionsConfiguration(actions: [delete,edit])
             
         }
         return nil
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toEditReminder"
+        {
+            if let destination = segue.destination as? AddReminderViewController
+            {
+                destination.pageState = "Edit"
+                destination.tempDataEdit = self.tempDataToEdit
+            }
+        }
+        if segue.identifier == "toAddReminder"
+        {
+            if let destination = segue.destination as? AddReminderViewController
+            {
+                destination.pageState = "Create"
+            }
+        }
         
     }
         
@@ -336,12 +363,15 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         reminderData = notifHelper.retrieveNotificationFromCoreData()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
+        self.swipeState = ""
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
        
     }
+    
+ 
     
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
            reminderData = notifHelper.retrieveNotificationFromCoreData()
@@ -364,6 +394,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
       //  self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
+        //notifHelper.updateDataInReminder(reminderNameToUpdate: "Leg workout", hour: "18", minute: "00", monday: true, tuesday: true, wednesday: true, thursday: true, friday: true, saturday: true, sunday: false, isReminderActive: true)
         //notifHelper.deleteDataInReminder(uniqueReminderName: "Loni")
         //notifHelper.notificationCenter.removeAllDeliveredNotifications()
         //notifHelper.notificationCenter.removeAllPendingNotificationRequests()

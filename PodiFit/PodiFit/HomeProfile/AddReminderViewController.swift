@@ -30,6 +30,7 @@ class AddReminderViewController: UIViewController {
     var friFlag: Int = 0
     var satFlag: Int = 0
     var sunFlag: Int = 0
+    var counter: Int = 0
     
     var monState: Bool = false
     var tueState: Bool = false
@@ -42,10 +43,17 @@ class AddReminderViewController: UIViewController {
     @IBOutlet weak var reminderNameTextField: UITextField!
     
     var userChoosenDayArray: [String] = []
+    var reminderNameArray:[String] = []
     
     var tempReminderName : String = ""
     var userChoosenHour: String = ""
     var userChoosenMinute: String = ""
+    var pageState: String = "Create"
+    
+    @IBOutlet var saveButton: UIBarButtonItem!
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    
+    var tempDataEdit = [ReminderModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +72,50 @@ class AddReminderViewController: UIViewController {
         
         notifHelper.configureUserNotificationCenter()
         
-      
+        print("page state: \(pageState)")
+       
+            if pageState == "Edit" {
+                setDataToUserChoose()
+            }
+            
+        
+        
+        
+    }
+    
+    func setDataToUserChoose()
+    {
+        //only if user choose edit
+        reminderNameTextField.text = tempDataEdit[0].reminderName
+        if tempDataEdit[0].isMon == true {
+            setUIButtonToSelected(sender: monButton)
+            monFlag = 1
+        }
+        if tempDataEdit[0].isTue == true {
+            setUIButtonToSelected(sender: tueButton)
+            tueFlag = 1
+        }
+        if tempDataEdit[0].isWed == true {
+            setUIButtonToSelected(sender: wedButton)
+            wedFlag = 1
+        }
+        if tempDataEdit[0].isThu == true {
+            setUIButtonToSelected(sender: thuButton)
+            thuFlag = 1
+        }
+        if tempDataEdit[0].isFri == true {
+            setUIButtonToSelected(sender: friButton)
+            friFlag = 1
+        }
+        if tempDataEdit[0].isSat == true {
+            setUIButtonToSelected(sender: satButton)
+            satFlag = 1
+        }
+        if tempDataEdit[0].isSun == true {
+            setUIButtonToSelected(sender: sunButton)
+            sunFlag = 1
+        }
+        timePickerView.setDate(notifHelper.changeHourSecondIntoDate(hourMinuteSecond: "\(tempDataEdit[0].Hour!):00"), animated: true)
     }
     
     func checkDayState()
@@ -187,6 +238,9 @@ class AddReminderViewController: UIViewController {
         sender.setTitleColor(.systemBlue, for: .normal)
     }
     
+    @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func checkuserChoosenDay()
     {
         if monFlag == 1 {
@@ -249,34 +303,98 @@ class AddReminderViewController: UIViewController {
         
     }
     
-    @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+    {
+        if pageState == "Edit"
+        {
+            self.counter = 0
+            
+            if self.tempDataEdit[0].isMon == true
+            {
+                self.counter += 1
+            }
+            if self.tempDataEdit[0].isTue == true
+              {
+                  self.counter += 1
+              }
+            if self.tempDataEdit[0].isWed == true
+              {
+                  self.counter += 1
+              }
+            if self.tempDataEdit[0].isThu == true
+              {
+                  self.counter += 1
+              }
+            if self.tempDataEdit[0].isFri == true
+              {
+                  self.counter += 1
+              }
+            if self.tempDataEdit[0].isSat == true
+              {
+                  self.counter += 1
+              }
+            if self.tempDataEdit[0].isSun == true
+              {
+                  self.counter += 1
+              }
+            
+            for i in 0...self.counter - 1
+            {
+                self.reminderNameArray.append("\(self.tempDataEdit[0].reminderName!)\(i)")
+            }
+              
+            for _ in 0...self.reminderNameArray.count - 1
+            {
+                notifHelper.notificationCenter.removeDeliveredNotifications(withIdentifiers: self.reminderNameArray)
+                notifHelper.notificationCenter.removePendingNotificationRequests(withIdentifiers: self.reminderNameArray)
+                
+            }
+            
+            userChoosenDayArray.removeAll()
+            checkuserChoosenDay()
+            checkDayState()
+            tempReminderName = reminderNameTextField.text!
+            
+            //save ke core data notifnya
+            for i in 0...userChoosenDayArray.count - 1 {
+                notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
+            }
+                        
+            notifHelper.updateDataInReminder(reminderNameToUpdate: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
+            
+            return true
+        }
+        else
+        {
+            if reminderNameTextField.text == ""
+            {
+                //kasih pesan error
+            }
+             else
+            {
+                     notifHelper.triggerNotification()
+                     
+                     userChoosenDayArray.removeAll()
+                     checkuserChoosenDay()
+                     checkDayState()
+                     tempReminderName = reminderNameTextField.text!
+                     
+                     //save ke core data notifnya
+                     for i in 0...userChoosenDayArray.count - 1 {
+                         notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
+                     }
+                                 
+                     notifHelper.storeNotificationToCoreData(reminderName: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
+                                 
+                    return true
+            }
+        }
+        
+            return false
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-          if reminderNameTextField.text == "" {
-                         //kasih pesan error
-                     }
-                     else
-                     {
-                         notifHelper.triggerNotification()
-                         
-                         userChoosenDayArray.removeAll()
-                         checkuserChoosenDay()
-                         checkDayState()
-                         tempReminderName = reminderNameTextField.text!
-                         
-                         //save ke core data notifnya
-                         for i in 0...userChoosenDayArray.count - 1 {
-                             notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
-                         }
-                         
-                         notifHelper.storeNotificationToCoreData(reminderName: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
-                         
-                      return true
-                    }
-        return false
-    }
+    
     
 }
 

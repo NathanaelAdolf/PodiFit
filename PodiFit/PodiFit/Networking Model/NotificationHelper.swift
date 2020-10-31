@@ -50,7 +50,6 @@ class NotificationHelper: UIViewController {
     
     func scheduleNotification(reminderName: String, dateToPush: String)
     {
-        print("date to push \(dateToPush)")
         //format tanggal seperti di dateFormatterGet
            let dateFormatterGet = DateFormatter()
            dateFormatterGet.dateFormat = "EEEE HH:mm:ss"
@@ -74,6 +73,15 @@ class NotificationHelper: UIViewController {
                    
                 }
         print("success")
+    }
+    func changeHourSecondIntoDate(hourMinuteSecond: String)->Date
+    {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "HH:mm:ss"
+        
+        let date = dateFormatterGet.date(from: hourMinuteSecond)
+        
+        return date!
     }
     
     private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
@@ -177,6 +185,37 @@ class NotificationHelper: UIViewController {
         }catch let err{
             print(err)
         }
+    }
+    
+    func updateDataInReminder(reminderNameToUpdate: String,hour: String,minute: String, monday: Bool, tuesday: Bool, wednesday: Bool, thursday: Bool, friday: Bool, saturday: Bool,sunday: Bool, isReminderActive: Bool) -> String {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return "" }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Reminder")
+        fetchRequest.predicate = NSPredicate(format: "reminderName = %@", reminderNameToUpdate)
+        
+        do{
+            let fetch = try managedContext.fetch(fetchRequest)
+            let dataToUpdate = fetch[0] as! NSManagedObject
+        
+            dataToUpdate.setValue(hour, forKey: "hour")
+            dataToUpdate.setValue(minute, forKey: "minute")
+            dataToUpdate.setValue(monday, forKey: "monday")
+            dataToUpdate.setValue(tuesday, forKey: "tuesday")
+            dataToUpdate.setValue(wednesday, forKey: "wednesday")
+            dataToUpdate.setValue(thursday, forKey: "thursday")
+            dataToUpdate.setValue(friday, forKey: "friday")
+            dataToUpdate.setValue(saturday, forKey: "saturday")
+            dataToUpdate.setValue(sunday, forKey: "sunday")
+            dataToUpdate.setValue(isReminderActive, forKey: "isActive")
+            
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
+        
+        return "00"
     }
 
 }
