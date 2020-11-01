@@ -35,6 +35,9 @@
 		8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */; };
 		8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */; };
 		8DB64621254BABF80072AC5C /* CompletedPlanDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB64620254BABF80072AC5C /* CompletedPlanDetailModel.swift */; };
+		8DBF07E5254E61E500AACB19 /* DetailBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF07E4254E61E500AACB19 /* DetailBadgesViewController.swift */; };
+		8DBF07F5254E64AA00AACB19 /* DetailBadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF07F4254E64AA00AACB19 /* DetailBadgeTableViewCell.swift */; };
+		8DBF07FA254E655100AACB19 /* DetailBadgesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF07F9254E655100AACB19 /* DetailBadgesModel.swift */; };
 		8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */; };
 		8DC063EF25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */; };
 		8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */; };
@@ -97,6 +100,9 @@
 		8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailsViewController.swift; sourceTree = "<group>"; };
 		8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailTableViewCell.swift; sourceTree = "<group>"; };
 		8DB64620254BABF80072AC5C /* CompletedPlanDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailModel.swift; sourceTree = "<group>"; };
+		8DBF07E4254E61E500AACB19 /* DetailBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBadgesViewController.swift; sourceTree = "<group>"; };
+		8DBF07F4254E64AA00AACB19 /* DetailBadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBadgeTableViewCell.swift; sourceTree = "<group>"; };
+		8DBF07F9254E655100AACB19 /* DetailBadgesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBadgesModel.swift; sourceTree = "<group>"; };
 		8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanTableViewCell.swift; sourceTree = "<group>"; };
 		8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanModel.swift; sourceTree = "<group>"; };
@@ -279,23 +285,11 @@
 		8D13C0F825402E6E002195C9 /* HomeProfile */ = {
 			isa = PBXGroup;
 			children = (
+				8DBF07D5254E612400AACB19 /* CollectionView */,
+				8DBF07D4254E610E00AACB19 /* Controller */,
+				8DBF07D3254E60FE00AACB19 /* Model */,
+				8DBF07CF254E60BE00AACB19 /* TableViewCell */,
 				8D13C0F925402E81002195C9 /* Profile.storyboard */,
-				8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */,
-				8D148C8C254140CF00571419 /* HomeProfileViewController.swift */,
-				8D3D1E70254550D10070444C /* AddReminderViewController.swift */,
-				8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */,
-				8DC71C4F254D0A0600AD6C2B /* BadgesTableViewCell.swift */,
-				8D09966E2542E977000363BE /* ReminderTableViewCell.swift */,
-				8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */,
-				8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */,
-				8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */,
-				8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */,
-				8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */,
-				8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */,
-				8DB64620254BABF80072AC5C /* CompletedPlanDetailModel.swift */,
-				8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */,
-				8D0996702542EA80000363BE /* ReminderModel.swift */,
-				8D8E6271254683BD005F445D /* DateExtension.swift */,
 			);
 			path = HomeProfile;
 			sourceTree = "<group>";
@@ -314,6 +308,53 @@
 				8D3D1E76254556A10070444C /* NotificationHelper.swift */,
 			);
 			path = "Networking Model";
+			sourceTree = "<group>";
+		};
+		8DBF07CF254E60BE00AACB19 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DC71C4F254D0A0600AD6C2B /* BadgesTableViewCell.swift */,
+				8D09966E2542E977000363BE /* ReminderTableViewCell.swift */,
+				8DC063F4254286A200D7F8AD /* userDataTableViewCell.swift */,
+				8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */,
+				8DC063F22542866800D7F8AD /* imagePersonTableViewCell.swift */,
+				8DC063EC2542699B00D7F8AD /* CompletedPlanTableViewCell.swift */,
+				8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */,
+				8DBF07F4254E64AA00AACB19 /* DetailBadgeTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		8DBF07D3254E60FE00AACB19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DB64620254BABF80072AC5C /* CompletedPlanDetailModel.swift */,
+				8DC063F02542711900D7F8AD /* CompletedPlanModel.swift */,
+				8D0996702542EA80000363BE /* ReminderModel.swift */,
+				8D8E6271254683BD005F445D /* DateExtension.swift */,
+				8DBF07F9254E655100AACB19 /* DetailBadgesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8DBF07D4254E610E00AACB19 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */,
+				8DBF07E4254E61E500AACB19 /* DetailBadgesViewController.swift */,
+				8D148C8C254140CF00571419 /* HomeProfileViewController.swift */,
+				8D3D1E70254550D10070444C /* AddReminderViewController.swift */,
+				8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DBF07D5254E612400AACB19 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8DC063EE25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +503,7 @@
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */,
+				8DBF07E5254E61E500AACB19 /* DetailBadgesViewController.swift in Sources */,
 				8D3D1E77254556A10070444C /* NotificationHelper.swift in Sources */,
 				8D0996712542EA80000363BE /* ReminderModel.swift in Sources */,
 				8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */,
@@ -478,6 +520,8 @@
 				8DC71C4B254D078600AD6C2B /* Colors.swift in Sources */,
 				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
 				8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */,
+				8DBF07FA254E655100AACB19 /* DetailBadgesModel.swift in Sources */,
+				8DBF07F5254E64AA00AACB19 /* DetailBadgeTableViewCell.swift in Sources */,
 				8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */,
 				8DC71C59254D0C2300AD6C2B /* BadgesCollectionViewCell.swift in Sources */,
 				8DC063EF25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift in Sources */,

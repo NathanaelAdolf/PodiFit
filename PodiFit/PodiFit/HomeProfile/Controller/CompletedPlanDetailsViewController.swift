@@ -40,6 +40,8 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
         completedPlanDetailTableView.delegate = self
         completedPlanDetailTableView.dataSource = self
         
+        self.view.backgroundColor = Colors.backgroundBaseColor
+        
         //data dummy buat plan details
         planDetailsData = [CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png"),CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png"),CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png")]
     }

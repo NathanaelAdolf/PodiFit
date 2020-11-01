@@ -379,7 +379,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
    }
     @objc func badgesButtonPressed()
     {
-        
+        performSegue(withIdentifier: "toDetailBadgesSegue", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
