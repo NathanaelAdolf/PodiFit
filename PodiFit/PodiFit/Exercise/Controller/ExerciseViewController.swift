@@ -16,8 +16,10 @@ class ExerciseViewController: UIViewController {
 
     
     var count = 30
+    var countTimeAddition = 20
     var timer: Timer?
     var isVideo: Int = 1
+    var finalExercise = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,56 +34,74 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func previous(_ sender: Any) {
-        if isVideo == 1 {
+        print(isVideo)
+        if isVideo == 2 {
+            exerciseView.restView()
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
+            isVideo = 1
+        } else {
             timer?.invalidate()
             exerciseView.countDownView(count: "30")
             circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
             exerciseView.videoView()
             isVideo = 2
-        } else {
-            exerciseView.restView()
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
-            isVideo = 1
         }
         
     }
     
     @IBAction func next(_ sender: Any) {
-        if isVideo % 2 == 1 {
-            exerciseView.restView()
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
-            isVideo += 1
-        } else {
-            timer?.invalidate()
-            exerciseView.countDownView(count: "30")
-            switch isVideo {
-            case 2:
-                exerciseView.videoView()
-                isVideo += 1
-            case 4:
-                exerciseView.videoView()
-                isVideo += 1
-                
-            case 6:
-                exerciseView.videoView()
-            case 8:
-                exerciseView.videoView()
-            case 10:
-                exerciseView.videoView()
-            default:
-                exerciseView.videoView()
-                
-                
-            }
+        if finalExercise == 3 {
+            exerciseView.lastExercise()
         }
+//        if isVideo == 1 {
+//            timer?.invalidate()
+//            exerciseView.countDownView(count: "30")
+//            circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
+//            exerciseView.videoView()
+//            isVideo = 2
+//        } else {
+//            exerciseView.restView()
+//            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
+//            isVideo = 1
+//        }
+    }
+    
+    @IBAction func doneExercise(_ sender: Any) {
+        self.performSegue(withIdentifier: "toReview", sender: nil)
+    }
+    
+    
+    @IBAction func Skip(_ sender: Any) {
+        timer?.invalidate()
+        exerciseView.countDownView(count: "30")
+        circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
+        exerciseView.videoView()
+        isVideo = 2
+        
+    }
+    
+    
+    @IBAction func addTimeRest(_ sender: Any) {
+        timer?.invalidate()
+        exerciseView.countDownView(count: "20")
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(additionTime), userInfo: nil, repeats: true)
+        countTimeAddition = 20
+    }
+    
+    @IBAction func exit(_ sender: Any) {
+        
+    
     }
     
     @objc func countDownTimer(){
         var countString = String(count)
+    
         if (count >= 0) {
             if count >= 10 {
                 exerciseView.countDownView(count: countString)
+                
                 count -= 1
+                print(countString)
             } else {
                 countString = "0\(countString)"
                 exerciseView.countDownView(count: countString)
@@ -89,4 +109,24 @@ class ExerciseViewController: UIViewController {
             }
         }
     }
+    
+    @objc func additionTime(){
+        var countStringAdd = String(countTimeAddition)
+        
+        if (countTimeAddition >= 0) {
+            if countTimeAddition >= 10 {
+                exerciseView.countDownView(count: countStringAdd)
+                
+                countTimeAddition -= 1
+                print(countStringAdd)
+            } else {
+                countStringAdd = "0\(countStringAdd)"
+                exerciseView.countDownView(count: countStringAdd)
+                countTimeAddition -= 1
+            }
+        }
+
+        
+    }
+    
 }

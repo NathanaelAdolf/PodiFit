@@ -1,14 +1,14 @@
 //
-//  progressBarr.swift
+//  ExerciseSummaryView.swift
 //  PodiFit
 //
-//  Created by Muhamad Vicky on 30/10/20.
+//  Created by Muhamad Vicky on 02/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 
 import UIKit
 
-class progressBarr: UIView {
+class ExerciseSummaryView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

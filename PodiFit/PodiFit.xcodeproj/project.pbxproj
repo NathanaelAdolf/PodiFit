@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48446769254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48446765254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift */; };
+		4844676A254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48446766254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift */; };
+		4844676B254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48446767254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift */; };
+		4844676C254FAB0A0099B9B5 /* ExerciseSteps+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48446768254FAB0A0099B9B5 /* ExerciseSteps+CoreDataProperties.swift */; };
+		487E1F62254F467500F58265 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F61254F467500F58265 /* ReviewService.swift */; };
+		487E1F6F254F52D200F58265 /* ExerciseSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */; };
+		487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */; };
 		48A12B99254BC45E00A02F60 /* InformationExercisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A12B98254BC45E00A02F60 /* InformationExercisionView.swift */; };
 		48E854FA254C2DD3002DAC0B /* InformationExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E854F9254C2DD3002DAC0B /* InformationExerciseController.swift */; };
 		48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8EFAA2542754400783427 /* ExerciseViewController.swift */; };
 		48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8EFCE254277D800783427 /* ExerciseView.swift */; };
 		48F4E797254C4B7F0051EED1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4E796254C4B7F0051EED1 /* CircularProgressView.swift */; };
-		48F4E79C254C72850051EED1 /* progressBarr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4E79B254C72850051EED1 /* progressBarr.swift */; };
 		8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09966E2542E977000363BE /* ReminderTableViewCell.swift */; };
 		8D0996712542EA80000363BE /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0996702542EA80000363BE /* ReminderModel.swift */; };
 		8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0B525402997002195C9 /* AppDelegate.swift */; };
@@ -64,12 +70,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48446765254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
+		48446766254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		48446767254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataClass.swift"; sourceTree = "<group>"; };
+		48446768254FAB0A0099B9B5 /* ExerciseSteps+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		487E1F61254F467500F58265 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryViewController.swift; sourceTree = "<group>"; };
+		487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryView.swift; sourceTree = "<group>"; };
 		48A12B98254BC45E00A02F60 /* InformationExercisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationExercisionView.swift; sourceTree = "<group>"; };
 		48E854F9254C2DD3002DAC0B /* InformationExerciseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationExerciseController.swift; sourceTree = "<group>"; };
 		48E8EFAA2542754400783427 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		48E8EFCE254277D800783427 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		48F4E796254C4B7F0051EED1 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		48F4E79B254C72850051EED1 /* progressBarr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressBarr.swift; sourceTree = "<group>"; };
 		8D09966E2542E977000363BE /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		8D0996702542EA80000363BE /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		8D13C0B225402997002195C9 /* PodiFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodiFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +182,8 @@
 			children = (
 				48E8EFAA2542754400783427 /* ExerciseViewController.swift */,
 				48E854F9254C2DD3002DAC0B /* InformationExerciseController.swift */,
+				487E1F61254F467500F58265 /* ReviewService.swift */,
+				487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -181,7 +195,7 @@
 				48E8EFCE254277D800783427 /* ExerciseView.swift */,
 				48A12B98254BC45E00A02F60 /* InformationExercisionView.swift */,
 				48F4E796254C4B7F0051EED1 /* CircularProgressView.swift */,
-				48F4E79B254C72850051EED1 /* progressBarr.swift */,
+				487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +328,10 @@
 		8D13C101254035D8002195C9 /* Networking Model */ = {
 			isa = PBXGroup;
 			children = (
+				48446765254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift */,
+				48446766254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift */,
+				48446767254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift */,
+				48446768254FAB0A0099B9B5 /* ExerciseSteps+CoreDataProperties.swift */,
 				8D3D1E76254556A10070444C /* NotificationHelper.swift */,
 			);
 			path = "Networking Model";
@@ -461,24 +479,30 @@
 				8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */,
 				8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */,
 				8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */,
+				4844676B254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
+				487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */,
 				8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */,
 				8D3D1E77254556A10070444C /* NotificationHelper.swift in Sources */,
 				48F4E797254C4B7F0051EED1 /* CircularProgressView.swift in Sources */,
+				487E1F6F254F52D200F58265 /* ExerciseSummaryViewController.swift in Sources */,
 				8D0996712542EA80000363BE /* ReminderModel.swift in Sources */,
 				8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */,
 				8D8E6272254683BD005F445D /* DateExtension.swift in Sources */,
+				487E1F62254F467500F58265 /* ReviewService.swift in Sources */,
 				8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */,
 				8DB64621254BABF80072AC5C /* CompletedPlanDetailModel.swift in Sources */,
+				48446769254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
-				48F4E79C254C72850051EED1 /* progressBarr.swift in Sources */,
+				4844676C254FAB0A0099B9B5 /* ExerciseSteps+CoreDataProperties.swift in Sources */,
 				8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */,
+				4844676A254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift in Sources */,
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
 				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
 				48E854FA254C2DD3002DAC0B /* InformationExerciseController.swift in Sources */,

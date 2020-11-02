@@ -24,13 +24,22 @@ class ExerciseView: UIView {
     @IBOutlet weak var warningView: UIView!
     @IBOutlet weak var contentWarningLabel: UILabel!
     
-
+    @IBOutlet weak var nextExerciseView: UIView!
+    @IBOutlet weak var timeRestView: UIView!
+    
+    @IBOutlet weak var doneView: UIButton!
+    
+    @IBOutlet weak var circularBarView: UIView!
+    @IBOutlet weak var previousView: UIButton!
+    @IBOutlet weak var nextView: UIButton!
     
     public func videoView() {
         //for show webkit(video)
         webKitView.isHidden = false
         restPageView.isHidden = true
         warningView.isHidden = false
+        nextExerciseView.isHidden = false
+        timeRestView.isHidden = true
         
         //fadein fadeout effect
         self.webKitView.alpha = 0.0
@@ -58,6 +67,8 @@ class ExerciseView: UIView {
         webKitView.isHidden = true
         restPageView.isHidden = false
         warningView.isHidden = true
+        timeRestView.isHidden = false
+        nextExerciseView.isHidden = true
         
         // border button
         addRestTimeBtn.layer.borderWidth = 1
@@ -89,6 +100,16 @@ class ExerciseView: UIView {
         let url = URL(string: "https://www.youtube.com/embed/bsM1qdGAVbU?playsinline=1")
         let request = URLRequest(url: url!)
         webKitView.load(request)
+    }
+    
+    public func lastExercise() {
+        doneView.isHidden = false
+        circularBarView.isHidden = true
+        previousView.isHidden = true
+        nextView.isHidden = true
+        
+        
+        
     }
     
     
