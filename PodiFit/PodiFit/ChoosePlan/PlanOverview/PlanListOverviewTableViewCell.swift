@@ -1,5 +1,5 @@
 //
-//  PlanListTableViewCell.swift
+//  PlanListOverviewTableViewCell.swift
 //  PodiFit
 //
 //  Created by Griffin on 23/10/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlanListTableViewCell: UITableViewCell {
+class PlanListOverviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var planImage: UIImageView!
     @IBOutlet weak var planName: UILabel!
