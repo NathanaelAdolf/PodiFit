@@ -4,7 +4,7 @@
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="levelDifficulty" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idExercise" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="listIdSteps" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
@@ -12,7 +12,7 @@
         <attribute name="videoUrl" optional="YES" attributeType="String"/>
         <attribute name="warningData" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="ExerciseSteps" representedClassName="ExerciseSteps" syncable="YES" codeGenerationType="class">
+    <entity name="ExerciseSteps" representedClassName="ExerciseSteps" syncable="YES">
         <attribute name="idStep" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="steps" optional="YES" attributeType="String"/>
     </entity>
@@ -45,11 +45,11 @@
         <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Plan" positionX="-54" positionY="-9" width="128" height="133"/>
-        <element name="Reminder" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="Difficulty" positionX="-54" positionY="63" width="128" height="73"/>
         <element name="Exercise" positionX="-45" positionY="72" width="128" height="133"/>
         <element name="ExerciseSteps" positionX="-36" positionY="90" width="128" height="73"/>
+        <element name="Plan" positionX="-54" positionY="-9" width="128" height="133"/>
+        <element name="Reminder" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="User" positionX="-18" positionY="99" width="128" height="118"/>
     </elements>
 </model>
