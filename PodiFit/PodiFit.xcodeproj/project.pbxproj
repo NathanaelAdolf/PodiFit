@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F733407254FCA5C006E4775 /* HomePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F733406254FCA5C006E4775 /* HomePlanVC.swift */; };
+		2F73340C254FCAD6006E4775 /* PlanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */; };
 		487E1F62254F467500F58265 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F61254F467500F58265 /* ReviewService.swift */; };
 		487E1F6F254F52D200F58265 /* ExerciseSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */; };
 		487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */; };
@@ -27,7 +29,7 @@
 		8D13C0D025402999002195C9 /* PodiFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0CF25402999002195C9 /* PodiFitTests.swift */; };
 		8D13C0DB25402999002195C9 /* PodiFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0DA25402999002195C9 /* PodiFitUITests.swift */; };
 		8D13C0EB25402AC4002195C9 /* Assesment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0EA25402AC4002195C9 /* Assesment.storyboard */; };
-		8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0EC25402AD9002195C9 /* Assesment.swift */; };
+		8D13C0ED25402AD9002195C9 /* AssesmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0EC25402AD9002195C9 /* AssesmentViewController.swift */; };
 		8D13C0F025402B7E002195C9 /* ChoosePlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0EF25402B7E002195C9 /* ChoosePlan.storyboard */; };
 		8D13C0F325402C27002195C9 /* HomePlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F225402C27002195C9 /* HomePlan.storyboard */; };
 		8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F625402D84002195C9 /* Exercise.storyboard */; };
@@ -78,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F733406254FCA5C006E4775 /* HomePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanVC.swift; sourceTree = "<group>"; };
+		2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
 		48446765254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
 		48446766254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		48446767254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -108,7 +112,7 @@
 		8D13C0DA25402999002195C9 /* PodiFitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiFitUITests.swift; sourceTree = "<group>"; };
 		8D13C0DC25402999002195C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D13C0EA25402AC4002195C9 /* Assesment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assesment.storyboard; sourceTree = "<group>"; };
-		8D13C0EC25402AD9002195C9 /* Assesment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assesment.swift; sourceTree = "<group>"; };
+		8D13C0EC25402AD9002195C9 /* AssesmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentViewController.swift; sourceTree = "<group>"; };
 		8D13C0EF25402B7E002195C9 /* ChoosePlan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoosePlan.storyboard; sourceTree = "<group>"; };
 		8D13C0F225402C27002195C9 /* HomePlan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePlan.storyboard; sourceTree = "<group>"; };
 		8D13C0F625402D84002195C9 /* Exercise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercise.storyboard; sourceTree = "<group>"; };
@@ -285,7 +289,7 @@
 		8D13C0E925402AA4002195C9 /* Assesment */ = {
 			isa = PBXGroup;
 			children = (
-				8D13C0EC25402AD9002195C9 /* Assesment.swift */,
+				8D13C0EC25402AD9002195C9 /* AssesmentViewController.swift */,
 				8D13C0EA25402AC4002195C9 /* Assesment.storyboard */,
 			);
 			path = Assesment;
@@ -303,7 +307,9 @@
 		8D13C0F125402BFE002195C9 /* HomePlan */ = {
 			isa = PBXGroup;
 			children = (
+				2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */,
 				8D13C0F225402C27002195C9 /* HomePlan.storyboard */,
+				2F733406254FCA5C006E4775 /* HomePlanVC.swift */,
 			);
 			path = HomePlan;
 			sourceTree = "<group>";
@@ -540,10 +546,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F73340C254FCAD6006E4775 /* PlanListTableViewCell.swift in Sources */,
 				48A12B99254BC45E00A02F60 /* InformationExercisionView.swift in Sources */,
 				8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */,
 				8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */,
-				8D13C0ED25402AD9002195C9 /* Assesment.swift in Sources */,
+				8D13C0ED25402AD9002195C9 /* AssesmentViewController.swift in Sources */,
 				8DC71C50254D0A0600AD6C2B /* BadgesTableViewCell.swift in Sources */,
 				8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
@@ -551,6 +558,8 @@
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */,
 				8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */,
+				8D3D1E77254556A10070444C /* NotificationHelper.swift in Sources */,
+				2F733407254FCA5C006E4775 /* HomePlanVC.swift in Sources */,
 				8DD29429254FD93300EFD6F2 /* Exercise+CoreDataProperties.swift in Sources */,
 				8D4E5C76254FCAB6002D94C8 /* UserDataModel.swift in Sources */,
 				8DBF07E5254E61E500AACB19 /* DetailBadgesViewController.swift in Sources */,
@@ -756,7 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F2LH5KBDDC;
+				DEVELOPMENT_TEAM = 6X2P3HV7HT;
 				INFOPLIST_FILE = PodiFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -774,7 +783,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F2LH5KBDDC;
+				DEVELOPMENT_TEAM = 6X2P3HV7HT;
 				INFOPLIST_FILE = PodiFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
