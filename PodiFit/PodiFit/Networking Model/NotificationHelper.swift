@@ -187,7 +187,7 @@ class NotificationHelper: UIViewController {
         }
     }
     
-    func updateDataInReminder(reminderNameToUpdate: String,hour: String,minute: String, monday: Bool, tuesday: Bool, wednesday: Bool, thursday: Bool, friday: Bool, saturday: Bool,sunday: Bool, isReminderActive: Bool) -> String {
+    func updateDataInReminder(reminderNameToUpdate: String,newName: String,hour: String,minute: String, monday: Bool, tuesday: Bool, wednesday: Bool, thursday: Bool, friday: Bool, saturday: Bool,sunday: Bool, isReminderActive: Bool) -> String {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return "" }
         
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -199,6 +199,7 @@ class NotificationHelper: UIViewController {
             let fetch = try managedContext.fetch(fetchRequest)
             let dataToUpdate = fetch[0] as! NSManagedObject
         
+            dataToUpdate.setValue(newName, forKey: "reminderName")
             dataToUpdate.setValue(hour, forKey: "hour")
             dataToUpdate.setValue(minute, forKey: "minute")
             dataToUpdate.setValue(monday, forKey: "monday")

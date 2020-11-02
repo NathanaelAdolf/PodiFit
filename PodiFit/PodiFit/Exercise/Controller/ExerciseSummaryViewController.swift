@@ -1,29 +1,36 @@
 //
-//  EditProfileViewController.swift
+//  ExerciseSummaryViewController.swift
 //  PodiFit
 //
-//  Created by Nathanael Adolf Sukiman on 27/10/20.
+//  Created by Muhamad Vicky on 02/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
 
-    @IBOutlet var saveButton: UIButton!
+class ExerciseSummaryViewController: UIViewController {
+
+    @IBOutlet weak var  exerciseSummaryView : ExerciseSummaryView!
+    
+    let reviewService = ReviewService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        saveButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func saveAction(_ sender: Any) {
-        performSegue(withIdentifier: "editToProfileSegue", sender: self)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let deadline = DispatchTime.now() + .seconds(2)
+        DispatchQueue.main.asyncAfter(deadline: deadline) { [weak self] in
+            self?.reviewService.requestReview()
+        }
+        
+        
     }
-    
+
     /*
     // MARK: - Navigation
 
