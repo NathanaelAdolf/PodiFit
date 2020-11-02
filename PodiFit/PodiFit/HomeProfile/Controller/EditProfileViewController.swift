@@ -12,16 +12,41 @@ class EditProfileViewController: UIViewController {
 
     @IBOutlet var saveButton: UIButton!
     
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var weightTextField: UITextField!
+    @IBOutlet var heightTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         saveButton.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
+        saveButton.backgroundColor = Colors.yellowColor
+        view.backgroundColor = Colors.backgroundBaseColor
+        
+        setUITextField(sender: nameTextField)
+        setUITextField(sender: weightTextField)
+        setUITextField(sender: heightTextField)
+        
+        notifHelper.configureUserNotificationCenter()
+        
     }
     
 
     @IBAction func saveAction(_ sender: Any) {
-        performSegue(withIdentifier: "editToProfileSegue", sender: self)
+       
+    }
+    
+    func setUITextField(sender: UITextField)
+    {
+        sender.backgroundColor = .clear
+        sender.layer.borderColor = Colors.yellowColor.cgColor
+        sender.layer.borderWidth = 1
+        sender.layer.cornerRadius = 5
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     /*

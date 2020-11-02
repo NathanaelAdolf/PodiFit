@@ -59,11 +59,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0
         {
-            return 110
+            return 120
         }
         else if indexPath.section == 1
         {
-            return 140
+            return 120
         }
         else if indexPath.section == 2
         {
@@ -89,9 +89,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
-            cell.persomImage.image = UIImage(systemName: "folder")
+            cell.persomImage.image = UIImage(named: "person image.png")
             cell.backgroundColor = .none
             cell.contentView.backgroundColor = .none
+            
+            cell.buttonProtocol = self
             
             return cell
             
@@ -399,7 +401,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
            reminderData = notifHelper.retrieveNotificationFromCoreData()
             completeRemindBadgeTableView.reloadData()
-          
+       }
+    
+    @IBAction func unwindSegueFromEditProfile(sender: UIStoryboardSegue){
+           
        }
     
 

@@ -42,6 +42,8 @@ class DetailBadgesViewController: UIViewController,UITableViewDataSource, UITabl
         
         self.view.backgroundColor = Colors.backgroundBaseColor
         
+        notifHelper.configureUserNotificationCenter()
+        
             //data dummy buat detail badge
         self.detailBadgeData =
         [

@@ -53,6 +53,8 @@ class AddReminderViewController: UIViewController {
     @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var cancelButton: UIBarButtonItem!
     
+    @IBOutlet var addReminderNavBar: UINavigationBar!
+    
     var tempDataEdit = [ReminderModel]()
     
     override func viewDidLoad() {
@@ -66,21 +68,29 @@ class AddReminderViewController: UIViewController {
         setUIButtonToUnselected(sender: satButton)
         setUIButtonToUnselected(sender: sunButton)
         
+        saveButton.tintColor = Colors.yellowColor
+        cancelButton.tintColor = Colors.yellowColor
+        
+        reminderNameTextField.layer.borderWidth = 1
+        reminderNameTextField.layer.borderColor = Colors.yellowColor.cgColor
+        reminderNameTextField.layer.cornerRadius = 5
+
         timePickerView.datePickerMode = .time
         timePickerView.preferredDatePickerStyle = .wheels
         timePickerView.locale = Locale(identifier: "id_ID")
+        timePickerView.backgroundColor = .black
+        timePickerView.setValue(UIColor.white, forKeyPath: "textColor")
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        addReminderNavBar.titleTextAttributes = textAttributes
         
         notifHelper.configureUserNotificationCenter()
         
-        print("page state: \(pageState)")
-       
             if pageState == "Edit" {
                 setDataToUserChoose()
             }
-            
-        
-        
-        
+ 
     }
     
     func setDataToUserChoose()
@@ -225,17 +235,17 @@ class AddReminderViewController: UIViewController {
     
     func setUIButtonToSelected(sender: UIButton)
     {
-        sender.backgroundColor = UIColor.systemBlue
+        sender.backgroundColor = Colors.yellowColor
         sender.setTitleColor(.white, for: .normal)
         sender.layer.cornerRadius = 5
     }
     func setUIButtonToUnselected(sender: UIButton)
     {
-        sender.backgroundColor = UIColor.white
-        sender.layer.borderColor = UIColor.blue.cgColor
+        sender.backgroundColor = Colors.backgroundBaseColor
+        sender.layer.borderColor = Colors.yellowColor.cgColor
         sender.layer.borderWidth = 1
         sender.layer.cornerRadius = 5
-        sender.setTitleColor(.systemBlue, for: .normal)
+        sender.setTitleColor(.white, for: .normal)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
