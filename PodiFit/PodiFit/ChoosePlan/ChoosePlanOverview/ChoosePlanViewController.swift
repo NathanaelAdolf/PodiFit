@@ -17,14 +17,18 @@ struct testCellData{
 class ChoosePlanViewController: UITableViewController {
 
     var expandableData = [testCellData]()
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
+        
+        
+        
         expandableData = [testCellData(opened: false, title: "Week 1", sectionData: ["Push Up 1",                      "Push Up 2"]),
                           testCellData(opened: false, title: "Week 2", sectionData: ["Push Up 1", "Push Up 2"]),
                           testCellData(opened: false, title: "Week 3", sectionData: ["Push Up 1", "Push Up 2"])]
         
         super.viewDidLoad()
+        
 
         //notifHelper.configureUserNotificationCenter()
         
@@ -36,8 +40,12 @@ class ChoosePlanViewController: UITableViewController {
         
         tableView.register(StackedTableViewCell.nib(), forCellReuseIdentifier: StackedTableViewCell.identifier)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
         // Do any additional setup after loading the view.
+    }
+    
+    func fetchData(){
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -203,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				AB8B16A0254D5AFA001057D9 /* SceneDelegate.swift */,
-				8D1171FD254D4FE000EB2AF0 /* ChoosePlanOverview */,
 				8D117207254D4FE000EB2AF0 /* ChoosePlan.storyboard */,
+				8D1171FD254D4FE000EB2AF0 /* ChoosePlanOverview */,
 				8D117208254D4FE000EB2AF0 /* CustomizePlan */,
 				8D117211254D4FE000EB2AF0 /* PlanOverview */,
 			);
@@ -454,7 +454,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Nathanael Adolf Sukiman";
 				TargetAttributes = {
 					8D13C0B125402997002195C9 = {
@@ -556,8 +556,6 @@
 				8DB64621254BABF80072AC5C /* CompletedPlanDetailModel.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D117220254D4FE000EB2AF0 /* CustomizePlanTableViewController.swift in Sources */,
-				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
-				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */,
 				48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */,
 				8D117217254D4FE000EB2AF0 /* ExerciseTableViewCell.swift in Sources */,
@@ -652,6 +650,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -712,6 +711,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
