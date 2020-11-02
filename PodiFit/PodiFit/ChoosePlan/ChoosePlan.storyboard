@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AgQ-39-fCE">
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aMU-Se-4l8">
->>>>>>> main
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,7 +9,6 @@
     </dependencies>
     <scenes>
         <!--Plan Details-->
-<<<<<<< HEAD
         <scene sceneID="oei-L1-DQ9">
             <objects>
                 <tableViewController id="g25-Qo-Lb3" customClass="ChoosePlanViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="planCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="planCell" rowHeight="220" id="Eyn-qm-KNW" customClass="PlanListTableViewCell" customModule="PodiFit" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="planCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="planCell" rowHeight="220" id="Eyn-qm-KNW" customClass="PlanListOverviewTableViewCell" customModule="PodiFit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eyn-qm-KNW" id="jKl-Bw-CGt">
@@ -126,147 +121,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYv-2y-eYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962" y="-160"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="RyA-Bm-f2T">
-            <objects>
-                <viewController id="svy-K2-0Rw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="G4z-Ng-wij">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose plan + plan details + customize exercise(griffin)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qf-qq-sd3">
-                                <rect key="frame" x="45" y="103" width="323" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xqF-s5-aRp">
-                                <rect key="frame" x="20" y="204" width="374" height="638"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Zp1-AZ-YMP"/>
-=======
-        <scene sceneID="DMr-BL-iYi">
-            <objects>
-                <tableViewController id="2WY-3o-fIa" customClass="ChoosePlanViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vvn-9h-Z5N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="2WY-3o-fIa" id="ckd-lo-lhI"/>
-                            <outlet property="delegate" destination="2WY-3o-fIa" id="rsm-Ro-UY2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Plan Details" id="C7X-Jw-HaH"/>
-                    <connections>
-                        <segue destination="kaB-bC-ERP" kind="show" identifier="customPlanSegue" id="j7o-pT-x6b"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tsQ-aL-hSv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="198" y="-160"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="JXg-FJ-hht">
-            <objects>
-                <navigationController id="aMU-Se-4l8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fjl-8N-plJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="yki-WZ-WMK" kind="relationship" relationship="rootViewController" id="9oa-7J-iWv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RkF-At-dC2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1199" y="-160"/>
-        </scene>
-        <!--Plan View Controller-->
-        <scene sceneID="CVc-uz-j4n">
-            <objects>
-                <tableViewController id="yki-WZ-WMK" customClass="PlanViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YuV-tG-5uk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="planCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="planCell" rowHeight="220" id="Y3C-ff-1cA" customClass="PlanListTableViewCell" customModule="PodiFit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="220"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y3C-ff-1cA" id="XtQ-Uy-tl2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEY-hq-Sbf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ7-53-3Vq">
-                                            <rect key="frame" x="20" y="136" width="374" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uo4-d0-Uie">
-                                            <rect key="frame" x="20" y="165" width="374" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="planImage" destination="YEY-hq-Sbf" id="DiW-Mp-H1T"/>
-                                    <outlet property="planName" destination="ZZ7-53-3Vq" id="jgV-29-9FW"/>
-                                    <outlet property="planSubtitle" destination="uo4-d0-Uie" id="iUS-HI-MxH"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="yki-WZ-WMK" id="4me-N9-79l"/>
-                            <outlet property="delegate" destination="yki-WZ-WMK" id="bmU-o0-j3M"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="7aC-wj-B2q"/>
-                    <connections>
-                        <segue destination="2WY-3o-fIa" kind="show" identifier="viewPlanSegue" id="bMb-RT-nFb"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hb7-Oe-WD5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-507.24637681159425" y="-160.04464285714286"/>
-        </scene>
-        <!--Customize Plan Table View Controller-->
-        <scene sceneID="bY8-hL-Fgl">
-            <objects>
-                <tableViewController id="kaB-bC-ERP" customClass="CustomizePlanTableViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z3L-sq-hKT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
->>>>>>> main
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="kaB-bC-ERP" id="kmI-fw-j0a"/>
-                            <outlet property="delegate" destination="kaB-bC-ERP" id="7JV-bu-jis"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="oHA-SH-kA3"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PXp-Ns-h2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="1641" y="-160"/>
-=======
-            <point key="canvasLocation" x="962" y="-160"/>
->>>>>>> main
         </scene>
     </scenes>
     <resources>

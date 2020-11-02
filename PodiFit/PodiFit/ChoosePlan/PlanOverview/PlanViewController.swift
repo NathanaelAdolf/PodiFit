@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PlanType{
+struct PlanTypes{
     var title = String()
     var subtitle = String()
     var image = String()
@@ -17,16 +17,16 @@ struct PlanType{
 
 class PlanViewController: UITableViewController {
 
-    var plans = [PlanType]()
+    var plans = [PlanTypes]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //notifHelper.configureUserNotificationCenter()
         
-        plans = [PlanType(title: "Easy Plan", subtitle: "2 weeks", image: "1"),
-                 PlanType(title: "Intermediate Plan", subtitle: "4 weeks", image: "2"),
-                 PlanType(title: "Advanced Plan", subtitle: "6 weeks", image: "3")]
+        plans = [PlanTypes(title: "Easy Plan", subtitle: "2 weeks", image: "1"),
+                 PlanTypes(title: "Intermediate Plan", subtitle: "4 weeks", image: "2"),
+                 PlanTypes(title: "Advanced Plan", subtitle: "6 weeks", image: "3")]
         
         tableView.rowHeight = 200.0
         // Uncomment the following line to preserve selection between presentations
@@ -52,7 +52,7 @@ class PlanViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "planCell", for: indexPath) as! PlanListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "planCell", for: indexPath) as! PlanListOverviewTableViewCell
 
         let plan = plans[indexPath.row]
         cell.planName.text = plan.title
