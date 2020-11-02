@@ -24,14 +24,28 @@ class StackedTableViewCell: UITableViewCell {
     @IBOutlet weak var durationDesc: UILabel!
     @IBOutlet weak var durationType: UILabel!
     
+    
+    @IBOutlet weak var exerciseImage: UIImageView!
+    @IBOutlet weak var exerciseDesc: UILabel!
+    @IBOutlet weak var exerciseType: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        levelImage.image = UIImage(named: "2")
+        levelDesc.text = "Level"
+        levelType.text = "Easy"
+        
+        durationImage.image = UIImage(named: "2")
+        durationDesc.text = "Duration"
+        durationType.text = "10 min"
+        
+        exerciseImage.image = UIImage(named: "2")
+        exerciseDesc.text = "Exercises"
+        exerciseType.text = "5 moves"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

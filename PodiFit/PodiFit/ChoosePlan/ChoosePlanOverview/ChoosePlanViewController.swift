@@ -119,8 +119,12 @@ class ChoosePlanViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-        
+        if indexPath.section == 1 {
+            return 240
+        }
+        else{
+            return 85
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -142,7 +146,7 @@ class ChoosePlanViewController: UITableViewController {
             let sections = IndexSet.init(integer: indexPath.section)
             tableView.reloadSections(sections, with: .none)
             //tableView.reloadData()
-        }else{
+        }else if (indexPath.section != 1){
             performSegue(withIdentifier: "customPlanSegue", sender: self)
         }
         
