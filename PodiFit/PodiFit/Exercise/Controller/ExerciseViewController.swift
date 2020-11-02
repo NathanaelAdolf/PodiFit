@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import CoreData
 
 class ExerciseViewController: UIViewController {
 
@@ -21,12 +22,84 @@ class ExerciseViewController: UIViewController {
     var isVideo: Int = 1
     var finalExercise = 3
     
+    //reference to moc
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // Data for the table
+    var plans: [Plan]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup View
         circularProgressView.trackClr = UIColor(red: 95/255, green: 104/255, blue: 71/255, alpha: 100)
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
         exerciseView.videoView()
+        
+        // get exercise from core data
+        fetchExercise()
+    }
+    
+    func fetchExercise() {
+        do {
+            self.plans = try context.fetch(Plan.fetchRequest())
+            print("ini plan \(self.plans)")
+            
+            
+            
+        } catch {
+            
+        }
+        
+        
+    }
+    
+    
+    @IBAction func didTap(_ sender: Any) {
+        //create alert
+        print("alert masuk")
+        let alert = UIAlertController(title: "Add Exercise", message: "What do you want to choose", preferredStyle: .alert)
+        alert.addTextField()
+        
+        // configure button handler
+        let submitButton = UIAlertAction(title: "Add", style: .default) { (action) in
+            //get the textfield for the alert
+            let textfield = alert.textFields![0]
+            
+            //create a exercise object
+            let newPlan = Plan(context: self.context)
+            newPlan.chosenExercise = [1,3,5,6]
+            newPlan.durasiPlan = 60
+            newPlan.durasiSession = 30
+            newPlan.idDifficulty = 3
+            newPlan.idPlan = 2
+            newPlan.namaPlan = textfield.text
+            
+//            newExercise.namaExercise = textfield.text
+//            newExercise.idExercise = 1
+//            newExercise.idDifficulty = 2
+//            newExercise.videoUrl = "https://www.youtube.com/embed/bsM1qdGAVbU?playsinline=1"
+//            newExercise.warningData = 1
+//            newExercise.listIdSteps = [1,2]
+            
+            // save the data
+            do {
+                try self.context.save()
+            }
+            catch {
+                
+            }
+            
+            // re-fetch
+            self.fetchExercise()
+        }
+        
+        // add button
+        alert.addAction(submitButton)
+        
+        // show alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func informationExercise(_ sender: Any) {
@@ -36,10 +109,12 @@ class ExerciseViewController: UIViewController {
     @IBAction func previous(_ sender: Any) {
         print(isVideo)
         if isVideo == 2 {
+            
             exerciseView.restView()
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
             isVideo = 1
         } else {
+            print("masuk\(plans)")
             timer?.invalidate()
             exerciseView.countDownView(count: "30")
             circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
