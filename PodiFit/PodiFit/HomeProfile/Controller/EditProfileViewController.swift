@@ -16,6 +16,8 @@ class EditProfileViewController: UIViewController {
     @IBOutlet var weightTextField: UITextField!
     @IBOutlet var heightTextField: UITextField!
     
+    @IBOutlet var profileView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +38,9 @@ class EditProfileViewController: UIViewController {
        
     }
     
+    @IBAction func editProfilePictureAction(_ sender: Any) {
+    }
+    
     func setUITextField(sender: UITextField)
     {
         sender.backgroundColor = .clear
@@ -48,6 +53,8 @@ class EditProfileViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    
     
     /*
     // MARK: - Navigation

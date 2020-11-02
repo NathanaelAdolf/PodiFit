@@ -371,7 +371,7 @@ class AddReminderViewController: UIViewController {
                 notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
             }
                         
-            notifHelper.updateDataInReminder(reminderNameToUpdate: tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
+            notifHelper.updateDataInReminder(reminderNameToUpdate: tempDataEdit[0].reminderName,newName:tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
             
             return true
         }

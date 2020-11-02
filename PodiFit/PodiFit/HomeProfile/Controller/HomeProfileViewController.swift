@@ -9,11 +9,14 @@
 import UIKit
 import UserNotifications
 
+    var userHelper = UserBasicDataHelper()
+
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var completedData = [CompletedPlanModel]()
     var reminderData = [ReminderModel]()
     var tempDataToEdit = [ReminderModel]()
+    var userData = [UserDataModel]()
     
     var addButton = UIButton()
     
@@ -90,6 +93,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
             cell.persomImage.image = UIImage(named: "person image.png")
+            cell.userName.text = userData[indexPath.row].Name
             cell.backgroundColor = .none
             cell.contentView.backgroundColor = .none
             
@@ -104,8 +108,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             
             //nanti ganti dengan input user
             cell.numberOfActivePlansLabel.text = "0"
-            cell.numberWeightLabel.text = "0"
-            cell.heightLabel.text = "0"
+            cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
+            cell.heightLabel.text = String(userData[indexPath.row].height)
             
             return cell
             
@@ -386,6 +390,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         reminderData = notifHelper.retrieveNotificationFromCoreData()
+        userData = userHelper.retrieveUserBasicData()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         self.swipeState = ""
@@ -422,6 +427,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
+        //userHelper.storeToUserData(idUser: 1, userName: "JohnDoe", idPlan: 1, height: 170, weight: 80) test data, nanti diganti dengan inputan user
+        userHelper.retrieveUserBasicData()
        
         //data dummy buat completedData
         self.completedData =

@@ -30,6 +30,8 @@
 		8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
 		8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D1E70254550D10070444C /* AddReminderViewController.swift */; };
 		8D3D1E77254556A10070444C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D1E76254556A10070444C /* NotificationHelper.swift */; };
+		8D4E5C71254FC0E2002D94C8 /* UserBasicDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */; };
+		8D4E5C76254FCAB6002D94C8 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */; };
 		8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */; };
 		8D8E6272254683BD005F445D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E6271254683BD005F445D /* DateExtension.swift */; };
 		8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */; };
@@ -95,6 +97,8 @@
 		8D148C8C254140CF00571419 /* HomeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileViewController.swift; sourceTree = "<group>"; };
 		8D3D1E70254550D10070444C /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		8D3D1E76254556A10070444C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicDataHelper.swift; sourceTree = "<group>"; };
+		8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8D8E6271254683BD005F445D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailsViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				8D3D1E76254556A10070444C /* NotificationHelper.swift */,
+				8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */,
 			);
 			path = "Networking Model";
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				8D0996702542EA80000363BE /* ReminderModel.swift */,
 				8D8E6271254683BD005F445D /* DateExtension.swift */,
 				8DBF07F9254E655100AACB19 /* DetailBadgesModel.swift */,
+				8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -503,12 +509,14 @@
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */,
+				8D4E5C76254FCAB6002D94C8 /* UserDataModel.swift in Sources */,
 				8DBF07E5254E61E500AACB19 /* DetailBadgesViewController.swift in Sources */,
 				8D3D1E77254556A10070444C /* NotificationHelper.swift in Sources */,
 				8D0996712542EA80000363BE /* ReminderModel.swift in Sources */,
 				8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */,
 				8D8E6272254683BD005F445D /* DateExtension.swift in Sources */,
 				8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */,
+				8D4E5C71254FC0E2002D94C8 /* UserBasicDataHelper.swift in Sources */,
 				8DB64621254BABF80072AC5C /* CompletedPlanDetailModel.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
