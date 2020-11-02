@@ -40,8 +40,12 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
         completedPlanDetailTableView.delegate = self
         completedPlanDetailTableView.dataSource = self
         
+        self.view.backgroundColor = Colors.backgroundBaseColor
+        
+        notifHelper.configureUserNotificationCenter()
+        
         //data dummy buat plan details
-        planDetailsData = [CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png"),CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png"),CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png")]
+        planDetailsData = [CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png"),CompletedPlanDetailModel(titleMovement: "Intermediate Leg Plan", numberWeeks: 5, numberExercise: 8, imagePlan: "LegPlanImage.png")]
     }
     
     override func viewWillAppear(_ animated: Bool) {

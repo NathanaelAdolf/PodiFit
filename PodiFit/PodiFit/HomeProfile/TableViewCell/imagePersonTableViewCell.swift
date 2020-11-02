@@ -12,7 +12,9 @@ class imagePersonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var persomImage: UIImageView!
     
-     weak var buttonProtocol: editButtonProtocol?
+    @IBOutlet var userName: UILabel!
+    
+    weak var buttonProtocol: editButtonProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
