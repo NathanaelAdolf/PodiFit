@@ -145,7 +145,8 @@ class NotificationHelper: UIViewController {
                     let result = try context.fetch(fetch)
                     for data in result as! [NSManagedObject]
                      {
-                       print("reminderName : \(data.value(forKey: "reminderName")as! String)")
+        
+                        print("reminderName : \(data.value(forKey: "reminderName")as! String)")
                         print("hour : \(data.value(forKey: "hour")as! String)")
                         print("minute : \(data.value(forKey: "minute")as! String)")
                         print("monday : \(data.value(forKey: "monday")as! Bool)")

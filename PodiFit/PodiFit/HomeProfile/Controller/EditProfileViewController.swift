@@ -18,6 +18,8 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet var profileView: UIView!
     
+    var tempDataToEdit = [UserDataModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +35,26 @@ class EditProfileViewController: UIViewController {
         
     }
     
+    
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if nameTextField.text == "" {
+            showAlert(messageToDisplay: "Name text field can't be empty")
+            return false
+        }
+        if weightTextField.text == "" {
+            showAlert(messageToDisplay: "weight text field can't be empty")
+            return false
+        }
+        if heightTextField.text == "" {
+            showAlert(messageToDisplay: "height text field can't be empty")
+            return false
+        }
+        
+        userHelper.updateUserData(userNameToUpdate: tempDataToEdit[0].Name!, newName: nameTextField.text!, height: Int(heightTextField.text!)!, weight: Int(weightTextField.text!)!)
+        
+        return true
+    }
     @IBAction func saveAction(_ sender: Any) {
        
     }
@@ -49,9 +70,20 @@ class EditProfileViewController: UIViewController {
         sender.layer.cornerRadius = 5
     }
     
+    func showAlert(messageToDisplay: String) {
+          let alert = UIAlertController(title: "Message", message: messageToDisplay, preferredStyle: .alert)
+          let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+          alert.addAction(action)
+          self.present(alert, animated: true, completion: nil)
+      }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
+        
+        nameTextField.text = tempDataToEdit[0].Name
+        heightTextField.text = "\(tempDataToEdit[0].height!)"
+        weightTextField.text = "\(tempDataToEdit[0].weight!)"
     }
     
     
