@@ -69,7 +69,7 @@ class UserBasicDataHelper: UIViewController {
                         print("weight : \(data.value(forKey: "weight")as! Int)")
                         print("\n")
                         
-                        tempUserData.append(UserDataModel(Name: data.value(forKey: "userName")as! String, weight: data.value(forKey: "weight")as! Int, height: data.value(forKey: "height")as! Int))
+                        tempUserData.append(UserDataModel(Name: data.value(forKey: "userName")as! String,userIdPlan: data.value(forKey: "userIdPlan")as! [Int]?, weight: data.value(forKey: "weight")as! Int, height: data.value(forKey: "height")as! Int))
                         
                     }
               }

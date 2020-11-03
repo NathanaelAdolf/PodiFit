@@ -93,7 +93,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
             cell.persomImage.image = UIImage(named: "person image.png")
-            cell.userName.text = userData[indexPath.row].Name
+            
+            if userData.count != 0 {
+                cell.userName.text = userData[indexPath.row].Name
+            }
+            
             cell.backgroundColor = .none
             cell.contentView.backgroundColor = .none
             
@@ -107,10 +111,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             let cell = tableView.dequeueReusableCell(withIdentifier: "userDataCell", for: indexPath) as! userDataTableViewCell
             
             //nanti ganti dengan input user
-            cell.numberOfActivePlansLabel.text = "0"
-            cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
-            cell.heightLabel.text = String(userData[indexPath.row].height)
             
+            if userData.count != 0 {
+                cell.numberOfActivePlansLabel.text = String(userData[indexPath.row].userIdPlan!.count)
+                cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
+                cell.heightLabel.text = String(userData[indexPath.row].height)
+            }
+           
+
             return cell
             
             
@@ -436,6 +444,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         notifHelper.configureUserNotificationCenter()
         
         userHelper.retrieveUserBasicData()
+        //userHelper.storeToUserData(idUser: 1, userName: "John Doe", idPlan: [1], height: 170, weight: 180)
        
         //data dummy buat completedData
         self.completedData =
