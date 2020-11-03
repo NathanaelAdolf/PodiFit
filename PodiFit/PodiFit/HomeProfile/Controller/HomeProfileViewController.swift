@@ -93,7 +93,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
             cell.persomImage.image = UIImage(named: "person image.png")
-            cell.userName.text = userData[indexPath.row].Name
+            
+            if userData.count != 0 {
+                cell.userName.text = userData[indexPath.row].Name
+            }
+            
             cell.backgroundColor = .none
             cell.contentView.backgroundColor = .none
             
@@ -107,10 +111,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             let cell = tableView.dequeueReusableCell(withIdentifier: "userDataCell", for: indexPath) as! userDataTableViewCell
             
             //nanti ganti dengan input user
-            cell.numberOfActivePlansLabel.text = "0"
-            cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
-            cell.heightLabel.text = String(userData[indexPath.row].height)
             
+            if userData.count != 0 {
+                cell.numberOfActivePlansLabel.text = String(userData[indexPath.row].userIdPlan!.count)
+                cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
+                cell.heightLabel.text = String(userData[indexPath.row].height)
+            }
+           
+
             return cell
             
             
@@ -344,7 +352,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             
             edit.backgroundColor = UIColor.init(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
-            delete.backgroundColor = UIColor.init(red: 138/255, green: 138/255, blue: 138/255, alpha: 1)
+            delete.backgroundColor = UIColor.red
             
             return UISwipeActionsConfiguration(actions: [delete,edit])
             
@@ -368,6 +376,12 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             if let destination = segue.destination as? AddReminderViewController
             {
                 destination.pageState = "Create"
+            }
+        }
+        if segue.identifier == "toEditProfile" {
+            if let destination = segue.destination as? EditProfileViewController
+            {
+                destination.tempDataToEdit = self.userData
             }
         }
         
@@ -409,7 +423,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
        }
     
     @IBAction func unwindSegueFromEditProfile(sender: UIStoryboardSegue){
-           
+        self.userData = userHelper.retrieveUserBasicData()
+        completeRemindBadgeTableView.reloadData()
        }
     
 
@@ -427,8 +442,9 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
-        //userHelper.storeToUserData(idUser: 1, userName: "JohnDoe", idPlan: 1, height: 170, weight: 80) test data, nanti diganti dengan inputan user
+        
         userHelper.retrieveUserBasicData()
+        //userHelper.storeToUserData(idUser: 1, userName: "John Doe", idPlan: [1], height: 170, weight: 180)
        
         //data dummy buat completedData
         self.completedData =
@@ -450,9 +466,25 @@ extension HomeProfileViewController: editButtonProtocol
     func moveToEditPage() {
         performSegue(withIdentifier: "toEditProfile", sender: self)
     }
-    
-    
 }
+
+extension UIViewController
+{
+
+    func hideKeyboardWhenTappedAround()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.endEditingKeyboard))
+        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+    }
+    
+    @objc func endEditingKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
+
+
 
 
 
