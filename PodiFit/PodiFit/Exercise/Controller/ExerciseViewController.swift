@@ -26,7 +26,7 @@ class ExerciseViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // Data for the table
-    var plans: [Plan]?
+    var plans: [Plan]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,8 @@ class ExerciseViewController: UIViewController {
     func fetchExercise() {
         do {
             self.plans = try context.fetch(Plan.fetchRequest())
-            print("ini plan \(self.plans)")
-            
-            
-            
+            let dataupdate = plans[0] as! NSManagedObject
+            print("ini plan \(dataupdate)")
         } catch {
             
         }

@@ -13,6 +13,7 @@
 		487E1F6F254F52D200F58265 /* ExerciseSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */; };
 		487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */; };
 		48A12B99254BC45E00A02F60 /* InformationExercisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A12B98254BC45E00A02F60 /* InformationExercisionView.swift */; };
+		48D518E92550FAE800EDD838 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48D518E82550FAE800EDD838 /* .gitignore */; };
 		48DA230C254FDB260011656F /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA2307254FDB260011656F /* Exercise+CoreDataClass.swift */; };
 		48DA230D254FDB260011656F /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA2308254FDB260011656F /* Exercise+CoreDataProperties.swift */; };
 		48DA230E254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA2309254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift */; };
@@ -90,6 +91,7 @@
 		487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryViewController.swift; sourceTree = "<group>"; };
 		487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryView.swift; sourceTree = "<group>"; };
 		48A12B98254BC45E00A02F60 /* InformationExercisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationExercisionView.swift; sourceTree = "<group>"; };
+		48D518E82550FAE800EDD838 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		48DA2307254FDB260011656F /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
 		48DA2308254FDB260011656F /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		48DA2309254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		8D13C0A925402997002195C9 = {
 			isa = PBXGroup;
 			children = (
+				48D518E82550FAE800EDD838 /* .gitignore */,
 				8D13C0B425402997002195C9 /* PodiFit */,
 				8D13C0CE25402999002195C9 /* PodiFitTests */,
 				8D13C0D925402999002195C9 /* PodiFitUITests */,
@@ -513,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D518E92550FAE800EDD838 /* .gitignore in Resources */,
 				8D13C0F025402B7E002195C9 /* ChoosePlan.storyboard in Resources */,
 				8D13C0C525402998002195C9 /* LaunchScreen.storyboard in Resources */,
 				8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */,
