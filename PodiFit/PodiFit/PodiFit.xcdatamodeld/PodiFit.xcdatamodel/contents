@@ -16,8 +16,8 @@
         <attribute name="idStep" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="steps" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Plan" representedClassName="Plan" syncable="YES" codeGenerationType="class">
-        <attribute name="chosenExercise" optional="YES" attributeType="Transformable"/>
+    <entity name="Plan" representedClassName="Plan" syncable="YES">
+        <attribute name="chosenExercise" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="durasiPlan" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="durasiSession" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>

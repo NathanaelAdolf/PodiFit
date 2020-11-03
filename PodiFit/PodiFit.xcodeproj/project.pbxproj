@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		2F733407254FCA5C006E4775 /* HomePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F733406254FCA5C006E4775 /* HomePlanVC.swift */; };
 		2F73340C254FCAD6006E4775 /* PlanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */; };
+		4818EB0C2550A38A0019A161 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818EB0A2550A38A0019A161 /* Plan+CoreDataClass.swift */; };
+		4818EB0D2550A38A0019A161 /* Plan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818EB0B2550A38A0019A161 /* Plan+CoreDataProperties.swift */; };
 		487E1F62254F467500F58265 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F61254F467500F58265 /* ReviewService.swift */; };
 		487E1F6F254F52D200F58265 /* ExerciseSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */; };
 		487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */; };
 		48A12B99254BC45E00A02F60 /* InformationExercisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A12B98254BC45E00A02F60 /* InformationExercisionView.swift */; };
+		48D518E92550FAE800EDD838 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48D518E82550FAE800EDD838 /* .gitignore */; };
+		48DA230C254FDB260011656F /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA2307254FDB260011656F /* Exercise+CoreDataClass.swift */; };
+		48DA230D254FDB260011656F /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA2308254FDB260011656F /* Exercise+CoreDataProperties.swift */; };
+		48DA230E254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA2309254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift */; };
+		48DA230F254FDB260011656F /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA230A254FDB260011656F /* NotificationHelper.swift */; };
+		48DA2310254FDB270011656F /* ExerciseSteps+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DA230B254FDB260011656F /* ExerciseSteps+CoreDataClass.swift */; };
 		48E854FA254C2DD3002DAC0B /* InformationExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E854F9254C2DD3002DAC0B /* InformationExerciseController.swift */; };
 		48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8EFAA2542754400783427 /* ExerciseViewController.swift */; };
 		48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8EFCE254277D800783427 /* ExerciseView.swift */; };
@@ -100,10 +108,22 @@
 /* Begin PBXFileReference section */
 		2F733406254FCA5C006E4775 /* HomePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanVC.swift; sourceTree = "<group>"; };
 		2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
+		4818EB0A2550A38A0019A161 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4818EB0B2550A38A0019A161 /* Plan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		48446765254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
+		48446766254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		48446767254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataClass.swift"; sourceTree = "<group>"; };
+		48446768254FAB0A0099B9B5 /* ExerciseSteps+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		487E1F61254F467500F58265 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryViewController.swift; sourceTree = "<group>"; };
 		487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryView.swift; sourceTree = "<group>"; };
 		48A12B98254BC45E00A02F60 /* InformationExercisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationExercisionView.swift; sourceTree = "<group>"; };
+		48D518E82550FAE800EDD838 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		48DA2307254FDB260011656F /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
+		48DA2308254FDB260011656F /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		48DA2309254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		48DA230A254FDB260011656F /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		48DA230B254FDB260011656F /* ExerciseSteps+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataClass.swift"; sourceTree = "<group>"; };
 		48E854F9254C2DD3002DAC0B /* InformationExerciseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationExerciseController.swift; sourceTree = "<group>"; };
 		48E8EFAA2542754400783427 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		48E8EFCE254277D800783427 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
@@ -245,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC889D52550F9CF005F1407 /* .gitignore */,
+				48D518E82550FAE800EDD838 /* .gitignore */,
 				8D13C0B425402997002195C9 /* PodiFit */,
 				8D13C0CE25402999002195C9 /* PodiFitTests */,
 				8D13C0D925402999002195C9 /* PodiFitUITests */,
@@ -365,6 +386,13 @@
 		8D13C101254035D8002195C9 /* Networking Model */ = {
 			isa = PBXGroup;
 			children = (
+				4818EB0A2550A38A0019A161 /* Plan+CoreDataClass.swift */,
+				4818EB0B2550A38A0019A161 /* Plan+CoreDataProperties.swift */,
+				48DA2307254FDB260011656F /* Exercise+CoreDataClass.swift */,
+				48DA2308254FDB260011656F /* Exercise+CoreDataProperties.swift */,
+				48DA230B254FDB260011656F /* ExerciseSteps+CoreDataClass.swift */,
+				48DA2309254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift */,
+				48DA230A254FDB260011656F /* NotificationHelper.swift */,
 				8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */,
 				8DD29421254FD93300EFD6F2 /* Exercise+CoreDataClass.swift */,
 				8DD29424254FD93300EFD6F2 /* Exercise+CoreDataProperties.swift */,
@@ -582,6 +610,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC889D62550F9CF005F1407 /* .gitignore in Resources */,
+				48D518E92550FAE800EDD838 /* .gitignore in Resources */,
+				8D13C0F025402B7E002195C9 /* ChoosePlan.storyboard in Resources */,
 				8D13C0C525402998002195C9 /* LaunchScreen.storyboard in Resources */,
 				8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */,
 				8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */,
@@ -631,6 +661,7 @@
 				8DC71C50254D0A0600AD6C2B /* BadgesTableViewCell.swift in Sources */,
 				8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */,
 				ABFB9A3F2550011A00B5E96A /* MovementCollectionModel.swift in Sources */,
+				48DA230F254FDB260011656F /* NotificationHelper.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
@@ -652,12 +683,17 @@
 				487E1F62254F467500F58265 /* ReviewService.swift in Sources */,
 				8DD29427254FD93300EFD6F2 /* ExerciseSteps+CoreDataProperties.swift in Sources */,
 				8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */,
+				48DA230E254FDB260011656F /* ExerciseSteps+CoreDataProperties.swift in Sources */,
 				8D4E5C71254FC0E2002D94C8 /* UserBasicDataHelper.swift in Sources */,
 				8DB64621254BABF80072AC5C /* CompletedPlanDetailModel.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				ABFB9A17254FFC1A00B5E96A /* ChoosePlanViewController.swift in Sources */,
+				4818EB0D2550A38A0019A161 /* Plan+CoreDataProperties.swift in Sources */,
+				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
+				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
+				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				ABFB9A03254FFBFF00B5E96A /* PlanViewController.swift in Sources */,
@@ -667,13 +703,17 @@
 				ABFB9A412550011A00B5E96A /* CustomizePlanTableViewCell.swift in Sources */,
 				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
 				48E854FA254C2DD3002DAC0B /* InformationExerciseController.swift in Sources */,
+				4818EB0C2550A38A0019A161 /* Plan+CoreDataClass.swift in Sources */,
 				8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */,
 				8DBF07FA254E655100AACB19 /* DetailBadgesModel.swift in Sources */,
 				8DBF07F5254E64AA00AACB19 /* DetailBadgeTableViewCell.swift in Sources */,
 				ABFB9A3D2550011A00B5E96A /* MovementCollectionViewCell.swift in Sources */,
 				8DD2942A254FD93300EFD6F2 /* ExerciseSteps+CoreDataClass.swift in Sources */,
 				8DD29426254FD93300EFD6F2 /* Exercise+CoreDataClass.swift in Sources */,
+				48DA2310254FDB270011656F /* ExerciseSteps+CoreDataClass.swift in Sources */,
+				48DA230C254FDB260011656F /* Exercise+CoreDataClass.swift in Sources */,
 				8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */,
+				48DA230D254FDB260011656F /* Exercise+CoreDataProperties.swift in Sources */,
 				8DC71C59254D0C2300AD6C2B /* BadgesCollectionViewCell.swift in Sources */,
 				8DD29428254FD93300EFD6F2 /* NotificationHelper.swift in Sources */,
 				8DC063EF25426CAC00D7F8AD /* CompletedPlanCollectionViewCell.swift in Sources */,
