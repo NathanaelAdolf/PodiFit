@@ -39,14 +39,33 @@ class ExerciseViewController: UIViewController {
         fetchExercise()
     }
     
-    func fetchExercise() {
+    func fetchExercise() -> [PlanModel]{
+        var tempPlanModel = [PlanModel]()
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempPlanModel}
+        
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+        
         do {
-            self.plans = try context.fetch(Plan.fetchRequest())
-            let dataupdate = plans[0] as! NSManagedObject
-            print("ini plan \(dataupdate)")
+            let result = try context.fetch(fetch)
+            for data in result as! [NSManagedObject]{
+                print(data.value(forKey: "chosenExercise"))
+            }
         } catch {
             
         }
+        
+        return tempPlanModel
+        
+        
+//
+//        do {
+//            self.plans = try context.fetch(Plan.fetchRequest())
+//            let dataupdate = plans[0] as! NSManagedObject
+//            print("ini plan \(dataupdate)")
+//        } catch {
+//
+//        }
         
         
     }
