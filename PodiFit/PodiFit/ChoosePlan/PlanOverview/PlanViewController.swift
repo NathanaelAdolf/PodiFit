@@ -19,17 +19,26 @@ struct PlanTypes{
 class PlanViewController: UITableViewController {
 
     var plans = [PlanTypes]()
+    var plan2 = [PlanTypes]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //deleteAllDummy(entity: "TestEntity")
+        
+        
         if someEntityExists() == false{
             createData()
+            print("create")
+            tableView.reloadData()
         }
         else{
             retrieveData()
-            print()
+            tableView.reloadData()
+            print("retrieve")
+            print("fetched \(plan2.count)")
         }
+        
         
         //notifHelper.configureUserNotificationCenter()
         
@@ -57,14 +66,14 @@ class PlanViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return plans.count
+        return plan2.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "planCell", for: indexPath) as! PlanListOverviewTableViewCell
 
-        let plan = plans[indexPath.row]
+        let plan = plan2[indexPath.row]
         cell.planName.text = plan.title
         cell.planSubtitle.text = plan.subtitle
         cell.planImage.image = UIImage(named: plan.image)
@@ -82,7 +91,7 @@ class PlanViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "viewPlanSegue", sender: self)
-        print("selected")
+        
     }
 
     
@@ -109,6 +118,7 @@ class PlanViewController: UITableViewController {
             let testplan = NSManagedObject(entity: testEntity, insertInto: context)
             testplan.setValue("Plan No.\(i)", forKeyPath: "planname")
             testplan.setValue("\(i) week(s)", forKeyPath: "duration")
+            testplan.setValue("\(i)", forKey: "image")
         }
         
         do{
@@ -119,7 +129,8 @@ class PlanViewController: UITableViewController {
     }
     
     func retrieveData(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
         
         let context = appDelegate.persistentContainer.viewContext
         
@@ -128,12 +139,32 @@ class PlanViewController: UITableViewController {
         do {
             let result = try context.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
-                print(data.value(forKey: "username") as! String)
+                //print(data.value(forKey: "planname") as! String)
+                plan2.append(PlanTypes(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
             }
                     
         } catch {
             print("Failed")
         }
+        
+    }
+    
+    func deleteAllDummy(entity: String){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
+        do{
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch{
+            print("Error deleting data")
+        }
+        
     }
     
     func someEntityExists() -> Bool {
@@ -141,13 +172,13 @@ class PlanViewController: UITableViewController {
         
         let context = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SomeEntity")
-        fetchRequest.includesSubentities = false
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TestEntity")
 
         var entitiesCount = 0
 
         do {
             entitiesCount = try context.count(for: fetchRequest)
+            print("fetch TestEntity successful, \(entitiesCount)")
         }
         catch {
             print("error executing fetch request: \(error)")

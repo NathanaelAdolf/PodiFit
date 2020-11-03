@@ -2,7 +2,7 @@
 //  TestEntity+CoreDataProperties.swift
 //  PodiFit
 //
-//  Created by Griffin on 02/11/20.
+//  Created by Griffin on 03/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 //
@@ -17,8 +17,9 @@ extension TestEntity {
         return NSFetchRequest<TestEntity>(entityName: "TestEntity")
     }
 
-    @NSManaged public var planname: String?
     @NSManaged public var duration: String?
+    @NSManaged public var planname: String?
+    @NSManaged public var image: String?
 
 }
 

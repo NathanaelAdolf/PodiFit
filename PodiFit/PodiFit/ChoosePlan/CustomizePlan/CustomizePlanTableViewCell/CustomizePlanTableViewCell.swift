@@ -12,7 +12,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
 
     static let identifier = "CustomizePlanTableViewCell"
-    
+    var colView: UITableViewController?
     @IBOutlet weak var movementCollection: UICollectionView!
     
     
@@ -53,6 +53,11 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         return 4
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("click")
+        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
@@ -60,6 +65,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         //cell.backgroundColor = UIColor.black
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 168, height: 168)

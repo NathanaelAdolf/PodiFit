@@ -60,9 +60,9 @@ class ChoosePlanViewController: UITableViewController {
             return 1
         }
         else{
-            print("section: \(section)")
+            //print("section: \(section)")
             if expandableData[section-2].opened == true {
-              print("expdata count: \(expandableData[section-2].sectionData.count+1)")
+              //print("expdata count: \(expandableData[section-2].sectionData.count+1)")
                 
               return expandableData[section-2].sectionData.count+1
             }
@@ -128,7 +128,7 @@ class ChoosePlanViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("sct=\(indexPath.section) ,idx =\(indexPath.row)")
+        //print("sct=\(indexPath.section) ,idx =\(indexPath.row)")
         
         //performSegue(withIdentifier: "customPlanSegue", sender: self)
         
@@ -136,11 +136,11 @@ class ChoosePlanViewController: UITableViewController {
         if (indexPath.section > 1 && indexPath.section < (expandableData.count + 2) && indexPath.row == 0){
             if expandableData[indexPath.section-2].opened == true{
                 expandableData[indexPath.section-2].opened = false
-                print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk if")
+                //print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk if")
             }else{
                 expandableData[indexPath.section-2].opened = true
                 
-                print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk else")
+                //print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk else")
             }
             
             let sections = IndexSet.init(integer: indexPath.section)
