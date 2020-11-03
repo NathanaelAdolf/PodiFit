@@ -32,20 +32,20 @@ class NotificationHelper: UIViewController {
             switch notificationSettings.authorizationStatus {
                 case .notDetermined:
                     self.requestAuthorization(completionHandler: { (success) in
-                        guard success else { return }
+                        guard success else { return}
                                             print("The application is allowed to display notifications")
                     })
                 case .authorized:
                                 print("The application is allowed to display notifications")
                 case .denied:
                                 print("The application is not allowed to display notifications")
-        
             case .provisional:
                  print("The application authorized to post non-interruptive user notifications")
             @unknown default:
                                 print("Application Not Allowed to Display Notifications")
             }
         }
+        
     }
     
     func scheduleNotification(reminderName: String, dateToPush: String)
@@ -219,6 +219,13 @@ class NotificationHelper: UIViewController {
         
         return "00"
     }
+    
+    func showAlert(messageToDisplay: String) {
+          let alert = UIAlertController(title: "Message", message: messageToDisplay, preferredStyle: .alert)
+          let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+          alert.addAction(action)
+          self.present(alert, animated: true, completion: nil)
+      }
 
 }
 

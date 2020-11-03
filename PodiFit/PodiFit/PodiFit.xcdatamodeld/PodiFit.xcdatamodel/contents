@@ -18,7 +18,6 @@
     </entity>
     <entity name="Plan" representedClassName="Plan" syncable="YES">
         <attribute name="chosenExercise" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
-        <attribute name="chosenExercise" optional="YES" attributeType="Transformable"/>
         <attribute name="durasiPlan" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="durasiSession" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -55,7 +54,7 @@
         <element name="ExerciseSteps" positionX="-36" positionY="90" width="128" height="73"/>
         <element name="Plan" positionX="-54" positionY="-9" width="128" height="133"/>
         <element name="Reminder" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="User" positionX="-18" positionY="99" width="128" height="118"/>
         <element name="TestEntity" positionX="-36" positionY="81" width="128" height="73"/>
+        <element name="User" positionX="-18" positionY="99" width="128" height="118"/>
     </elements>
 </model>
