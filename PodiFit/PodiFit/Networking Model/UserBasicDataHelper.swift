@@ -17,7 +17,7 @@ class UserBasicDataHelper: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func storeToUserData(idUser: Int,userName: String,idPlan: Int,height: Int,weight: Int)->String
+    func storeToUserData(idUser: Int,userName: String,idPlan: [Int]?,height: Int,weight: Int)->String
     {
       
           guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return ""}
@@ -31,7 +31,7 @@ class UserBasicDataHelper: UIViewController {
 
          listOfEntity.setValue(idUser, forKey: "idUser")
         listOfEntity.setValue(userName, forKey: "userName")
-        listOfEntity.setValue(idPlan, forKey: "idPlan")
+        listOfEntity.setValue(idPlan, forKey: "userIdPlan")
         listOfEntity.setValue(height, forKey: "height")
         listOfEntity.setValue(weight, forKey: "weight")
   
@@ -64,7 +64,7 @@ class UserBasicDataHelper: UIViewController {
                      {
                         print("id User : \(data.value(forKey: "idUser")as! Int)")
                         print("user name : \(data.value(forKey: "userName")as! String)")
-                        print("id plan : \(data.value(forKey: "idPlan")as! Int)")
+                        print("id plan : \(data.value(forKey: "userIdPlan")as! [Int]?)")
                         print("height : \(data.value(forKey: "height")as! Int)")
                         print("weight : \(data.value(forKey: "weight")as! Int)")
                         print("\n")

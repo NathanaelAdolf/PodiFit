@@ -344,7 +344,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             
             edit.backgroundColor = UIColor.init(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
-            delete.backgroundColor = UIColor.init(red: 138/255, green: 138/255, blue: 138/255, alpha: 1)
+            delete.backgroundColor = UIColor.red
             
             return UISwipeActionsConfiguration(actions: [delete,edit])
             
@@ -368,6 +368,12 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             if let destination = segue.destination as? AddReminderViewController
             {
                 destination.pageState = "Create"
+            }
+        }
+        if segue.identifier == "toEditProfile" {
+            if let destination = segue.destination as? EditProfileViewController
+            {
+                destination.tempDataToEdit = self.userData
             }
         }
         
@@ -409,7 +415,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
        }
     
     @IBAction func unwindSegueFromEditProfile(sender: UIStoryboardSegue){
-           
+        self.userData = userHelper.retrieveUserBasicData()
+        completeRemindBadgeTableView.reloadData()
        }
     
 
@@ -427,7 +434,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
-        //userHelper.storeToUserData(idUser: 1, userName: "JohnDoe", idPlan: 1, height: 170, weight: 80) test data, nanti diganti dengan inputan user
+        
         userHelper.retrieveUserBasicData()
        
         //data dummy buat completedData
@@ -450,9 +457,25 @@ extension HomeProfileViewController: editButtonProtocol
     func moveToEditPage() {
         performSegue(withIdentifier: "toEditProfile", sender: self)
     }
-    
-    
 }
+
+extension UIViewController
+{
+
+    func hideKeyboardWhenTappedAround()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.endEditingKeyboard))
+        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+    }
+    
+    @objc func endEditingKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
+
+
 
 
 
