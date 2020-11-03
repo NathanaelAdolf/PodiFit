@@ -58,14 +58,14 @@ class ExerciseViewController: UIViewController {
         return tempPlanModel
         
         
-//
-//        do {
-//            self.plans = try context.fetch(Plan.fetchRequest())
-//            let dataupdate = plans[0] as! NSManagedObject
-//            print("ini plan \(dataupdate)")
-//        } catch {
-//
-//        }
+
+        do {
+            self.plans = try context.fetch(Plan.fetchRequest())
+            let dataupdate = plans[0] as! NSManagedObject
+            print("ini plan \(dataupdate)")
+        } catch {
+
+        }
         
         
     }
