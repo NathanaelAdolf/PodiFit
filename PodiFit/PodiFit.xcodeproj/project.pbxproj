@@ -77,6 +77,8 @@
 		ABFB9A3F2550011A00B5E96A /* MovementCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A382550011A00B5E96A /* MovementCollectionModel.swift */; };
 		ABFB9A402550011A00B5E96A /* CustomizePlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFB9A3A2550011A00B5E96A /* CustomizePlanTableViewCell.xib */; };
 		ABFB9A412550011A00B5E96A /* CustomizePlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A3B2550011A00B5E96A /* CustomizePlanTableViewCell.swift */; };
+		ABFB9A5925500A1E00B5E96A /* TestEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A5725500A1E00B5E96A /* TestEntity+CoreDataClass.swift */; };
+		ABFB9A5A25500A1E00B5E96A /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A5825500A1E00B5E96A /* TestEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +175,8 @@
 		ABFB9A382550011A00B5E96A /* MovementCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementCollectionModel.swift; sourceTree = "<group>"; };
 		ABFB9A3A2550011A00B5E96A /* CustomizePlanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomizePlanTableViewCell.xib; sourceTree = "<group>"; };
 		ABFB9A3B2550011A00B5E96A /* CustomizePlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizePlanTableViewCell.swift; sourceTree = "<group>"; };
+		ABFB9A5725500A1E00B5E96A /* TestEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABFB9A5825500A1E00B5E96A /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +315,8 @@
 		8D13C0EE25402B57002195C9 /* ChoosePlan */ = {
 			isa = PBXGroup;
 			children = (
+				ABFB9A5725500A1E00B5E96A /* TestEntity+CoreDataClass.swift */,
+				ABFB9A5825500A1E00B5E96A /* TestEntity+CoreDataProperties.swift */,
 				ABFB9A07254FFC1A00B5E96A /* ChoosePlanOverview */,
 				ABFB99FC254FFBA300B5E96A /* PlanOverview */,
 				ABFB9A332550011A00B5E96A /* CustomizePlan */,
@@ -647,6 +653,7 @@
 				8D8E6272254683BD005F445D /* DateExtension.swift in Sources */,
 				487E1F62254F467500F58265 /* ReviewService.swift in Sources */,
 				8DD29427254FD93300EFD6F2 /* ExerciseSteps+CoreDataProperties.swift in Sources */,
+				ABFB9A5A25500A1E00B5E96A /* TestEntity+CoreDataProperties.swift in Sources */,
 				8D09966F2542E977000363BE /* ReminderTableViewCell.swift in Sources */,
 				8D4E5C71254FC0E2002D94C8 /* UserBasicDataHelper.swift in Sources */,
 				8DB64621254BABF80072AC5C /* CompletedPlanDetailModel.swift in Sources */,
@@ -656,6 +663,7 @@
 				ABFB9A17254FFC1A00B5E96A /* ChoosePlanViewController.swift in Sources */,
 				8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
+				ABFB9A5925500A1E00B5E96A /* TestEntity+CoreDataClass.swift in Sources */,
 				ABFB9A03254FFBFF00B5E96A /* PlanViewController.swift in Sources */,
 				48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */,
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
