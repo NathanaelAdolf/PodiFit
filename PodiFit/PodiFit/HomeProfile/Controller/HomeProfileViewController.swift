@@ -93,7 +93,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
             cell.persomImage.image = UIImage(named: "person image.png")
-            cell.userName.text = userData[indexPath.row].Name
+            //cell.userName.text = userData[indexPath.row].Name
             cell.backgroundColor = .none
             cell.contentView.backgroundColor = .none
             
@@ -108,8 +108,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             
             //nanti ganti dengan input user
             cell.numberOfActivePlansLabel.text = "0"
-            cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
-            cell.heightLabel.text = String(userData[indexPath.row].height)
+            //cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
+            //cell.heightLabel.text = String(userData[indexPath.row].height)
             
             return cell
             
