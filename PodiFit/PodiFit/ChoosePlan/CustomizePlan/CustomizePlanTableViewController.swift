@@ -49,13 +49,13 @@ class CustomizePlanTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomizePlanTableViewCell.identifier, for: indexPath) as! CustomizePlanTableViewCell
 
         // Configure the cell...
-        
+        cell.colView = self
         cell.configure(with: model)
 
         return cell
     }
     
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 175
     }

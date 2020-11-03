@@ -14,6 +14,9 @@ class MovementCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movementName: UILabel!
     @IBOutlet weak var movementCollectionImage: UIImageView!
     
+    @IBAction func buttonInfo(_ sender: Any) {
+    }
+    
     static let identifier = "MovementCollectionViewCell"
     
     static func nib() -> UINib{
@@ -26,7 +29,7 @@ class MovementCollectionViewCell: UICollectionViewCell {
         
         
     }
-
+    
     public func configure(with model: MovementModel){
         
         self.movementName.text = model.movementName
