@@ -62,7 +62,6 @@
 		8DC71C4B254D078600AD6C2B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71C4A254D078600AD6C2B /* Colors.swift */; };
 		8DC71C50254D0A0600AD6C2B /* BadgesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71C4F254D0A0600AD6C2B /* BadgesTableViewCell.swift */; };
 		8DC71C59254D0C2300AD6C2B /* BadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */; };
-		8DC889D62550F9CF005F1407 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8DC889D52550F9CF005F1407 /* .gitignore */; };
 		8DD29426254FD93300EFD6F2 /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD29421254FD93300EFD6F2 /* Exercise+CoreDataClass.swift */; };
 		8DD29427254FD93300EFD6F2 /* ExerciseSteps+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD29422254FD93300EFD6F2 /* ExerciseSteps+CoreDataProperties.swift */; };
 		8DD29428254FD93300EFD6F2 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD29423254FD93300EFD6F2 /* NotificationHelper.swift */; };
@@ -110,10 +109,6 @@
 		2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
 		4818EB0A2550A38A0019A161 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4818EB0B2550A38A0019A161 /* Plan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		48446765254FAB0A0099B9B5 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
-		48446766254FAB0A0099B9B5 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		48446767254FAB0A0099B9B5 /* ExerciseSteps+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataClass.swift"; sourceTree = "<group>"; };
-		48446768254FAB0A0099B9B5 /* ExerciseSteps+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		487E1F61254F467500F58265 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryViewController.swift; sourceTree = "<group>"; };
 		487E1F7B254F553100F58265 /* ExerciseSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryView.swift; sourceTree = "<group>"; };
@@ -171,7 +166,6 @@
 		8DC71C4A254D078600AD6C2B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = PodiFit/Theme/Colours/Colors.swift; sourceTree = SOURCE_ROOT; };
 		8DC71C4F254D0A0600AD6C2B /* BadgesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesTableViewCell.swift; sourceTree = "<group>"; };
 		8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesCollectionViewCell.swift; sourceTree = "<group>"; };
-		8DC889D52550F9CF005F1407 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		8DD29421254FD93300EFD6F2 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8DD29422254FD93300EFD6F2 /* ExerciseSteps+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8DD29423254FD93300EFD6F2 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
@@ -264,7 +258,6 @@
 		8D13C0A925402997002195C9 = {
 			isa = PBXGroup;
 			children = (
-				8DC889D52550F9CF005F1407 /* .gitignore */,
 				48D518E82550FAE800EDD838 /* .gitignore */,
 				8D13C0B425402997002195C9 /* PodiFit */,
 				8D13C0CE25402999002195C9 /* PodiFitTests */,
@@ -609,9 +602,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC889D62550F9CF005F1407 /* .gitignore in Resources */,
 				48D518E92550FAE800EDD838 /* .gitignore in Resources */,
-				8D13C0F025402B7E002195C9 /* ChoosePlan.storyboard in Resources */,
 				8D13C0C525402998002195C9 /* LaunchScreen.storyboard in Resources */,
 				8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */,
 				8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */,
