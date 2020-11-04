@@ -47,7 +47,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if section == 3
         {
-            return reminderData.count
+            return (reminderData.count == 0) ? 1 : reminderData.count
         }
         else if section == 4
         {
@@ -143,9 +143,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 3
         {
-            if reminderData.isEmpty == true {
+            print("reminder data; \(reminderData.count)")
+            if reminderData.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
-                print("No Reminder Data")
+                print("No Reminder Data......")
                 cell.emptyMessageLabel.text = "No Reminder"
                 
                 return cell
@@ -461,16 +462,16 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
+
        
         //userHelper.storeToUserData(idUser: 1, userName: "John Doe", idPlan: [1], height: 170, weight: 180)
-       
         //data dummy buat completedData
-        self.completedData =
+       /* self.completedData =
             [
                 CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4, movement: 5)
                 ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6, movement: 8)
                 
-            ]
+            ]*/
         
         //data dummy buat badges
         badgesImageArray =

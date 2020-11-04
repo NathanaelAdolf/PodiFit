@@ -18,12 +18,16 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet var profileView: UIImageView!
     
+    @IBOutlet var editProfileButton: UIButton!
+    
     var tempDataToEdit = [UserDataModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         saveButton.layer.cornerRadius = 5
+        editProfileButton.layer.cornerRadius = 5
+        
         saveButton.backgroundColor = Colors.yellowColor
         view.backgroundColor = Colors.backgroundBaseColor
         
