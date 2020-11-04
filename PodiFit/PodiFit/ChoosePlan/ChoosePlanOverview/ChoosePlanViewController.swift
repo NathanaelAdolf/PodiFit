@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct testCellData{
     var opened = Bool()
@@ -120,7 +121,7 @@ class ChoosePlanViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
-            return 240
+            return 195
         }
         else{
             return 85
@@ -150,6 +151,26 @@ class ChoosePlanViewController: UITableViewController {
             performSegue(withIdentifier: "customPlanSegue", sender: self)
         }
         
+    }
+    
+    func retrieveData(){
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                //print(data.value(forKey: "planname") as!
+            }
+                    
+        } catch {
+            print("Failed")
+        }
         
     }
     
