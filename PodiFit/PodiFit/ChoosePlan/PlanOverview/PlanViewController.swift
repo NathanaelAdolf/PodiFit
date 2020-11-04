@@ -24,6 +24,7 @@ class PlanViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //deleteAllDummy(entity: "TestEntity")
         
         

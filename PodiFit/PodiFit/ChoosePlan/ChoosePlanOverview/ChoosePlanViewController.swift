@@ -21,7 +21,7 @@ class ChoosePlanViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        
+        self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         
         expandableData = [testCellData(opened: false, title: "Week 1", sectionData: ["Push Up 1",                      "Push Up 2"]),
                           testCellData(opened: false, title: "Week 2", sectionData: ["Push Up 1", "Push Up 2"]),
