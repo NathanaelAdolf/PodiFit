@@ -25,55 +25,54 @@ class ExerciseViewController: UIViewController {
     //reference to moc
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    // Data for the table
-    var plans: [Plan]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isHidden = true
         // Setup View
         circularProgressView.trackClr = UIColor(red: 95/255, green: 104/255, blue: 71/255, alpha: 100)
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
         exerciseView.videoView()
         
         // get exercise from core data
-        fetchExercise()
+//        fetchPlan()
     }
     
-    func fetchExercise() -> [PlanModel]{
-        var tempPlanModel = [PlanModel]()
-        
-        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempPlanModel}
-        
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
-        
-        do {
-            let result = try context.fetch(fetch)
-            for data in result as! [NSManagedObject]{
-                print(data.value(forKey: "chosenExercise"))
-            }
-        } catch {
-            
-        }
-        
-        return tempPlanModel
-        
-        
-
-        do {
-            self.plans = try context.fetch(Plan.fetchRequest())
-            let dataupdate = plans[0] as! NSManagedObject
-            print("ini plan \(dataupdate)")
-        } catch {
-
-        }
-        
-        
-    }
+//    func fetchPlan() -> [Plan]{
+//
+//        // for temporary data
+//        var tempPlanModel = [Plan]()
+//
+//        // reference to moc with return
+//        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempPlanModel}
+//
+//        // fetch data in table Plan
+//        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+//
+//        do {
+//            let result = try context.fetch(fetch)
+//            for data in result as! [NSManagedObject]{
+//                let exerciseData = data.value(forKey: "chosenExercise")
+//
+//                print("ini data nya \(exerciseData)")
+//            }
+//        } catch {
+//
+//        }
+//
+//        return tempPlanModel
+//
+//    }
+    
+    
+    
     
     
     @IBAction func didTap(_ sender: Any) {
+
         //create alert
-        print("alert masuk")
         let alert = UIAlertController(title: "Add Exercise", message: "What do you want to choose", preferredStyle: .alert)
         alert.addTextField()
         
@@ -83,31 +82,34 @@ class ExerciseViewController: UIViewController {
             let textfield = alert.textFields![0]
             
             //create a exercise object
-            let newPlan = Plan(context: self.context)
-            newPlan.chosenExercise = [1,3,5,6]
-            newPlan.durasiPlan = 60
-            newPlan.durasiSession = 30
-            newPlan.idDifficulty = 3
-            newPlan.idPlan = 2
-            newPlan.namaPlan = textfield.text
+            let newPlan = Exercise(context: self.context)
+            newPlan.idDifficulty = 1
+            newPlan.idExercise = 1
+            newPlan.listIdSteps = [2,3,4]
+            newPlan.namaExercise = textfield.text
+            newPlan.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+            newPlan.warningData = 3
             
-//            newExercise.namaExercise = textfield.text
-//            newExercise.idExercise = 1
-//            newExercise.idDifficulty = 2
-//            newExercise.videoUrl = "https://www.youtube.com/embed/bsM1qdGAVbU?playsinline=1"
-//            newExercise.warningData = 1
-//            newExercise.listIdSteps = [1,2]
+//
+//            newPlan.chosenExercise = [1,3,5,6]
+//            newPlan.durasiPlan = 60
+//            newPlan.durasiSession = 30
+//            newPlan.idDifficulty = 3
+//            newPlan.idPlan = 2
+//            newPlan.namaPlan = textfield.text
+//
             
             // save the data
             do {
                 try self.context.save()
+                
             }
             catch {
                 
             }
             
             // re-fetch
-            self.fetchExercise()
+//            self.fetchPlan()
         }
         
         // add button
@@ -131,7 +133,7 @@ class ExerciseViewController: UIViewController {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
             isVideo = 1
         } else {
-            print("masuk\(plans)")
+            
             timer?.invalidate()
             exerciseView.countDownView(count: "30")
             circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
@@ -159,7 +161,7 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func doneExercise(_ sender: Any) {
-        self.performSegue(withIdentifier: "toReview", sender: nil)
+        self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
     }
     
     
@@ -181,6 +183,8 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func exit(_ sender: Any) {
+        timer?.invalidate()
+        self.performSegue(withIdentifier: "tocoba", sender: nil)
         
     
     }

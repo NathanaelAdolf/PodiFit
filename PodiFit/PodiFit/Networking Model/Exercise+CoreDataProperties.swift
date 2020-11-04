@@ -27,5 +27,5 @@ extension Exercise {
 }
 
 extension Exercise : Identifiable {
-
+    
 }

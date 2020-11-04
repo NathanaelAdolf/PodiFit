@@ -9,6 +9,8 @@
 import UIKit
 import WebKit
 
+var planModelHelper = PlanModel()
+
 class ExerciseView: UIView {
 
     @IBOutlet weak var webKitView: WKWebView!
@@ -33,6 +35,9 @@ class ExerciseView: UIView {
     @IBOutlet weak var previousView: UIButton!
     @IBOutlet weak var nextView: UIButton!
     
+    
+    var tempExercise = [ExerciseModel]()
+    
     public func videoView() {
         //for show webkit(video)
         webKitView.isHidden = false
@@ -50,6 +55,15 @@ class ExerciseView: UIView {
         nameExerciseLabel?.text = "Normal Squat"
         loadWebsite()
         warningExercise()
+        
+        self.tempExercise = planModelHelper.fetchExerciseById()
+        if tempExercise.count == 0 {
+            print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
+            
+        }
+        
+        print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
+//        print(tempPlan)
         
     }
     
@@ -87,7 +101,6 @@ class ExerciseView: UIView {
     }
     
     public func warningExercise() {
-        
         warningView.layer.cornerRadius = 10
         contentWarningLabel?.text = "This exercise requires heavy rotation"
     }
@@ -97,7 +110,7 @@ class ExerciseView: UIView {
     }
     
     func loadWebsite() {
-        let url = URL(string: "https://www.youtube.com/embed/bsM1qdGAVbU?playsinline=1")
+        let url = URL(string: "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1")
         let request = URLRequest(url: url!)
         webKitView.load(request)
     }
