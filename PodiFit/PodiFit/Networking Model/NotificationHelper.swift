@@ -32,20 +32,20 @@ class NotificationHelper: UIViewController {
             switch notificationSettings.authorizationStatus {
                 case .notDetermined:
                     self.requestAuthorization(completionHandler: { (success) in
-                        guard success else { return }
+                        guard success else { return}
                                             print("The application is allowed to display notifications")
                     })
                 case .authorized:
                                 print("The application is allowed to display notifications")
                 case .denied:
                                 print("The application is not allowed to display notifications")
-        
             case .provisional:
                  print("The application authorized to post non-interruptive user notifications")
             @unknown default:
                                 print("Application Not Allowed to Display Notifications")
             }
         }
+        
     }
     
     func scheduleNotification(reminderName: String, dateToPush: String)
@@ -145,7 +145,8 @@ class NotificationHelper: UIViewController {
                     let result = try context.fetch(fetch)
                     for data in result as! [NSManagedObject]
                      {
-                       print("reminderName : \(data.value(forKey: "reminderName")as! String)")
+                        
+                        print("reminderName : \(data.value(forKey: "reminderName")as! String)")
                         print("hour : \(data.value(forKey: "hour")as! String)")
                         print("minute : \(data.value(forKey: "minute")as! String)")
                         print("monday : \(data.value(forKey: "monday")as! Bool)")
@@ -218,6 +219,13 @@ class NotificationHelper: UIViewController {
         
         return "00"
     }
+    
+    func showAlert(messageToDisplay: String) {
+          let alert = UIAlertController(title: "Message", message: messageToDisplay, preferredStyle: .alert)
+          let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+          alert.addAction(action)
+          self.present(alert, animated: true, completion: nil)
+      }
 
 }
 

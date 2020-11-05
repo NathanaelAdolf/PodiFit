@@ -47,7 +47,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if section == 3
         {
-            return reminderData.count
+            return (reminderData.count == 0) ? 1 : reminderData.count
         }
         else if section == 4
         {
@@ -87,117 +87,149 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        var tempCell = UITableViewCell()
         if indexPath.section == 0
         {
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
             cell.persomImage.image = UIImage(named: "person image.png")
-            cell.userName.text = userData[indexPath.row].Name
+            
+            if userData.count != 0 {
+                cell.userName.text = userData[indexPath.row].Name
+            }
+            
             cell.backgroundColor = .none
             cell.contentView.backgroundColor = .none
             
             cell.buttonProtocol = self
             
             return cell
-            
         }
         else if indexPath.section == 1
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "userDataCell", for: indexPath) as! userDataTableViewCell
             
-            //nanti ganti dengan input user
-            cell.numberOfActivePlansLabel.text = "0"
-            cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
-            cell.heightLabel.text = String(userData[indexPath.row].height)
             
+            if userData.count != 0 {
+                cell.numberOfActivePlansLabel.text = String(userData[indexPath.row].userIdPlan!.count)
+                cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
+                cell.heightLabel.text = String(userData[indexPath.row].height)
+            }
+           
+
             return cell
             
             
         }
         else if indexPath.section == 2
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "completedPlanCell", for: indexPath) as! CompletedPlanTableViewCell
+            if completedData.count == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
+                print("No Completed data")
+               
+                cell.emptyMessageLabel.text = "You have no completed plan"
+                
+                return cell
+            }
+            else
+            {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "completedPlanCell", for: indexPath) as! CompletedPlanTableViewCell
+                
+                cell.loadCollectionView(data: completedData)
+                
+                return cell
+            }
             
-            cell.loadCollectionView(data: completedData)
-            
-            return cell
         }
         else if indexPath.section == 3
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
-            
-            cell.hourLabel.text = reminderData[indexPath.row].Hour
-            cell.reminderNameLabel.text = reminderData[indexPath.row].reminderName
-            
-            if reminderData[indexPath.row].isMon == true {
-                cell.mondayLabel.textColor = .white
+            print("reminder data; \(reminderData.count)")
+            if reminderData.count == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
+                print("No Reminder Data......")
+                cell.emptyMessageLabel.text = "No Reminder"
+                
+                return cell
             }
             else
             {
-                cell.mondayLabel.textColor = .gray
+                    print("abcded")
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
+                    
+                    cell.hourLabel.text = reminderData[indexPath.row].Hour
+                    cell.reminderNameLabel.text = reminderData[indexPath.row].reminderName
+                    
+                    if reminderData[indexPath.row].isMon == true {
+                        cell.mondayLabel.textColor = .white
+                    }
+                    else
+                    {
+                        cell.mondayLabel.textColor = .gray
+                    }
+                    
+                     if reminderData[indexPath.row].isTue == true {
+                        cell.TuesdayLabel.textColor = .white
+                    }
+                    else
+                   {
+                       cell.TuesdayLabel.textColor = .gray
+                   }
+                    if reminderData[indexPath.row].isWed == true {
+                        cell.wednesdayLabel.textColor = .white
+                       }
+                    else
+                   {
+                       cell.wednesdayLabel.textColor = .gray
+                   }
+                     if reminderData[indexPath.row].isThu == true {
+                        cell.thursdayLabel.textColor = .white
+                       }
+                    else
+                   {
+                       cell.thursdayLabel.textColor = .gray
+                   }
+                    if reminderData[indexPath.row].isFri == true {
+                        cell.fridayLabel.textColor = .white
+                       }
+                    else
+                   {
+                       cell.fridayLabel.textColor = .gray
+                   }
+                     if reminderData[indexPath.row].isSat == true {
+                        cell.saturdayLabel.textColor = .white
+                       }
+                    else
+                       {
+                           cell.saturdayLabel.textColor = .gray
+                       }
+                     if reminderData[indexPath.row].isSun == true {
+                        cell.sundayLabel.textColor = .white
+                       }
+                    else
+                       {
+                           cell.sundayLabel.textColor = .gray
+                       }
+                    
+                    if reminderData[indexPath.row].isReminderActive == true {
+                        cell.reminderSwitch.setOn(true, animated: false)
+                    }
+                    else
+                    {
+                        cell.reminderSwitch.setOn(false, animated: false)
+                    }
+                    
+                    return cell
             }
-            
-             if reminderData[indexPath.row].isTue == true {
-                cell.TuesdayLabel.textColor = .white
-            }
-            else
-           {
-               cell.TuesdayLabel.textColor = .gray
-           }
-            if reminderData[indexPath.row].isWed == true {
-                cell.wednesdayLabel.textColor = .white
-               }
-            else
-           {
-               cell.wednesdayLabel.textColor = .gray
-           }
-             if reminderData[indexPath.row].isThu == true {
-                cell.thursdayLabel.textColor = .white
-               }
-            else
-           {
-               cell.thursdayLabel.textColor = .gray
-           }
-            if reminderData[indexPath.row].isFri == true {
-                cell.fridayLabel.textColor = .white
-               }
-            else
-           {
-               cell.fridayLabel.textColor = .gray
-           }
-             if reminderData[indexPath.row].isSat == true {
-                cell.saturdayLabel.textColor = .white
-               }
-            else
-               {
-                   cell.saturdayLabel.textColor = .gray
-               }
-             if reminderData[indexPath.row].isSun == true {
-                cell.sundayLabel.textColor = .white
-               }
-            else
-               {
-                   cell.sundayLabel.textColor = .gray
-               }
-            
-            if reminderData[indexPath.row].isReminderActive == true {
-                cell.reminderSwitch.setOn(true, animated: false)
-            }
-            else
-            {
-                cell.reminderSwitch.setOn(false, animated: false)
-            }
-            
-            return cell
         }
-        else{
+        else
+        {
             let cell = tableView.dequeueReusableCell(withIdentifier: "badgesCell", for: indexPath) as! BadgesTableViewCell
             
             cell.loadCollectionView(data: badgesImageArray)
             
             return cell
         }
+        return tempCell
         
     }
     
@@ -344,7 +376,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             
             edit.backgroundColor = UIColor.init(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
-            delete.backgroundColor = UIColor.init(red: 138/255, green: 138/255, blue: 138/255, alpha: 1)
+            delete.backgroundColor = UIColor.red
             
             return UISwipeActionsConfiguration(actions: [delete,edit])
             
@@ -370,6 +402,12 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 destination.pageState = "Create"
             }
         }
+        if segue.identifier == "toEditProfile" {
+            if let destination = segue.destination as? EditProfileViewController
+            {
+                destination.tempDataToEdit = self.userData
+            }
+        }
         
     }
         
@@ -391,25 +429,22 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     override func viewWillAppear(_ animated: Bool) {
         reminderData = notifHelper.retrieveNotificationFromCoreData()
         userData = userHelper.retrieveUserBasicData()
+        
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         self.swipeState = ""
+    }
         
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-       
-    }
-    
- 
-    
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
            reminderData = notifHelper.retrieveNotificationFromCoreData()
+        
             completeRemindBadgeTableView.reloadData()
        }
     
     @IBAction func unwindSegueFromEditProfile(sender: UIStoryboardSegue){
-           
+        self.userData = userHelper.retrieveUserBasicData()
+        
+        completeRemindBadgeTableView.reloadData()
        }
     
 
@@ -427,16 +462,16 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
-        //userHelper.storeToUserData(idUser: 1, userName: "JohnDoe", idPlan: 1, height: 170, weight: 80) test data, nanti diganti dengan inputan user
-        userHelper.retrieveUserBasicData()
+
        
+        //userHelper.storeToUserData(idUser: 1, userName: "John Doe", idPlan: [1], height: 170, weight: 180)
         //data dummy buat completedData
-        self.completedData =
+       /* self.completedData =
             [
                 CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4, movement: 5)
                 ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6, movement: 8)
                 
-            ]
+            ]*/
         
         //data dummy buat badges
         badgesImageArray =
@@ -450,9 +485,25 @@ extension HomeProfileViewController: editButtonProtocol
     func moveToEditPage() {
         performSegue(withIdentifier: "toEditProfile", sender: self)
     }
-    
-    
 }
+
+extension UIViewController
+{
+
+    func hideKeyboardWhenTappedAround()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.endEditingKeyboard))
+        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+    }
+    
+    @objc func endEditingKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
+
+
 
 
 

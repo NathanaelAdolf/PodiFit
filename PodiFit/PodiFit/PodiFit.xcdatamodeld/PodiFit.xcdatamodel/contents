@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Difficulty" representedClassName="Difficulty" syncable="YES" codeGenerationType="class">
+    <entity name="Difficulty" representedClassName="Difficulty" syncable="YES">
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="levelDifficulty" optional="YES" attributeType="String"/>
     </entity>
@@ -24,7 +24,7 @@
         <attribute name="idPlan" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="namaPlan" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Reminder" representedClassName="Reminder" syncable="YES" codeGenerationType="class">
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES">
         <attribute name="friday" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="hour" optional="YES" attributeType="String"/>
         <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -37,7 +37,11 @@
         <attribute name="tuesday" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="wednesday" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="TestEntity" representedClassName="TestEntity" syncable="YES">
+        <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="planname" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idUser" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="userIdPlan" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
@@ -50,6 +54,7 @@
         <element name="ExerciseSteps" positionX="-36" positionY="90" width="128" height="73"/>
         <element name="Plan" positionX="-54" positionY="-9" width="128" height="133"/>
         <element name="Reminder" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="TestEntity" positionX="-36" positionY="81" width="128" height="73"/>
         <element name="User" positionX="-18" positionY="99" width="128" height="118"/>
     </elements>
 </model>
