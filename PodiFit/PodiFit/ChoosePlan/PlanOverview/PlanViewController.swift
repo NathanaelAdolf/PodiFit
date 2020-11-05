@@ -21,12 +21,8 @@ class PlanViewController: UITableViewController {
     var plans = [PlanTypes]()
     var plan2 = [PlanTypes]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        //deleteAllDummy(entity: "TestEntity")
-        
-        
+    //MARK: masih ga mau muncul di awal pertama kali
+    override func viewWillAppear(_ animated: Bool) {
         if someEntityExists() == false{
             createData()
             print("create")
@@ -38,6 +34,13 @@ class PlanViewController: UITableViewController {
             print("retrieve")
             print("fetched \(plan2.count)")
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        //deleteAllDummy(entity: "TestEntity")
         
         
         //notifHelper.configureUserNotificationCenter()

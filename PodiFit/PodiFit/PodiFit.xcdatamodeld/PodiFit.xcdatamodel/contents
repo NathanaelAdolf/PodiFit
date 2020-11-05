@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Badges" representedClassName="Badges" syncable="YES">
+        <attribute name="completeFivePlanBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="completePlanBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="customExerciseBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="exerciseAddictBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="exerciseMasterBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="firstTimeBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="reminderBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Difficulty" representedClassName="Difficulty" syncable="YES">
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="levelDifficulty" optional="YES" attributeType="String"/>
+        <relationship name="plan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plan" inverseName="ofDifficulty" inverseEntity="Plan"/>
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -11,18 +21,27 @@
         <attribute name="namaExercise" optional="YES" attributeType="String"/>
         <attribute name="videoUrl" optional="YES" attributeType="String"/>
         <attribute name="warningData" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofPlan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plan" inverseName="exercise" inverseEntity="Plan"/>
+        <relationship name="steps" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="ExerciseSteps" inverseName="ofExercise" inverseEntity="ExerciseSteps"/>
     </entity>
     <entity name="ExerciseSteps" representedClassName="ExerciseSteps" syncable="YES">
         <attribute name="idStep" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="steps" optional="YES" attributeType="String"/>
+        <relationship name="ofExercise" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="steps" inverseEntity="Exercise"/>
     </entity>
     <entity name="Plan" representedClassName="Plan" syncable="YES">
         <attribute name="chosenExercise" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="durasiPlan" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="durasiSession" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="durasiSessionDay" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idDifficulty" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idPlan" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isPlanDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="jumlahHari" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="namaPlan" optional="YES" attributeType="String"/>
+        <attribute name="totalSessionDone" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="exercise" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="ofPlan" inverseEntity="Exercise"/>
+        <relationship name="ofDifficulty" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Difficulty" inverseName="plan" inverseEntity="Difficulty"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="plan" inverseEntity="User"/>
     </entity>
     <entity name="Reminder" representedClassName="Reminder" syncable="YES">
         <attribute name="friday" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -45,18 +64,20 @@
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idUser" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="img" optional="YES" attributeType="Binary"/>
         <attribute name="userIdPlan" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="plan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plan" inverseName="ofUser" inverseEntity="Plan"/>
     </entity>
     <elements>
-        <element name="Difficulty" positionX="-54" positionY="63" width="128" height="73"/>
-        <element name="Exercise" positionX="-45" positionY="72" width="128" height="133"/>
-        <element name="ExerciseSteps" positionX="-36" positionY="90" width="128" height="73"/>
-        <element name="Plan" positionX="-54" positionY="-9" width="128" height="133"/>
-        <element name="Reminder" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="TestEntity" positionX="-36" positionY="81" width="128" height="88"/>
-        <element name="TestEntity" positionX="-36" positionY="81" width="128" height="73"/>
-        <element name="User" positionX="-18" positionY="99" width="128" height="118"/>
+        <element name="Difficulty" positionX="-54" positionY="63" width="128" height="88"/>
+        <element name="Exercise" positionX="148.92578125" positionY="94.18359375" width="128" height="163"/>
+        <element name="ExerciseSteps" positionX="-16.47265625" positionY="-47.8046875" width="128" height="88"/>
+        <element name="Plan" positionX="-332.07421875" positionY="32.90234375" width="128" height="223"/>
+        <element name="Reminder" positionX="-171.22265625" positionY="-239.04296875" width="128" height="208"/>
+        <element name="TestEntity" positionX="262.875" positionY="-467.78125" width="128" height="73"/>
+        <element name="User" positionX="-331.83984375" positionY="-140.41796875" width="128" height="148"/>
+        <element name="Badges" positionX="155.6328125" positionY="-234.0703125" width="128" height="148"/>
     </elements>
 </model>

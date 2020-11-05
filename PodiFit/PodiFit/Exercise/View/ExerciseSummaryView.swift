@@ -10,12 +10,24 @@ import UIKit
 
 class ExerciseSummaryView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewTimeSummary: UIView!
+    @IBOutlet weak var viewMinute: UIView!
+    @IBOutlet weak var viewSecond: UIView!
+    
+    @IBOutlet weak var minuteLabel: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setInitialView()
+    }
+
+    func setview() {
+        
+    }
+    
+    func setInitialView(){
+        tableView.estimatedRowHeight = 293
+    }
+    
 }

@@ -24,10 +24,13 @@ class StackedTableViewCell: UITableViewCell {
     @IBOutlet weak var durationDesc: UILabel!
     @IBOutlet weak var durationType: UILabel!
     
-    
     @IBOutlet weak var exerciseImage: UIImageView!
     @IBOutlet weak var exerciseDesc: UILabel!
     @IBOutlet weak var exerciseType: UILabel!
+    
+    
+    @IBOutlet weak var separator: UIImageView!
+    @IBOutlet weak var separator2: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +45,9 @@ class StackedTableViewCell: UITableViewCell {
         exerciseImage.image = UIImage(named: "2")
         exerciseDesc.text = "Exercises"
         exerciseType.text = "5 moves"
+        
+        //separator.image = UIImage(named: "white_line")
+        //separator2.image = UIImage(named: "white_line")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
