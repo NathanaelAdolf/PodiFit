@@ -17,7 +17,10 @@ class ExerciseSummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        exerciseSummaryView.setView()
 
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

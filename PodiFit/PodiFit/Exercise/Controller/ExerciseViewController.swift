@@ -40,34 +40,7 @@ class ExerciseViewController: UIViewController {
 //        fetchPlan()
     }
     
-//    func fetchPlan() -> [Plan]{
-//
-//        // for temporary data
-//        var tempPlanModel = [Plan]()
-//
-//        // reference to moc with return
-//        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempPlanModel}
-//
-//        // fetch data in table Plan
-//        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
-//
-//        do {
-//            let result = try context.fetch(fetch)
-//            for data in result as! [NSManagedObject]{
-//                let exerciseData = data.value(forKey: "chosenExercise")
-//
-//                print("ini data nya \(exerciseData)")
-//            }
-//        } catch {
-//
-//        }
-//
-//        return tempPlanModel
-//
-//    }
-    
-    
-    
+
     
     
     @IBAction func didTap(_ sender: Any) {
@@ -161,7 +134,7 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func doneExercise(_ sender: Any) {
-        self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
+        self.performSegue(withIdentifier: "toSummary", sender: nil)
     }
     
     
