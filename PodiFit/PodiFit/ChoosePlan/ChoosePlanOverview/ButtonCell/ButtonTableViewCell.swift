@@ -23,9 +23,14 @@ class ButtonTableViewCell: UITableViewCell {
     @IBAction func confirmationButton(_ sender: Any) {
     }
     
+    @IBOutlet weak var btnConfirm: UIButton!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     

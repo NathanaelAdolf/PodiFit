@@ -10,11 +10,14 @@ import UIKit
 
 class MovementCollectionViewCell: UICollectionViewCell {
 
+    var colView: UITableViewController?
+    
     @IBOutlet weak var movementDetails: UILabel!
     @IBOutlet weak var movementName: UILabel!
     @IBOutlet weak var movementCollectionImage: UIImageView!
     
     @IBAction func buttonInfo(_ sender: Any) {
+        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
     }
     
     static let identifier = "MovementCollectionViewCell"

@@ -1,27 +1,26 @@
 //
-//  PlanViewController.swift
+//  PlanOverviewViewController.swift
 //  PodiFit
 //
-//  Created by Griffin on 23/10/20.
+//  Created by Griffin on 06/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-struct PlanTypes{
+struct PlanTypes1{
     var title = String()
     var subtitle = String()
     var image = String()
 }
 
-
-class PlanViewController: UITableViewController {
-
-    var plans = [PlanTypes]()
-    var plan2 = [PlanTypes]()
+class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //masih ga mau muncul di awal pertama kali
+    var plans = [PlanTypes1]()
+    var plan2 = [PlanTypes1]()
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         if someEntityExists() == false{
@@ -42,17 +41,21 @@ class PlanViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        self.tableView.delegate = self
+
+        self.tableView.dataSource = self
+        tableView.backgroundColor = UIColor.clear
+            
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //deleteAllDummy(entity: "TestEntity")
         
         
         //notifHelper.configureUserNotificationCenter()
         
         
-        plans = [PlanTypes(title: "Easy Plan", subtitle: "2 weeks", image: "1"),
-                 PlanTypes(title: "Intermediate Plan", subtitle: "4 weeks", image: "2"),
-                 PlanTypes(title: "Advanced Plan", subtitle: "6 weeks", image: "3")]
+        plans = [PlanTypes1(title: "Easy Plan", subtitle: "2 weeks", image: "1"),
+                 PlanTypes1(title: "Intermediate Plan", subtitle: "4 weeks", image: "2"),
+                 PlanTypes1(title: "Advanced Plan", subtitle: "6 weeks", image: "3")]
         
         tableView.rowHeight = 200.0
         // Uncomment the following line to preserve selection between presentations
@@ -66,25 +69,26 @@ class PlanViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return plan2.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "planCell", for: indexPath) as! PlanListOverviewTableViewCell
 
         let plan = plan2[indexPath.row]
         cell.planName.text = plan.title
         cell.planSubtitle.text = plan.subtitle
         cell.planImage.image = UIImage(named: plan.image)
-
+        cell.backgroundColor = UIColor.clear
+        
         return cell
     }
     
@@ -96,23 +100,21 @@ class PlanViewController: UITableViewController {
     }
     */
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "viewPlanSegue", sender: self)
         
     }
-
     
+
+    /*
     // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "viewPlanSegue" {
-            //let dest = segue.destination as! ChoosePlanViewController
-            
-        }
     }
-    
+    */
 
     func createData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -147,7 +149,7 @@ class PlanViewController: UITableViewController {
             let result = try context.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
                 //print(data.value(forKey: "planname") as! String)
-                plan2.append(PlanTypes(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
+                plan2.append(PlanTypes1(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
             }
                     
         } catch {
