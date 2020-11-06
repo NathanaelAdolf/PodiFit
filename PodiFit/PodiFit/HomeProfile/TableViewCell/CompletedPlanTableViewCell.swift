@@ -16,7 +16,7 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 2
+        return (collectionViewData.count >= 2) ? 2 : collectionViewData.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

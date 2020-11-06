@@ -1,0 +1,147 @@
+
+//
+//  PlanHelper.swift
+//  PodiFit
+//
+//  Created by Nathanael Adolf Sukiman on 06/11/20.
+//  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
+//
+
+import UIKit
+import CoreData
+
+   
+class PlanHelper: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func storeToPlanData(idPlan: Int,namaPlan: String,idDifficulty: Int,durasiPlan: Int,durasiSessionDay: Int,jumlahHari: Int, totalSessionDone: Int, choosenExercise: [Int]?,isPlanDone: Bool)->String
+    {
+      
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return ""}
+    
+          var message: String = ""
+
+          let context = appDelegate.persistentContainer.viewContext
+
+          let dataOfEntity = NSEntityDescription.entity(forEntityName: "Plan", in: context)!
+          let listOfEntity = NSManagedObject(entity: dataOfEntity, insertInto: context)
+
+         listOfEntity.setValue(idPlan, forKey: "idPlan")
+        listOfEntity.setValue(namaPlan, forKey: "namaPlan")
+        listOfEntity.setValue(idDifficulty, forKey: "idDifficulty")
+        listOfEntity.setValue(durasiPlan, forKey: "durasiPlan")
+        listOfEntity.setValue(durasiSessionDay, forKey: "durasiSessionDay")
+        listOfEntity.setValue(jumlahHari, forKey: "jumlahHari")
+        listOfEntity.setValue(totalSessionDone, forKey: "totalSessionDone")
+        listOfEntity.setValue(choosenExercise, forKey: "chosenExercise")
+        listOfEntity.setValue(isPlanDone, forKey: "isPlanDone")
+  
+          do {
+              
+             try context.save()
+              message = "00"
+          } catch let error as NSError {
+             
+              print("Gagal save context \(error), \(error.userInfo)")
+              message = "01"
+          }
+        
+        return message
+    }
+    
+    func retrievePlanData()
+    {
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return}
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        print("id Plan : \(data.value(forKey: "idPlan")as! Int)")
+                        print("nama Plan : \(data.value(forKey: "namaPlan")as! String)")
+                        print("id difficulty : \(data.value(forKey: "idDifficulty")as! Int)")
+                        print("durasi plan : \(data.value(forKey: "durasiPlan")as! Int)")
+                        print("durasi session day : \(data.value(forKey: "durasiSessionDay")as! Int)")
+                        print("jumlah hari: \(data.value(forKey: "jumlahHari")as! Int)")
+                        print("totalSessionDone : \(data.value(forKey: "totalSessionDone")as! Int)")
+                        print("choosen Exercise : \(data.value(forKey: "chosenExercise")as! [Int]?)")
+                        print("is Plan done : \(data.value(forKey: "isPlanDone")as! Bool)")
+                        
+                        print("\n")
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
+        
+    }
+    
+    func updatePlanIntoDone(planNameToUpdate: String,isPlanDone: Bool){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Plan")
+        fetchRequest.predicate = NSPredicate(format: "namaPlan = %@", planNameToUpdate)
+        
+        do{
+            let fetch = try managedContext.fetch(fetchRequest)
+            let dataToUpdate = fetch[0] as! NSManagedObject
+        
+            dataToUpdate.setValue(isPlanDone, forKey: "isPlanDone")
+          
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
+        
+    }
+    
+    func retrieveCompletedPlanData()-> [CompletedPlanModel]
+    {
+        var tempCompletedPlanData = [CompletedPlanModel]()
+        tempCompletedPlanData = []
+        var userIdPlan: [Int] = userHelper.retrieveUserBasicData()[0].userIdPlan!
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempCompletedPlanData}
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        if data.value(forKey: "isPlanDone")as! Bool == true
+                        {
+                            for i in 0...userIdPlan.count - 1
+                            {
+                                if userIdPlan[i] == data.value(forKey: "idPlan")as! Int {
+                                    tempCompletedPlanData.append(CompletedPlanModel(titleMovement: data.value(forKey: "namaPlan")as! String, level: difficultyHelper.checkDifficultyNameById(idDifficulty: data.value(forKey: "idDifficulty")as! Int), period: data.value(forKey: "durasiPlan")as! Int, movement: 10))
+                                }
+                            }
+                        }
+                        
+                        print("\n")
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
+       
+        return tempCompletedPlanData
+        
+    }
+  
+
+}
