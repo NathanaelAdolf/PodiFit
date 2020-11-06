@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -111,8 +111,8 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIq-d5-gN8">
                                                 <rect key="frame" x="22" y="73" width="370" height="265"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <mutableString key="text">Steps:
-1. Put both hands and knees on the floor. 2. Place your right foot near your right hand and extend your left leg behind you. 3. In one smooth motion, switch your legs, keeping your arms in the same position. 4. Switch your legs back and forth twice, such that your right leg is again close to your right hand. </mutableString>
+                                                <string key="text">Steps:
+1. Put both hands and knees on the floor. 2. Place your right foot near your right hand and extend your left leg behind you. 3. In one smooth motion, switch your legs, keeping your arms in the same position. 4. Switch your legs back and forth twice, such that your right leg is again close to your right hand. </string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -136,6 +136,7 @@
                             <outlet property="modalView" destination="6MT-CL-eKm" id="YKC-wg-3wU"/>
                         </connections>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="informationExerciseView" destination="ft8-Gq-wkY" id="n2g-Zh-Mdl"/>
@@ -241,12 +242,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UzL-yG-st8">
-                                <rect key="frame" x="0.0" y="125" width="414" height="645"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="661"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32975244520000002" green="0.3725231886" blue="0.37255001069999999" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.2355744243" green="0.27056741709999999" blue="0.27058902379999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.2355744243" green="0.27056741709999999" blue="0.27058902379999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="summaryTime" rowHeight="330" id="LtF-ye-hCl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="summaryTime" rowHeight="330" id="LtF-ye-hCl" customClass="SummaryTableViewCell" customModule="PodiFit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="330"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LtF-ye-hCl" id="vjF-MI-gfP">
@@ -320,6 +321,13 @@
                                             <color key="backgroundColor" red="0.2355744243" green="0.27056741709999999" blue="0.27058902379999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.73885941509999997" green="0.82239037749999999" blue="0.13292640450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="minuteLabel" destination="xza-m1-PXY" id="wyN-ws-uxE"/>
+                                            <outlet property="secondLabel" destination="LfY-eC-nAJ" id="t2w-QJ-OPi"/>
+                                            <outlet property="viewMinute" destination="2sa-c7-gE3" id="6Lb-f8-g9p"/>
+                                            <outlet property="viewSecond" destination="dgC-Ka-coU" id="Fup-ac-oGQ"/>
+                                            <outlet property="viewSummaryMinute" destination="ArO-py-oCI" id="7zN-Bt-7LA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -358,7 +366,7 @@
         <!--Exercise View Controller-->
         <scene sceneID="Iac-9k-yo2">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="zsz-kc-T8g" customClass="ExerciseViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zsz-kc-T8g" customClass="ExerciseViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pBP-Vu-pIB" customClass="ExerciseView" customModule="PodiFit" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,7 +606,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="9Zz-CK-dbr"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="circularProgressView" destination="Wx9-qr-19A" id="NDr-vY-n3V"/>
                         <outlet property="exerciseView" destination="pBP-Vu-pIB" id="eDZ-5C-5o6"/>

@@ -83,6 +83,36 @@ class PlanModel: UIViewController {
         self.fetchPlan()
     }
     
+    func fetchPlanUsingEntity(){
+        print(",masuk")
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
+        print(".masukkk")
+        do {
+            let exercises = try managedObjectContext.fetch(fetchRequest)
+//            print(exercises.count)
+            for exercise in exercises {
+                
+                print("//masuk")
+//                print(exercise.steps?. ?? "No Data Found")
+                let bebas : Set<ExerciseSteps> = exercise.steps as! Set<ExerciseSteps>
+                print(bebas )
+                
+                for beb in bebas {
+                    print(beb.idStep)
+                }
+            }
+            
+            
+            
+        } catch  {
+            print("error")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -56,14 +56,20 @@ class ExerciseView: UIView {
         loadWebsite()
         warningExercise()
         
-        self.tempExercise = planModelHelper.fetchExerciseById()
-        if tempExercise.count == 0 {
-            print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
-            
-        }
+        planModelHelper.fetchPlanUsingEntity()
+//        print("ini di view \(planModelHelper.fetchPlanUsingEntity())")
         
-        print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
-//        print(tempPlan)
+//        self.tempExercise = planModelHelper.fetchExerciseById()
+        print(tempExercise.count)
+//        if tempExercise.count == 0 {
+//            print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
+//
+//        }else {
+//            print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
+//        }
+        
+        
+//
         
     }
     

@@ -63,7 +63,25 @@ class ExerciseViewController: UIViewController {
             newPlan.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
             newPlan.warningData = 3
             
+            
+            let step = ExerciseSteps(context: self.context)
+            step.idStep = 2
+            step.steps = "bangun bro"
+            
+            let step1 = ExerciseSteps(context: self.context)
+            step1.idStep = 3
+            step1.steps = "jongkok lagi bro"
+            
+            let step2 = ExerciseSteps(context: self.context)
+            step2.idStep = 4
+            step2.steps = "baru tidur"
+            
+            newPlan.steps = NSSet.init(array: [step, step1, step2])
+            
+            
 //
+            
+            
 //            newPlan.chosenExercise = [1,3,5,6]
 //            newPlan.durasiPlan = 60
 //            newPlan.durasiSession = 30
