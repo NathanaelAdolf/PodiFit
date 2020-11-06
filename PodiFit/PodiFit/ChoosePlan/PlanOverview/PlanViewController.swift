@@ -21,11 +21,14 @@ class PlanViewController: UITableViewController {
     var plans = [PlanTypes]()
     var plan2 = [PlanTypes]()
     
-    //MARK: masih ga mau muncul di awal pertama kali
+    //masih ga mau muncul di awal pertama kali
+    
     override func viewWillAppear(_ animated: Bool) {
         if someEntityExists() == false{
             createData()
             print("create")
+            
+            retrieveData()
             tableView.reloadData()
         }
         else{
@@ -35,6 +38,7 @@ class PlanViewController: UITableViewController {
             print("fetched \(plan2.count)")
         }
     }
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,4 +193,89 @@ class PlanViewController: UITableViewController {
 
         return entitiesCount > 0
     }
+    
+    func createRealData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let testUser = User(context: context)
+        testUser.height = 180
+        testUser.plan = [1]
+        testUser.idUser = 1
+        //testUser.img = UIImage(named: "1") //binary data?
+        
+        let testPlan = Plan(context: context)
+        testPlan.idPlan = 1
+        testPlan.durasiPlan = 4
+        testPlan.jumlahHari = 12
+        testPlan.durasiSessionDay = 10
+        testPlan.idDifficulty = 1
+        testPlan.namaPlan = "Easy Leg Plan"
+        testPlan.totalSessionDone = 0
+        testPlan.chosenExercise = [1, 2, 3]
+        testPlan.isPlanDone = false
+        
+        let exercise1 = Exercise(context: context)
+        exercise1.idDifficulty = 1
+        exercise1.idExercise = 1
+        exercise1.namaExercise = "Step Up"
+        exercise1.listIdSteps = [1]
+        exercise1.videoUrl = ""
+        exercise1.warningData = 1
+        
+        let exercise2 = Exercise(context: context)
+        exercise2.idDifficulty = 1
+        exercise2.idExercise = 2
+        exercise2.namaExercise = "Frog Hold"
+        exercise2.listIdSteps = [1]
+        exercise2.videoUrl = ""
+        exercise2.warningData = 1
+        
+        let exercise3 = Exercise(context: context)
+        exercise3.idDifficulty = 1
+        exercise3.idExercise = 3
+        exercise3.namaExercise = "Glute Bridge"
+        exercise3.listIdSteps = [2]
+        exercise3.videoUrl = ""
+        exercise3.warningData = 1
+        
+        let diff = Difficulty(context: context)
+        diff.idDifficulty = 1
+        diff.levelDifficulty = "Beginner"
+        
+        let move1 = ExerciseSteps(context: context)
+        move1.idStep = 1
+        move1.steps = "Berdiri tegak"
+        
+        let move2 = ExerciseSteps(context: context)
+        move2.idStep = 2
+        move2.steps = "Berbaring di lantai"
+        
+        do{
+            try context.save()
+        }catch let error as NSError {
+            print("Error: \(error), \(error.userInfo)")
+        }
+    }
+ 
+    func fetchRealData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
+        
+        do{
+            let tasks = try context.fetch(fetchRequest)
+            
+            for task in tasks {
+                print("\(task.ofUser?.userName ?? "Nama error")")
+            }
+        }
+        catch let error as NSError{
+            print("Fetching error, \(error), \(error.userInfo)")
+        }
+    }
+    
 }
