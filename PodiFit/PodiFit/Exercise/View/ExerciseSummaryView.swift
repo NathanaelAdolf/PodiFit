@@ -23,7 +23,7 @@ class ExerciseSummaryView: UIView {
     }
 
     func setview() {
-        
+        print("")
     }
     
     func setInitialView(){

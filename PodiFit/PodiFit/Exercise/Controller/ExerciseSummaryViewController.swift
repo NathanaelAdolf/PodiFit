@@ -18,7 +18,10 @@ class ExerciseSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //exerciseSummaryView.setView()
+    
+//        exerciseSummaryView.setInitialView()
+        exerciseSummaryView.tableView.delegate = self
+        exerciseSummaryView.tableView.dataSource = self
 
         
     }
@@ -34,5 +37,25 @@ class ExerciseSummaryViewController: UIViewController {
     }
 
         
+    
+}
+
+extension ExerciseSummaryViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "summaryTime") as! SummaryTableViewCell
+        
+//        cell.setupCellFor()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 321
+    }
+    
     
 }
