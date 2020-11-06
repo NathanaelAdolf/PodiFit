@@ -10,6 +10,8 @@ import UIKit
 import UserNotifications
 
     var userHelper = UserBasicDataHelper()
+    var planHelper = PlanHelper()
+    var difficultyHelper = DifficultyHelper()
 
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -70,11 +72,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 2
         {
-            return 152
+            return (completedData.count == 0) ? 48 : 152
         }
         else if indexPath.section == 3
         {
-            return 90
+            return (reminderData.count == 0) ? 48 : 90
         }
         else if indexPath.section == 4
         {
@@ -143,7 +145,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 3
         {
-            print("reminder data; \(reminderData.count)")
             if reminderData.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
                 print("No Reminder Data......")
@@ -153,7 +154,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             else
             {
-                    print("abcded")
                     let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
                     
                     cell.hourLabel.text = reminderData[indexPath.row].Hour
@@ -427,9 +427,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+       
         reminderData = notifHelper.retrieveNotificationFromCoreData()
         userData = userHelper.retrieveUserBasicData()
-        
+        completedData = planHelper.retrieveCompletedPlanData()
+    
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         self.swipeState = ""
@@ -463,16 +465,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         notifHelper.configureUserNotificationCenter()
 
-       
-        //userHelper.storeToUserData(idUser: 1, userName: "John Doe", idPlan: [1], height: 170, weight: 180)
-        //data dummy buat completedData
-       /* self.completedData =
-            [
-                CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4, movement: 5)
-                ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6, movement: 8)
-                
-            ]*/
-        
         //data dummy buat badges
         badgesImageArray =
         ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
