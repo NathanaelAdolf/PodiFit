@@ -196,7 +196,9 @@
 		AB5F462D2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB5F462E2553CD97005DE0D0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB5F462F2553CD97005DE0D0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB5F46442553EDDD005DE0D0 /* PodiFit 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PodiFit 2.xcdatamodel"; sourceTree = "<group>"; };
 		AB88B9522551486400AFF3BA /* ModalPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPlanViewController.swift; sourceTree = "<group>"; };
+		ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodiFit3.xcdatamodel; sourceTree = "<group>"; };
 		ABFB99FD254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		ABFB9A02254FFBFF00B5E96A /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		ABFB9A08254FFC1A00B5E96A /* StackedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackedTableViewCell.xib; sourceTree = "<group>"; };
@@ -296,20 +298,6 @@
 		8D13C0A925402997002195C9 = {
 			isa = PBXGroup;
 			children = (
-				AB5F46222553CD97005DE0D0 /* Exercise+CoreDataClass.swift */,
-				AB5F46232553CD97005DE0D0 /* Exercise+CoreDataProperties.swift */,
-				AB5F46242553CD97005DE0D0 /* Plan+CoreDataClass.swift */,
-				AB5F46252553CD97005DE0D0 /* Plan+CoreDataProperties.swift */,
-				AB5F46262553CD97005DE0D0 /* ExerciseSteps+CoreDataClass.swift */,
-				AB5F46272553CD97005DE0D0 /* ExerciseSteps+CoreDataProperties.swift */,
-				AB5F46282553CD97005DE0D0 /* Badges+CoreDataClass.swift */,
-				AB5F46292553CD97005DE0D0 /* Badges+CoreDataProperties.swift */,
-				AB5F462A2553CD97005DE0D0 /* Difficulty+CoreDataClass.swift */,
-				AB5F462B2553CD97005DE0D0 /* Difficulty+CoreDataProperties.swift */,
-				AB5F462C2553CD97005DE0D0 /* Reminder+CoreDataClass.swift */,
-				AB5F462D2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift */,
-				AB5F462E2553CD97005DE0D0 /* User+CoreDataClass.swift */,
-				AB5F462F2553CD97005DE0D0 /* User+CoreDataProperties.swift */,
 				48D518E82550FAE800EDD838 /* .gitignore */,
 				8D13C0B425402997002195C9 /* PodiFit */,
 				8D13C0CE25402999002195C9 /* PodiFitTests */,
@@ -435,6 +423,20 @@
 		8D13C101254035D8002195C9 /* Networking Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB5F46222553CD97005DE0D0 /* Exercise+CoreDataClass.swift */,
+				AB5F46232553CD97005DE0D0 /* Exercise+CoreDataProperties.swift */,
+				AB5F46242553CD97005DE0D0 /* Plan+CoreDataClass.swift */,
+				AB5F46252553CD97005DE0D0 /* Plan+CoreDataProperties.swift */,
+				AB5F46262553CD97005DE0D0 /* ExerciseSteps+CoreDataClass.swift */,
+				AB5F46272553CD97005DE0D0 /* ExerciseSteps+CoreDataProperties.swift */,
+				AB5F46282553CD97005DE0D0 /* Badges+CoreDataClass.swift */,
+				AB5F46292553CD97005DE0D0 /* Badges+CoreDataProperties.swift */,
+				AB5F462A2553CD97005DE0D0 /* Difficulty+CoreDataClass.swift */,
+				AB5F462B2553CD97005DE0D0 /* Difficulty+CoreDataProperties.swift */,
+				AB5F462C2553CD97005DE0D0 /* Reminder+CoreDataClass.swift */,
+				AB5F462D2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift */,
+				AB5F462E2553CD97005DE0D0 /* User+CoreDataClass.swift */,
+				AB5F462F2553CD97005DE0D0 /* User+CoreDataProperties.swift */,
 				8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */,
 				AB5F45FB2553CCEA005DE0D0 /* NotificationHelper.swift */,
 				489A2B572552540400713AD4 /* ExerciseModel.swift */,
@@ -1141,9 +1143,11 @@
 		8D13C0BE25402997002195C9 /* PodiFit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */,
+				AB5F46442553EDDD005DE0D0 /* PodiFit 2.xcdatamodel */,
 				8D13C0BF25402997002195C9 /* PodiFit.xcdatamodel */,
 			);
-			currentVersion = 8D13C0BF25402997002195C9 /* PodiFit.xcdatamodel */;
+			currentVersion = ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */;
 			path = PodiFit.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
