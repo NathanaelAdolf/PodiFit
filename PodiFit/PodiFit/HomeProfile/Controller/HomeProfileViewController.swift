@@ -70,11 +70,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 2
         {
-            return (completedData.count == 0) ? 48 : 152
+            return 152
         }
         else if indexPath.section == 3
         {
-            return (reminderData.count == 0) ? 48 : 90
+            return 90
         }
         else if indexPath.section == 4
         {
@@ -430,10 +430,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         reminderData = notifHelper.retrieveNotificationFromCoreData()
         userData = userHelper.retrieveUserBasicData()
         
-            print("user id plan: \(userData[0].userIdPlan!)")
-        
-        //userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2], height: 165, weight: 73)
-        
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         self.swipeState = ""
@@ -467,8 +463,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         notifHelper.configureUserNotificationCenter()
 
+       
         //userHelper.storeToUserData(idUser: 1, userName: "John Doe", idPlan: [1], height: 170, weight: 180)
-        
         //data dummy buat completedData
        /* self.completedData =
             [
@@ -506,3 +502,9 @@ extension UIViewController
         view.endEditing(true)
     }
 }
+
+
+
+
+
+

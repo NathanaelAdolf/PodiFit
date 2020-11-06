@@ -74,7 +74,6 @@
 		8DD29428254FD93300EFD6F2 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD29423254FD93300EFD6F2 /* NotificationHelper.swift */; };
 		8DD29429254FD93300EFD6F2 /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD29424254FD93300EFD6F2 /* Exercise+CoreDataProperties.swift */; };
 		8DD2942A254FD93300EFD6F2 /* ExerciseSteps+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD29425254FD93300EFD6F2 /* ExerciseSteps+CoreDataClass.swift */; };
-		8DD69DED2554DE9200E2DF21 /* PlanHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD69DEC2554DE9200E2DF21 /* PlanHelper.swift */; };
 		AB33864D25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33864B25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift */; };
 		AB33864E25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33864C25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift */; };
 		AB88B9532551486400AFF3BA /* ModalPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88B9522551486400AFF3BA /* ModalPlanViewController.swift */; };
@@ -189,7 +188,6 @@
 		8DD29423254FD93300EFD6F2 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		8DD29424254FD93300EFD6F2 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8DD29425254FD93300EFD6F2 /* ExerciseSteps+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseSteps+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8DD69DEC2554DE9200E2DF21 /* PlanHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanHelper.swift; sourceTree = "<group>"; };
 		AB33864B25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB33864C25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB88B9522551486400AFF3BA /* ModalPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPlanViewController.swift; sourceTree = "<group>"; };
@@ -431,7 +429,6 @@
 				8DD29422254FD93300EFD6F2 /* ExerciseSteps+CoreDataProperties.swift */,
 				8DD29423254FD93300EFD6F2 /* NotificationHelper.swift */,
 				489A2B572552540400713AD4 /* ExerciseModel.swift */,
-				8DD69DEC2554DE9200E2DF21 /* PlanHelper.swift */,
 			);
 			path = "Networking Model";
 			sourceTree = "<group>";
@@ -732,7 +729,6 @@
 				ABFB9A3E2550011A00B5E96A /* CustomizePlanTableViewController.swift in Sources */,
 				8DC71C50254D0A0600AD6C2B /* BadgesTableViewCell.swift in Sources */,
 				8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */,
-				8DD69DED2554DE9200E2DF21 /* PlanHelper.swift in Sources */,
 				ABFB9A3F2550011A00B5E96A /* MovementCollectionModel.swift in Sources */,
 				48DA230F254FDB260011656F /* NotificationHelper.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
