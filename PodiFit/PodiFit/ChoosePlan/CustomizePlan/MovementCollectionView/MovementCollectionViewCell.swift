@@ -11,13 +11,19 @@ import UIKit
 class MovementCollectionViewCell: UICollectionViewCell {
 
     var colView: UITableViewController?
+    var delegate: CollectionCellDelegator!
     
     @IBOutlet weak var movementDetails: UILabel!
     @IBOutlet weak var movementName: UILabel!
     @IBOutlet weak var movementCollectionImage: UIImageView!
     
     @IBAction func buttonInfo(_ sender: Any) {
-        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
+        if (self.delegate != nil) {
+            self.delegate.callSegueFromColViewCell()
+        }
+        
+        print("button colview clicked")
+        //colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
     }
     
     static let identifier = "MovementCollectionViewCell"
@@ -41,4 +47,6 @@ class MovementCollectionViewCell: UICollectionViewCell {
         
         
     }
+    
+    
 }

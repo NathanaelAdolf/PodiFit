@@ -87,7 +87,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         cell.planName.text = plan.title
         cell.planSubtitle.text = plan.subtitle
         cell.planImage.image = UIImage(named: plan.image)
-        cell.backgroundColor = UIColor.clear
+        //cell.backgroundColor = UIColor.clear
         
         return cell
     }
@@ -149,7 +149,10 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
             let result = try context.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
                 //print(data.value(forKey: "planname") as! String)
-                plan2.append(PlanTypes1(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
+                if plan2.count != result.count {
+                    plan2.append(PlanTypes1(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
+                }
+                //plan2.append(PlanTypes1(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
             }
                     
         } catch {

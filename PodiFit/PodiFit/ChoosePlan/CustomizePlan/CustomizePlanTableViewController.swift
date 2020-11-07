@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CustomizePlanTableViewController: UITableViewController {
+
+
+class CustomizePlanTableViewController: UITableViewController{
 
     var model = [MovementModel]()
     
@@ -51,7 +53,7 @@ class CustomizePlanTableViewController: UITableViewController {
         // Configure the cell...
         cell.colView = self
         cell.configure(with: model)
-
+        
         return cell
     }
     
@@ -59,6 +61,8 @@ class CustomizePlanTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 175
     }
+    
+    
     
     /*
     // MARK: - Navigation

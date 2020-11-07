@@ -8,7 +8,11 @@
 
 import UIKit
 
-class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+protocol CollectionCellDelegator {
+    func callSegueFromColViewCell()
+}
+
+class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionCellDelegator {
     
 
     static let identifier = "CustomizePlanTableViewCell"
@@ -54,14 +58,16 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("click")
-        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
+        print("colview clicked")
+        //colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
         cell.configure(with: model[indexPath.row])
+        cell.delegate = self
+        
         //cell.backgroundColor = UIColor.black
         return cell
     }
@@ -71,5 +77,8 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         return CGSize(width: 168, height: 168)
     }
  
-     
+    func callSegueFromColViewCell() {
+        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self )
+
+    }
 }

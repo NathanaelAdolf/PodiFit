@@ -15,7 +15,11 @@ struct testCellData{
     var sectionData = [String]()
 }
 
-class ChoosePlanViewController: UITableViewController {
+protocol ButtonCellDelegator {
+    func callSegueFromCell()
+}
+
+class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
 
     var expandableData = [testCellData]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -89,7 +93,7 @@ class ChoosePlanViewController: UITableViewController {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
-            cell.planDesc.text = "Action Plan"
+            cell.planDesc.text = "Action Plan designed for your easy leg stuff"
             cell.backgroundColor = UIColor.clear
             return cell
         }
@@ -103,6 +107,7 @@ class ChoosePlanViewController: UITableViewController {
             cell.backgroundColor = UIColor.clear
             cell.btnConfirm.layer.borderWidth = 2
             cell.btnConfirm.layer.borderColor = CGColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 1)
+            cell.delegate = self
             return cell
         }
         else{
@@ -153,8 +158,10 @@ class ChoosePlanViewController: UITableViewController {
             let sections = IndexSet.init(integer: indexPath.section)
             tableView.reloadSections(sections, with: .none)
             //tableView.reloadData()
+        }else if (indexPath.section == (expandableData.count + 2)){
+            //performSegue(withIdentifier: "customPlanSegue", sender: self)
         }else if (indexPath.section != 1){
-            performSegue(withIdentifier: "customPlanSegue", sender: self)
+            
         }
         
     }
@@ -179,6 +186,11 @@ class ChoosePlanViewController: UITableViewController {
         }
         
     }
+    
+    func callSegueFromCell() {
+        self.performSegue(withIdentifier: "customPlanSegue", sender: self )
+
+     }
     
     /*
     // MARK: - Navigation

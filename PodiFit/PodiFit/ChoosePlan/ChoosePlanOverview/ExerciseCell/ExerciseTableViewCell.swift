@@ -26,6 +26,7 @@ class ExerciseTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         exerciseImage.image = UIImage.init(named: "1")
+        exerciseImage.layer.cornerRadius = 1.0
         exerciseDuration.text = "30 sec"
     }
 

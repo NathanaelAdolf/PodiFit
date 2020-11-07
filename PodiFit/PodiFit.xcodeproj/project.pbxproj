@@ -618,9 +618,9 @@
 			isa = PBXGroup;
 			children = (
 				ABFB9A342550011A00B5E96A /* MovementCollectionView */,
+				ABFB9A392550011A00B5E96A /* CustomizePlanTableViewCell */,
 				ABFB9A372550011A00B5E96A /* CustomizePlanTableViewController.swift */,
 				ABFB9A382550011A00B5E96A /* MovementCollectionModel.swift */,
-				ABFB9A392550011A00B5E96A /* CustomizePlanTableViewCell */,
 			);
 			path = CustomizePlan;
 			sourceTree = "<group>";

@@ -11,6 +11,7 @@ import UIKit
 class ButtonTableViewCell: UITableViewCell {
 
     static let identifier = "ButtonTableViewCell"
+    var delegate:ButtonCellDelegator!
     
     static func nib() -> UINib{
         return UINib(nibName: "ButtonTableViewCell", bundle: nil)
@@ -18,6 +19,11 @@ class ButtonTableViewCell: UITableViewCell {
     
     
     @IBAction func customButton(_ sender: Any) {
+        if (self.delegate != nil) {
+            self.delegate.callSegueFromCell()
+        }
+        print("pencet custom")
+        
     }
     
     @IBAction func confirmationButton(_ sender: Any) {
