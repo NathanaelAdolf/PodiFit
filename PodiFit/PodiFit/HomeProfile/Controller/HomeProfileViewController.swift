@@ -72,7 +72,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 2
         {
-            return (completedData.count == 0) ? 48 : 152
+            return (completedData.count == 0) ? 48 : 210
         }
         else if indexPath.section == 3
         {
@@ -408,6 +408,12 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 destination.tempDataToEdit = self.userData
             }
         }
+        if segue.identifier == "toCompletedHistory" {
+            if let destination = segue.destination as? CompletedPlanDetailsViewController
+            {
+                destination.tempPlanData = completedData
+            }
+        }
         
     }
         
@@ -428,10 +434,31 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewWillAppear(_ animated: Bool) {
        
-        reminderData = notifHelper.retrieveNotificationFromCoreData()
-        userData = userHelper.retrieveUserBasicData()
-        completedData = planHelper.retrieveCompletedPlanData()
+       /* data dummy
+        userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2], height: 165, weight: 73)
+        planHelper.storeToPlanData(idPlan: 1, namaPlan: "Eazy leg plan", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5,6,7,8,9,10], isPlanDone: false)
+        planHelper.storeToPlanData(idPlan: 2, namaPlan: "Intermediate leg plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 0, choosenExercise: [11,12,13,14,15,16,17,18,19,20], isPlanDone: true)
+        difficultyHelper.storeToDifficultyData(idDifficulty: 1, levelDifficulty: "Beginner")
+        difficultyHelper.storeToDifficultyData(idDifficulty: 2, levelDifficulty: "Intermediate")*/
+        
+        //userHelper.deleteDataInUser(uniqueUserName: "Adolf")
+         //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
+        //planHelper.updatePlanIntoDone(planNameToUpdate: "Eazy leg plan", isPlanDone: true)
+         
+        
+         reminderData = notifHelper.retrieveNotificationFromCoreData()
+        
+        if userHelper.isUserTableEmpty() == false {
+            userData = userHelper.retrieveUserBasicData()
+        }
+        /*else{
+            userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2], height: 165, weight: 73)
+        }*/
     
+        if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
+            completedData = planHelper.retrieveCompletedPlanData()
+        }
+        
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         self.swipeState = ""
@@ -468,6 +495,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         //data dummy buat badges
         badgesImageArray =
         ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        .lightContent
     }
     
 }

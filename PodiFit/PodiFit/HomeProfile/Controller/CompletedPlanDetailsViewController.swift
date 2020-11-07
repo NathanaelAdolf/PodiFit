@@ -12,6 +12,8 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
     
     var planDetailsData = [CompletedPlanDetailModel]()
     
+    var tempPlanData = [CompletedPlanModel]()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         planDetailsData.count
     }
@@ -44,24 +46,25 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
         
         notifHelper.configureUserNotificationCenter()
         
-        //data dummy buat plan details
-        planDetailsData = [CompletedPlanDetailModel(titleMovement: "Easy Leg Plan", numberWeeks: 3, numberExercise: 4, imagePlan: "LegPlanImage.png"),CompletedPlanDetailModel(titleMovement: "Intermediate Leg Plan", numberWeeks: 5, numberExercise: 8, imagePlan: "LegPlanImage.png")]
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if tempPlanData.count != 0 {
+            
+            for i in 0...tempPlanData.count - 1
+            {
+                planDetailsData.append(CompletedPlanDetailModel(titleMovement: tempPlanData[i].titleMovement, numberWeeks: tempPlanData[i].period, numberExercise: 10, imagePlan: "LegPlanImage.png"))
+            }
+        }
+       
+        
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        .lightContent
     }
-    */
 
 }

@@ -88,6 +88,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             return false
         }
         
+      /*  if let imageData = profileView.image?.pngData()
+        {
+            ImageHelper.shareInstance.saveImage(data: imageData, nameToUpdate: tempDataToEdit[0].Name!)
+        }*/
+       
         userHelper.updateUserData(userNameToUpdate: tempDataToEdit[0].Name!, newName: nameTextField.text!, height: Int(heightTextField.text!)!, weight: Int(weightTextField.text!)!)
         
         return true
@@ -123,16 +128,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         weightTextField.text = "\(tempDataToEdit[0].weight!)"
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        .lightContent
     }
-    */
+    
+
 
 }
