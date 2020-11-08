@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="-728" y="-160"/>
         </scene>
-        <!--Customize Plan Table View Controller-->
+        <!--Customize Exercise-->
         <scene sceneID="VNn-86-U54">
             <objects>
                 <tableViewController id="awM-t3-TVk" customClass="CustomizePlanTableViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,7 +114,7 @@
                             <outlet property="delegate" destination="awM-t3-TVk" id="Ayy-8E-rsw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vGT-hZ-MC8"/>
+                    <navigationItem key="navigationItem" title="Customize Exercise" id="vGT-hZ-MC8"/>
                     <connections>
                         <segue destination="paD-IO-2xN" kind="presentation" identifier="modalPlanSegue" id="5I7-Kh-Cw7"/>
                     </connections>
@@ -142,14 +142,26 @@
                                 <rect key="frame" x="57" y="418" width="301" height="364"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-Ct-jM0">
+                                <rect key="frame" x="57" y="143" width="301" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Li-vO-Bul"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="infoVideo" destination="rP1-Ct-jM0" id="hOd-Mv-WuM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cdb-5K-D7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -42,7 +42,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         movementCollection.register(MovementCollectionViewCell.nib(), forCellWithReuseIdentifier: MovementCollectionViewCell.identifier)
         movementCollection.delegate = self
         movementCollection.dataSource = self
-        //movementCollection.backgroundColor = UIColor.black
+        //movementCollection.backgroundColor = UIColor.clear
         
     }
 
@@ -67,7 +67,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
         cell.configure(with: model[indexPath.row])
         cell.delegate = self
-        
+        cell.backgroundColor = UIColor.clear
         //cell.backgroundColor = UIColor.black
         return cell
     }

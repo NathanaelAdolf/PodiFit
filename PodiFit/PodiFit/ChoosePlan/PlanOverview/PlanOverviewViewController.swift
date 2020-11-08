@@ -45,7 +45,17 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
 
         self.tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
-            
+        
+        let backButton = UIBarButtonItem()
+        let secYellow = UIColor(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
+        
+        backButton.title = ""
+        backButton.image = UIImage(named: "chevron.left")
+        backButton.tintColor = secYellow
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //deleteAllDummy(entity: "TestEntity")
         
