@@ -15,7 +15,11 @@ struct testCellData{
     var sectionData = [String]()
 }
 
-class ChoosePlanViewController: UITableViewController {
+protocol ButtonCellDelegator {
+    func callSegueFromCell()
+}
+
+class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
 
     var expandableData = [testCellData]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -89,30 +93,34 @@ class ChoosePlanViewController: UITableViewController {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
-            cell.planDesc.text = "Action Plan"
-            
+            cell.planDesc.text = "Action Plan designed for your easy leg stuff"
+            cell.backgroundColor = UIColor.clear
             return cell
         }
         else if (indexPath.section == 1){
             let cell = tableView.dequeueReusableCell(withIdentifier:StackedTableViewCell.identifier, for: indexPath) as! StackedTableViewCell
-            
+            cell.backgroundColor = UIColor.clear
             return cell
         }
         else if (indexPath.section == (expandableData.count + 2)){
             let cell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.identifier, for: indexPath) as! ButtonTableViewCell
-            
+            cell.backgroundColor = UIColor.clear
+            cell.btnConfirm.layer.borderWidth = 2
+            cell.btnConfirm.layer.borderColor = CGColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 1)
+            cell.delegate = self
             return cell
         }
         else{
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
                 cell.planDesc.text = expandableData[indexPath.section - 2].title
-                
+                cell.backgroundColor = UIColor.clear
                 return cell
             }
             else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseTableViewCell.identifier, for: indexPath) as! ExerciseTableViewCell
                 cell.exerciseName.text = expandableData[indexPath.section - 2].sectionData[indexPath.row - 1]
+                cell.backgroundColor = UIColor.clear
                 return cell
             }
         }
@@ -122,6 +130,9 @@ class ChoosePlanViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
             return 195
+        }
+        else if(indexPath.section == (expandableData.count + 2)){
+            return 125
         }
         else{
             return 85
@@ -147,8 +158,10 @@ class ChoosePlanViewController: UITableViewController {
             let sections = IndexSet.init(integer: indexPath.section)
             tableView.reloadSections(sections, with: .none)
             //tableView.reloadData()
+        }else if (indexPath.section == (expandableData.count + 2)){
+            //performSegue(withIdentifier: "customPlanSegue", sender: self)
         }else if (indexPath.section != 1){
-            performSegue(withIdentifier: "customPlanSegue", sender: self)
+            
         }
         
     }
@@ -173,6 +186,11 @@ class ChoosePlanViewController: UITableViewController {
         }
         
     }
+    
+    func callSegueFromCell() {
+        self.performSegue(withIdentifier: "customPlanSegue", sender: self )
+
+     }
     
     /*
     // MARK: - Navigation

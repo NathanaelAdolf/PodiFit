@@ -8,13 +8,26 @@
 
 import UIKit
 
-class CustomizePlanTableViewController: UITableViewController {
+
+
+class CustomizePlanTableViewController: UITableViewController{
 
     var model = [MovementModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backButton = UIBarButtonItem()
+        let secYellow = UIColor(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
+        
+        backButton.title = ""
+        backButton.image = UIImage(named: "chevron.left")
+        backButton.tintColor = secYellow
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        
+        self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //notifHelper.configureUserNotificationCenter()
 
         model.append(MovementModel(movementName: "Step Up", movementImage: "1", movementDetail: "20x"))
@@ -50,8 +63,9 @@ class CustomizePlanTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.colView = self
+        cell.backgroundColor = UIColor.clear
         cell.configure(with: model)
-
+        
         return cell
     }
     
@@ -59,6 +73,8 @@ class CustomizePlanTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 175
     }
+    
+    
     
     /*
     // MARK: - Navigation
