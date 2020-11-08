@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "period logo.png",
+      "filename" : "period logo.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "period logo@2x.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "period logo@3x.pdf",
       "idiom" : "universal",
       "scale" : "3x"
     }
