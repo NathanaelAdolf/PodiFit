@@ -20,6 +20,14 @@ class HomePlanVC: UIViewController {
         setupRegisterNib()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: " ", style: .plain, target: nil, action: nil)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     private func setupDelegate() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -30,7 +38,6 @@ class HomePlanVC: UIViewController {
     }
     
     func setupUI() {
-        
     }
     
 
