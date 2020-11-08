@@ -60,5 +60,10 @@ class DetailBadgesViewController: UIViewController,UITableViewDataSource, UITabl
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        .lightContent
+    }
+    
     
 }

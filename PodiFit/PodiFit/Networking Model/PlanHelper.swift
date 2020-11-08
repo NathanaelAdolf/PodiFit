@@ -142,6 +142,39 @@ class PlanHelper: UIViewController {
         return tempCompletedPlanData
         
     }
+    
+    func isPlanTableEmpty()->Bool
+    {
+        
+        var counter: Int = 0
+        var isTableEmpty = Bool()
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return isTableEmpty}
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        counter += 1
+                        
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
+        
+        if counter == 0 {
+            isTableEmpty = true
+        }else{
+            isTableEmpty = false
+        }
+        
+        return isTableEmpty
+    }
   
 
 }

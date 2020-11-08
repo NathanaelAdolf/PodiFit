@@ -10,11 +10,20 @@ import UIKit
 
 class MovementCollectionViewCell: UICollectionViewCell {
 
+    var colView: UITableViewController?
+    var delegate: CollectionCellDelegator!
+    
     @IBOutlet weak var movementDetails: UILabel!
     @IBOutlet weak var movementName: UILabel!
     @IBOutlet weak var movementCollectionImage: UIImageView!
     
     @IBAction func buttonInfo(_ sender: Any) {
+        if (self.delegate != nil) {
+            self.delegate.callSegueFromColViewCell()
+        }
+        
+        print("button colview clicked")
+        //colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
     }
     
     static let identifier = "MovementCollectionViewCell"
@@ -25,6 +34,7 @@ class MovementCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.cornerRadius = 1.0
         // Initialization code
         
         
@@ -38,4 +48,6 @@ class MovementCollectionViewCell: UICollectionViewCell {
         
         
     }
+    
+    
 }
