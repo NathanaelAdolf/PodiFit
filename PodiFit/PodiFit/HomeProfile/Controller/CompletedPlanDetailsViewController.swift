@@ -15,22 +15,35 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
     var tempPlanData = [CompletedPlanModel]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        planDetailsData.count
+        return (planDetailsData.count == 0) ? 1 : planDetailsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "completedPlanDetailCell")as! CompletedPlanDetailTableViewCell
         
-        cell.titlePlanLabel.text = planDetailsData[indexPath.row].titleMovement
-        cell.numberWeeksLabel.text = String(planDetailsData[indexPath.row].numberWeeks)
-        cell.numberExerciseLabel.text = String(planDetailsData[indexPath.row].numberExercise)
-        cell.planImage.image = UIImage(named: planDetailsData[indexPath.row].imagePlan)
-        
-        return cell
+        if tempPlanData.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailPlanNoDataCell")as! PlanDetailNoDataTableViewCell
+            
+            cell.errorLabel.text = "You have no completed plan"
+            
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "completedPlanDetailCell")as! CompletedPlanDetailTableViewCell
+            
+            cell.titlePlanLabel.text = planDetailsData[indexPath.row].titleMovement
+            cell.numberWeeksLabel.text = String(planDetailsData[indexPath.row].numberWeeks)
+            cell.numberExerciseLabel.text = String(planDetailsData[indexPath.row].numberExercise)
+            cell.planImage.image = UIImage(named: planDetailsData[indexPath.row].imagePlan)
+            
+            return cell
+        }
+     
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 210
+    
+        return (planDetailsData.count == 0) ? 405 : 210
     }
     
 

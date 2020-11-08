@@ -51,6 +51,8 @@
 		8D4E5C71254FC0E2002D94C8 /* UserBasicDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */; };
 		8D4E5C76254FCAB6002D94C8 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */; };
 		8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */; };
+		8D7825D425579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7825D325579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift */; };
+		8D7825D925579ED700501AEA /* BadgesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7825D825579ED700501AEA /* BadgesHelper.swift */; };
 		8D8E6272254683BD005F445D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E6271254683BD005F445D /* DateExtension.swift */; };
 		8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */; };
 		8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */; };
@@ -176,6 +178,8 @@
 		8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicDataHelper.swift; sourceTree = "<group>"; };
 		8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8D7825D325579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailNoDataTableViewCell.swift; sourceTree = "<group>"; };
+		8D7825D825579ED700501AEA /* BadgesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesHelper.swift; sourceTree = "<group>"; };
 		8D8E6271254683BD005F445D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailsViewController.swift; sourceTree = "<group>"; };
 		8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -496,6 +500,7 @@
 				8DD69DF42554E19500E2DF21 /* NotificationHelper.swift */,
 				489A2B572552540400713AD4 /* ExerciseModel.swift */,
 				8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */,
+				8D7825D825579ED700501AEA /* BadgesHelper.swift */,
 			);
 			path = "Networking Model";
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */,
 				8DBF07F4254E64AA00AACB19 /* DetailBadgeTableViewCell.swift */,
 				8DC60F962552504E006A4047 /* NoDataTableViewCell.swift */,
+				8D7825D325579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -797,6 +803,8 @@
 				8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */,
 				ABFB9A3E2550011A00B5E96A /* CustomizePlanTableViewController.swift in Sources */,
 				8DC71C50254D0A0600AD6C2B /* BadgesTableViewCell.swift in Sources */,
+				8D7825D925579ED700501AEA /* BadgesHelper.swift in Sources */,
+				8D7825D425579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift in Sources */,
 				AB5F46312553CD97005DE0D0 /* Exercise+CoreDataProperties.swift in Sources */,
 				ABFB9A3F2550011A00B5E96A /* MovementCollectionModel.swift in Sources */,
 				AB5F46372553CD97005DE0D0 /* Badges+CoreDataProperties.swift in Sources */,

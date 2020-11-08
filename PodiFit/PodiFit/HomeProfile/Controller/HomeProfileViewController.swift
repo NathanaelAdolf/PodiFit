@@ -12,6 +12,7 @@ import UserNotifications
     var userHelper = UserBasicDataHelper()
     var planHelper = PlanHelper()
     var difficultyHelper = DifficultyHelper()
+    var badgesHelper = BadgesHelper()
 
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -443,21 +444,27 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         //userHelper.deleteDataInUser(uniqueUserName: "Adolf")
          //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
-        //planHelper.updatePlanIntoDone(planNameToUpdate: "Eazy leg plan", isPlanDone: true)
-         
-        
+        //planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
+        //planHelper.updatePlanIntoDone(planNameToUpdate: "Eazy leg plan", isPlanDone: false)
+
          reminderData = notifHelper.retrieveNotificationFromCoreData()
+        
+        if badgesHelper.isBadgesTableEmpty() == true {
+            badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
+            print("TABLE EMPTY")
+        }
+        badgesHelper.retreiveDataFromBadges()
         
         if userHelper.isUserTableEmpty() == false {
             userData = userHelper.retrieveUserBasicData()
         }
-        /*else{
-            userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2], height: 165, weight: 73)
-        }*/
-    
+     
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
             completedData = planHelper.retrieveCompletedPlanData()
         }
+        
+       
+        badgesHelper.checkUserEarnBadge()
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -491,7 +498,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
-
+        
         //data dummy buat badges
         badgesImageArray =
         ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]

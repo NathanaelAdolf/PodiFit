@@ -7,6 +7,7 @@
         <attribute name="exerciseAddictBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="exerciseMasterBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="firstTimeBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reminderBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="Difficulty" representedClassName="Difficulty" syncable="YES">
@@ -78,7 +79,7 @@
         <relationship name="ofExercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="warning" inverseEntity="Exercise"/>
     </entity>
     <elements>
-        <element name="Badges" positionX="155.6328125" positionY="-234.0703125" width="128" height="148"/>
+        <element name="Badges" positionX="155.6328125" positionY="-234.0703125" width="128" height="163"/>
         <element name="Difficulty" positionX="-54" positionY="63" width="128" height="88"/>
         <element name="Exercise" positionX="148.92578125" positionY="94.18359375" width="128" height="178"/>
         <element name="ExerciseSteps" positionX="-16.47265625" positionY="-47.8046875" width="128" height="88"/>
