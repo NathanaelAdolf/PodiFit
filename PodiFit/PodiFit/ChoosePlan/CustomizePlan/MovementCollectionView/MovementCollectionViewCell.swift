@@ -34,7 +34,8 @@ class MovementCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 1.0
+        //self.backgroundColor = UIColor.white
+        //self.layer.cornerRadius = 1.0
         // Initialization code
         
         
