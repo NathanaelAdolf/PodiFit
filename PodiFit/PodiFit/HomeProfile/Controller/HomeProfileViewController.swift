@@ -435,24 +435,33 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewWillAppear(_ animated: Bool) {
        
-       /* data dummy
-        userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2], height: 165, weight: 73)
-        planHelper.storeToPlanData(idPlan: 1, namaPlan: "Eazy leg plan", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5,6,7,8,9,10], isPlanDone: false)
-        planHelper.storeToPlanData(idPlan: 2, namaPlan: "Intermediate leg plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 0, choosenExercise: [11,12,13,14,15,16,17,18,19,20], isPlanDone: true)
-        difficultyHelper.storeToDifficultyData(idDifficulty: 1, levelDifficulty: "Beginner")
-        difficultyHelper.storeToDifficultyData(idDifficulty: 2, levelDifficulty: "Intermediate")*/
-        
         //userHelper.deleteDataInUser(uniqueUserName: "Adolf")
          //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
         //planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
-        //planHelper.updatePlanIntoDone(planNameToUpdate: "Eazy leg plan", isPlanDone: false)
+       // planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
 
-         reminderData = notifHelper.retrieveNotificationFromCoreData()
+        reminderData = notifHelper.retrieveNotificationFromCoreData()
+        
+        if userHelper.isUserTableEmpty() == true {
+            userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2,3,4,5], height: 180, weight: 93)
+        }
         
         if badgesHelper.isBadgesTableEmpty() == true {
             badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
-            print("TABLE EMPTY")
         }
+        if planHelper.isPlanTableEmpty() == true { //data dummy
+            planHelper.storeToPlanData(idPlan: 1, namaPlan: "Eazy leg plan", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5,6,7,8,9,10], isPlanDone: false)
+            planHelper.storeToPlanData(idPlan: 2, namaPlan: "Medium leg plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 0, choosenExercise: [11,12,13,14,15,16,17,18,19,20], isPlanDone: false)
+            planHelper.storeToPlanData(idPlan: 3, namaPlan: "Custom leg plan", idDifficulty: 1, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 12, choosenExercise: [1,3,5,7,9,11,13,15,17,19], isPlanDone: true)
+            planHelper.storeToPlanData(idPlan: 4, namaPlan: "Custom wrist plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 15, choosenExercise: [11,12,13,14,1,2,17,18,19,20], isPlanDone: true)
+            planHelper.storeToPlanData(idPlan: 5, namaPlan: "Custom knee plan", idDifficulty: 2, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 12, choosenExercise: [2,4,6,8,10,12,14,16], isPlanDone: false)
+        }
+        
+        if difficultyHelper.isDifficultyTableEmpty() == true {
+            difficultyHelper.storeToDifficultyData(idDifficulty: 1, levelDifficulty: "Beginner")
+            difficultyHelper.storeToDifficultyData(idDifficulty: 2, levelDifficulty: "Intermediate")
+        }
+        
         badgesHelper.retreiveDataFromBadges()
         
         if userHelper.isUserTableEmpty() == false {
@@ -460,11 +469,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
      
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
-            completedData = planHelper.retrieveCompletedPlanData()
+            completedData = planHelper.retrieveCompletedPlanData().tempModel
         }
         
-       
         badgesHelper.checkUserEarnBadge()
+        badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -473,7 +482,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
            reminderData = notifHelper.retrieveNotificationFromCoreData()
-        
+            badgesHelper.checkUserEarnBadge()
+        badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
             completeRemindBadgeTableView.reloadData()
        }
     

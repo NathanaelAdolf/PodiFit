@@ -58,6 +58,7 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
         self.view.backgroundColor = Colors.backgroundBaseColor
         
         notifHelper.configureUserNotificationCenter()
+        self.navigationController!.navigationBar.isTranslucent = true
         
     }
     

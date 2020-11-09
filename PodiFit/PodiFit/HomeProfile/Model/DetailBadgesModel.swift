@@ -14,10 +14,16 @@ class DetailBadgesModel
     var imageName: String!
     var detailBadgeTitle: String!
     var detailBadgeDescription: String!
+    var labelIndicator: String!
     
-    init(imageName: String, title: String,description: String) {
+    var progressNumber = Float()
+    
+    
+    init(imageName: String, title: String,description: String,progressNum: Float, labelIndicator: String) {
         self.imageName = imageName
         self.detailBadgeTitle = title
         self.detailBadgeDescription = description
+        self.progressNumber = progressNum
+        self.labelIndicator = labelIndicator
     }
 }

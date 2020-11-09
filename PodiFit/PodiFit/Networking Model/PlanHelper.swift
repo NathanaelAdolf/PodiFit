@@ -19,12 +19,10 @@ class PlanHelper: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func storeToPlanData(idPlan: Int,namaPlan: String,idDifficulty: Int,durasiPlan: Int,durasiSessionDay: Int,jumlahHari: Int, totalSessionDone: Int, choosenExercise: [Int]?,isPlanDone: Bool)->String
+    func storeToPlanData(idPlan: Int,namaPlan: String,idDifficulty: Int,durasiPlan: Int,durasiSessionDay: Int,jumlahHari: Int, totalSessionDone: Int, choosenExercise: [Int]?,isPlanDone: Bool)
     {
       
-          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return ""}
-    
-          var message: String = ""
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
 
           let context = appDelegate.persistentContainer.viewContext
 
@@ -44,14 +42,13 @@ class PlanHelper: UIViewController {
           do {
               
              try context.save()
-              message = "00"
+             
           } catch let error as NSError {
              
               print("Gagal save context \(error), \(error.userInfo)")
-              message = "01"
+             
           }
         
-        return message
     }
     
     func retrievePlanData()
@@ -106,13 +103,14 @@ class PlanHelper: UIViewController {
         
     }
     
-    func retrieveCompletedPlanData()-> [CompletedPlanModel]
+    func retrieveCompletedPlanData()-> (tempModel: [CompletedPlanModel], isFinishedOneExercise: Bool)
     {
         var tempCompletedPlanData = [CompletedPlanModel]()
         tempCompletedPlanData = []
-        var userIdPlan: [Int] = userHelper.retrieveUserBasicData()[0].userIdPlan!
+        let userIdPlan: [Int] = userHelper.retrieveUserBasicData()[0].userIdPlan!
+        var isFinishedOneExercise: Bool = false
         
-        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempCompletedPlanData}
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempCompletedPlanData,isFinishedOneExercise)}
                  let context = appDel.persistentContainer.viewContext
             
                  let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
@@ -125,10 +123,17 @@ class PlanHelper: UIViewController {
                         {
                             for i in 0...userIdPlan.count - 1
                             {
-                                if userIdPlan[i] == data.value(forKey: "idPlan")as! Int {
+                                if userIdPlan[i] == data.value(forKey: "idPlan")as! Int
+                                {
                                     tempCompletedPlanData.append(CompletedPlanModel(titleMovement: data.value(forKey: "namaPlan")as! String, level: difficultyHelper.checkDifficultyNameById(idDifficulty: data.value(forKey: "idDifficulty")as! Int), period: data.value(forKey: "durasiPlan")as! Int, movement: 10))
+                                    
+                        
                                 }
                             }
+                        }
+                        
+                        if data.value(forKey: "totalSessionDone")as! Int != 0 {
+                            isFinishedOneExercise = true
                         }
                         
                         print("\n")
@@ -139,7 +144,7 @@ class PlanHelper: UIViewController {
                  print("Failed")
              }
        
-        return tempCompletedPlanData
+        return (tempCompletedPlanData,isFinishedOneExercise)
         
     }
     
