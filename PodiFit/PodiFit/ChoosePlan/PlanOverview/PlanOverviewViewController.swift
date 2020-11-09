@@ -47,11 +47,10 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         tableView.backgroundColor = UIColor.clear
         
         let backButton = UIBarButtonItem()
-        let secYellow = UIColor(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
         
         backButton.title = ""
         backButton.image = UIImage(named: "chevron.left")
-        backButton.tintColor = secYellow
+        backButton.tintColor = Colors.yellowColor
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
@@ -97,7 +96,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         cell.planName.text = plan.title
         cell.planSubtitle.text = plan.subtitle
         cell.planImage.image = UIImage(named: plan.image)
-        //cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear
         
         return cell
     }

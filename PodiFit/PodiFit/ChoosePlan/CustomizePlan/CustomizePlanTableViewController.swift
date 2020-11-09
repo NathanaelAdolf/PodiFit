@@ -18,16 +18,19 @@ class CustomizePlanTableViewController: UITableViewController{
         super.viewDidLoad()
         
         let backButton = UIBarButtonItem()
-        let secYellow = UIColor(red: 191/255, green: 210/255, blue: 34/255, alpha: 1)
         
         backButton.title = ""
         backButton.image = UIImage(named: "chevron.left")
-        backButton.tintColor = secYellow
+        backButton.tintColor = Colors.yellowColor
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "plan_bg"), for: .default)
+        //self.navigationController?.navigationBar.titleTextAttrib
         
-        self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        //self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        self.tableView.backgroundColor = UIColor.clear
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //notifHelper.configureUserNotificationCenter()
 
         model.append(MovementModel(movementName: "Step Up", movementImage: "1", movementDetail: "20x"))
@@ -49,14 +52,37 @@ class CustomizePlanTableViewController: UITableViewController{
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionName: String
+            switch section {
+                case 0:
+                    sectionName = "Lunges"
+                case 1:
+                    sectionName = "Squat"
+                case 2:
+                    sectionName = "Hamstring"
+                default:
+                    sectionName = ""
+            }
+            return sectionName
     }
 
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+            if let header = view as? UITableViewHeaderFooterView {
+                //header.backgroundView?.backgroundColor = UIColor.green
+                header.tintColor = UIColor.clear
+                header.textLabel?.textColor = UIColor.white
+                header.textLabel?.font = UIFont(name: "SF Pro", size: 18)
+            }
+        }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomizePlanTableViewCell.identifier, for: indexPath) as! CustomizePlanTableViewCell
@@ -71,7 +97,7 @@ class CustomizePlanTableViewController: UITableViewController{
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 175
+        return 220
     }
     
     
