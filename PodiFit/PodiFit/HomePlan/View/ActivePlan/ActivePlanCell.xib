@@ -74,7 +74,7 @@
                                 <color key="progressTintColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F7a-SG-KIA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F7a-SG-KIA">
                                 <rect key="frame" x="334" y="176" width="36" height="13"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -114,6 +114,9 @@
                 </userDefinedRuntimeAttributes>
             </collectionViewCellContentView>
             <size key="customSize" width="374" height="134"/>
+            <connections>
+                <outlet property="progressPlan" destination="8Xk-Se-muP" id="jBx-YO-WUQ"/>
+            </connections>
             <point key="canvasLocation" x="52.173913043478265" y="29.464285714285712"/>
         </collectionViewCell>
     </objects>

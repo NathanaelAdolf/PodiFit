@@ -22,8 +22,7 @@ class HomePlanVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -40,16 +39,10 @@ class HomePlanVC: UIViewController {
     func setupUI() {
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
 
@@ -63,5 +56,7 @@ extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         return cell
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "viewExercisesSegue", sender: self)
+    }
 }

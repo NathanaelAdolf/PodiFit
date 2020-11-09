@@ -10,9 +10,12 @@ import UIKit
 
 class ActivePlanCell: UICollectionViewCell {
 
+    @IBOutlet weak var progressPlan: UIProgressView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        progressPlan.progress = 1
     }
 
 }

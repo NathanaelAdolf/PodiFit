@@ -33,7 +33,7 @@ class AssesmentStep2VC: UIViewController {
         }
         else {
             firstBtn.isSelected.toggle()
-            times = "0-2"
+            times = "2"
             firstBtn.layer.backgroundColor = Colors.yellowColor.cgColor
             unSelected(status: "1")
         }
@@ -46,7 +46,7 @@ class AssesmentStep2VC: UIViewController {
         }
         else {
             secondBtn.isSelected.toggle()
-            times = "2-3"
+            times = "3"
             secondBtn.layer.backgroundColor = Colors.yellowColor.cgColor
             unSelected(status: "2")
         }
@@ -59,7 +59,7 @@ class AssesmentStep2VC: UIViewController {
         }
         else {
             thirdBtn.isSelected.toggle()
-            times = "3-4"
+            times = "4"
             thirdBtn.layer.backgroundColor = Colors.yellowColor.cgColor
             unSelected(status: "3")
         }
@@ -72,7 +72,7 @@ class AssesmentStep2VC: UIViewController {
         }
         else {
             fourthBtn.isSelected.toggle()
-            times = "4-5"
+            times = "5"
             fourthBtn.layer.backgroundColor = Colors.yellowColor.cgColor
             unSelected(status: "4")
         }
