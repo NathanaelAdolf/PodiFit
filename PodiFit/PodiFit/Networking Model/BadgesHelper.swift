@@ -47,10 +47,14 @@ class BadgesHelper: UIViewController {
         
     }
     
-    func retreiveDataFromBadges()
+    func retreiveDataFromBadges()->(detailData: [DetailBadgesModel],imageData: [String])
     {
+        var tempDetailData = [DetailBadgesModel]()
+        var tempImageData = [String]()
+        var tempListCompletedPlan = [CompletedPlanModel]()
+        tempListCompletedPlan = planHelper.retrieveCompletedPlanData().tempModel
         
-            guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return}
+            guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempDetailData,tempImageData)}
                      let context = appDel.persistentContainer.viewContext
                 
                      let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Badges")
@@ -67,14 +71,70 @@ class BadgesHelper: UIViewController {
                             print("first time badge : \(data.value(forKey: "firstTimeBadge")as! Bool)")
                             print("reminder badge : \(data.value(forKey: "reminderBadge")as! Bool)")
                             
+                            if data.value(forKey: "firstTimeBadge")as! Bool == true{
+                                tempDetailData.append(DetailBadgesModel(imageName: "first time badge.png", title: "1st Time", description: "You have finished your first exercise",progressNum: 1,labelIndicator: "1/1"))
+                            }
+                            else
+                            {
+                                tempDetailData.append(DetailBadgesModel(imageName: "first time badge.png", title: "1st Time", description: "You have finished your first exercise",progressNum: 0,labelIndicator: "0/1"))
+                            }
+                            
+                            
+                            
+                            if data.value(forKey: "customExerciseBadge")as! Bool == true {
+                                tempDetailData.append(DetailBadgesModel(imageName: "custom exercise badge.png", title: "Custom Exercise", description: "Create your custom exercise for first time",progressNum: 1,labelIndicator: "1/1"))
+                            }
+                            else
+                            {
+                                tempDetailData.append(DetailBadgesModel(imageName: "custom exercise badge.png", title: "Custom Exercise", description: "Create your custom exercise for first time",progressNum: 0,labelIndicator: "0/1"))
+                            }
+                            
+                            
+                            
+                            if data.value(forKey: "completePlanBadge")as! Bool == true {
+                                tempDetailData.append(DetailBadgesModel(imageName: "completed one plan badge.png", title: "Complete One Plan", description: "You have complete one exercise plan",progressNum: 1,labelIndicator: "1/1"))
+                            }
+                            else
+                            {
+                                tempDetailData.append(DetailBadgesModel(imageName: "completed one plan badge.png", title: "Complete One Plan", description: "You have complete one exercise plan",progressNum: 1,labelIndicator: "1/1"))
+                            }
+                            
+                            
+                            
+                            if data.value(forKey: "completeFivePlanBadge")as! Bool == true{
+                                tempDetailData.append(DetailBadgesModel(imageName: "completed five plan badge.png", title: "Goals On Point", description: "Finish 5 exercise plans",progressNum: Float(tempListCompletedPlan.count/5),labelIndicator: "\(tempListCompletedPlan.count)/5"))
+                                print("float :\(tempListCompletedPlan.count/5)")
+                            }
+                            else
+                            {
+                                tempDetailData.append(DetailBadgesModel(imageName: "completed five plan badge.png", title: "Goals On Point", description: "Finish 5 exercise plans",progressNum: Float(tempListCompletedPlan.count/5),labelIndicator: "\(tempListCompletedPlan.count)/5"))
+                                print("float :\(tempListCompletedPlan.count/5)")
+                            }
+                            
+                            
+                            
+                            if data.value(forKey: "reminderBadge")as! Bool == true {
+                                tempDetailData.append(DetailBadgesModel(imageName: "reminder badge.png", title: "Exercise routine", description: "Create first reminder for exercise",progressNum: 1,labelIndicator: "1/1"))
+                            }
+                            else
+                            {
+                                tempDetailData.append(DetailBadgesModel(imageName: "reminder badge.png", title: "Exercise routine", description: "Create first reminder for exercise",progressNum: 0,labelIndicator: "0/1"))
+                            }
                             
                             print("\n")
+                            
                         }
                   }
                  catch
                  {
                      print("Failed")
                  }
+        
+        for i in 0...tempDetailData.count - 1 {
+            tempImageData.append(tempDetailData[i].imageName)
+        }
+        
+        return (tempDetailData,tempImageData)
     }
     
     func isBadgesTableEmpty()->Bool
@@ -116,7 +176,7 @@ class BadgesHelper: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Badges")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", 1)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "1")
         
         do{
             let fetch = try managedContext.fetch(fetchRequest)
@@ -158,7 +218,7 @@ class BadgesHelper: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Badges")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", 1)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "1")
         
         do{
             let fetch = try managedContext.fetch(fetchRequest)
@@ -179,7 +239,7 @@ class BadgesHelper: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Badges")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", 1)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "1")
         
         do{
             let fetch = try managedContext.fetch(fetchRequest)
@@ -200,7 +260,7 @@ class BadgesHelper: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Badges")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", 1)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "1")
         
         do{
             let fetch = try managedContext.fetch(fetchRequest)
@@ -221,7 +281,7 @@ class BadgesHelper: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Badges")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", 1)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "1")
         
         do{
             let fetch = try managedContext.fetch(fetchRequest)
@@ -258,12 +318,23 @@ class BadgesHelper: UIViewController {
     }
     
     
-    func checkUserEarnBadge()->[String]
+    func checkUserEarnBadge()
     {
-        let tempBadgeString: [String] = []
-        
         var tempCompletedData = [CompletedPlanModel]()
-        tempCompletedData = planHelper.retrieveCompletedPlanData()
+        tempCompletedData = planHelper.retrieveCompletedPlanData().tempModel
+        
+        var isFinishedOneExercise: Bool = false
+        isFinishedOneExercise = planHelper.retrieveCompletedPlanData().isFinishedOneExercise
+    
+        
+        let userIdPlan: [Int] = userHelper.retrieveUserBasicData()[0].userIdPlan!
+        var customIdPlan = [Int]()
+        
+        for i in 0...userIdPlan.count - 1 {
+            if userIdPlan[i] > 2 {
+                customIdPlan.append(userIdPlan[i])
+            }
+        }
         
         if notifHelper.isReminderTableEmpty() == false {
             //tempBadgeString.append("")nanti append buat tambahin gambarnya di home, samain dgn semuanya
@@ -276,8 +347,21 @@ class BadgesHelper: UIViewController {
             print("finish one plan")
         }
         
+        if tempCompletedData.count >= 5 {
+            badgesHelper.update5PlanIntoTrue(isBadgesDone: true)
+            print("Finish 5 plans")
+        }
         
-        return tempBadgeString
+        if customIdPlan.count >= 1 {
+            badgesHelper.updateCustomExerciseIntoTrue(isBadgesDone: true)
+            print("Success custom exercise")
+        }
+        
+        if isFinishedOneExercise == true {
+            badgesHelper.updateFirstTimeIntoTrue(isBadgesDone: true)
+            print("Success finish one exercise")
+        }
+        
     }
     
     func deleteReminderBadgesOneRow(uniqueType: String) {

@@ -26,6 +26,10 @@ class DetailBadgesViewController: UIViewController,UITableViewDataSource, UITabl
         cell.badgeImage.image = UIImage(named: detailBadgeData[indexPath.row].imageName)
         cell.badgeTitle.text = detailBadgeData[indexPath.row].detailBadgeTitle
         cell.badgeDescription.text = detailBadgeData[indexPath.row].detailBadgeDescription
+        cell.detailBadgeProgressView.progress = detailBadgeData[indexPath.row].progressNumber
+        cell.indicatorLabelProgress.text = detailBadgeData[indexPath.row].labelIndicator
+        
+        print("angka progress number:\(detailBadgeData[indexPath.row].progressNumber)")
         
         return cell
     }
@@ -44,15 +48,8 @@ class DetailBadgesViewController: UIViewController,UITableViewDataSource, UITabl
         
         notifHelper.configureUserNotificationCenter()
         
-            //data dummy buat detail badge
-        self.detailBadgeData =
-        [
-            DetailBadgesModel(imageName: "completed one plan badge.png", title: "1st Time", description: "You have finished your first exercise"),
-            DetailBadgesModel(imageName: "custom exercise badge.png", title: "Custom Exercise", description: "7 days in a row. Well done!"),
-            DetailBadgesModel(imageName: "exercise addict badge.png", title: "Exercise Addict", description: "7 days in a row. Well done!"),
-            DetailBadgesModel(imageName: "exercise master badge.png", title: "Exercise Master", description: "7 days in a row. Well done!"),
-            DetailBadgesModel(imageName: "completed one plan badge.png", title: " Completed One Plan", description: "YYou have finished your first exercise")
-        ]
+        detailBadgeData = badgesHelper.retreiveDataFromBadges().detailData
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
