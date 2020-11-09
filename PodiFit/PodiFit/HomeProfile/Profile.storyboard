@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -173,15 +173,15 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="184"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="level logo" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-N5-cBo">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="level" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-N5-cBo">
                                                                         <rect key="frame" x="18" y="31" width="20" height="20"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="period logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vbx-Lc-w18">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="period" translatesAutoresizingMaskIntoConstraints="NO" id="Vbx-Lc-w18">
                                                                         <rect key="frame" x="18" y="81" width="20" height="20"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exercise logo" translatesAutoresizingMaskIntoConstraints="NO" id="WWD-Aa-V9a">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exercise" translatesAutoresizingMaskIntoConstraints="NO" id="WWD-Aa-V9a">
                                                                         <rect key="frame" x="18" y="130" width="20" height="20"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
@@ -1016,9 +1016,9 @@
     <resources>
         <image name="Group 13" width="321" height="380"/>
         <image name="Group line above" width="321" height="380"/>
-        <image name="exercise logo" width="20" height="12"/>
-        <image name="level logo" width="20" height="20"/>
-        <image name="period logo" width="18" height="20"/>
+        <image name="exercise" width="20" height="12"/>
+        <image name="level" width="20" height="20"/>
+        <image name="period" width="18" height="20"/>
         <image name="person image" width="116" height="116"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="ruler" width="20" height="20"/>
