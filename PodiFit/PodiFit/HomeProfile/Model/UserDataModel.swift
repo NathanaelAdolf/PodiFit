@@ -15,11 +15,13 @@ class UserDataModel
     var weight: Int!
     var height: Int!
     var userIdPlan: [Int]?
+    var img: Data
     
-    init(Name: String,userIdPlan: [Int]?, weight: Int,height: Int) {
+    init(Name: String,userIdPlan: [Int]?, weight: Int,height: Int,img: Data) {
         self.Name = Name
         self.weight = weight
         self.height = height
         self.userIdPlan = userIdPlan
+        self.img = img
     }
 }

@@ -88,11 +88,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             return false
         }
         
-      /*  if let imageData = profileView.image?.pngData()
-        {
-            ImageHelper.shareInstance.saveImage(data: imageData, nameToUpdate: tempDataToEdit[0].Name!)
-        }*/
-       
+        userHelper.updateUserImage(nameToUpdate: tempDataToEdit[0].Name!, image: (profileView.image?.pngData())!)
+        
         userHelper.updateUserData(userNameToUpdate: tempDataToEdit[0].Name!, newName: nameTextField.text!, height: Int(heightTextField.text!)!, weight: Int(weightTextField.text!)!)
         
         return true
@@ -126,6 +123,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         nameTextField.text = tempDataToEdit[0].Name
         heightTextField.text = "\(tempDataToEdit[0].height!)"
         weightTextField.text = "\(tempDataToEdit[0].weight!)"
+        profileView.image = UIImage(data: tempDataToEdit[0].img)
     }
     
 

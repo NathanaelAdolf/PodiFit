@@ -99,10 +99,17 @@ class PlanModel: UIViewController {
                 print("//masuk")
 //                print(exercise.steps?. ?? "No Data Found")
                 let bebas : Set<ExerciseSteps> = exercise.steps as! Set<ExerciseSteps>
-                print(bebas )
+                let arrBebas = Array(bebas)
+//                print(bebas)
                 
-                for beb in bebas {
+                for beb in arrBebas {
+                    
+//                    fetchRequest.predicate = NSPredicate(format: "idStep == %@", "3")
                     print(beb.idStep)
+//                    let stepss = try managedObjectContext.fetch(fetchRequest)
+//                    for stepsss in stepss {
+//                        print(stepsss.steps)
+//                    }
                 }
             }
             

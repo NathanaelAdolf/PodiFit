@@ -15,22 +15,23 @@ class ExerciseViewController: UIViewController {
     @IBOutlet weak var exerciseView : ExerciseView!
     @IBOutlet weak var circularProgressView : CircularProgressView!
 
-    
     var count = 30
     var countTimeAddition = 20
     var timer: Timer?
-    var isVideo: Int = 1
-    var finalExercise = 3
+    var isVideo: Int = 2
+    var countChosenExercise = 3
+    var finishExercise = 1
     
     //reference to moc
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//           self.navigationController!.navigationBar.shadowImage = UIImage()
+//        self.navigationController!.navigationBar.isTranslucent = true
         // Setup View
         circularProgressView.trackClr = UIColor(red: 95/255, green: 104/255, blue: 71/255, alpha: 100)
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
@@ -39,9 +40,6 @@ class ExerciseViewController: UIViewController {
         // get exercise from core data
 //        fetchPlan()
     }
-    
-
-    
     
     @IBAction func didTap(_ sender: Any) {
 
@@ -117,54 +115,56 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func previous(_ sender: Any) {
-        print(isVideo)
-        if isVideo == 2 {
-            
-            exerciseView.restView()
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
-            isVideo = 1
+        if finishExercise == countChosenExercise {
+            exerciseView.lastExercise()
         } else {
-            
-            timer?.invalidate()
-            exerciseView.countDownView(count: "30")
-            circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
-            exerciseView.videoView()
-            isVideo = 2
+            if ((isVideo % 2) != 0) {
+                timer?.invalidate()
+                exerciseView.countDownView(count: "30")
+                circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
+                exerciseView.videoView()
+                isVideo += 1
+            } else {
+                exerciseView.restView()
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
+                isVideo += 1
+            }
+            finishExercise -= 1
         }
-        
     }
     
     @IBAction func next(_ sender: Any) {
-        if finalExercise == 3 {
+        if finishExercise == countChosenExercise {
             exerciseView.lastExercise()
+        } else {
+            if ((isVideo % 2) != 0) {
+                timer?.invalidate()
+                exerciseView.countDownView(count: "30")
+                circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
+                exerciseView.videoView()
+                isVideo += 1
+            } else {
+                exerciseView.restView()
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
+                isVideo += 1
+            }
+            finishExercise += 1
         }
-//        if isVideo == 1 {
-//            timer?.invalidate()
-//            exerciseView.countDownView(count: "30")
-//            circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
-//            exerciseView.videoView()
-//            isVideo = 2
-//        } else {
-//            exerciseView.restView()
-//            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
-//            isVideo = 1
-//        }
     }
     
     @IBAction func doneExercise(_ sender: Any) {
         self.performSegue(withIdentifier: "toSummary", sender: nil)
     }
     
-    
     @IBAction func Skip(_ sender: Any) {
         timer?.invalidate()
         exerciseView.countDownView(count: "30")
         circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
         exerciseView.videoView()
-        isVideo = 2
+        isVideo += 1
+        
         
     }
-    
     
     @IBAction func addTimeRest(_ sender: Any) {
         timer?.invalidate()
