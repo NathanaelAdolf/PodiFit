@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,6 +100,9 @@
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnTestStart:" destination="b5u-Wd-d8a" eventType="touchUpInside" id="E9j-6j-kXk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG5-ip-mOZ">
                                 <rect key="frame" x="20" y="104" width="374" height="60"/>
@@ -227,7 +230,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableViewUI" destination="YEY-vx-igb" id="tmF-4Z-9p0"/>
-                        <segue destination="EH6-jn-caR" kind="show" identifier="ExerciseListSegue" id="92a-o2-cRT"/>
+                        <segue destination="EH6-jn-caR" kind="show" identifier="exerciseListSegue" id="WFY-io-BMY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agQ-Bq-4Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

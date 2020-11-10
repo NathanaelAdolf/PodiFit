@@ -12,6 +12,10 @@ class ShowPlanVC: UIViewController {
 
     @IBOutlet weak var tableViewUI: UITableView!
     
+    @IBAction func btnTestStart(_ sender: Any) {
+        performSegue(withIdentifier: "exerciseListSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

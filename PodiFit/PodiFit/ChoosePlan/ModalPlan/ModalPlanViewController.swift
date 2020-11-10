@@ -12,6 +12,7 @@ import WebKit
 class ModalPlanViewController: UIViewController {
     
     @IBOutlet weak var infoVideo: WKWebView!
+    @IBOutlet weak var exerciseName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

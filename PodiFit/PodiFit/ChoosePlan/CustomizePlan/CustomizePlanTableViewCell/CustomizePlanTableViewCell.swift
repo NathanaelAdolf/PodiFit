@@ -82,4 +82,6 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self )
 
     }
+    
+    
 }

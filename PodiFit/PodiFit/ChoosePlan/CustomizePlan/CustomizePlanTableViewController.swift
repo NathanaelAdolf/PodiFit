@@ -100,7 +100,15 @@ class CustomizePlanTableViewController: UITableViewController{
         return 220
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "modalPlanSegue" {
+            let dest = segue.destination as! ModalPlanViewController
+            
+            dest.exerciseName?.text = "Mountain Climber"
+        }
+        
+    }
     
     /*
     // MARK: - Navigation
