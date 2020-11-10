@@ -512,11 +512,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         //data dummy buat badges
         badgesImageArray =
         ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle
-    {
-        .lightContent
+        
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
 }
