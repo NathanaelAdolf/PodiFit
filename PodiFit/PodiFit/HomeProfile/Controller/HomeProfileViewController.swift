@@ -65,11 +65,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0
         {
-            return 120
+            return 170
         }
         else if indexPath.section == 1
         {
-            return 120
+            return 110
         }
         else if indexPath.section == 2
         {
@@ -95,7 +95,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
-            cell.persomImage.image = UIImage(named: "person image.png")
+            cell.persomImage.image = UIImage(data: userData[indexPath.row].img)
+            cell.persomImage.layer.cornerRadius = 20
             
             if userData.count != 0 {
                 cell.userName.text = userData[indexPath.row].Name
@@ -443,7 +444,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         reminderData = notifHelper.retrieveNotificationFromCoreData()
         
         if userHelper.isUserTableEmpty() == true {
-            userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2,3,4,5], height: 180, weight: 93)
+            userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2,3,4,5], height: 180, weight: 93, img: (UIImage(named: "person image.png")?.pngData())!)
         }
         
         if badgesHelper.isBadgesTableEmpty() == true {

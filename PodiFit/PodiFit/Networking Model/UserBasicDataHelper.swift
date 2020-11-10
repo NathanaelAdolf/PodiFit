@@ -17,7 +17,7 @@ class UserBasicDataHelper: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func storeToUserData(idUser: Int,userName: String,idPlan: [Int]?,height: Int,weight: Int)
+    func storeToUserData(idUser: Int,userName: String,idPlan: [Int]?,height: Int,weight: Int,img: Data)
     {
       
           guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
@@ -32,6 +32,7 @@ class UserBasicDataHelper: UIViewController {
         listOfEntity.setValue(idPlan, forKey: "userIdPlan")
         listOfEntity.setValue(height, forKey: "height")
         listOfEntity.setValue(weight, forKey: "weight")
+        listOfEntity.setValue(img, forKey: "img")
   
           do {
               
@@ -63,9 +64,10 @@ class UserBasicDataHelper: UIViewController {
                         print("id plan : \(data.value(forKey: "userIdPlan")as! [Int]?)")
                         print("height : \(data.value(forKey: "height")as! Int)")
                         print("weight : \(data.value(forKey: "weight")as! Int)")
+                        print("img : \(data.value(forKey: "img")as! Data)")
                         print("\n")
                         
-                        tempUserData.append(UserDataModel(Name: data.value(forKey: "userName")as! String,userIdPlan: data.value(forKey: "userIdPlan")as! [Int]?, weight: data.value(forKey: "weight")as! Int, height: data.value(forKey: "height")as! Int))
+                        tempUserData.append(UserDataModel(Name: data.value(forKey: "userName")as! String,userIdPlan: data.value(forKey: "userIdPlan")as! [Int]?, weight: data.value(forKey: "weight")as! Int, height: data.value(forKey: "height")as! Int,img: data.value(forKey: "img")as! Data))
                         
                     }
               }
@@ -132,6 +134,29 @@ class UserBasicDataHelper: UIViewController {
         }
         
         return "00"
+    }
+    
+    func updateUserImage(nameToUpdate: String, image: Data)
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "userName = %@", nameToUpdate)
+        
+        do{
+            let fetch = try managedContext.fetch(fetchRequest)
+            let dataToUpdate = fetch[0] as! NSManagedObject
+        
+            dataToUpdate.setValue(image, forKey: "img")
+         
+          
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
+
     }
     
     func deleteDataInUser(uniqueUserName: String) {
