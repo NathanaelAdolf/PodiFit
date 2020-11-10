@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F733407254FCA5C006E4775 /* HomePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F733406254FCA5C006E4775 /* HomePlanVC.swift */; };
-		2F73340C254FCAD6006E4775 /* PlanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */; };
-		482EBA812553D17D002062E8 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482EBA802553D17D002062E8 /* NotificationHelper.swift */; };
+		2F0BEF05255142190017103D /* AssesmentStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEF04255142190017103D /* AssesmentStep2VC.swift */; };
+		2F0BEF0A255178540017103D /* AssesmentResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEF09255178540017103D /* AssesmentResultVC.swift */; };
+		2F57CE2225517BDC00EB914E /* AssesmentStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57CE2125517BDC00EB914E /* AssesmentStep1VC.swift */; };
+		2F57CE312551A32000EB914E /* HomePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57CE302551A32000EB914E /* HomePlanVC.swift */; };
+		2F57CE4E2551B57B00EB914E /* ActivePlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57CE4C2551B57B00EB914E /* ActivePlanCell.swift */; };
+		2F57CE4F2551B57B00EB914E /* ActivePlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F57CE4D2551B57B00EB914E /* ActivePlanCell.xib */; };
+		2F9C0F14255626D900D87F01 /* ShowPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C0F13255626D900D87F01 /* ShowPlanVC.swift */; };
+		2F9C0F2D2558621F00D87F01 /* ListPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C0F2C2558621F00D87F01 /* ListPlanVC.swift */; };
+		2F9C0F36255864E300D87F01 /* ListExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C0F34255864E300D87F01 /* ListExerciseCell.swift */; };
+		2F9C0F37255864E300D87F01 /* ListExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C0F35255864E300D87F01 /* ListExerciseCell.xib */; };
+		2FC916FF2558E1E60047F26E /* NumberExercisesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC916FD2558E1E60047F26E /* NumberExercisesCell.swift */; };
+		2FC917002558E1E60047F26E /* NumberExercisesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC916FE2558E1E60047F26E /* NumberExercisesCell.xib */; };
+		2FCBFC4D2559798D000F163E /* ButtonExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCBFC4B2559798D000F163E /* ButtonExerciseCell.swift */; };
+		2FCBFC4E2559798D000F163E /* ButtonExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCBFC4C2559798D000F163E /* ButtonExerciseCell.xib */; };
+		2FF2277D2554CA9300D494C4 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
+		2FF227822554CABC00D494C4 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF227812554CABC00D494C4 /* NotificationHelper.swift */; };
 		487B519725548C0700091ABB /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487B519625548C0700091ABB /* SummaryTableViewCell.swift */; };
 		487E1F62254F467500F58265 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F61254F467500F58265 /* ReviewService.swift */; };
 		487E1F6F254F52D200F58265 /* ExerciseSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */; };
@@ -38,16 +51,16 @@
 		8D13C0D025402999002195C9 /* PodiFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0CF25402999002195C9 /* PodiFitTests.swift */; };
 		8D13C0DB25402999002195C9 /* PodiFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0DA25402999002195C9 /* PodiFitUITests.swift */; };
 		8D13C0EB25402AC4002195C9 /* Assesment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0EA25402AC4002195C9 /* Assesment.storyboard */; };
-		8D13C0ED25402AD9002195C9 /* AssesmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D13C0EC25402AD9002195C9 /* AssesmentViewController.swift */; };
 		8D13C0F325402C27002195C9 /* HomePlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F225402C27002195C9 /* HomePlan.storyboard */; };
 		8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F625402D84002195C9 /* Exercise.storyboard */; };
 		8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F925402E81002195C9 /* Profile.storyboard */; };
 		8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0FE25402F2B002195C9 /* Survey.storyboard */; };
-		8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
 		8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D1E70254550D10070444C /* AddReminderViewController.swift */; };
 		8D4E5C71254FC0E2002D94C8 /* UserBasicDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */; };
 		8D4E5C76254FCAB6002D94C8 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */; };
 		8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */; };
+		8D7825D425579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7825D325579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift */; };
+		8D7825D925579ED700501AEA /* BadgesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7825D825579ED700501AEA /* BadgesHelper.swift */; };
 		8D8E6272254683BD005F445D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E6271254683BD005F445D /* DateExtension.swift */; };
 		8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */; };
 		8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */; };
@@ -64,8 +77,11 @@
 		8DC71C4B254D078600AD6C2B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71C4A254D078600AD6C2B /* Colors.swift */; };
 		8DC71C50254D0A0600AD6C2B /* BadgesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71C4F254D0A0600AD6C2B /* BadgesTableViewCell.swift */; };
 		8DC71C59254D0C2300AD6C2B /* BadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */; };
+		8DD69DFD2554E22A00E2DF21 /* PlanHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD69DFC2554E22A00E2DF21 /* PlanHelper.swift */; };
+		8DD69E052554FD7600E2DF21 /* DifficultyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */; };
 		AB33864D25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33864B25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift */; };
 		AB33864E25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33864C25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift */; };
+		AB398FD9255538F4006C2B59 /* PlanOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB398FD8255538F4006C2B59 /* PlanOverviewViewController.swift */; };
 		AB5F46302553CD97005DE0D0 /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F46222553CD97005DE0D0 /* Exercise+CoreDataClass.swift */; };
 		AB5F46312553CD97005DE0D0 /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F46232553CD97005DE0D0 /* Exercise+CoreDataProperties.swift */; };
 		AB5F46322553CD97005DE0D0 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F46242553CD97005DE0D0 /* Plan+CoreDataClass.swift */; };
@@ -80,15 +96,16 @@
 		AB5F463B2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F462D2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift */; };
 		AB5F463C2553CD97005DE0D0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F462E2553CD97005DE0D0 /* User+CoreDataClass.swift */; };
 		AB5F463D2553CD97005DE0D0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F462F2553CD97005DE0D0 /* User+CoreDataProperties.swift */; };
+		AB6E780725593ACD00262039 /* PlanInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E780525593ACD00262039 /* PlanInfoCell.swift */; };
+		AB6E780825593ACD00262039 /* PlanInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6E780625593ACD00262039 /* PlanInfoCell.xib */; };
 		AB88B9532551486400AFF3BA /* ModalPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88B9522551486400AFF3BA /* ModalPlanViewController.swift */; };
 		ABFB99FE254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB99FD254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift */; };
-		ABFB9A03254FFBFF00B5E96A /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A02254FFBFF00B5E96A /* PlanViewController.swift */; };
-		ABFB9A11254FFC1A00B5E96A /* StackedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFB9A08254FFC1A00B5E96A /* StackedTableViewCell.xib */; };
+		ABFB9A11254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFB9A08254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.xib */; };
 		ABFB9A12254FFC1A00B5E96A /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFB9A09254FFC1A00B5E96A /* ButtonTableViewCell.xib */; };
 		ABFB9A13254FFC1A00B5E96A /* DescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A0A254FFC1A00B5E96A /* DescTableViewCell.swift */; };
 		ABFB9A14254FFC1A00B5E96A /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A0B254FFC1A00B5E96A /* ExerciseTableViewCell.swift */; };
 		ABFB9A15254FFC1A00B5E96A /* DescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFB9A0C254FFC1A00B5E96A /* DescTableViewCell.xib */; };
-		ABFB9A16254FFC1A00B5E96A /* StackedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A0D254FFC1A00B5E96A /* StackedTableViewCell.swift */; };
+		ABFB9A16254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A0D254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift */; };
 		ABFB9A17254FFC1A00B5E96A /* ChoosePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A0E254FFC1A00B5E96A /* ChoosePlanViewController.swift */; };
 		ABFB9A18254FFC1A00B5E96A /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFB9A0F254FFC1A00B5E96A /* ButtonTableViewCell.swift */; };
 		ABFB9A19254FFC1A00B5E96A /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFB9A10254FFC1A00B5E96A /* ExerciseTableViewCell.xib */; };
@@ -119,9 +136,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0BEF04255142190017103D /* AssesmentStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentStep2VC.swift; sourceTree = "<group>"; };
+		2F0BEF09255178540017103D /* AssesmentResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentResultVC.swift; sourceTree = "<group>"; };
+		2F57CE2125517BDC00EB914E /* AssesmentStep1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssesmentStep1VC.swift; sourceTree = "<group>"; };
+		2F57CE302551A32000EB914E /* HomePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanVC.swift; sourceTree = "<group>"; };
+		2F57CE4C2551B57B00EB914E /* ActivePlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePlanCell.swift; sourceTree = "<group>"; };
+		2F57CE4D2551B57B00EB914E /* ActivePlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivePlanCell.xib; sourceTree = "<group>"; };
 		2F733406254FCA5C006E4775 /* HomePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanVC.swift; sourceTree = "<group>"; };
-		2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
-		482EBA802553D17D002062E8 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationHelper.swift; path = ../../../../../../Downloads/NotificationHelper.swift; sourceTree = "<group>"; };
+		2F9C0F13255626D900D87F01 /* ShowPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPlanVC.swift; sourceTree = "<group>"; };
+		2F9C0F2C2558621F00D87F01 /* ListPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlanVC.swift; sourceTree = "<group>"; };
+		2F9C0F34255864E300D87F01 /* ListExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExerciseCell.swift; sourceTree = "<group>"; };
+		2F9C0F35255864E300D87F01 /* ListExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListExerciseCell.xib; sourceTree = "<group>"; };
+		2FC916FD2558E1E60047F26E /* NumberExercisesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExercisesCell.swift; sourceTree = "<group>"; };
+		2FC916FE2558E1E60047F26E /* NumberExercisesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberExercisesCell.xib; sourceTree = "<group>"; };
+		2FCBFC4B2559798D000F163E /* ButtonExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExerciseCell.swift; sourceTree = "<group>"; };
+		2FCBFC4C2559798D000F163E /* ButtonExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonExerciseCell.xib; sourceTree = "<group>"; };
+		2FF227812554CABC00D494C4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		487B519625548C0700091ABB /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		487E1F61254F467500F58265 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +186,6 @@
 		8D13C0DA25402999002195C9 /* PodiFitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiFitUITests.swift; sourceTree = "<group>"; };
 		8D13C0DC25402999002195C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D13C0EA25402AC4002195C9 /* Assesment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assesment.storyboard; sourceTree = "<group>"; };
-		8D13C0EC25402AD9002195C9 /* AssesmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentViewController.swift; sourceTree = "<group>"; };
 		8D13C0F225402C27002195C9 /* HomePlan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePlan.storyboard; sourceTree = "<group>"; };
 		8D13C0F625402D84002195C9 /* Exercise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercise.storyboard; sourceTree = "<group>"; };
 		8D13C0F925402E81002195C9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -166,6 +195,8 @@
 		8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicDataHelper.swift; sourceTree = "<group>"; };
 		8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8D7825D325579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailNoDataTableViewCell.swift; sourceTree = "<group>"; };
+		8D7825D825579ED700501AEA /* BadgesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesHelper.swift; sourceTree = "<group>"; };
 		8D8E6271254683BD005F445D /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailsViewController.swift; sourceTree = "<group>"; };
 		8DB6461B254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedPlanDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -182,8 +213,12 @@
 		8DC71C4A254D078600AD6C2B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = PodiFit/Theme/Colours/Colors.swift; sourceTree = SOURCE_ROOT; };
 		8DC71C4F254D0A0600AD6C2B /* BadgesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesTableViewCell.swift; sourceTree = "<group>"; };
 		8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DD69DF42554E19500E2DF21 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		8DD69DFC2554E22A00E2DF21 /* PlanHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanHelper.swift; sourceTree = "<group>"; };
+		8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyHelper.swift; sourceTree = "<group>"; };
 		AB33864B25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB33864C25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB398FD8255538F4006C2B59 /* PlanOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanOverviewViewController.swift; sourceTree = "<group>"; };
 		AB5F46222553CD97005DE0D0 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB5F46232553CD97005DE0D0 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB5F46242553CD97005DE0D0 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -198,15 +233,18 @@
 		AB5F462D2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB5F462E2553CD97005DE0D0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB5F462F2553CD97005DE0D0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB5F46442553EDDD005DE0D0 /* PodiFit 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PodiFit 2.xcdatamodel"; sourceTree = "<group>"; };
+		AB6E780525593ACD00262039 /* PlanInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInfoCell.swift; sourceTree = "<group>"; };
+		AB6E780625593ACD00262039 /* PlanInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanInfoCell.xib; sourceTree = "<group>"; };
 		AB88B9522551486400AFF3BA /* ModalPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPlanViewController.swift; sourceTree = "<group>"; };
+		ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodiFit3.xcdatamodel; sourceTree = "<group>"; };
 		ABFB99FD254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListOverviewTableViewCell.swift; sourceTree = "<group>"; };
-		ABFB9A02254FFBFF00B5E96A /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
-		ABFB9A08254FFC1A00B5E96A /* StackedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackedTableViewCell.xib; sourceTree = "<group>"; };
+		ABFB9A08254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		ABFB9A09254FFC1A00B5E96A /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		ABFB9A0A254FFC1A00B5E96A /* DescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescTableViewCell.swift; sourceTree = "<group>"; };
 		ABFB9A0B254FFC1A00B5E96A /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		ABFB9A0C254FFC1A00B5E96A /* DescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescTableViewCell.xib; sourceTree = "<group>"; };
-		ABFB9A0D254FFC1A00B5E96A /* StackedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackedTableViewCell.swift; sourceTree = "<group>"; };
+		ABFB9A0D254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		ABFB9A0E254FFC1A00B5E96A /* ChoosePlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePlanViewController.swift; sourceTree = "<group>"; };
 		ABFB9A0F254FFC1A00B5E96A /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		ABFB9A10254FFC1A00B5E96A /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
@@ -244,6 +282,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0BEEFD255141980017103D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F57CE2125517BDC00EB914E /* AssesmentStep1VC.swift */,
+				2F0BEF04255142190017103D /* AssesmentStep2VC.swift */,
+				2F0BEF09255178540017103D /* AssesmentResultVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F57CE2F2551A30600EB914E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FC9170F25590C6B0047F26E /* ActivePlan */,
+				2FC9171025590C900047F26E /* ShowPlan */,
+				2FC9171125590CAA0047F26E /* ListPlan */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F57CE562551CD0800EB914E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FC9171225590CD90047F26E /* ActivePlan */,
+				2FC9171325590CE50047F26E /* ShowPlan */,
+				2FC9171425590D760047F26E /* ListPlan */,
+				8D13C0F225402C27002195C9 /* HomePlan.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FC9170F25590C6B0047F26E /* ActivePlan */ = {
+			isa = PBXGroup;
+			children = (
+				2F57CE302551A32000EB914E /* HomePlanVC.swift */,
+				2F57CE4C2551B57B00EB914E /* ActivePlanCell.swift */,
+			);
+			path = ActivePlan;
+			sourceTree = "<group>";
+		};
+		2FC9171025590C900047F26E /* ShowPlan */ = {
+			isa = PBXGroup;
+			children = (
+				2F9C0F13255626D900D87F01 /* ShowPlanVC.swift */,
+				2FCBFC4B2559798D000F163E /* ButtonExerciseCell.swift */,
+				2FC916FD2558E1E60047F26E /* NumberExercisesCell.swift */,
+			);
+			path = ShowPlan;
+			sourceTree = "<group>";
+		};
+		2FC9171125590CAA0047F26E /* ListPlan */ = {
+			isa = PBXGroup;
+			children = (
+				2F9C0F2C2558621F00D87F01 /* ListPlanVC.swift */,
+				2F9C0F34255864E300D87F01 /* ListExerciseCell.swift */,
+			);
+			path = ListPlan;
+			sourceTree = "<group>";
+		};
+		2FC9171225590CD90047F26E /* ActivePlan */ = {
+			isa = PBXGroup;
+			children = (
+				2F57CE4D2551B57B00EB914E /* ActivePlanCell.xib */,
+			);
+			path = ActivePlan;
+			sourceTree = "<group>";
+		};
+		2FC9171325590CE50047F26E /* ShowPlan */ = {
+			isa = PBXGroup;
+			children = (
+				2FC916FE2558E1E60047F26E /* NumberExercisesCell.xib */,
+				2FCBFC4C2559798D000F163E /* ButtonExerciseCell.xib */,
+			);
+			path = ShowPlan;
+			sourceTree = "<group>";
+		};
+		2FC9171425590D760047F26E /* ListPlan */ = {
+			isa = PBXGroup;
+			children = (
+				2F9C0F35255864E300D87F01 /* ListExerciseCell.xib */,
+			);
+			path = ListPlan;
+			sourceTree = "<group>";
+		};
+		2FF2276C2554C8DC00D494C4 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				2F733406254FCA5C006E4775 /* HomePlanVC.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		4898B4C9254928E800FBBC17 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +434,7 @@
 				8D13C0CE25402999002195C9 /* PodiFitTests */,
 				8D13C0D925402999002195C9 /* PodiFitUITests */,
 				8D13C0B325402997002195C9 /* Products */,
+				2FF2276C2554C8DC00D494C4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -360,7 +491,7 @@
 		8D13C0E925402AA4002195C9 /* Assesment */ = {
 			isa = PBXGroup;
 			children = (
-				8D13C0EC25402AD9002195C9 /* AssesmentViewController.swift */,
+				2F0BEEFD255141980017103D /* Controller */,
 				8D13C0EA25402AC4002195C9 /* Assesment.storyboard */,
 			);
 			path = Assesment;
@@ -384,9 +515,8 @@
 		8D13C0F125402BFE002195C9 /* HomePlan */ = {
 			isa = PBXGroup;
 			children = (
-				2F73340B254FCAD6006E4775 /* PlanListTableViewCell.swift */,
-				8D13C0F225402C27002195C9 /* HomePlan.storyboard */,
-				2F733406254FCA5C006E4775 /* HomePlanVC.swift */,
+				2F57CE2F2551A30600EB914E /* Controller */,
+				2F57CE562551CD0800EB914E /* View */,
 			);
 			path = HomePlan;
 			sourceTree = "<group>";
@@ -424,6 +554,7 @@
 		8D13C101254035D8002195C9 /* Networking Model */ = {
 			isa = PBXGroup;
 			children = (
+				2FF227812554CABC00D494C4 /* NotificationHelper.swift */,
 				AB5F46222553CD97005DE0D0 /* Exercise+CoreDataClass.swift */,
 				AB5F46232553CD97005DE0D0 /* Exercise+CoreDataProperties.swift */,
 				AB5F46242553CD97005DE0D0 /* Plan+CoreDataClass.swift */,
@@ -438,9 +569,12 @@
 				AB5F462D2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift */,
 				AB5F462E2553CD97005DE0D0 /* User+CoreDataClass.swift */,
 				AB5F462F2553CD97005DE0D0 /* User+CoreDataProperties.swift */,
-				482EBA802553D17D002062E8 /* NotificationHelper.swift */,
 				8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */,
+				8DD69DFC2554E22A00E2DF21 /* PlanHelper.swift */,
+				8DD69DF42554E19500E2DF21 /* NotificationHelper.swift */,
 				489A2B572552540400713AD4 /* ExerciseModel.swift */,
+				8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */,
+				8D7825D825579ED700501AEA /* BadgesHelper.swift */,
 			);
 			path = "Networking Model";
 			sourceTree = "<group>";
@@ -457,6 +591,7 @@
 				8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */,
 				8DBF07F4254E64AA00AACB19 /* DetailBadgeTableViewCell.swift */,
 				8DC60F962552504E006A4047 /* NoDataTableViewCell.swift */,
+				8D7825D325579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -477,11 +612,11 @@
 		8DBF07D4254E610E00AACB19 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */,
 				8DBF07E4254E61E500AACB19 /* DetailBadgesViewController.swift */,
 				8D148C8C254140CF00571419 /* HomeProfileViewController.swift */,
 				8D3D1E70254550D10070444C /* AddReminderViewController.swift */,
 				8DB64608254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift */,
+				8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,13 +629,13 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		AB36384B2552AE1E002A5E6B /* StackViewCell */ = {
+		AB36384B2552AE1E002A5E6B /* ExerciseHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
-				ABFB9A0D254FFC1A00B5E96A /* StackedTableViewCell.swift */,
-				ABFB9A08254FFC1A00B5E96A /* StackedTableViewCell.xib */,
+				ABFB9A0D254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift */,
+				ABFB9A08254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.xib */,
 			);
-			path = StackViewCell;
+			path = ExerciseHeaderCell;
 			sourceTree = "<group>";
 		};
 		AB36384D2552AE57002A5E6B /* ButtonCell */ = {
@@ -530,6 +665,15 @@
 			path = DescCell;
 			sourceTree = "<group>";
 		};
+		AB6E780C25593DD500262039 /* PlanInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB6E780525593ACD00262039 /* PlanInfoCell.swift */,
+				AB6E780625593ACD00262039 /* PlanInfoCell.xib */,
+			);
+			path = PlanInfoCell;
+			sourceTree = "<group>";
+		};
 		AB88B9512551482900AFF3BA /* ModalPlan */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,8 +685,8 @@
 		ABFB99FC254FFBA300B5E96A /* PlanOverview */ = {
 			isa = PBXGroup;
 			children = (
-				ABFB9A02254FFBFF00B5E96A /* PlanViewController.swift */,
 				ABFB99FD254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift */,
+				AB398FD8255538F4006C2B59 /* PlanOverviewViewController.swift */,
 			);
 			path = PlanOverview;
 			sourceTree = "<group>";
@@ -550,10 +694,11 @@
 		ABFB9A07254FFC1A00B5E96A /* ChoosePlanOverview */ = {
 			isa = PBXGroup;
 			children = (
+				AB6E780C25593DD500262039 /* PlanInfoCell */,
 				AB36384F2552AE99002A5E6B /* DescCell */,
 				AB36384E2552AE83002A5E6B /* ExerciseCell */,
 				AB36384D2552AE57002A5E6B /* ButtonCell */,
-				AB36384B2552AE1E002A5E6B /* StackViewCell */,
+				AB36384B2552AE1E002A5E6B /* ExerciseHeaderCell */,
 				ABFB9A0E254FFC1A00B5E96A /* ChoosePlanViewController.swift */,
 			);
 			path = ChoosePlanOverview;
@@ -563,9 +708,9 @@
 			isa = PBXGroup;
 			children = (
 				ABFB9A342550011A00B5E96A /* MovementCollectionView */,
+				ABFB9A392550011A00B5E96A /* CustomizePlanTableViewCell */,
 				ABFB9A372550011A00B5E96A /* CustomizePlanTableViewController.swift */,
 				ABFB9A382550011A00B5E96A /* MovementCollectionModel.swift */,
-				ABFB9A392550011A00B5E96A /* CustomizePlanTableViewCell */,
 			);
 			path = CustomizePlan;
 			sourceTree = "<group>";
@@ -696,15 +841,20 @@
 				8D13C0C525402998002195C9 /* LaunchScreen.storyboard in Resources */,
 				8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */,
 				8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */,
+				2F9C0F37255864E300D87F01 /* ListExerciseCell.xib in Resources */,
 				8D13C0C225402998002195C9 /* Assets.xcassets in Resources */,
-				ABFB9A11254FFC1A00B5E96A /* StackedTableViewCell.xib in Resources */,
+				ABFB9A11254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.xib in Resources */,
 				8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */,
+				2FC917002558E1E60047F26E /* NumberExercisesCell.xib in Resources */,
+				2F57CE4F2551B57B00EB914E /* ActivePlanCell.xib in Resources */,
 				8D13C0EB25402AC4002195C9 /* Assesment.storyboard in Resources */,
 				ABFB9A402550011A00B5E96A /* CustomizePlanTableViewCell.xib in Resources */,
 				ABFB9A3C2550011A00B5E96A /* MovementCollectionViewCell.xib in Resources */,
 				ABFB9A15254FFC1A00B5E96A /* DescTableViewCell.xib in Resources */,
 				ABFB9A12254FFC1A00B5E96A /* ButtonTableViewCell.xib in Resources */,
+				2FCBFC4E2559798D000F163E /* ButtonExerciseCell.xib in Resources */,
 				ABFB9A19254FFC1A00B5E96A /* ExerciseTableViewCell.xib in Resources */,
+				AB6E780825593ACD00262039 /* PlanInfoCell.xib in Resources */,
 				ABFB9A2C255000A700B5E96A /* ChoosePlan.storyboard in Resources */,
 				8D13C0F325402C27002195C9 /* HomePlan.storyboard in Resources */,
 				8D13C0BD25402997002195C9 /* Main.storyboard in Resources */,
@@ -732,16 +882,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F73340C254FCAD6006E4775 /* PlanListTableViewCell.swift in Sources */,
+				2FF2277D2554CA9300D494C4 /* HomeProfileViewController.swift in Sources */,
 				48A12B99254BC45E00A02F60 /* InformationExercisionView.swift in Sources */,
 				AB5F46322553CD97005DE0D0 /* Plan+CoreDataClass.swift in Sources */,
 				8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */,
+				2FC916FF2558E1E60047F26E /* NumberExercisesCell.swift in Sources */,
+				2F0BEF05255142190017103D /* AssesmentStep2VC.swift in Sources */,
 				ABFB9A14254FFC1A00B5E96A /* ExerciseTableViewCell.swift in Sources */,
 				8DC063F5254286A200D7F8AD /* userDataTableViewCell.swift in Sources */,
-				8D13C0ED25402AD9002195C9 /* AssesmentViewController.swift in Sources */,
 				ABFB9A3E2550011A00B5E96A /* CustomizePlanTableViewController.swift in Sources */,
 				8DC71C50254D0A0600AD6C2B /* BadgesTableViewCell.swift in Sources */,
-				8D148C8D254140CF00571419 /* HomeProfileViewController.swift in Sources */,
+				8D7825D925579ED700501AEA /* BadgesHelper.swift in Sources */,
+				8D7825D425579BFC00501AEA /* PlanDetailNoDataTableViewCell.swift in Sources */,
 				AB5F46312553CD97005DE0D0 /* Exercise+CoreDataProperties.swift in Sources */,
 				ABFB9A3F2550011A00B5E96A /* MovementCollectionModel.swift in Sources */,
 				AB5F46372553CD97005DE0D0 /* Badges+CoreDataProperties.swift in Sources */,
@@ -749,14 +901,21 @@
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				48E2D9962551D21600F2EF03 /* PlanModel.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
+				2F57CE312551A32000EB914E /* HomePlanVC.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
+				2F9C0F14255626D900D87F01 /* ShowPlanVC.swift in Sources */,
 				ABFB99FE254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift in Sources */,
 				487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */,
-				ABFB9A16254FFC1A00B5E96A /* StackedTableViewCell.swift in Sources */,
+				2F9C0F2D2558621F00D87F01 /* ListPlanVC.swift in Sources */,
+				ABFB9A16254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift in Sources */,
+				ABFB9A16254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift in Sources */,
 				8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */,
+				2FCBFC4D2559798D000F163E /* ButtonExerciseCell.swift in Sources */,
+				2F9C0F36255864E300D87F01 /* ListExerciseCell.swift in Sources */,
 				ABFB9A18254FFC1A00B5E96A /* ButtonTableViewCell.swift in Sources */,
-				2F733407254FCA5C006E4775 /* HomePlanVC.swift in Sources */,
+				8DD69E052554FD7600E2DF21 /* DifficultyHelper.swift in Sources */,
 				AB33864D25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift in Sources */,
+				AB6E780725593ACD00262039 /* PlanInfoCell.swift in Sources */,
 				8D4E5C76254FCAB6002D94C8 /* UserDataModel.swift in Sources */,
 				AB5F46352553CD97005DE0D0 /* ExerciseSteps+CoreDataProperties.swift in Sources */,
 				8DBF07E5254E61E500AACB19 /* DetailBadgesViewController.swift in Sources */,
@@ -766,6 +925,7 @@
 				8D0996712542EA80000363BE /* ReminderModel.swift in Sources */,
 				ABFB9A13254FFC1A00B5E96A /* DescTableViewCell.swift in Sources */,
 				AB5F46382553CD97005DE0D0 /* Difficulty+CoreDataClass.swift in Sources */,
+				AB398FD9255538F4006C2B59 /* PlanOverviewViewController.swift in Sources */,
 				8DC063F12542711900D7F8AD /* CompletedPlanModel.swift in Sources */,
 				AB5F46332553CD97005DE0D0 /* Plan+CoreDataProperties.swift in Sources */,
 				AB5F463A2553CD97005DE0D0 /* Reminder+CoreDataClass.swift in Sources */,
@@ -784,30 +944,33 @@
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				AB5F46392553CD97005DE0D0 /* Difficulty+CoreDataProperties.swift in Sources */,
 				ABFB9A17254FFC1A00B5E96A /* ChoosePlanViewController.swift in Sources */,
-				482EBA812553D17D002062E8 /* NotificationHelper.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				AB5F463D2553CD97005DE0D0 /* User+CoreDataProperties.swift in Sources */,
 				8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
-				ABFB9A03254FFBFF00B5E96A /* PlanViewController.swift in Sources */,
 				48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */,
 				AB5F46342553CD97005DE0D0 /* ExerciseSteps+CoreDataClass.swift in Sources */,
 				AB5F46362553CD97005DE0D0 /* Badges+CoreDataClass.swift in Sources */,
 				489A2B3425521F1A00713AD4 /* BadgeView.swift in Sources */,
 				8D13C0C025402997002195C9 /* PodiFit.xcdatamodeld in Sources */,
+				2F0BEF0A255178540017103D /* AssesmentResultVC.swift in Sources */,
 				8DC71C4B254D078600AD6C2B /* Colors.swift in Sources */,
 				ABFB9A412550011A00B5E96A /* CustomizePlanTableViewCell.swift in Sources */,
 				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
+				2F57CE4E2551B57B00EB914E /* ActivePlanCell.swift in Sources */,
 				48E854FA254C2DD3002DAC0B /* InformationExerciseController.swift in Sources */,
 				489A2B392552230900713AD4 /* BadgeViewController.swift in Sources */,
 				AB5F463C2553CD97005DE0D0 /* User+CoreDataClass.swift in Sources */,
+				8DD69DFD2554E22A00E2DF21 /* PlanHelper.swift in Sources */,
 				8DC063F32542866800D7F8AD /* imagePersonTableViewCell.swift in Sources */,
 				AB88B9532551486400AFF3BA /* ModalPlanViewController.swift in Sources */,
 				8DBF07FA254E655100AACB19 /* DetailBadgesModel.swift in Sources */,
 				8DBF07F5254E64AA00AACB19 /* DetailBadgeTableViewCell.swift in Sources */,
 				ABFB9A3D2550011A00B5E96A /* MovementCollectionViewCell.swift in Sources */,
+				2FF227822554CABC00D494C4 /* NotificationHelper.swift in Sources */,
+				2F57CE2225517BDC00EB914E /* AssesmentStep1VC.swift in Sources */,
 				8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */,
 				8DC71C59254D0C2300AD6C2B /* BadgesCollectionViewCell.swift in Sources */,
 				489A2B4B2552250000713AD4 /* ExitView.swift in Sources */,
@@ -1145,9 +1308,11 @@
 		8D13C0BE25402997002195C9 /* PodiFit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */,
+				AB5F46442553EDDD005DE0D0 /* PodiFit 2.xcdatamodel */,
 				8D13C0BF25402997002195C9 /* PodiFit.xcdatamodel */,
 			);
-			currentVersion = 8D13C0BF25402997002195C9 /* PodiFit.xcdatamodel */;
+			currentVersion = ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */;
 			path = PodiFit.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

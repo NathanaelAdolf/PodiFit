@@ -88,6 +88,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             return false
         }
         
+        userHelper.updateUserImage(nameToUpdate: tempDataToEdit[0].Name!, image: (profileView.image?.pngData())!)
+        
         userHelper.updateUserData(userNameToUpdate: tempDataToEdit[0].Name!, newName: nameTextField.text!, height: Int(heightTextField.text!)!, weight: Int(weightTextField.text!)!)
         
         return true
@@ -121,18 +123,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         nameTextField.text = tempDataToEdit[0].Name
         heightTextField.text = "\(tempDataToEdit[0].height!)"
         weightTextField.text = "\(tempDataToEdit[0].weight!)"
+        profileView.image = UIImage(data: tempDataToEdit[0].img)
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

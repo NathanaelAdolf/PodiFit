@@ -13,6 +13,7 @@ class PlanListOverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var planImage: UIImageView!
     @IBOutlet weak var planName: UILabel!
     @IBOutlet weak var planSubtitle: UILabel!
+    @IBOutlet weak var cardBackground: UIView!
     
     
     override func awakeFromNib() {

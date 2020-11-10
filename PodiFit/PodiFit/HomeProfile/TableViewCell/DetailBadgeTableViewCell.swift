@@ -14,9 +14,14 @@ class DetailBadgeTableViewCell: UITableViewCell {
     @IBOutlet var badgeTitle: UILabel!
     @IBOutlet var badgeDescription: UILabel!
     
+    @IBOutlet var detailBadgeProgressView: UIProgressView!
+    
+    @IBOutlet var indicatorLabelProgress: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        detailBadgeProgressView.progress = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

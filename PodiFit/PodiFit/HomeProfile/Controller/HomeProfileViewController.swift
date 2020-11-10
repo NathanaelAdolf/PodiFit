@@ -10,6 +10,9 @@ import UIKit
 import UserNotifications
 
     var userHelper = UserBasicDataHelper()
+    var planHelper = PlanHelper()
+    var difficultyHelper = DifficultyHelper()
+    var badgesHelper = BadgesHelper()
 
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -62,19 +65,19 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0
         {
-            return 120
+            return 170
         }
         else if indexPath.section == 1
         {
-            return 120
+            return 110
         }
         else if indexPath.section == 2
         {
-            return 152
+            return (completedData.count == 0) ? 48 : 210
         }
         else if indexPath.section == 3
         {
-            return 90
+            return (reminderData.count == 0) ? 48 : 90
         }
         else if indexPath.section == 4
         {
@@ -92,7 +95,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
              let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
-            cell.persomImage.image = UIImage(named: "person image.png")
+            cell.persomImage.image = UIImage(data: userData[indexPath.row].img)
+            cell.persomImage.layer.cornerRadius = 20
             
             if userData.count != 0 {
                 cell.userName.text = userData[indexPath.row].Name
@@ -143,7 +147,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 3
         {
-            print("reminder data; \(reminderData.count)")
             if reminderData.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
                 print("No Reminder Data......")
@@ -153,7 +156,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             else
             {
-                    print("abcded")
                     let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
                     
                     cell.hourLabel.text = reminderData[indexPath.row].Hour
@@ -408,6 +410,12 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 destination.tempDataToEdit = self.userData
             }
         }
+        if segue.identifier == "toCompletedHistory" {
+            if let destination = segue.destination as? CompletedPlanDetailsViewController
+            {
+                destination.tempPlanData = completedData
+            }
+        }
         
     }
         
@@ -427,8 +435,46 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+       
+        //userHelper.deleteDataInUser(uniqueUserName: "Adolf")
+         //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
+        //planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
+       // planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
+
         reminderData = notifHelper.retrieveNotificationFromCoreData()
-        userData = userHelper.retrieveUserBasicData()
+        
+        if userHelper.isUserTableEmpty() == true {
+            userHelper.storeToUserData(idUser: 1, userName: "Adolf", idPlan: [1,2,3,4,5], height: 180, weight: 93, img: (UIImage(named: "person image.png")?.pngData())!)
+        }
+        
+        if badgesHelper.isBadgesTableEmpty() == true {
+            badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
+        }
+        if planHelper.isPlanTableEmpty() == true { //data dummy
+            planHelper.storeToPlanData(idPlan: 1, namaPlan: "Eazy leg plan", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5,6,7,8,9,10], isPlanDone: false)
+            planHelper.storeToPlanData(idPlan: 2, namaPlan: "Medium leg plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 0, choosenExercise: [11,12,13,14,15,16,17,18,19,20], isPlanDone: false)
+            planHelper.storeToPlanData(idPlan: 3, namaPlan: "Custom leg plan", idDifficulty: 1, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 12, choosenExercise: [1,3,5,7,9,11,13,15,17,19], isPlanDone: true)
+            planHelper.storeToPlanData(idPlan: 4, namaPlan: "Custom wrist plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 15, choosenExercise: [11,12,13,14,1,2,17,18,19,20], isPlanDone: true)
+            planHelper.storeToPlanData(idPlan: 5, namaPlan: "Custom knee plan", idDifficulty: 2, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 12, choosenExercise: [2,4,6,8,10,12,14,16], isPlanDone: false)
+        }
+        
+        if difficultyHelper.isDifficultyTableEmpty() == true {
+            difficultyHelper.storeToDifficultyData(idDifficulty: 1, levelDifficulty: "Beginner")
+            difficultyHelper.storeToDifficultyData(idDifficulty: 2, levelDifficulty: "Intermediate")
+        }
+        
+        badgesHelper.retreiveDataFromBadges()
+        
+        if userHelper.isUserTableEmpty() == false {
+            userData = userHelper.retrieveUserBasicData()
+        }
+     
+        if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
+            completedData = planHelper.retrieveCompletedPlanData().tempModel
+        }
+        
+        badgesHelper.checkUserEarnBadge()
+        badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -437,7 +483,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
            reminderData = notifHelper.retrieveNotificationFromCoreData()
-        
+            badgesHelper.checkUserEarnBadge()
+        badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
             completeRemindBadgeTableView.reloadData()
        }
     
@@ -462,20 +509,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
-
-       
-        //userHelper.storeToUserData(idUser: 1, userName: "John Doe", idPlan: [1], height: 170, weight: 180)
-        //data dummy buat completedData
-       /* self.completedData =
-            [
-                CompletedPlanModel(titleMovement: "Leg Plan", level: "Beginner", period: 4, movement: 5)
-                ,CompletedPlanModel(titleMovement: "Advance leg plan", level: "Intermediate", period: 6, movement: 8)
-                
-            ]*/
         
         //data dummy buat badges
         badgesImageArray =
         ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
+        
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
 }

@@ -8,7 +8,11 @@
 
 import UIKit
 
-class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+protocol CollectionCellDelegator {
+    func callSegueFromColViewCell()
+}
+
+class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionCellDelegator {
     
 
     static let identifier = "CustomizePlanTableViewCell"
@@ -38,7 +42,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         movementCollection.register(MovementCollectionViewCell.nib(), forCellWithReuseIdentifier: MovementCollectionViewCell.identifier)
         movementCollection.delegate = self
         movementCollection.dataSource = self
-        //movementCollection.backgroundColor = UIColor.black
+        movementCollection.backgroundColor = UIColor.clear
         
     }
 
@@ -54,22 +58,28 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("click")
-        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
+        print("colview clicked")
+        //colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
         cell.configure(with: model[indexPath.row])
+        cell.delegate = self
+        cell.backgroundColor = UIColor.white
+        cell.layer.cornerRadius = 10
         //cell.backgroundColor = UIColor.black
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 168, height: 168)
+        return CGSize(width: 120, height: 180)
     }
  
-     
+    func callSegueFromColViewCell() {
+        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self )
+
+    }
 }

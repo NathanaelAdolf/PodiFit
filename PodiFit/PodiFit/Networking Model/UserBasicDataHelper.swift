@@ -17,13 +17,11 @@ class UserBasicDataHelper: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func storeToUserData(idUser: Int,userName: String,idPlan: [Int]?,height: Int,weight: Int)->String
+    func storeToUserData(idUser: Int,userName: String,idPlan: [Int]?,height: Int,weight: Int,img: Data)
     {
       
-          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return ""}
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
     
-          var message: String = ""
-
           let context = appDelegate.persistentContainer.viewContext
 
           let dataOfEntity = NSEntityDescription.entity(forEntityName: "User", in: context)!
@@ -34,18 +32,17 @@ class UserBasicDataHelper: UIViewController {
         listOfEntity.setValue(idPlan, forKey: "userIdPlan")
         listOfEntity.setValue(height, forKey: "height")
         listOfEntity.setValue(weight, forKey: "weight")
+        listOfEntity.setValue(img, forKey: "img")
   
           do {
               
              try context.save()
-              message = "00"
+            
           } catch let error as NSError {
              
               print("Gagal save context \(error), \(error.userInfo)")
-              message = "01"
           }
-        
-        return message
+    
     }
     
     func retrieveUserBasicData()->[UserDataModel]
@@ -67,9 +64,10 @@ class UserBasicDataHelper: UIViewController {
                         print("id plan : \(data.value(forKey: "userIdPlan")as! [Int]?)")
                         print("height : \(data.value(forKey: "height")as! Int)")
                         print("weight : \(data.value(forKey: "weight")as! Int)")
+                        print("img : \(data.value(forKey: "img")as! Data)")
                         print("\n")
                         
-                        tempUserData.append(UserDataModel(Name: data.value(forKey: "userName")as! String,userIdPlan: data.value(forKey: "userIdPlan")as! [Int]?, weight: data.value(forKey: "weight")as! Int, height: data.value(forKey: "height")as! Int))
+                        tempUserData.append(UserDataModel(Name: data.value(forKey: "userName")as! String,userIdPlan: data.value(forKey: "userIdPlan")as! [Int]?, weight: data.value(forKey: "weight")as! Int, height: data.value(forKey: "height")as! Int,img: data.value(forKey: "img")as! Data))
                         
                     }
               }
@@ -79,6 +77,39 @@ class UserBasicDataHelper: UIViewController {
              }
         
         return tempUserData
+    }
+    
+    func isUserTableEmpty()->Bool
+    {
+        
+        var counter: Int = 0
+        var isTableEmpty = Bool()
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return isTableEmpty}
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        counter += 1
+                        
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
+        
+        if counter == 0 {
+            isTableEmpty = true
+        }else{
+            isTableEmpty = false
+        }
+        
+        return isTableEmpty
     }
     
     func updateUserData(userNameToUpdate: String,newName: String,height: Int,weight: Int) -> String {
@@ -105,15 +136,45 @@ class UserBasicDataHelper: UIViewController {
         return "00"
     }
     
+    func updateUserImage(nameToUpdate: String, image: Data)
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "userName = %@", nameToUpdate)
+        
+        do{
+            let fetch = try managedContext.fetch(fetchRequest)
+            let dataToUpdate = fetch[0] as! NSManagedObject
+        
+            dataToUpdate.setValue(image, forKey: "img")
+         
+          
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    func deleteDataInUser(uniqueUserName: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "userName = %@", uniqueUserName)
+        
+        do{
+            let dataToDelete = try managedContext.fetch(fetchRequest)[0] as! NSManagedObject
+            managedContext.delete(dataToDelete)
+            
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
+    }
 
 }
