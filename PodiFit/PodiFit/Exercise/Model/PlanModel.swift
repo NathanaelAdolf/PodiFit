@@ -103,7 +103,8 @@ class PlanModel: UIViewController {
 //                print(bebas)
                 
                 for beb in arrBebas {
-//                    fetchRequest.predicate = NSPredicate(format: "idStep == %@", "beb")
+                    
+//                    fetchRequest.predicate = NSPredicate(format: "idStep == %@", "3")
                     print(beb.idStep)
 //                    let stepss = try managedObjectContext.fetch(fetchRequest)
 //                    for stepsss in stepss {

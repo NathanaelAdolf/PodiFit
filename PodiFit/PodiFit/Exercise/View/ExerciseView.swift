@@ -123,9 +123,10 @@ class ExerciseView: UIView {
     
     public func lastExercise() {
         doneView.isHidden = false
-        circularBarView.isHidden = true
+        circularBarView.isHidden = false
         previousView.isHidden = true
         nextView.isHidden = true
+        progressNumber.isHidden = true
         
         
         
