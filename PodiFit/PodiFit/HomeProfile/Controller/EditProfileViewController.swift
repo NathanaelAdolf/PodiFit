@@ -128,11 +128,5 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         weightTextField.text = "\(tempDataToEdit[0].weight!)"
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle
-    {
-        .lightContent
-    }
-    
-
 
 }
