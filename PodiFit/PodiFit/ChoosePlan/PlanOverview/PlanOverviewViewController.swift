@@ -66,7 +66,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
                  PlanTypes1(title: "Intermediate Plan", subtitle: "4 weeks", image: "2"),
                  PlanTypes1(title: "Advanced Plan", subtitle: "6 weeks", image: "3")]
         
-        tableView.rowHeight = 200.0
+        tableView.rowHeight = 220.0
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

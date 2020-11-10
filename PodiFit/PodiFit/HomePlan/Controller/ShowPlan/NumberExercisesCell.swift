@@ -21,7 +21,7 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         return UINib(nibName: "NumberExercisesCell", bundle: nil)
     }
     
-    var colView = UITableViewController()
+    var colView : ShowPlanVC?
     @IBOutlet weak var buttonCollection: UICollectionView!
     
     override func awakeFromNib() {
@@ -70,7 +70,7 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     
     func callSegueFromColViewCell() {
         print("masuk")
-        colView.performSegue(withIdentifier: "exerciseListSegue", sender: self)
+        colView?.performSegue(withIdentifier: "exerciseListSegue", sender: self)
         print("Jalan")
     }
 }

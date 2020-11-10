@@ -48,8 +48,9 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
+        
     }
     
     
@@ -58,9 +59,24 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("colview clicked")
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? MovementCollectionViewCell{
+            
+            if cell.layer.borderWidth == 0 {
+                cell.layer.borderWidth = 2
+                cell.layer.borderColor = Colors.yellowColor.cgColor
+                print("indexpath = \(indexPath), status = selected")
+            }
+            else {
+                cell.layer.borderWidth = 0
+                cell.layer.borderColor = UIColor.clear.cgColor
+                print("indexpath = \(indexPath), status = not selected")
+            }
+            
+        }
         //colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -69,6 +85,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         cell.delegate = self
         cell.backgroundColor = UIColor.white
         cell.layer.cornerRadius = 10
+        
         //cell.backgroundColor = UIColor.black
         return cell
     }

@@ -53,6 +53,9 @@ extension ShowPlanVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewUI.dequeueReusableCell(withIdentifier: NumberExercisesCell.identifier, for: indexPath) as! NumberExercisesCell
+        
+        cell.colView = self
+        
         return cell
     }
     
