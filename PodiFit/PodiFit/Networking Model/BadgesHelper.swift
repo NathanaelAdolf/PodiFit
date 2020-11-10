@@ -102,13 +102,11 @@ class BadgesHelper: UIViewController {
                             
                             
                             if data.value(forKey: "completeFivePlanBadge")as! Bool == true{
-                                tempDetailData.append(DetailBadgesModel(imageName: "completed five plan badge.png", title: "Goals On Point", description: "Finish 5 exercise plans",progressNum: Float(tempListCompletedPlan.count/5),labelIndicator: "\(tempListCompletedPlan.count)/5"))
-                                print("float :\(tempListCompletedPlan.count/5)")
+                                tempDetailData.append(DetailBadgesModel(imageName: "completed five plan badge.png", title: "Goals On Point", description: "Finish 5 exercise plans",progressNum: Float(Float(tempListCompletedPlan.count)/Float(5)),labelIndicator: "\(tempListCompletedPlan.count)/5"))
                             }
                             else
                             {
-                                tempDetailData.append(DetailBadgesModel(imageName: "completed five plan badge.png", title: "Goals On Point", description: "Finish 5 exercise plans",progressNum: Float(tempListCompletedPlan.count/5),labelIndicator: "\(tempListCompletedPlan.count)/5"))
-                                print("float :\(tempListCompletedPlan.count/5)")
+                                tempDetailData.append(DetailBadgesModel(imageName: "completed five plan badge.png", title: "Goals On Point", description: "Finish 5 exercise plans",progressNum: Float(Float(tempListCompletedPlan.count)/Float(5)),labelIndicator: "\(tempListCompletedPlan.count)/5"))
                             }
                             
                             

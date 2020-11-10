@@ -43,7 +43,7 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
-        return (planDetailsData.count == 0) ? 405 : 210
+        return (planDetailsData.count == 0) ? 405 : 220
     }
     
 
@@ -58,7 +58,6 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
         self.view.backgroundColor = Colors.backgroundBaseColor
         
         notifHelper.configureUserNotificationCenter()
-        self.navigationController!.navigationBar.isTranslucent = true
         
     }
     
@@ -76,9 +75,6 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle
-    {
-        .lightContent
-    }
+   
 
 }
