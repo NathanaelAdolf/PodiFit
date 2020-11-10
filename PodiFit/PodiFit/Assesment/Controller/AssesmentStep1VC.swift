@@ -14,14 +14,25 @@ class AssesmentStep1VC: UIViewController{
     
     @IBOutlet weak var maleBtn: UIButton!
     @IBOutlet weak var femaleBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
+    @IBOutlet weak var alertLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupTextFields()
+    }
+    
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        if (gender.isEmpty == true || weightTextField.text?.isEmpty == true || heightTextField.text?.isEmpty == true){
+                alertLabel.isHidden = false
+        }
+        else {
+            self.performSegue(withIdentifier: "NextStepSegue", sender: self)
+        }
     }
     
     @IBAction func maleSelectedBtn(_ sender: Any) {

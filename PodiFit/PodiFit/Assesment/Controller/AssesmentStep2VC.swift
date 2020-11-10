@@ -19,6 +19,7 @@ class AssesmentStep2VC: UIViewController {
     @IBOutlet weak var secondBtn: UIButton!
     @IBOutlet weak var thirdBtn: UIButton!
     @IBOutlet weak var fourthBtn: UIButton!
+    @IBOutlet weak var alertLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +123,15 @@ class AssesmentStep2VC: UIViewController {
             target.weight = weight
             target.height = height
             target.times = times
+        }
+    }
+    
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        if (firstBtn.isSelected == true || secondBtn.isSelected == true || thirdBtn.isSelected == true || fourthBtn.isSelected == true) {
+            self.performSegue(withIdentifier: "ResultSegue", sender: self)
+        }
+        else {
+            alertLabel.isHidden = false
         }
     }
     

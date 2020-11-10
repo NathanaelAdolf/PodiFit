@@ -52,10 +52,11 @@ class NumberExercisesCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     func callSegueFromColViewCell() {
         colView?.performSegue(withIdentifier: "ExerciseListSegue", sender: self)
+        print("Jalan")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,9 +65,5 @@ class NumberExercisesCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         cell.delegate = self
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 75, height: 75)
     }
 }

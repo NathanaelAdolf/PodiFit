@@ -23,6 +23,7 @@ class ButtonExerciseCell: UICollectionViewCell {
     @IBAction func tapExerciseBtn(_ sender: Any) {
         if (self.delegate != nil) {
             self.delegate.callSegueFromColViewCell()
+            print("inside clicked")
         }
         
         print("Button exercise clicked")

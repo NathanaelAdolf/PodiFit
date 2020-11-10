@@ -152,7 +152,6 @@
 		2FCBFC4B2559798D000F163E /* ButtonExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExerciseCell.swift; sourceTree = "<group>"; };
 		2FCBFC4C2559798D000F163E /* ButtonExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonExerciseCell.xib; sourceTree = "<group>"; };
 		2FF227812554CABC00D494C4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
-		482EBA802553D17D002062E8 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationHelper.swift; path = ../../../../../../Downloads/NotificationHelper.swift; sourceTree = "<group>"; };
 		487B519625548C0700091ABB /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		487E1F61254F467500F58265 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		487E1F6E254F52D200F58265 /* ExerciseSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryViewController.swift; sourceTree = "<group>"; };
@@ -570,7 +569,6 @@
 				AB5F462D2553CD97005DE0D0 /* Reminder+CoreDataProperties.swift */,
 				AB5F462E2553CD97005DE0D0 /* User+CoreDataClass.swift */,
 				AB5F462F2553CD97005DE0D0 /* User+CoreDataProperties.swift */,
-				482EBA802553D17D002062E8 /* NotificationHelper.swift */,
 				8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */,
 				8DD69DFC2554E22A00E2DF21 /* PlanHelper.swift */,
 				8DD69DF42554E19500E2DF21 /* NotificationHelper.swift */,
@@ -909,7 +907,7 @@
 				ABFB99FE254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift in Sources */,
 				487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */,
 				2F9C0F2D2558621F00D87F01 /* ListPlanVC.swift in Sources */,
-				ABFB9A16254FFC1A00B5E96A /* StackedTableViewCell.swift in Sources */,
+				ABFB9A16254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift in Sources */,
 				ABFB9A16254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.swift in Sources */,
 				8DB6461C254BAA6C0072AC5C /* CompletedPlanDetailTableViewCell.swift in Sources */,
 				2FCBFC4D2559798D000F163E /* ButtonExerciseCell.swift in Sources */,
