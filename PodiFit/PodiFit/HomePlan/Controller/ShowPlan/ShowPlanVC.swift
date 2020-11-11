@@ -8,13 +8,13 @@
 
 import UIKit
 
+protocol ShowPlanDelegator {
+    func callSegueFromColViewCell()
+}
+
 class ShowPlanVC: UIViewController {
 
     @IBOutlet weak var tableViewUI: UITableView!
-    
-    @IBAction func btnTestStart(_ sender: Any) {
-        performSegue(withIdentifier: "exerciseListSegue", sender: self)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,6 @@ class ShowPlanVC: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = true
     }
-
 }
 
 extension ShowPlanVC: UITableViewDelegate, UITableViewDataSource {
@@ -54,9 +53,15 @@ extension ShowPlanVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewUI.dequeueReusableCell(withIdentifier: NumberExercisesCell.identifier, for: indexPath) as! NumberExercisesCell
         
-        cell.colView = self
+        cell.delegate = self
         
         return cell
     }
     
+}
+
+extension ShowPlanVC: ShowPlanDelegator {
+    func callSegueFromColViewCell() {
+        performSegue(withIdentifier: "exerciseListSegue", sender: self)
+    }
 }

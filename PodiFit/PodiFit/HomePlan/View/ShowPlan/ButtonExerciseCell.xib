@@ -24,10 +24,13 @@
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srs-1l-m4O">
                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.74901960779999999" green="0.82352941180000006" blue="0.1333333333" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
                         <state key="normal" title="1">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.24313725490196078" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
                             <action selector="tapExerciseBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bde-c0-4V3"/>
