@@ -33,6 +33,9 @@ class AssesmentResultVC: UIViewController {
     }
     
     @IBAction func seeMyPlanBtn(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "first")
+        UserDefaults.standard.synchronize()
+        
         userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!)
         
         self.performSegue(withIdentifier: "SeeMyPlanSegue", sender: self)

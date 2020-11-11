@@ -465,6 +465,7 @@
 				8D13C0B525402997002195C9 /* AppDelegate.swift */,
 				8D13C0B925402997002195C9 /* ViewController.swift */,
 				8D13C0BB25402997002195C9 /* Main.storyboard */,
+				8D13C0B725402997002195C9 /* SceneDelegate.swift */,
 				8D13C0C125402998002195C9 /* Assets.xcassets */,
 				8D13C0C325402998002195C9 /* LaunchScreen.storyboard */,
 				8D13C0C625402998002195C9 /* Info.plist */,
@@ -510,7 +511,6 @@
 				ABFB9A332550011A00B5E96A /* CustomizePlan */,
 				AB88B9512551482900AFF3BA /* ModalPlan */,
 				ABFB9A2B255000A700B5E96A /* ChoosePlan.storyboard */,
-				8D13C0B725402997002195C9 /* SceneDelegate.swift */,
 			);
 			path = ChoosePlan;
 			sourceTree = "<group>";
