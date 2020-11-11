@@ -9,10 +9,14 @@
 import UIKit
 import UserNotifications
 
-    var userHelper = UserBasicDataHelper()
-    var planHelper = PlanHelper()
-    var difficultyHelper = DifficultyHelper()
-    var badgesHelper = BadgesHelper()
+var userHelper = UserBasicDataHelper()
+var planHelper = PlanHelper()
+var difficultyHelper = DifficultyHelper()
+var badgesHelper = BadgesHelper()
+
+protocol HomeProfileDelegate {
+    func nextDidTap()
+}
 
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -57,9 +61,9 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             return 1
         }
         else
-       {
-           return 1
-       }
+        {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,7 +97,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         var tempCell = UITableViewCell()
         if indexPath.section == 0
         {
-             let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
             
             cell.persomImage.image = UIImage(data: userData[indexPath.row].img)
             cell.persomImage.layer.cornerRadius = 20
@@ -119,8 +123,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                 cell.numberWeightLabel.text = String(userData[indexPath.row].weight)
                 cell.heightLabel.text = String(userData[indexPath.row].height)
             }
-           
-
+            
+            
             return cell
             
             
@@ -130,7 +134,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             if completedData.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
                 print("No Completed data")
-               
+                
                 cell.emptyMessageLabel.text = "You have no completed plan"
                 
                 return cell
@@ -156,71 +160,71 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             else
             {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
-                    
-                    cell.hourLabel.text = reminderData[indexPath.row].Hour
-                    cell.reminderNameLabel.text = reminderData[indexPath.row].reminderName
-                    
-                    if reminderData[indexPath.row].isMon == true {
-                        cell.mondayLabel.textColor = .white
-                    }
-                    else
-                    {
-                        cell.mondayLabel.textColor = .gray
-                    }
-                    
-                     if reminderData[indexPath.row].isTue == true {
-                        cell.TuesdayLabel.textColor = .white
-                    }
-                    else
-                   {
-                       cell.TuesdayLabel.textColor = .gray
-                   }
-                    if reminderData[indexPath.row].isWed == true {
-                        cell.wednesdayLabel.textColor = .white
-                       }
-                    else
-                   {
-                       cell.wednesdayLabel.textColor = .gray
-                   }
-                     if reminderData[indexPath.row].isThu == true {
-                        cell.thursdayLabel.textColor = .white
-                       }
-                    else
-                   {
-                       cell.thursdayLabel.textColor = .gray
-                   }
-                    if reminderData[indexPath.row].isFri == true {
-                        cell.fridayLabel.textColor = .white
-                       }
-                    else
-                   {
-                       cell.fridayLabel.textColor = .gray
-                   }
-                     if reminderData[indexPath.row].isSat == true {
-                        cell.saturdayLabel.textColor = .white
-                       }
-                    else
-                       {
-                           cell.saturdayLabel.textColor = .gray
-                       }
-                     if reminderData[indexPath.row].isSun == true {
-                        cell.sundayLabel.textColor = .white
-                       }
-                    else
-                       {
-                           cell.sundayLabel.textColor = .gray
-                       }
-                    
-                    if reminderData[indexPath.row].isReminderActive == true {
-                        cell.reminderSwitch.setOn(true, animated: false)
-                    }
-                    else
-                    {
-                        cell.reminderSwitch.setOn(false, animated: false)
-                    }
-                    
-                    return cell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell", for: indexPath) as! ReminderTableViewCell
+                
+                cell.hourLabel.text = reminderData[indexPath.row].Hour
+                cell.reminderNameLabel.text = reminderData[indexPath.row].reminderName
+                
+                if reminderData[indexPath.row].isMon == true {
+                    cell.mondayLabel.textColor = .white
+                }
+                else
+                {
+                    cell.mondayLabel.textColor = .gray
+                }
+                
+                if reminderData[indexPath.row].isTue == true {
+                    cell.TuesdayLabel.textColor = .white
+                }
+                else
+                {
+                    cell.TuesdayLabel.textColor = .gray
+                }
+                if reminderData[indexPath.row].isWed == true {
+                    cell.wednesdayLabel.textColor = .white
+                }
+                else
+                {
+                    cell.wednesdayLabel.textColor = .gray
+                }
+                if reminderData[indexPath.row].isThu == true {
+                    cell.thursdayLabel.textColor = .white
+                }
+                else
+                {
+                    cell.thursdayLabel.textColor = .gray
+                }
+                if reminderData[indexPath.row].isFri == true {
+                    cell.fridayLabel.textColor = .white
+                }
+                else
+                {
+                    cell.fridayLabel.textColor = .gray
+                }
+                if reminderData[indexPath.row].isSat == true {
+                    cell.saturdayLabel.textColor = .white
+                }
+                else
+                {
+                    cell.saturdayLabel.textColor = .gray
+                }
+                if reminderData[indexPath.row].isSun == true {
+                    cell.sundayLabel.textColor = .white
+                }
+                else
+                {
+                    cell.sundayLabel.textColor = .gray
+                }
+                
+                if reminderData[indexPath.row].isReminderActive == true {
+                    cell.reminderSwitch.setOn(true, animated: false)
+                }
+                else
+                {
+                    cell.reminderSwitch.setOn(false, animated: false)
+                }
+                
+                return cell
             }
         }
         else
@@ -262,7 +266,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-           
+        
         if section == 0 || section == 1
         {
             return nil
@@ -272,19 +276,19 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             let headerView = UIView()
             headerView.backgroundColor = .none
-
-             let sectionLabel = UILabel(frame: CGRect(x: 20, y: 10, width:
-             tableView.bounds.size.width, height: tableView.bounds.size.height))
-             sectionLabel.font = UIFont(name: "Helvetica", size: 20)
-             sectionLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            
+            let sectionLabel = UILabel(frame: CGRect(x: 20, y: 10, width:
+                                                        tableView.bounds.size.width, height: tableView.bounds.size.height))
+            sectionLabel.font = UIFont(name: "Helvetica", size: 20)
+            sectionLabel.font = UIFont.boldSystemFont(ofSize: 20)
             sectionLabel.textColor = UIColor.white
-  
+            
             addButton = UIButton(frame: CGRect(x: tableView.frame.size.width - 100, y: 6, width:
-            80, height: 33))
+                                                80, height: 33))
             addButton.titleLabel?.textColor = .gray
             
             if section == 2 {
-                 sectionLabel.text = "Completed Plan"
+                sectionLabel.text = "Completed Plan"
                 addButton.setTitle("History", for: .normal)
                 addButton.setTitleColor(.lightGray, for: .normal)
                 
@@ -292,29 +296,29 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             if section == 3
             {
-               addButton.setTitle("Add new", for: .normal)
+                addButton.setTitle("Add new", for: .normal)
                 addButton.setTitleColor(.lightGray, for: .normal)
                 swipeState = ""
-               addButton.addTarget(self, action: #selector(reminderButtonPressed), for: .touchUpInside)
+                addButton.addTarget(self, action: #selector(reminderButtonPressed), for: .touchUpInside)
                 sectionLabel.text = "Reminder"
             }
             if section == 4 {
                 addButton.setTitle("See more", for: .normal)
                 addButton.setTitleColor(.lightGray, for: .normal)
-                 swipeState = ""
+                swipeState = ""
                 addButton.addTarget(self, action: #selector(badgesButtonPressed), for: .touchUpInside)
-                 sectionLabel.text = "Badges"
+                sectionLabel.text = "Badges"
             }
-          
-             sectionLabel.sizeToFit()
+            
+            sectionLabel.sizeToFit()
             
             headerView.addSubview(sectionLabel)
             headerView.addSubview(addButton)
-        
-             return headerView
+            
+            return headerView
         }
-            return nil
-       }
+        return nil
+    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
@@ -338,42 +342,42 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                     self.counter += 1
                 }
                 if self.reminderData[indexPath.row].isTue == true
-                  {
-                      self.counter += 1
-                  }
+                {
+                    self.counter += 1
+                }
                 if self.reminderData[indexPath.row].isWed == true
-                  {
-                      self.counter += 1
-                  }
+                {
+                    self.counter += 1
+                }
                 if self.reminderData[indexPath.row].isThu == true
-                  {
-                      self.counter += 1
-                  }
+                {
+                    self.counter += 1
+                }
                 if self.reminderData[indexPath.row].isFri == true
-                  {
-                      self.counter += 1
-                  }
+                {
+                    self.counter += 1
+                }
                 if self.reminderData[indexPath.row].isSat == true
-                  {
-                      self.counter += 1
-                  }
+                {
+                    self.counter += 1
+                }
                 if self.reminderData[indexPath.row].isSun == true
-                  {
-                      self.counter += 1
-                  }
+                {
+                    self.counter += 1
+                }
                 
                 for i in 0...self.counter - 1
                 {
-                  self.reminderNameArray.append("\(self.reminderData[indexPath.row].reminderName!)\(i)")
+                    self.reminderNameArray.append("\(self.reminderData[indexPath.row].reminderName!)\(i)")
                 }
-                  
+                
                 for _ in 0...self.reminderNameArray.count - 1
                 {
                     notifHelper.notificationCenter.removeDeliveredNotifications(withIdentifiers: self.reminderNameArray)
                     notifHelper.notificationCenter.removePendingNotificationRequests(withIdentifiers: self.reminderNameArray)
                     
                 }
-            
+                
                 notifHelper.deleteDataInReminder(uniqueReminderName: self.reminderData[indexPath.row].reminderName)
                 self.reminderData.remove(at: indexPath.row)
                 self.completeRemindBadgeTableView.reloadData()
@@ -406,6 +410,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             if let destination = segue.destination as? AddReminderViewController
             {
                 destination.pageState = "Create"
+                destination.delegate = self
             }
         }
         if segue.identifier == "toEditProfile" {
@@ -422,29 +427,29 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         
     }
-        
+    
     @objc func completeButtonPressed()
     {
         print("pressed complete button")
         performSegue(withIdentifier: "toCompletedHistory", sender: self)
     }
     @objc func reminderButtonPressed()
-   {
+    {
         print("pressed reminder button")
-       performSegue(withIdentifier: "toAddReminder", sender: self)
-   }
+        performSegue(withIdentifier: "toAddReminder", sender: self)
+    }
     @objc func badgesButtonPressed()
     {
         performSegue(withIdentifier: "toDetailBadgesSegue", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       
+        
         //userHelper.deleteDataInUser(uniqueUserName: "Adolf")
-         //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
+        //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
         //planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
-       // planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
-
+        // planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
+        
         reminderData = notifHelper.retrieveNotificationFromCoreData()
         
         if userHelper.isUserTableEmpty() == true {
@@ -474,7 +479,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         if userHelper.isUserTableEmpty() == false {
             userData = userHelper.retrieveUserBasicData()
         }
-     
+        
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
             completedData = planHelper.retrieveCompletedPlanData().tempModel
         }
@@ -483,21 +488,22 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.tabBarController?.tabBar.isHidden = false
         self.swipeState = ""
     }
-        
+    
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
-           reminderData = notifHelper.retrieveNotificationFromCoreData()
-            badgesHelper.checkUserEarnBadge()
-        badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
-            completeRemindBadgeTableView.reloadData()
-       }
+        print("unwind segue test")
+        //save to coredata
+        
+        
+        
+    }
     
     @IBAction func unwindSegueFromEditProfile(sender: UIStoryboardSegue){
         self.userData = userHelper.retrieveUserBasicData()
         
         completeRemindBadgeTableView.reloadData()
-       }
+    }
     
-
+    
     @IBOutlet weak var completeRemindBadgeTableView: UITableView!
     
     override func viewDidLoad() {
@@ -515,7 +521,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         //data dummy buat badges
         badgesImageArray =
-        ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
+            ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
         
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -533,7 +539,7 @@ extension HomeProfileViewController: editButtonProtocol
 
 extension UIViewController
 {
-
+    
     func hideKeyboardWhenTappedAround()
     {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.endEditingKeyboard))
@@ -547,8 +553,11 @@ extension UIViewController
     }
 }
 
-
-
-
-
-
+extension HomeProfileViewController: HomeProfileDelegate {
+    func nextDidTap() {
+        self.reminderData = notifHelper.retrieveNotificationFromCoreData()
+        badgesHelper.checkUserEarnBadge()
+        self.badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
+        self.completeRemindBadgeTableView.reloadData()
+    }
+}
