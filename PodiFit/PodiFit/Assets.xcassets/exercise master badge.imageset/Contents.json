@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "exercise master badge.png",
+      "filename" : "exercise_master_badge.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "exercise_master_badge@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "exercise_master_badge@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

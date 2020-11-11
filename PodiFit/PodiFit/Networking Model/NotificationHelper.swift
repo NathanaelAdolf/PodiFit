@@ -41,6 +41,8 @@ class NotificationHelper: UIViewController {
                                 print("The application is not allowed to display notifications")
             case .provisional:
                  print("The application authorized to post non-interruptive user notifications")
+            case .ephemeral:
+                print("ephemeral")
             @unknown default:
                                 print("Application Not Allowed to Display Notifications")
             }
