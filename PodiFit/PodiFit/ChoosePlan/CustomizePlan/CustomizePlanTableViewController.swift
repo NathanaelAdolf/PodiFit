@@ -126,13 +126,29 @@ class CustomizePlanTableViewController: UITableViewController{
 }
 
 extension CustomizePlanTableViewController: UIViewControllerTransitioningDelegate{
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController!, sourceViewController source: UIViewController) -> UIPresentationController? {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
         return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
     }
 }
 
+extension CustomizePlanTableViewController: CollectionCellDelegator{
+    func callSegueFromColViewCell() {
+        var storyboard = UIStoryboard(name: "ChoosePlan", bundle: nil)
+        let pvc = storyboard.instantiateViewController(withIdentifier: "ModalPlanViewController") as UIViewController
+
+        pvc.modalPresentationStyle = UIModalPresentationStyle.popover
+        pvc.transitioningDelegate = self
+
+        self.present(pvc, animated: true, completion: nil)
+    }
+    
+}
+
 class HalfSizePresentationController : UIPresentationController {
-    func frameOfPresentedViewInContainerView() -> CGRect {
+    
+    override var frameOfPresentedViewInContainerView: CGRect{
         return CGRect(x: 0, y: (containerView?.bounds.height)!/2, width: containerView!.bounds.width, height: containerView!.bounds.height/2)
     }
 }
