@@ -115,6 +115,10 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func previous(_ sender: Any) {
+        var countProgress = Double((Double(finishExercise) / Double(countChosenExercise)))
+        print("ini \(countProgress)")
+        print("angka dari \(finishExercise), \(countChosenExercise)")
+
         if finishExercise == countChosenExercise {
             exerciseView.lastExercise()
         } else {
@@ -134,16 +138,14 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: Any) {
+        var countProgress = Float((Float(finishExercise) / Float(countChosenExercise)))
+        circularProgressView.setProgressWithAnimation(duration: 1.0, value: countProgress)
+        exerciseView.setProgressNumber(number: finishExercise, totalExercise: countChosenExercise)
         if finishExercise == countChosenExercise {
             exerciseView.lastExercise()
         } else {
-            if ((isVideo % 2) != 0) {
-                timer?.invalidate()
-                exerciseView.countDownView(count: "30")
-                circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
-                exerciseView.videoView()
-                isVideo += 1
-            } else {
+//            print("harusnya masuk\(finishExercise), \(isVideo)")
+            if ((isVideo % 2) != 1) {
                 exerciseView.restView()
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
                 isVideo += 1
@@ -157,20 +159,18 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func Skip(_ sender: Any) {
+        
         timer?.invalidate()
         exerciseView.countDownView(count: "30")
-        circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
         exerciseView.videoView()
         isVideo += 1
-        
-        
     }
     
     @IBAction func addTimeRest(_ sender: Any) {
         timer?.invalidate()
-        exerciseView.countDownView(count: "20")
+        exerciseView.countDownView(count: "5")
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(additionTime), userInfo: nil, repeats: true)
-        countTimeAddition = 20
+        countTimeAddition = 5
     }
     
     @IBAction func exit(_ sender: Any) {
