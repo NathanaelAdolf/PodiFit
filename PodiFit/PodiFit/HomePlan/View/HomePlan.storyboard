@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7r-EI-iie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063.768115942029" y="1127.6785714285713"/>
+            <point key="canvasLocation" x="2006" y="1128"/>
         </scene>
         <!--Show PlanVC-->
         <scene sceneID="AXA-PK-dzl">
@@ -105,7 +105,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="IDb-Nk-8e5" kind="show" id="6tG-Rn-C8U"/>
+                                    <segue destination="IDb-Nk-8e5" kind="show" id="ccz-h4-hOk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG5-ip-mOZ">
@@ -244,7 +244,7 @@
                 <viewControllerPlaceholder storyboardName="ChoosePlan" id="PAB-zF-Ci9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwJ-rw-zPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="1533"/>
+            <point key="canvasLocation" x="2006" y="1535"/>
         </scene>
         <!--Exercise-->
         <scene sceneID="Azd-AC-dzD">
@@ -460,7 +460,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tsF-8O-Av0"/>
+        <segue reference="ccz-h4-hOk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.plaintext.fill" catalog="system" width="115" height="128"/>
