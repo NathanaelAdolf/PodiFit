@@ -14,6 +14,10 @@ class AssesmentResultVC: UIViewController {
     var weight: String = ""
     var height: String = ""
     var times: String = ""
+    
+    var myHeight: Int = 0
+    var myWeight: Int = 0
+    var myTimes: Int = 0
 
     @IBOutlet weak var genderImage: UIImageView!
     @IBOutlet weak var genderLabel: UILabel!
@@ -26,8 +30,18 @@ class AssesmentResultVC: UIViewController {
         super.viewDidLoad()
         
         setupData()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func seeMyPlanBtn(_ sender: Any) {
+        userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!)
+        
+        self.performSegue(withIdentifier: "SeeMyPlanSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let target = segue.destination as? PlanOverviewViewController {
+            target.jumlahHari = myTimes
+        }
     }
     
     func setupData() {
@@ -36,6 +50,10 @@ class AssesmentResultVC: UIViewController {
         weightLabel.text = weight
         heightLabel.text = height
         timeLabel.text = times
+        
+        myHeight = Int(height)!
+        myWeight = Int(weight)!
+        myTimes = Int(times)!
     }
     
 }

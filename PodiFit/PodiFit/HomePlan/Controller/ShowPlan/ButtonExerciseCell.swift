@@ -15,18 +15,14 @@ class ButtonExerciseCell: UICollectionViewCell {
         return UINib(nibName: "ButtonExerciseCell", bundle: nil)
     }
     
-    var colView = UITableViewController()
-    var delegate: CollectionViewCellDelegator!
+    var delegate: ShowPlanDelegator!
 
     @IBOutlet weak var btnExercise: UIButton!
     
     @IBAction func tapExerciseBtn(_ sender: Any) {
         if (self.delegate != nil) {
             self.delegate.callSegueFromColViewCell()
-            print("inside clicked")
         }
-        
-        print("Button exercise clicked")
     }
     
     override func awakeFromNib() {
@@ -38,6 +34,6 @@ class ButtonExerciseCell: UICollectionViewCell {
     func setupUI() {
         btnExercise.layer.borderWidth = 2
         btnExercise.layer.cornerRadius = 37.5
-        btnExercise.layer.borderColor = #colorLiteral(red: 0.9130336642, green: 0.9586860538, blue: 0.3836800456, alpha: 1)
+        btnExercise.layer.borderColor = #colorLiteral(red: 0.7490196078, green: 0.8235294118, blue: 0.1333333333, alpha: 1)
     }
 }

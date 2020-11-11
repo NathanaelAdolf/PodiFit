@@ -115,7 +115,13 @@
             </collectionViewCellContentView>
             <size key="customSize" width="374" height="134"/>
             <connections>
+                <outlet property="equipmentPlanLabel" destination="IuY-yn-uMa" id="mTM-oi-e6a"/>
+                <outlet property="exercisePlanLabel" destination="fOI-cB-Wqd" id="Wyd-Hw-yWi"/>
+                <outlet property="namePlanLabel" destination="T7R-0H-cwq" id="K0C-4I-rhB"/>
+                <outlet property="planImage" destination="pEU-yz-jbL" id="Po5-CL-K9p"/>
                 <outlet property="progressPlan" destination="8Xk-Se-muP" id="jBx-YO-WUQ"/>
+                <outlet property="progressPlanLabel" destination="F7a-SG-KIA" id="bZl-C6-6vJ"/>
+                <outlet property="weekPlanLabel" destination="aME-7J-5V0" id="JUf-OF-jNO"/>
             </connections>
             <point key="canvasLocation" x="52.173913043478265" y="29.464285714285712"/>
         </collectionViewCell>
