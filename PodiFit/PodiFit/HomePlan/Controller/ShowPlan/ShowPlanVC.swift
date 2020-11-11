@@ -12,6 +12,10 @@ class ShowPlanVC: UIViewController {
 
     @IBOutlet weak var tableViewUI: UITableView!
     
+    @IBAction func btnTestStart(_ sender: Any) {
+        performSegue(withIdentifier: "exerciseListSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +53,9 @@ extension ShowPlanVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewUI.dequeueReusableCell(withIdentifier: NumberExercisesCell.identifier, for: indexPath) as! NumberExercisesCell
+        
+        cell.colView = self
+        
         return cell
     }
     

@@ -12,7 +12,8 @@ protocol CollectionViewCellDelegator {
     func callSegueFromColViewCell()
 }
 
-class NumberExercisesCell: UITableViewCell,UICollectionViewDelegate, UICollectionViewDataSource, CollectionViewCellDelegator {
+class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionViewCellDelegator {
+    
     
     static let identifier = "NumberExercisesCell"
     
@@ -20,7 +21,7 @@ class NumberExercisesCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         return UINib(nibName: "NumberExercisesCell", bundle: nil)
     }
     
-    var colView:UITableViewController?
+    var colView : ShowPlanVC?
     @IBOutlet weak var buttonCollection: UICollectionView!
     
     override func awakeFromNib() {
@@ -50,14 +51,10 @@ class NumberExercisesCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         // Configure the view for the selected state
     }
     
-    func callSegueFromColViewCell() {
-        colView?.performSegue(withIdentifier: "ExerciseListSegue", sender: self)
-        print("Jalan")
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonExerciseCell.identifier, for: indexPath) as! ButtonExerciseCell
@@ -65,5 +62,15 @@ class NumberExercisesCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         cell.delegate = self
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("colview clicked")
+    }
+    
+    func callSegueFromColViewCell() {
+        print("masuk")
+        colView?.performSegue(withIdentifier: "exerciseListSegue", sender: self)
+        print("Jalan")
     }
 }

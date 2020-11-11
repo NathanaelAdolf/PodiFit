@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class CustomizePlanTableViewController: UITableViewController{
 
     var model = [MovementModel]()
@@ -100,7 +98,20 @@ class CustomizePlanTableViewController: UITableViewController{
         return 220
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "modalPlanSegue" {
+            
+            var storyboard = UIStoryboard(name: "ChoosePlan", bundle: nil)
+            var pvc = storyboard.instantiateViewController(withIdentifier: "ModalPlanViewController") as UIViewController
+
+            pvc.modalPresentationStyle = UIModalPresentationStyle.popover
+            pvc.transitioningDelegate = self
+
+            self.present(pvc, animated: true, completion: nil)
+        }
+        
+    }
     
     /*
     // MARK: - Navigation
@@ -112,4 +123,16 @@ class CustomizePlanTableViewController: UITableViewController{
     }
     */
 
+}
+
+extension CustomizePlanTableViewController: UIViewControllerTransitioningDelegate{
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController!, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+    }
+}
+
+class HalfSizePresentationController : UIPresentationController {
+    func frameOfPresentedViewInContainerView() -> CGRect {
+        return CGRect(x: 0, y: (containerView?.bounds.height)!/2, width: containerView!.bounds.width, height: containerView!.bounds.height/2)
+    }
 }

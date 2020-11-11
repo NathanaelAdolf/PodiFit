@@ -15,7 +15,7 @@ class ButtonExerciseCell: UICollectionViewCell {
         return UINib(nibName: "ButtonExerciseCell", bundle: nil)
     }
     
-    var colView: UITabBarController?
+    var colView = UITableViewController()
     var delegate: CollectionViewCellDelegator!
 
     @IBOutlet weak var btnExercise: UIButton!

@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 struct testCellData{
-    var opened = Bool()
     var title = String ()
     var sectionData = [String]()
 }
@@ -39,7 +38,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         
         
-        expandableData = [testCellData(opened: false, title: "Week 1", sectionData: ["Push Up 1",                      "Push Up 2"])]
+        expandableData = [testCellData(title: "Week 1", sectionData: ["Mountain Climber", "Push Up 1", "Push Up 2", "Glute Bridge", "Frog Hold", "One Leg Frog Hold"])]
         
         super.viewDidLoad()
         
@@ -56,7 +55,8 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         
         tableView.register(PlanInfoCell.nib(), forCellReuseIdentifier: PlanInfoCell.identifier)
         
-        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+        tableView.separatorColor = UIColor.white
         // Do any additional setup after loading the view.
     }
     
@@ -77,14 +77,9 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         }
         else{
             //print("section: \(section)")
-            if expandableData[section-2].opened == true {
               //print("expdata count: \(expandableData[section-2].sectionData.count+1)")
                 
               return expandableData[section-2].sectionData.count+1
-            }
-            else{
-                return 1
-            }
         }
     }
     /*
@@ -106,11 +101,13 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
             cell.planDesc.text = "Action Plan designed for your easy leg stuff"
             cell.backgroundColor = UIColor.clear
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
             return cell
         }
         else if (indexPath.section == 1){
             let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCell.identifier, for: indexPath) as! PlanInfoCell
             cell.backgroundColor = UIColor.clear
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
             return cell
         }
         else if (indexPath.section == (expandableData.count + 2)){
@@ -119,18 +116,21 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
             cell.btnConfirm.layer.borderWidth = 2
             cell.btnConfirm.layer.borderColor = CGColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 1)
             cell.delegate = self
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
             return cell
         }
         else{
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseHeaderTableViewCell.identifier, for: indexPath) as! ExerciseHeaderTableViewCell
                 cell.backgroundColor = UIColor.clear
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
                 return cell
             }
             else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseTableViewCell.identifier, for: indexPath) as! ExerciseTableViewCell
                 cell.exerciseName.text = expandableData[indexPath.section - 2].sectionData[indexPath.row - 1]
                 cell.backgroundColor = UIColor.clear
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
                 return cell
             }
         }
@@ -155,6 +155,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         }
     }
     
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print("sct=\(indexPath.section) ,idx =\(indexPath.row)")
         
@@ -181,6 +182,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         }
         
     }
+ */
     
     func retrieveData(){
         
