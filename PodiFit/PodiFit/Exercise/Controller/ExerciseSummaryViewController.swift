@@ -17,13 +17,13 @@ class ExerciseSummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
 //        exerciseSummaryView.setInitialView()
         exerciseSummaryView.tableView.delegate = self
         exerciseSummaryView.tableView.dataSource = self
-
-        
+    }
+    
+    @IBAction func finishSummary(_ sender: Any) {
+        self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -17,6 +17,8 @@ struct PlanTypes1{
 
 class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var jumlahHari: Int = 0
+    
     var plans = [PlanTypes1]()
     var plan2 = [PlanTypes1]()
     

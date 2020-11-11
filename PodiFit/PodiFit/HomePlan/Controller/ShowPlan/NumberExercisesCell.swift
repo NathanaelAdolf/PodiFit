@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol CollectionViewCellDelegator {
-    func callSegueFromColViewCell()
-}
-
-class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionViewCellDelegator {
+class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     static let identifier = "NumberExercisesCell"
@@ -21,7 +17,7 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         return UINib(nibName: "NumberExercisesCell", bundle: nil)
     }
     
-    var colView : ShowPlanVC?
+    var delegate : ShowPlanVC?
     @IBOutlet weak var buttonCollection: UICollectionView!
     
     override func awakeFromNib() {
@@ -59,18 +55,12 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonExerciseCell.identifier, for: indexPath) as! ButtonExerciseCell
         
-        cell.delegate = self
+        cell.delegate = delegate
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("colview clicked")
-    }
-    
-    func callSegueFromColViewCell() {
-        print("masuk")
-        colView?.performSegue(withIdentifier: "exerciseListSegue", sender: self)
-        print("Jalan")
     }
 }

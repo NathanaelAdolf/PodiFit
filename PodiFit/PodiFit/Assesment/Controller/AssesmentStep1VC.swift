@@ -27,8 +27,14 @@ class AssesmentStep1VC: UIViewController{
     }
     
     @IBAction func nextBtnTapped(_ sender: Any) {
-        if (gender.isEmpty == true || weightTextField.text?.isEmpty == true || heightTextField.text?.isEmpty == true){
-                alertLabel.isHidden = false
+        if (gender.isEmpty == true){
+            showAlert(messageToDisplay: "Gender must be selected")
+        }
+        else if (weightTextField.text?.isEmpty == true) {
+            showAlert(messageToDisplay: "Weight text field can't be empty")
+        }
+        else if (heightTextField.text?.isEmpty == true) {
+            showAlert(messageToDisplay: "Height text field can't be empty")
         }
         else {
             self.performSegue(withIdentifier: "NextStepSegue", sender: self)
@@ -107,5 +113,12 @@ class AssesmentStep1VC: UIViewController{
         heightTextField.layer.borderColor = Colors.yellowColor.cgColor
         heightTextField.layer.cornerRadius = 10
         heightTextField.keyboardType = UIKeyboardType.numberPad
+    }
+    
+    func showAlert(messageToDisplay: String) {
+          let alert = UIAlertController(title: "Message", message: messageToDisplay, preferredStyle: .alert)
+          let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+          alert.addAction(action)
+          self.present(alert, animated: true, completion: nil)
     }
 }
