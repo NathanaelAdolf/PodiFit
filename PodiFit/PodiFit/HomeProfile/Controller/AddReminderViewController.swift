@@ -383,7 +383,7 @@ class AddReminderViewController: UIViewController {
             }
              else
             {
-                     notifHelper.triggerNotification()
+                     //notifHelper.triggerNotification()
                      
                      userChoosenDayArray.removeAll()
                      checkuserChoosenDay()

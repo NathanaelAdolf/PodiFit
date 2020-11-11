@@ -53,6 +53,7 @@ class BadgesHelper: UIViewController {
         var tempImageData = [String]()
         var tempListCompletedPlan = [CompletedPlanModel]()
         tempListCompletedPlan = planHelper.retrieveCompletedPlanData().tempModel
+        var totalAllSessionDone = planHelper.retrieveCompletedPlanData().totalSession
         
             guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempDetailData,tempImageData)}
                      let context = appDel.persistentContainer.viewContext
@@ -117,6 +118,20 @@ class BadgesHelper: UIViewController {
                             else
                             {
                                 tempDetailData.append(DetailBadgesModel(imageName: "reminder badge.png", title: "Exercise routine", description: "Create first reminder for exercise",progressNum: 0,labelIndicator: "0/1"))
+                            }
+                            
+                            if data.value(forKey: "exerciseAddictBadge") as! Bool == true {
+                                tempDetailData.append(DetailBadgesModel(imageName: "exercise addict badge.png", title: "Exercise Addict", description: "Complete exercise for 7 days in a row",progressNum: Float(Float(totalAllSessionDone)/Float(7)),labelIndicator: "\(totalAllSessionDone)/7"))
+                            }else{
+                                tempDetailData.append(DetailBadgesModel(imageName: "exercise addict badge.png", title: "Exercise Addict", description: "Complete exercise for 7 days in a row",progressNum: Float(Float(totalAllSessionDone)/Float(7)),labelIndicator: "\(totalAllSessionDone)/7"))
+                            }
+                            
+                            if data.value(forKey: "exerciseMasterBadge")as! Bool == true {
+                                tempDetailData.append(DetailBadgesModel(imageName: "exercise master badge.png", title: "Exercise Master", description: "Complete exercise for 30 days in a row",progressNum: Float(Float(totalAllSessionDone)/Float(30)),labelIndicator: "\(totalAllSessionDone)/30"))
+                            }
+                            else
+                            {
+                                tempDetailData.append(DetailBadgesModel(imageName: "exercise master badge.png", title: "Exercise Master", description: "Complete exercise for 30 days in a row",progressNum: Float(Float(totalAllSessionDone)/Float(30)),labelIndicator: "\(totalAllSessionDone)/30"))
                             }
                             
                             print("\n")
@@ -320,6 +335,7 @@ class BadgesHelper: UIViewController {
     {
         var tempCompletedData = [CompletedPlanModel]()
         tempCompletedData = planHelper.retrieveCompletedPlanData().tempModel
+        var totalAllSessionDone = planHelper.retrieveCompletedPlanData().totalSession
         
         var isFinishedOneExercise: Bool = false
         isFinishedOneExercise = planHelper.retrieveCompletedPlanData().isFinishedOneExercise
@@ -336,28 +352,38 @@ class BadgesHelper: UIViewController {
         
         if notifHelper.isReminderTableEmpty() == false {
             //tempBadgeString.append("")nanti append buat tambahin gambarnya di home, samain dgn semuanya
-            print("Reminder badges earn")
+           // print("Reminder badges earn")
             badgesHelper.updateReminderBadgeIntoTrue(isBadgesDone: true)
             
         }
         if tempCompletedData.count != 0 {
             badgesHelper.updateCompletePlanIntoTrue(isBadgesDone: true)
-            print("finish one plan")
+           // print("finish one plan")
         }
         
         if tempCompletedData.count >= 5 {
             badgesHelper.update5PlanIntoTrue(isBadgesDone: true)
-            print("Finish 5 plans")
+           // print("Finish 5 plans")
         }
         
         if customIdPlan.count >= 1 {
             badgesHelper.updateCustomExerciseIntoTrue(isBadgesDone: true)
-            print("Success custom exercise")
+            //print("Success custom exercise")
         }
         
         if isFinishedOneExercise == true {
             badgesHelper.updateFirstTimeIntoTrue(isBadgesDone: true)
-            print("Success finish one exercise")
+            //print("Success finish one exercise")
+        }
+        
+        if totalAllSessionDone >= 7 {
+            badgesHelper.updateExerciseAddictIntoTrue(isBadgesDone: true)
+            //print("exercise addict earn")
+        }
+        
+        if totalAllSessionDone >= 30 {
+            badgesHelper.updateExerciseMasterIntoTrue(isBadgesDone: true)
+            //print("exercise master earn")
         }
         
     }

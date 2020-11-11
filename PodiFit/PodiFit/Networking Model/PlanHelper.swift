@@ -103,14 +103,15 @@ class PlanHelper: UIViewController {
         
     }
     
-    func retrieveCompletedPlanData()-> (tempModel: [CompletedPlanModel], isFinishedOneExercise: Bool)
+    func retrieveCompletedPlanData()-> (tempModel: [CompletedPlanModel], isFinishedOneExercise: Bool,totalSession: Int)
     {
         var tempCompletedPlanData = [CompletedPlanModel]()
         tempCompletedPlanData = []
         let userIdPlan: [Int] = userHelper.retrieveUserBasicData()[0].userIdPlan!
         var isFinishedOneExercise: Bool = false
+        var totalAllSessionDone: Int = 0
         
-        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempCompletedPlanData,isFinishedOneExercise)}
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempCompletedPlanData,isFinishedOneExercise,totalAllSessionDone)}
                  let context = appDel.persistentContainer.viewContext
             
                  let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
@@ -126,8 +127,6 @@ class PlanHelper: UIViewController {
                                 if userIdPlan[i] == data.value(forKey: "idPlan")as! Int
                                 {
                                     tempCompletedPlanData.append(CompletedPlanModel(titleMovement: data.value(forKey: "namaPlan")as! String, level: difficultyHelper.checkDifficultyNameById(idDifficulty: data.value(forKey: "idDifficulty")as! Int), period: data.value(forKey: "durasiPlan")as! Int, movement: 10))
-                                    
-                        
                                 }
                             }
                         }
@@ -135,6 +134,8 @@ class PlanHelper: UIViewController {
                         if data.value(forKey: "totalSessionDone")as! Int != 0 {
                             isFinishedOneExercise = true
                         }
+                        totalAllSessionDone += data.value(forKey: "totalSessionDone")as! Int
+                        
                         
                         print("\n")
                     }
@@ -144,7 +145,7 @@ class PlanHelper: UIViewController {
                  print("Failed")
              }
        
-        return (tempCompletedPlanData,isFinishedOneExercise)
+        return (tempCompletedPlanData,isFinishedOneExercise,totalAllSessionDone)
         
     }
     

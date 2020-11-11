@@ -239,11 +239,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         if section == 0
         {
-            return ""
+            return nil
         }
         else if section == 1
         {
-            return ""
+            return nil
         }
         else if section == 2 {
             return "Completed Plan"
@@ -257,16 +257,20 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             return "badges"
         }
         else {
-            return ""
+            return nil
         }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
            
-        let headerView = UIView()
+        if section == 0 || section == 1
+        {
+            return nil
+        }
         
         if section == 2 || section == 3 || section == 4
         {
+            let headerView = UIView()
             headerView.backgroundColor = .none
 
              let sectionLabel = UILabel(frame: CGRect(x: 20, y: 10, width:
@@ -275,7 +279,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
              sectionLabel.font = UIFont.boldSystemFont(ofSize: 20)
             sectionLabel.textColor = UIColor.white
   
-            addButton = UIButton(frame: CGRect(x: tableView.frame.size.width - 100, y: 5, width:
+            addButton = UIButton(frame: CGRect(x: tableView.frame.size.width - 100, y: 6, width:
             80, height: 33))
             addButton.titleLabel?.textColor = .gray
             
@@ -309,7 +313,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
              return headerView
         }
-            return headerView
+            return nil
        }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
@@ -454,8 +458,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             planHelper.storeToPlanData(idPlan: 1, namaPlan: "Eazy leg plan", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5,6,7,8,9,10], isPlanDone: false)
             planHelper.storeToPlanData(idPlan: 2, namaPlan: "Medium leg plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 0, choosenExercise: [11,12,13,14,15,16,17,18,19,20], isPlanDone: false)
             planHelper.storeToPlanData(idPlan: 3, namaPlan: "Custom leg plan", idDifficulty: 1, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 12, choosenExercise: [1,3,5,7,9,11,13,15,17,19], isPlanDone: true)
-            planHelper.storeToPlanData(idPlan: 4, namaPlan: "Custom wrist plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 15, choosenExercise: [11,12,13,14,1,2,17,18,19,20], isPlanDone: true)
-            planHelper.storeToPlanData(idPlan: 5, namaPlan: "Custom knee plan", idDifficulty: 2, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 12, choosenExercise: [2,4,6,8,10,12,14,16], isPlanDone: false)
+            planHelper.storeToPlanData(idPlan: 4, namaPlan: "Custom wrist plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 5, choosenExercise: [11,12,13,14,1,2,17,18,19,20], isPlanDone: false)
+            planHelper.storeToPlanData(idPlan: 5, namaPlan: "Custom knee plan", idDifficulty: 2, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 3, choosenExercise: [2,4,6,8,10,12,14,16], isPlanDone: false)
         }
         
         if difficultyHelper.isDifficultyTableEmpty() == true {
@@ -463,6 +467,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             difficultyHelper.storeToDifficultyData(idDifficulty: 2, levelDifficulty: "Intermediate")
         }
         
+        badgesHelper.checkUserEarnBadge()
+        badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
         badgesHelper.retreiveDataFromBadges()
         
         if userHelper.isUserTableEmpty() == false {
@@ -472,9 +478,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
             completedData = planHelper.retrieveCompletedPlanData().tempModel
         }
-        
-        badgesHelper.checkUserEarnBadge()
-        badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false

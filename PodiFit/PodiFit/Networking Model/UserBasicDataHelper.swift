@@ -59,12 +59,12 @@ class UserBasicDataHelper: UIViewController {
                     let result = try context.fetch(fetch)
                     for data in result as! [NSManagedObject]
                      {
-                        print("id User : \(data.value(forKey: "idUser")as! Int)")
+                      /*  print("id User : \(data.value(forKey: "idUser")as! Int)")
                         print("user name : \(data.value(forKey: "userName")as! String)")
                         print("id plan : \(data.value(forKey: "userIdPlan")as! [Int]?)")
                         print("height : \(data.value(forKey: "height")as! Int)")
                         print("weight : \(data.value(forKey: "weight")as! Int)")
-                        print("img : \(data.value(forKey: "img")as! Data)")
+                        print("img : \(data.value(forKey: "img")as! Data)")*/
                         print("\n")
                         
                         tempUserData.append(UserDataModel(Name: data.value(forKey: "userName")as! String,userIdPlan: data.value(forKey: "userIdPlan")as! [Int]?, weight: data.value(forKey: "weight")as! Int, height: data.value(forKey: "height")as! Int,img: data.value(forKey: "img")as! Data))
