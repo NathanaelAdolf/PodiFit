@@ -52,7 +52,7 @@ class ExerciseView: UIView {
             self.webKitView.alpha = 1.0
         })
         
-        nameExerciseLabel?.text = "Normal Squat"
+        nameExerciseLabel?.text = "STRAIGHT LEG AND CALF RAISE"
         loadWebsite()
         warningExercise()
         
@@ -130,6 +130,12 @@ class ExerciseView: UIView {
         
         
         
+    }
+    
+    func setProgressNumber (number : Int, totalExercise : Int) {
+        let number = String(number)
+        let totalExercise = String(totalExercise)
+        progressNumber?.text = "\(number)/\(totalExercise)"
     }
     
     
