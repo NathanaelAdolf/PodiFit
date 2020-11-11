@@ -131,7 +131,7 @@ class AssesmentStep2VC: UIViewController {
             self.performSegue(withIdentifier: "ResultSegue", sender: self)
         }
         else {
-            alertLabel.isHidden = false
+            showAlert(messageToDisplay: "Have to choose one")
         }
     }
     
@@ -153,6 +153,10 @@ class AssesmentStep2VC: UIViewController {
         fourthBtn.layer.cornerRadius = 7
     }
 
-    
-
+    func showAlert(messageToDisplay: String) {
+          let alert = UIAlertController(title: "Message", message: messageToDisplay, preferredStyle: .alert)
+          let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+          alert.addAction(action)
+          self.present(alert, animated: true, completion: nil)
+    }
 }
