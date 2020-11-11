@@ -12,11 +12,11 @@ protocol CollectionCellDelegator {
     func callSegueFromColViewCell()
 }
 
-class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionCellDelegator {
+class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 
     static let identifier = "CustomizePlanTableViewCell"
-    var colView: UITableViewController?
+    var colView: CollectionCellDelegator?
     @IBOutlet weak var movementCollection: UICollectionView!
     
     
@@ -82,7 +82,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
         cell.configure(with: model[indexPath.row])
-        cell.delegate = self
+        cell.delegate = colView //kirim dleegate
         cell.backgroundColor = UIColor.white
         cell.layer.cornerRadius = 10
         
@@ -93,11 +93,6 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 120, height: 180)
-    }
- 
-    func callSegueFromColViewCell() {
-        colView?.performSegue(withIdentifier: "modalPlanSegue", sender: self )
-
     }
     
     

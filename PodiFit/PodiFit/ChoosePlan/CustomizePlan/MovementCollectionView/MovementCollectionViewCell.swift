@@ -10,7 +10,6 @@ import UIKit
 
 class MovementCollectionViewCell: UICollectionViewCell {
 
-    var colView: UITableViewController?
     var delegate: CollectionCellDelegator!
     
     @IBOutlet weak var movementDetails: UILabel!
