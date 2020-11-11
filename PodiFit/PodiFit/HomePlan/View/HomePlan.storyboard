@@ -43,6 +43,9 @@
                                 <state key="normal">
                                     <color key="titleColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="PAB-zF-Ci9" kind="showDetail" id="4Jp-g1-tJ7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="47Y-qW-2zD"/>
@@ -101,6 +104,9 @@
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="IDb-Nk-8e5" kind="show" id="6tG-Rn-C8U"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG5-ip-mOZ">
                                 <rect key="frame" x="20" y="104" width="374" height="60"/>
@@ -232,6 +238,24 @@
             </objects>
             <point key="canvasLocation" x="2876.811594202899" y="1127.6785714285713"/>
         </scene>
+        <!--ChoosePlan-->
+        <scene sceneID="tYA-PR-j7S">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChoosePlan" id="PAB-zF-Ci9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwJ-rw-zPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2042" y="1533"/>
+        </scene>
+        <!--Exercise-->
+        <scene sceneID="Azd-AC-dzD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Exercise" id="IDb-Nk-8e5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1Iv-cF-Jm3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jeM-58-adN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2846" y="1598"/>
+        </scene>
         <!--List PlanVC-->
         <scene sceneID="Pqa-DA-kNk">
             <objects>
@@ -259,6 +283,9 @@
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="IDb-Nk-8e5" kind="show" id="tsF-8O-Av0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-2i-E00">
                                 <rect key="frame" x="20" y="104" width="374" height="60"/>
@@ -407,7 +434,7 @@
         <!--Plan-->
         <scene sceneID="MiQ-xc-zDF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ke-uZ-yHM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="6ke-uZ-yHM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Plan" image="doc.plaintext.fill" catalog="system" id="m5A-yW-WkB"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -432,6 +459,9 @@
             <point key="canvasLocation" x="1153.6231884057972" y="1127.6785714285713"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tsF-8O-Av0"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.plaintext.fill" catalog="system" width="115" height="128"/>
         <image name="exercise" width="20" height="12"/>

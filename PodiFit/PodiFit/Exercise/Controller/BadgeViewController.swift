@@ -20,7 +20,7 @@ class BadgeViewController: UIViewController {
     }
     
     @IBAction func claimBadge(_ sender: Any) {
-        self.performSegue(withIdentifier: "toReview", sender: nil)
+//        self.performSegue(withIdentifier: "toReview", sender: nil)
     }
 
     /*

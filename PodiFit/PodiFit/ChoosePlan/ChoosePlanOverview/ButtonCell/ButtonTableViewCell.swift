@@ -27,7 +27,12 @@ class ButtonTableViewCell: UITableViewCell {
     }
     
     @IBAction func confirmationButton(_ sender: Any) {
-    }
+            if (self.delegate != nil) {
+                self.delegate.callSegueFromCellToMain()
+            }
+            print("pencet confirm")
+            
+        }
     
     @IBOutlet weak var btnConfirm: UIButton!
     

@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,11 +25,22 @@
                     <navigationItem key="navigationItem" title="Plan Details" id="d1H-W0-MeH"/>
                     <connections>
                         <segue destination="awM-t3-TVk" kind="show" identifier="customPlanSegue" id="dw1-qk-Dbb"/>
+                        <segue destination="K6g-nN-z8j" kind="show" identifier="mainSegue" id="msd-XJ-idn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXp-M0-eGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="198" y="-160"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="uRu-OM-WMW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="K6g-nN-z8j" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="H4R-ly-4GK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m74-48-Rgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="270"/>
         </scene>
         <!--Plan Overview View Controller-->
         <scene sceneID="r9g-k8-f6K">
@@ -190,7 +201,7 @@
         <!--Navigation Controller-->
         <scene sceneID="HLT-pD-Hqe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uZ1-Nt-Pj3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="uZ1-Nt-Pj3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oP2-6Z-1PX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

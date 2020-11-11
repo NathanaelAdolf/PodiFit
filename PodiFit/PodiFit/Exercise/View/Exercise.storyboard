@@ -197,6 +197,7 @@
                                         <state key="normal" backgroundImage="claimBadge"/>
                                         <connections>
                                             <action selector="claimBadge:" destination="D2J-66-CHl" eventType="touchUpInside" id="s8l-vo-bMy"/>
+                                            <segue destination="Hty-gD-bBZ" kind="show" identifier="" id="bcH-AI-gap"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -218,6 +219,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dN3-ZI-6nJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2157" y="873"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="lSd-zU-Xdf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Hty-gD-bBZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RZd-JY-bjT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HrJ-jQ-jce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="760"/>
         </scene>
         <!--Exercise Summary View Controller-->
         <scene sceneID="w9q-Rd-Dax">
@@ -694,7 +705,7 @@
         <!--Navigation Controller-->
         <scene sceneID="JHw-Qf-IKO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lYk-IP-ly7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="lYk-IP-ly7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MBf-Qm-BkN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

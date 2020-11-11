@@ -16,6 +16,7 @@ struct testCellData{
 
 protocol ButtonCellDelegator {
     func callSegueFromCell()
+    func callSegueFromCellToMain()
 }
 
 class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
@@ -209,6 +210,10 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         self.performSegue(withIdentifier: "customPlanSegue", sender: self )
 
      }
+    
+    func callSegueFromCellToMain() {
+        self.performSegue(withIdentifier: "mainSegue", sender: self )
+    }
     
     /*
     // MARK: - Navigation

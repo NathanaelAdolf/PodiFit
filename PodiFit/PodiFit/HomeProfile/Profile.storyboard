@@ -983,7 +983,7 @@
         <!--Profile-->
         <scene sceneID="3mU-nL-2aP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KYZ-qI-TBZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="KYZ-qI-TBZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" selectedImage="person.fill" id="1nH-88-ekb">
                         <color key="badgeColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.42745098040000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                     </tabBarItem>

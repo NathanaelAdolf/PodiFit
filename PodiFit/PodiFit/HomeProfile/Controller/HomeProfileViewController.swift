@@ -440,7 +440,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewWillAppear(_ animated: Bool) {
        
-        //userHelper.deleteDataInUser(uniqueUserName: "Adolf")
+//        userHelper.deleteDataInUser(uniqueUserName: "User PodiFit")
          //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
         //planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
        // planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)

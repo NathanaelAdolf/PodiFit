@@ -39,8 +39,13 @@ class ShowPlanVC: UIViewController {
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationItem.title = "Leg yeaahhh"
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem()
         
+        backButton.title = ""
+        backButton.image = UIImage(named: "chevron.left")
+        backButton.tintColor = Colors.yellowColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         self.tabBarController?.tabBar.isHidden = true
     }
 }
