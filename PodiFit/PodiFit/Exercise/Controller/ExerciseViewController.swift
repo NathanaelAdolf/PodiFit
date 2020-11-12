@@ -123,8 +123,11 @@ class ExerciseViewController: UIViewController {
                 circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
                 exerciseView.videoView()
                 isVideo += 1
+                self.navigationController?.navigationBar.isHidden = false
+
             } else {
                 exerciseView.restView()
+                self.navigationController?.navigationBar.isHidden = true
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
                 isVideo += 1
             }
@@ -142,9 +145,11 @@ class ExerciseViewController: UIViewController {
 //            print("harusnya masuk\(finishExercise), \(isVideo)")
             if ((isVideo % 2) != 1) {
                 exerciseView.restView()
+                self.navigationController?.navigationBar.isHidden = true
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
                 isVideo += 1
             }
+//            self.navigationController?.navigationBar.isHidden = false
             finishExercise += 1
         }
     }

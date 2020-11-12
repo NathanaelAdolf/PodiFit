@@ -45,7 +45,7 @@
         <!--Plan Overview View Controller-->
         <scene sceneID="r9g-k8-f6K">
             <objects>
-                <viewController id="Fa7-85-uUA" customClass="PlanOverviewViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Fa7-85-uUA" customClass="PlanOverviewViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AS8-De-xz0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -31,13 +31,13 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         backButton.title = ""
         backButton.image = UIImage(named: "chevron.left")
         backButton.tintColor = Colors.yellowColor
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "plan_bg"), for: .default)
         self.tableView.backgroundColor = UIColor.clear
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
-        
+        self.navigationController?.navigationBar.isHidden = false
         
         expandableData = [testCellData(title: "Week 1", sectionData: ["Mountain Climber", "Push Up 1", "Push Up 2", "Glute Bridge", "Frog Hold", "One Leg Frog Hold"])]
         
@@ -212,7 +212,13 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
      }
     
     func callSegueFromCellToMain() {
-        self.performSegue(withIdentifier: "mainSegue", sender: self )
+//        self.preSegue(withIdentifier: "mainSegue", sender: self )
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewController = storyboard.instantiateInitialViewController() else {
+            return
+        }
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
     }
     
     /*

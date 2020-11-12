@@ -69,27 +69,17 @@ class PlanModel: UIViewController {
         
         return tempExerciseData
     }
+
     
-    func createPlan () {
-        // save the data
-        do {
-            try self.context.save()
-        }
-        catch {
-            
-        }
-        
-        // re-fetch
-        self.fetchPlan()
-    }
-    
-    func fetchPlanUsingEntity(){
+    func fetchIdSteps(){
         print(",masuk")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let managedObjectContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
+        fetchRequest.predicate = NSPredicate(format: "idExercise == %@", "1")
+        
         print(".masukkk")
         do {
             let exercises = try managedObjectContext.fetch(fetchRequest)
@@ -103,21 +93,19 @@ class PlanModel: UIViewController {
 //                print(bebas)
                 
                 for beb in arrBebas {
+                    print(beb.steps)
                     
-                    fetchRequest.predicate = NSPredicate(format: "idStep == %@", "3")
-                    print(beb.idStep)
-                    let stepss = try managedObjectContext.fetch(fetchRequest)
-                    for stepsss in stepss {
-                        print(stepsss.steps)
-                    }
+                    
                 }
             }
             
             
-            
+ 
         } catch  {
             print("error")
         }
+        
+        
     }
     
     /*

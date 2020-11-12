@@ -56,7 +56,7 @@ class ExerciseView: UIView {
         loadWebsite()
         warningExercise()
         
-        planModelHelper.fetchPlanUsingEntity()
+        planModelHelper.fetchIdSteps()
 //        print("ini di view \(planModelHelper.fetchPlanUsingEntity())")
         
 //        self.tempExercise = planModelHelper.fetchExerciseById()
@@ -82,7 +82,7 @@ class ExerciseView: UIView {
         UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
             self.restPageView.alpha = 1.0
         })
-        
+                
         // for hidden webkit view (video) and show page rest
         webKitView.isHidden = true
         restPageView.isHidden = false
