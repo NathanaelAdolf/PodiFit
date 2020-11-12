@@ -10,12 +10,12 @@ import UIKit
 import CoreData
 
 class DefaultDataHelper: UIViewController {
-
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -288,8 +288,258 @@ class DefaultDataHelper: UIViewController {
         
         newExercise10.steps = NSSet.init(array: [step34,step35,step36])
         
-        //mulai aldo punya
+        //11
+        let newExercise11 = Exercise(context: self.context)
+        newExercise11.idDifficulty = 2
+        newExercise11.idExercise = 11
+        newExercise11.listIdSteps = [37,38,39,40,8]
+        newExercise11.namaExercise = "Single Leg Hip Raises"
+        newExercise11.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise11.warningData = [1]
         
-    
+        
+        let step37 = ExerciseSteps(context: self.context)
+        step37.idStep = 37
+        step37.steps = "Lie on your back with your right knee bent and right foot flat on the floor."
+        
+        let step38 = ExerciseSteps(context: self.context)
+        step38.idStep = 38
+        step38.steps = "Raise your left leg so it’s in line with your right thigh."
+        
+        let step39 = ExerciseSteps(context: self.context)
+        step39.idStep = 39
+        step39.steps = "Push your hips up, keeping your left leg elevated."
+        
+        let step40 = ExerciseSteps(context: self.context)
+        step40.idStep = 40
+        step40.steps = "Pause and slowly return to the starting position"
+        
+        newExercise11.steps = NSSet.init(array: [step37, step38, step39, step40])
+        
+        
+        //12
+        let newExercise12 = Exercise(context: self.context)
+        newExercise12.idDifficulty = 2
+        newExercise12.idExercise = 12
+        newExercise12.listIdSteps = [41,42,43,44,8]
+        newExercise12.namaExercise = "Standing Side Leg Raises"
+        newExercise12.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise12.warningData = [1]
+        
+        
+        let step41 = ExerciseSteps(context: self.context)
+        step41.idStep = 41
+        step41.steps = "Start with your hands out in front of you or resting on your hips. Stand upright with your toes facing forward."
+        
+        let step42 = ExerciseSteps(context: self.context)
+        step42.idStep = 42
+        step42.steps = "As you lift your right leg up off the floor with the foot flexed, inhale and shift the weight into your left foot."
+        
+        let step43 = ExerciseSteps(context: self.context)
+        step43.idStep = 43
+        step43.steps = "As you exhale, bring the leg back down to meet the left."
+        
+        let step44 = ExerciseSteps(context: self.context)
+        step44.idStep = 44
+        step44.steps = "Repeat for around 15 seconds"
+        
+        newExercise12.steps = NSSet.init(array: [step41, step42, step43, step44])
+        
+        //13
+        let newExercise13 = Exercise(context: self.context)
+        newExercise13.idDifficulty = 2
+        newExercise13.idExercise = 13
+        newExercise13.listIdSteps = [45,46,26]
+        newExercise13.namaExercise = "Pulse squat"
+        newExercise13.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise13.warningData = [1]
+        
+        
+        let step45 = ExerciseSteps(context: self.context)
+        step45.idStep = 45
+        step45.steps = "Start standing with your feet hip-width apart and arms stretched out in front"
+        
+        let step46 = ExerciseSteps(context: self.context)
+        step46.idStep = 46
+        step46.steps = "Perform a squat and hold it at the bottoms as you pulse a few inches up and down"
+        
+        newExercise13.steps = NSSet.init(array: [step45, step46])
+        
+        //14
+        let newExercise14 = Exercise(context: self.context)
+        newExercise14.idDifficulty = 2
+        newExercise14.idExercise = 14
+        newExercise14.listIdSteps = [47,48,49,26]
+        newExercise14.namaExercise = "Plié squat calf raise"
+        newExercise14.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise14.warningData = [1]
+        
+        
+        let step47 = ExerciseSteps(context: self.context)
+        step47.idStep = 47
+        step47.steps = "Stand with your feet wide, toes slightly pointed out"
+        
+        let step48 = ExerciseSteps(context: self.context)
+        step48.idStep = 48
+        step48.steps = "Raise your heels off the floor and squeeze your calves."
+        
+        let step49 = ExerciseSteps(context: self.context)
+        step49.idStep = 49
+        step49.steps = "Lower your heels and return to the starting position."
+        
+        newExercise14.steps = NSSet.init(array: [step47, step48, step49])
+        
+        //15
+        let newExercise15 = Exercise(context: self.context)
+        newExercise15.idDifficulty = 2
+        newExercise15.idExercise = 15
+        newExercise15.listIdSteps = [34,50,51,26]
+        newExercise15.namaExercise = "Glute bridge calf raise"
+        newExercise15.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise15.warningData = [1]
+        
+        
+        let step50 = ExerciseSteps(context: self.context)
+        step50.idStep = 50
+        step50.steps = "Then slowly lift of your heel and hold it for couple of seconds"
+        
+        let step51 = ExerciseSteps(context: self.context)
+        step51.idStep = 51
+        step51.steps = "Slowly lowering down your heel again"
+        
+        newExercise15.steps = NSSet.init(array: [step50, step51])
+        
+        //16
+        let newExercise16 = Exercise(context: self.context)
+        newExercise16.idDifficulty = 2
+        newExercise16.idExercise = 16
+        newExercise16.listIdSteps = [4,5,52,53,19]
+        newExercise16.namaExercise = "Split squat"
+        newExercise16.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise16.warningData = [1]
+        
+        
+        let step52 = ExerciseSteps(context: self.context)
+        step52.idStep = 52
+        step52.steps = "Make sure the heel of your other leg is raised"
+        
+        let step53 = ExerciseSteps(context: self.context)
+        step53.idStep = 53
+        step53.steps = "Keep your torso straight, lower slowly until your back knee almost touched the floor"
+        
+        newExercise16.steps = NSSet.init(array: [step52, step53])
+        
+        //17
+        let newExercise17 = Exercise(context: self.context)
+        newExercise17.idDifficulty = 2
+        newExercise17.idExercise = 17
+        newExercise17.listIdSteps = [16,54,55,56,8]
+        newExercise17.namaExercise = "Walking lunge"
+        newExercise17.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise17.warningData = [1]
+        
+        
+        let step54 = ExerciseSteps(context: self.context)
+        step54.idStep = 54
+        step54.steps = "Step forward with your right leg, bend the right knee, lowering down so it's parallel to the floor in lunge position"
+        
+        let step55 = ExerciseSteps(context: self.context)
+        step55.idStep = 55
+        step55.steps = "Pause for a beat"
+        
+        let step56 = ExerciseSteps(context: self.context)
+        step56.idStep = 56
+        step56.steps = "Without moving your right leg, move your left leg forward"
+        
+        newExercise17.steps = NSSet.init(array: [step54, step55, step56])
+        
+        //18
+        let newExercise18 = Exercise(context: self.context)
+        newExercise18.idDifficulty = 2
+        newExercise18.idExercise = 18
+        newExercise18.listIdSteps = [57,58,59,60,8]
+        newExercise18.namaExercise = "Reverse lunge"
+        newExercise18.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise18.warningData = [1]
+        
+        
+        let step57 = ExerciseSteps(context: self.context)
+        step57.idStep = 57
+        step57.steps = "Stand upright with your hands at your hips"
+        
+        let step58 = ExerciseSteps(context: self.context)
+        step58.idStep = 58
+        step58.steps = "Take a large step back with your left foot"
+        
+        let step59 = ExerciseSteps(context: self.context)
+        step59.idStep = 59
+        step59.steps = "Lower your hips so that your right thigh becomes parallel with your right knee positioned directly to your ankle"
+        
+        let step60 = ExerciseSteps(context: self.context)
+        step60.idStep = 60
+        step60.steps = "Return to standing by pressing your right heel into the floor"
+        
+        newExercise18.steps = NSSet.init(array: [step57, step58, step59, step60])
+        
+        //19
+        let newExercise19 = Exercise(context: self.context)
+        newExercise19.idDifficulty = 2
+        newExercise19.idExercise = 19
+        newExercise19.listIdSteps = [61,62,63,64,65,26]
+        newExercise19.namaExercise = "Inch worms"
+        newExercise19.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise19.warningData = [1]
+        
+        
+        let step61 = ExerciseSteps(context: self.context)
+        step61.idStep = 61
+        step61.steps = "Begin standing in your back edge of the mat"
+        
+        let step62 = ExerciseSteps(context: self.context)
+        step62.idStep = 62
+        step62.steps = "Hinge your body forward and walk your hands out in front of you along the floor, keeping your feet in place"
+        
+        let step63 = ExerciseSteps(context: self.context)
+        step63.idStep = 63
+        step63.steps = "Continue walking your arms out past the plank position."
+        
+        let step64 = ExerciseSteps(context: self.context)
+        step64.idStep = 64
+        step64.steps = "Start walking your feet towards your hands in small steps"
+        
+        let step65 = ExerciseSteps(context: self.context)
+        step65.idStep = 65
+        step65.steps = "Continue inching your body up until your feet meet your palms"
+        
+        newExercise19.steps = NSSet.init(array: [step61, step62, step63, step64, step65])
+        
+        //20
+        let newExercise20 = Exercise(context: self.context)
+        newExercise20.idDifficulty = 2
+        newExercise20.idExercise = 20
+        newExercise20.listIdSteps = [66,67,68,69,8]
+        newExercise20.namaExercise = "Donkey kicks"
+        newExercise20.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise20.warningData = [1]
+        
+        
+        let step66 = ExerciseSteps(context: self.context)
+        step66.idStep = 66
+        step66.steps = "Start by knees hip-width apart, hands under your shoulders, neck and spine neutral"
+        
+        let step67 = ExerciseSteps(context: self.context)
+        step67.idStep = 67
+        step67.steps = "Begin to lift your right leg, knee staying bent, foot staying flat and hinging at the hip"
+        
+        let step68 = ExerciseSteps(context: self.context)
+        step68.idStep = 68
+        step68.steps = "Use your glute to press your foot directly toward the ceiling and squeeze at the top. Ensure your pelvis and working hip stay pointed toward to the ground"
+        
+        let step69 = ExerciseSteps(context: self.context)
+        step69.idStep = 69
+        step69.steps = "Return to the starting position"
+        
+        newExercise20.steps = NSSet.init(array: [step66, step67, step68, step69])
+        
     }
 }
