@@ -19,7 +19,7 @@ class PlanHelper: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func storeToPlanData(idPlan: Int,namaPlan: String,idDifficulty: Int,durasiPlan: Int,durasiSessionDay: Int,jumlahHari: Int, totalSessionDone: Int, choosenExercise: [Int]?,isPlanDone: Bool)
+    func storeToPlanData(idPlan: Int,namaPlan: String,idDifficulty: Int,durasiPlan: Int,durasiSessionDay: Int,jumlahHari: Int, totalSessionDone: Int, choosenExercise: [Int]?,isPlanDone: Bool,description: String)
     {
       
           guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
@@ -38,6 +38,7 @@ class PlanHelper: UIViewController {
         listOfEntity.setValue(totalSessionDone, forKey: "totalSessionDone")
         listOfEntity.setValue(choosenExercise, forKey: "chosenExercise")
         listOfEntity.setValue(isPlanDone, forKey: "isPlanDone")
+        listOfEntity.setValue(description, forKey: "desc")
   
           do {
               

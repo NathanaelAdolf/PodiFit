@@ -455,11 +455,11 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
         }
         if planHelper.isPlanTableEmpty() == true { //data dummy
-            planHelper.storeToPlanData(idPlan: 1, namaPlan: "Eazy leg plan", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5,6,7,8,9,10], isPlanDone: false)
+          /*  planHelper.storeToPlanData(idPlan: 1, namaPlan: "Eazy leg plan", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5,6,7,8,9,10], isPlanDone: false)
             planHelper.storeToPlanData(idPlan: 2, namaPlan: "Medium leg plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 0, choosenExercise: [11,12,13,14,15,16,17,18,19,20], isPlanDone: false)
             planHelper.storeToPlanData(idPlan: 3, namaPlan: "Custom leg plan", idDifficulty: 1, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 12, choosenExercise: [1,3,5,7,9,11,13,15,17,19], isPlanDone: true)
             planHelper.storeToPlanData(idPlan: 4, namaPlan: "Custom wrist plan", idDifficulty: 2, durasiPlan: 5, durasiSessionDay: 30, jumlahHari: 3, totalSessionDone: 5, choosenExercise: [11,12,13,14,1,2,17,18,19,20], isPlanDone: false)
-            planHelper.storeToPlanData(idPlan: 5, namaPlan: "Custom knee plan", idDifficulty: 2, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 3, choosenExercise: [2,4,6,8,10,12,14,16], isPlanDone: false)
+            planHelper.storeToPlanData(idPlan: 5, namaPlan: "Custom knee plan", idDifficulty: 2, durasiPlan: 3, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 3, choosenExercise: [2,4,6,8,10,12,14,16], isPlanDone: false)*/
         }
         
         if difficultyHelper.isDifficultyTableEmpty() == true {

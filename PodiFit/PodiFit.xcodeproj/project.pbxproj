@@ -57,6 +57,7 @@
 		8D13C0FA25402E81002195C9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0F925402E81002195C9 /* Profile.storyboard */; };
 		8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D13C0FE25402F2B002195C9 /* Survey.storyboard */; };
 		8D3D1E71254550D10070444C /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D1E70254550D10070444C /* AddReminderViewController.swift */; };
+		8D4BE0C7255CE58F009F4C23 /* DefaultDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4BE0C6255CE58F009F4C23 /* DefaultDataHelper.swift */; };
 		8D4E5C71254FC0E2002D94C8 /* UserBasicDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */; };
 		8D4E5C76254FCAB6002D94C8 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */; };
 		8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */; };
@@ -196,6 +197,7 @@
 		8D13C0FE25402F2B002195C9 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		8D148C8C254140CF00571419 /* HomeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileViewController.swift; sourceTree = "<group>"; };
 		8D3D1E70254550D10070444C /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
+		8D4BE0C6255CE58F009F4C23 /* DefaultDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataHelper.swift; sourceTree = "<group>"; };
 		8D4E5C70254FC0E2002D94C8 /* UserBasicDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasicDataHelper.swift; sourceTree = "<group>"; };
 		8D4E5C75254FCAB6002D94C8 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		8D73E2B92547DDD2006338FF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 				489A2B572552540400713AD4 /* ExerciseModel.swift */,
 				8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */,
 				8D7825D825579ED700501AEA /* BadgesHelper.swift */,
+				8D4BE0C6255CE58F009F4C23 /* DefaultDataHelper.swift */,
 			);
 			path = "Networking Model";
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 				AB88B9532551486400AFF3BA /* ModalPlanViewController.swift in Sources */,
 				8DBF07FA254E655100AACB19 /* DetailBadgesModel.swift in Sources */,
 				8DBF07F5254E64AA00AACB19 /* DetailBadgeTableViewCell.swift in Sources */,
+				8D4BE0C7255CE58F009F4C23 /* DefaultDataHelper.swift in Sources */,
 				ABFB9A3D2550011A00B5E96A /* MovementCollectionViewCell.swift in Sources */,
 				AB46E8FB255CDE3A0028A983 /* Warning+CoreDataClass.swift in Sources */,
 				2FF227822554CABC00D494C4 /* NotificationHelper.swift in Sources */,
