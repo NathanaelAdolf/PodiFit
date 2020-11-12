@@ -54,7 +54,7 @@ class ExerciseViewController: UIViewController {
             newPlan.listIdSteps = [2,3,4]
             newPlan.namaExercise = textfield.text
             newPlan.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
-            newPlan.warningData = 3
+            newPlan.warningData = [2,3]
             
             
             let step = ExerciseSteps(context: self.context)

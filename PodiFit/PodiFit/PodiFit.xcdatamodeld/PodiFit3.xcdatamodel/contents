@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Badges" representedClassName="Badges" syncable="YES">
         <attribute name="completeFivePlanBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="completePlanBadge" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -73,7 +73,7 @@
         <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="plan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plan" inverseName="ofUser" inverseEntity="Plan"/>
     </entity>
-    <entity name="Warning" representedClassName="Warning" syncable="YES" codeGenerationType="class">
+    <entity name="Warning" representedClassName="Warning" syncable="YES">
         <attribute name="idWarning" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="warningText" optional="YES" attributeType="String"/>
         <relationship name="ofExercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="warning" inverseEntity="Exercise"/>
@@ -87,6 +87,6 @@
         <element name="Reminder" positionX="-171.22265625" positionY="-239.04296875" width="128" height="208"/>
         <element name="TestEntity" positionX="262.875" positionY="-467.78125" width="128" height="73"/>
         <element name="User" positionX="-331.83984375" positionY="-140.41796875" width="128" height="148"/>
-        <element name="Warning" positionX="189.12890625" positionY="-21.1875" width="128" height="58"/>
+        <element name="Warning" positionX="189.12890625" positionY="-21.1875" width="128" height="88"/>
     </elements>
 </model>

@@ -238,7 +238,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         exercise1.namaExercise = "Step Up"
         exercise1.listIdSteps = [1]
         exercise1.videoUrl = ""
-        exercise1.warningData = 1
+        exercise1.warningData = [1]
         
         let exercise2 = Exercise(context: context)
         exercise2.idDifficulty = 1
@@ -246,7 +246,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         exercise2.namaExercise = "Frog Hold"
         exercise2.listIdSteps = [1]
         exercise2.videoUrl = ""
-        exercise2.warningData = 1
+        exercise2.warningData = [1]
         
         let exercise3 = Exercise(context: context)
         exercise3.idDifficulty = 1
@@ -254,7 +254,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         exercise3.namaExercise = "Glute Bridge"
         exercise3.listIdSteps = [2]
         exercise3.videoUrl = ""
-        exercise3.warningData = 1
+        exercise3.warningData = [1]
         
         let diff = Difficulty(context: context)
         diff.idDifficulty = 1
