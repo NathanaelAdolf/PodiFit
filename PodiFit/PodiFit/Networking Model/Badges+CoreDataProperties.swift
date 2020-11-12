@@ -2,7 +2,7 @@
 //  Badges+CoreDataProperties.swift
 //  PodiFit
 //
-//  Created by Griffin on 05/11/20.
+//  Created by Griffin on 12/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 //
@@ -17,12 +17,13 @@ extension Badges {
         return NSFetchRequest<Badges>(entityName: "Badges")
     }
 
-    @NSManaged public var firstTimeBadge: Bool
+    @NSManaged public var completeFivePlanBadge: Bool
+    @NSManaged public var completePlanBadge: Bool
     @NSManaged public var customExerciseBadge: Bool
     @NSManaged public var exerciseAddictBadge: Bool
     @NSManaged public var exerciseMasterBadge: Bool
-    @NSManaged public var completePlanBadge: Bool
-    @NSManaged public var completeFivePlanBadge: Bool
+    @NSManaged public var firstTimeBadge: Bool
+    @NSManaged public var id: Int16
     @NSManaged public var reminderBadge: Bool
 
 }

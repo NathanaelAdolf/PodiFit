@@ -1,5 +1,5 @@
 //
-//  ExerciseSteps+CoreDataProperties.swift
+//  Warning+CoreDataProperties.swift
 //  PodiFit
 //
 //  Created by Griffin on 12/11/20.
@@ -11,20 +11,20 @@ import Foundation
 import CoreData
 
 
-extension ExerciseSteps {
+extension Warning {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ExerciseSteps> {
-        return NSFetchRequest<ExerciseSteps>(entityName: "ExerciseSteps")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Warning> {
+        return NSFetchRequest<Warning>(entityName: "Warning")
     }
 
-    @NSManaged public var idStep: Int32
-    @NSManaged public var steps: String?
+    @NSManaged public var idWarning: Int64
+    @NSManaged public var warningText: String?
     @NSManaged public var ofExercise: NSSet?
 
 }
 
 // MARK: Generated accessors for ofExercise
-extension ExerciseSteps {
+extension Warning {
 
     @objc(addOfExerciseObject:)
     @NSManaged public func addToOfExercise(_ value: Exercise)
@@ -40,6 +40,6 @@ extension ExerciseSteps {
 
 }
 
-extension ExerciseSteps : Identifiable {
+extension Warning : Identifiable {
 
 }

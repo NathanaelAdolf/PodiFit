@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  PodiFit
 //
-//  Created by Griffin on 05/11/20.
+//  Created by Griffin on 12/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 //
@@ -19,10 +19,10 @@ extension User {
 
     @NSManaged public var height: Int32
     @NSManaged public var idUser: Int32
+    @NSManaged public var img: Data?
     @NSManaged public var userIdPlan: [Int]?
     @NSManaged public var userName: String?
     @NSManaged public var weight: Int32
-    @NSManaged public var img: Data?
     @NSManaged public var plan: NSSet?
 
 }
