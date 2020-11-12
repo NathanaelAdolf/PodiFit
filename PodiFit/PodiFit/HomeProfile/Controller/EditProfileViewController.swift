@@ -35,6 +35,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         setUITextField(sender: weightTextField)
         setUITextField(sender: heightTextField)
         
+        hideKeyboardWhenTappedAround()
+        
         notifHelper.configureUserNotificationCenter()
         
     }

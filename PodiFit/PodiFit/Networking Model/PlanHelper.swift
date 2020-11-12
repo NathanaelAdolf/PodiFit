@@ -120,21 +120,23 @@ class PlanHelper: UIViewController {
                     let result = try context.fetch(fetch)
                     for data in result as! [NSManagedObject]
                      {
-                        if data.value(forKey: "isPlanDone")as! Bool == true
-                        {
                             for i in 0...userIdPlan.count - 1
                             {
                                 if userIdPlan[i] == data.value(forKey: "idPlan")as! Int
                                 {
+                                    if data.value(forKey: "isPlanDone")as! Bool == true
+                                    {
                                     tempCompletedPlanData.append(CompletedPlanModel(titleMovement: data.value(forKey: "namaPlan")as! String, level: difficultyHelper.checkDifficultyNameById(idDifficulty: data.value(forKey: "idDifficulty")as! Int), period: data.value(forKey: "durasiPlan")as! Int, movement: 10))
+                                    }
+                                    
+                                    if data.value(forKey: "totalSessionDone")as! Int != 0 {
+                                        isFinishedOneExercise = true
+                                    }
+                                    totalAllSessionDone += data.value(forKey: "totalSessionDone")as! Int
+
                                 }
+                                
                             }
-                        }
-                        
-                        if data.value(forKey: "totalSessionDone")as! Int != 0 {
-                            isFinishedOneExercise = true
-                        }
-                        totalAllSessionDone += data.value(forKey: "totalSessionDone")as! Int
                         
                         
                         print("\n")

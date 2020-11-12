@@ -89,6 +89,8 @@ class AddReminderViewController: UIViewController {
         
         notifHelper.configureUserNotificationCenter()
         
+        hideKeyboardWhenTappedAround()
+        
         if pageState == "Edit" {
             setDataToUserChoose()
         }
@@ -314,103 +316,6 @@ class AddReminderViewController: UIViewController {
         }
         
     }
-    
-    
-    /*override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
-    {
-        if pageState == "Edit"
-        {
-            self.counter = 0
-            
-            if self.tempDataEdit[0].isMon == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isTue == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isWed == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isThu == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isFri == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isSat == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isSun == true
-            {
-                self.counter += 1
-            }
-            
-            for i in 0...self.counter - 1
-            {
-                self.reminderNameArray.append("\(self.tempDataEdit[0].reminderName!)\(i)")
-            }
-            
-            for _ in 0...self.reminderNameArray.count - 1
-            {
-                notifHelper.notificationCenter.removeDeliveredNotifications(withIdentifiers: self.reminderNameArray)
-                notifHelper.notificationCenter.removePendingNotificationRequests(withIdentifiers: self.reminderNameArray)
-                
-            }
-            
-            userChoosenDayArray.removeAll()
-            checkuserChoosenDay()
-            checkDayState()
-            tempReminderName = reminderNameTextField.text!
-            
-            //save ke core data notifnya
-            for i in 0...userChoosenDayArray.count - 1 {
-                notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
-            }
-            
-            notifHelper.updateDataInReminder(reminderNameToUpdate: tempDataEdit[0].reminderName,newName:tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
-            
-            return true
-        }
-        else
-        {
-            if reminderNameTextField.text == ""
-            {
-                //kasih pesan error
-            }
-            else
-            {
-                notifHelper.triggerNotification { (isSuccess) in
-                    self.userChoosenDayArray.removeAll()
-                    self.checkuserChoosenDay()
-                    self.checkDayState()
-                    
-                    DispatchQueue.main.async {
-                        
-                        self.tempReminderName = self.reminderNameTextField.text!
-                        for i in 0...self.userChoosenDayArray.count - 1 {
-                            notifHelper.scheduleNotification(reminderName:"\(self.tempReminderName)\(i)", dateToPush:self.checkUserChoosenDate(arrayIndex: i) )
-                            }
-                        
-                        notifHelper.storeNotificationToCoreData(reminderName: self.tempReminderName, hour: self.userChoosenHour, minute: self.userChoosenMinute, monday: self.monState, tuesday: self.tueState, wednesday: self.wedState, thursday: self.thuState, friday: self.friState, saturday: self.satState, sunday: self.sunState, isReminderActive: true)
-                        self.dismiss(animated: true) {
-                            self.delegate?.nextDidTap()
-                        }
-                    }
-                
-                }
-                
-                return true
-            }
-        }
-        
-        return false
-    }*/
     
     @IBAction func nextDidTap() {
         if pageState == "Edit"

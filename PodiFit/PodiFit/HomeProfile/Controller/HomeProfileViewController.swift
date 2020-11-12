@@ -445,12 +445,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         
-        //userHelper.deleteDataInUser(uniqueUserName: "Adolf")
-        //userHelper.storeToUserData(idUser: 0, userName: "Adolf", idPlan: [1,2], height: 178, weight: 70)
-
-        //planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
-        // planHelper.updatePlanIntoDone(planNameToUpdate: "Intermediate leg plan", isPlanDone: true)
-        
         reminderData = notifHelper.retrieveNotificationFromCoreData()
         
         if userHelper.isUserTableEmpty() == true {
@@ -473,16 +467,16 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             difficultyHelper.storeToDifficultyData(idDifficulty: 2, levelDifficulty: "Intermediate")
         }
         
-        badgesHelper.checkUserEarnBadge()
+       /* badgesHelper.checkUserEarnBadge()
         badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
-        badgesHelper.retreiveDataFromBadges()
+        badgesHelper.retreiveDataFromBadges()*/
         
         if userHelper.isUserTableEmpty() == false {
             userData = userHelper.retrieveUserBasicData()
         }
         
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
-            completedData = planHelper.retrieveCompletedPlanData().tempModel
+           // completedData = planHelper.retrieveCompletedPlanData().tempModel
         }
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -491,11 +485,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
-        print("unwind segue test")
-        //save to coredata
-        
-        
-        
+    
     }
     
     @IBAction func unwindSegueFromEditProfile(sender: UIStoryboardSegue){
@@ -527,6 +517,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        hideKeyboardWhenTappedAround()
     }
     
 }
@@ -557,8 +549,8 @@ extension UIViewController
 extension HomeProfileViewController: HomeProfileDelegate {
     func nextDidTap() {
         self.reminderData = notifHelper.retrieveNotificationFromCoreData()
-        badgesHelper.checkUserEarnBadge()
-        self.badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
+        /*badgesHelper.checkUserEarnBadge()
+        self.badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData*/
         self.completeRemindBadgeTableView.reloadData()
     }
 }
