@@ -18,6 +18,7 @@ struct PlanTypes1{
 class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var jumlahHari: Int = 0
+    var checkSender = 0
     
     var plans = [PlanTypes1]()
     var plan2 = [PlanTypes1]()
@@ -43,6 +44,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("checkSender = \(checkSender)")
         self.tableView.delegate = self
 
         self.tableView.dataSource = self
@@ -59,6 +61,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //deleteAllDummy(entity: "TestEntity")
+        
         self.navigationController?.navigationBar.isHidden = true
         
         //notifHelper.configureUserNotificationCenter()
