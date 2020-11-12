@@ -8,9 +8,14 @@
 
 import UIKit
 
-class CustomizePlanTableViewController: UITableViewController{
+protocol UnwindDelegator {
+    func unwindSegueFromCell()
+}
+
+class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
 
     var model = [MovementModel]()
+    var selectedExercise = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +46,19 @@ class CustomizePlanTableViewController: UITableViewController{
         
         model.append(MovementModel(movementName: "Frog Hold 2", movementImage: "2", movementDetail: "20x"))
         
+        model.append(MovementModel(movementName: "Frog Hold 3", movementImage: "1", movementDetail: "20x"))
+        
+        model.append(MovementModel(movementName: "Frog Hold 4", movementImage: "3", movementDetail: "20x"))
+        
+        model.append(MovementModel(movementName: "Step Up 1", movementImage: "3", movementDetail: "20x"))
+        
+        model.append(MovementModel(movementName: "Glute Bridge 2", movementImage: "1", movementDetail: "20x"))
+        
+        model.append(MovementModel(movementName: "Kneeling Squat 4", movementImage: "3", movementDetail: "20x"))
+        
         tableView.register(CustomizePlanTableViewCell.nib(), forCellReuseIdentifier: CustomizePlanTableViewCell.identifier)
+        
+        tableView.register(FinishButtonTableViewCell.nib(), forCellReuseIdentifier: FinishButtonTableViewCell.identifier)
         
         //print(model)
     }
@@ -50,7 +67,7 @@ class CustomizePlanTableViewController: UITableViewController{
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +75,7 @@ class CustomizePlanTableViewController: UITableViewController{
         return 1
     }
     
+    /*
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionName: String
             switch section {
@@ -72,6 +90,7 @@ class CustomizePlanTableViewController: UITableViewController{
             }
             return sectionName
     }
+   */
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
             if let header = view as? UITableViewHeaderFooterView {
@@ -83,19 +102,35 @@ class CustomizePlanTableViewController: UITableViewController{
         }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomizePlanTableViewCell.identifier, for: indexPath) as! CustomizePlanTableViewCell
-
-        // Configure the cell...
-        cell.colView = self
-        cell.backgroundColor = UIColor.clear
-        cell.configure(with: model)
         
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CustomizePlanTableViewCell.identifier, for: indexPath) as! CustomizePlanTableViewCell
+
+            // Configure the cell...
+            cell.colView = self
+            cell.backgroundColor = UIColor.clear
+            cell.configure(with: model)
+            
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: FinishButtonTableViewCell.identifier, for: indexPath) as! FinishButtonTableViewCell
+            
+            cell.delegate = self
+            cell.backgroundColor = UIColor.clear
+            return cell
+        }
+        
     }
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
+        if indexPath.section == 0 {
+            return 700
+        }
+        else {
+            return 70
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,6 +144,11 @@ class CustomizePlanTableViewController: UITableViewController{
             pvc.transitioningDelegate = self
 
             self.present(pvc, animated: true, completion: nil)
+        }
+        else if segue.identifier == "unwindToOverview" {
+            print("prepare dlu")
+            selectedExercise = checkSelected
+            
         }
         
     }
@@ -134,7 +174,7 @@ extension CustomizePlanTableViewController: UIViewControllerTransitioningDelegat
 }
 
 extension CustomizePlanTableViewController: CollectionCellDelegator{
-    func callSegueFromColViewCell() {
+    func presentFromButton() {
         var storyboard = UIStoryboard(name: "ChoosePlan", bundle: nil)
         let pvc = storyboard.instantiateViewController(withIdentifier: "ModalPlanViewController") as UIViewController
 
@@ -144,6 +184,10 @@ extension CustomizePlanTableViewController: CollectionCellDelegator{
         self.present(pvc, animated: true, completion: nil)
     }
     
+    func unwindSegueFromCell() {
+        self.performSegue(withIdentifier: "unwindToOverview", sender: self )
+        print("ijo = \(checkSelected)")
+     }
 }
 
 class HalfSizePresentationController : UIPresentationController {
