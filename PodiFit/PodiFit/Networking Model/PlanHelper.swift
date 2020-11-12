@@ -114,7 +114,6 @@ class PlanHelper: UIViewController {
         
         guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempCompletedPlanData,isFinishedOneExercise,totalAllSessionDone)}
                  let context = appDel.persistentContainer.viewContext
-            
                  let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
              
              do {
