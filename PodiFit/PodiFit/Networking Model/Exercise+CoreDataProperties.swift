@@ -2,7 +2,7 @@
 //  Exercise+CoreDataProperties.swift
 //  PodiFit
 //
-//  Created by Griffin on 05/11/20.
+//  Created by Griffin on 12/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 //
@@ -22,9 +22,10 @@ extension Exercise {
     @NSManaged public var listIdSteps: [Int]?
     @NSManaged public var namaExercise: String?
     @NSManaged public var videoUrl: String?
-    @NSManaged public var warningData: Int64
+    @NSManaged public var warningData: [Int]?
     @NSManaged public var ofPlan: NSSet?
     @NSManaged public var steps: NSSet?
+    @NSManaged public var warning: NSSet?
 
 }
 
@@ -59,6 +60,23 @@ extension Exercise {
 
     @objc(removeSteps:)
     @NSManaged public func removeFromSteps(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for warning
+extension Exercise {
+
+    @objc(addWarningObject:)
+    @NSManaged public func addToWarning(_ value: Warning)
+
+    @objc(removeWarningObject:)
+    @NSManaged public func removeFromWarning(_ value: Warning)
+
+    @objc(addWarning:)
+    @NSManaged public func addToWarning(_ values: NSSet)
+
+    @objc(removeWarning:)
+    @NSManaged public func removeFromWarning(_ values: NSSet)
 
 }
 

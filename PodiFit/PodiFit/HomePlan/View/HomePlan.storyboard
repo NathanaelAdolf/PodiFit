@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +44,7 @@
                                     <color key="titleColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PAB-zF-Ci9" kind="showDetail" id="4Jp-g1-tJ7"/>
+                                    <segue destination="PAB-zF-Ci9" kind="show" id="4Jp-g1-tJ7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -241,7 +241,9 @@
         <!--ChoosePlan-->
         <scene sceneID="tYA-PR-j7S">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChoosePlan" id="PAB-zF-Ci9" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ChoosePlan" id="PAB-zF-Ci9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VEg-sz-eg6"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwJ-rw-zPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2006" y="1535"/>

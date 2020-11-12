@@ -2,7 +2,7 @@
 //  Reminder+CoreDataClass.swift
 //  PodiFit
 //
-//  Created by Griffin on 05/11/20.
+//  Created by Griffin on 12/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 //

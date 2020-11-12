@@ -1,5 +1,5 @@
 //
-//  Exercise+CoreDataClass.swift
+//  Warning+CoreDataClass.swift
 //  PodiFit
 //
 //  Created by Griffin on 12/11/20.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Exercise)
-public class Exercise: NSManagedObject {
+@objc(Warning)
+public class Warning: NSManagedObject {
 
 }
