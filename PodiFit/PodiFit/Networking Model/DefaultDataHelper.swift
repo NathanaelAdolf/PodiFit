@@ -322,26 +322,26 @@ class DefaultDataHelper: UIViewController {
         newExercise12.idDifficulty = 2
         newExercise12.idExercise = 12
         newExercise12.listIdSteps = [41,42,43,44,8]
-        newExercise12.namaExercise = "Standing Side Leg Raises"
+        newExercise12.namaExercise = "Side Leg Raises"
         newExercise12.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
         newExercise12.warningData = [1]
         
         
         let step41 = ExerciseSteps(context: self.context)
         step41.idStep = 41
-        step41.steps = "Start with your hands out in front of you or resting on your hips. Stand upright with your toes facing forward."
+        step41.steps = "Lie down on a mat or floor, your body should be in a straight line with your leg extended and feet stacked at top of each other"
         
         let step42 = ExerciseSteps(context: self.context)
         step42.idStep = 42
-        step42.steps = "As you lift your right leg up off the floor with the foot flexed, inhale and shift the weight into your left foot."
+        step42.steps = "Place your arm straight on the floor under your head or bend your elbow and cradle your head for support. Place your left hand out front for extra support or let it rest on your leg or hip."
         
         let step43 = ExerciseSteps(context: self.context)
         step43.idStep = 43
-        step43.steps = "As you exhale, bring the leg back down to meet the left."
+        step43.steps = "s you exhale, gently raise your left leg off the lower leg. Stop raising your leg when you feel the muscles flex in your lower back or obliques."
         
         let step44 = ExerciseSteps(context: self.context)
         step44.idStep = 44
-        step44.steps = "Repeat for around 15 seconds"
+        step44.steps = "Inhale and lower the leg back down to meet the right leg. Stack your feet again."
         
         newExercise12.steps = NSSet.init(array: [step41, step42, step43, step44])
         
