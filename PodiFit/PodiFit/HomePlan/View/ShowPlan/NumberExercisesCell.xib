@@ -77,6 +77,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="buttonCollection" destination="Zkf-BU-ndf" id="IBS-bf-SPv"/>
+                <outlet property="weekLabel" destination="UlU-1N-9Ql" id="UCK-ag-u5E"/>
             </connections>
             <point key="canvasLocation" x="-286.95652173913044" y="83.370535714285708"/>
         </tableViewCell>

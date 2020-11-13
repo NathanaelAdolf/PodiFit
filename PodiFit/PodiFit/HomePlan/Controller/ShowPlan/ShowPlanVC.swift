@@ -13,15 +13,22 @@ protocol ShowPlanDelegator {
 }
 
 class ShowPlanVC: UIViewController {
-
+    
+    var titlePlan: String = ""
+    
+    let countWeek = activePlanHelper.countWeekPlan(idPlan: 1)
+    
     @IBOutlet weak var tableViewUI: UITableView!
+    @IBOutlet weak var progressExercise: UIProgressView!
+    @IBOutlet weak var progressExerciseLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
         setupRegisterNib()
         setupDelegate()
+        setupData()
     }
     
     private func setupDelegate() {
@@ -33,31 +40,39 @@ class ShowPlanVC: UIViewController {
         tableViewUI.register(NumberExercisesCell.nib(), forCellReuseIdentifier: NumberExercisesCell.identifier)
     }
     
+    func setupData() {
+    }
+    
     func setupUI() {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
-        self.navigationItem.title = "Leg yeaahhh"
-//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        let backButton = UIBarButtonItem()
-        
-        backButton.title = ""
-        backButton.image = UIImage(named: "chevron.left")
-        backButton.tintColor = Colors.yellowColor
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        self.navigationItem.title = titlePlan
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var title: String = ""
+        let data = activePlanHelper.fetchActivePlan()
+        data.forEach { (active) in
+            title = active.namaPlan.unsafelyUnwrapped
+        }
+        
+        if let target = segue.destination as? ListPlanVC {
+            target.titlePlan = titlePlan
+        }
     }
 }
 
 extension ShowPlanVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return countWeek
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewUI.dequeueReusableCell(withIdentifier: NumberExercisesCell.identifier, for: indexPath) as! NumberExercisesCell
-        
         cell.delegate = self
         
         return cell
