@@ -19,32 +19,45 @@ protocol ButtonCellDelegator {
     func callSegueFromCellToMain()
 }
 
+let CustomizePlanHelper = CustomizePlanModel()
+
 class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
 
-    var expandableData = [testCellData]()
-    var selectedIndexPlan = 0
+    //var expandableData = [testCellData]()
+    
+    var exerciseData = [ExerciseModel]()
+    var planData = [PlansModel]()
+    
+    var selectedIndexPlan: Int!
     var selectedExercise = 0
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
-        
+        //retrieveData()
         let backButton = UIBarButtonItem()
         
         backButton.title = ""
         backButton.image = UIImage(named: "chevron.left")
         backButton.tintColor = Colors.yellowColor
-//        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        //        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "plan_bg"), for: .default)
         self.tableView.backgroundColor = UIColor.clear
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         self.navigationController?.navigationBar.isHidden = false
         
-        expandableData = [testCellData(title: "Week 1", sectionData: ["Mountain Climber", "Push Up 1", "Push Up 2", "Glute Bridge", "Frog Hold", "One Leg Frog Hold"])]
+        
+        self.exerciseData = CustomizePlanHelper.fetchSelectedExercise(idPlan: selectedIndexPlan!)
+        self.planData = CustomizePlanHelper.fetchActivePlan()
+        
+        
+        //expandableData = [testCellData(title: "Week 1", sectionData: ["Mountain Climber", "Push Up 1", "Push Up 2", "Glute Bridge", "Frog Hold", "One Leg Frog Hold"])]
         
         super.viewDidLoad()
+        
+        print("selected index Plan = \(selectedIndexPlan!)")
         print("selected exercise = \(selectedExercise)")
         //notifHelper.configureUserNotificationCenter()
         
@@ -75,14 +88,16 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         else if section == 1{
             return 1
         }
-        else if section == (expandableData.count + 2) {
+        else if section == 2 {
+            return 1
+        }
+        else if section == 4 {
             return 1
         }
         else{
-            //print("section: \(section)")
-              //print("expdata count: \(expandableData[section-2].sectionData.count+1)")
                 
-              return expandableData[section-2].sectionData.count+1
+            return exerciseData.count
+              //return expandableData[section-2].sectionData.count+1
         }
     }
     /*
@@ -95,25 +110,35 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     */
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return (expandableData.count + 3)
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
-            cell.planDesc.text = "Action Plan designed for your easy leg stuff"
+            cell.parseData(data: planData[selectedIndexPlan-1])
+            
             cell.backgroundColor = UIColor.clear
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
             return cell
         }
         else if (indexPath.section == 1){
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCell.identifier, for: indexPath) as! PlanInfoCell
+            cell.parseData(data: planData[selectedIndexPlan-1])
+            
             cell.backgroundColor = UIColor.clear
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
             return cell
         }
-        else if (indexPath.section == (expandableData.count + 2)){
+        else if (indexPath.section == 2) {
+                let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseHeaderTableViewCell.identifier, for: indexPath) as! ExerciseHeaderTableViewCell
+                cell.backgroundColor = UIColor.clear
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
+                return cell
+        }
+        else if (indexPath.section == 4){
             let cell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.identifier, for: indexPath) as! ButtonTableViewCell
             cell.backgroundColor = UIColor.clear
             cell.btnConfirm.layer.borderWidth = 2
@@ -123,20 +148,16 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
             return cell
         }
         else{
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseHeaderTableViewCell.identifier, for: indexPath) as! ExerciseHeaderTableViewCell
-                cell.backgroundColor = UIColor.clear
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
-                return cell
-            }
-            else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseTableViewCell.identifier, for: indexPath) as! ExerciseTableViewCell
-                cell.exerciseName.text = expandableData[indexPath.section - 2].sectionData[indexPath.row - 1]
+                
+                cell.parseData(data: exerciseData[indexPath.row])
+                
+                //cell.exerciseName.text = expandableData[indexPath.section - 2].sectionData[indexPath.row - 1]
                 cell.backgroundColor = UIColor.clear
                 cell.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
                 return cell
             }
-        }
+        
         
     }
     
@@ -144,10 +165,10 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         if indexPath.section == 1 {
             return 120
         }
-        else if(indexPath.section == (expandableData.count + 1) && indexPath.row == 0){
+        else if(indexPath.section == 2){
             return 60
         }
-        else if(indexPath.section == (expandableData.count + 1) && indexPath.row != 0){
+        else if(indexPath.section == 3){
             return 110
         }
         else if(indexPath.section == 0){
@@ -165,13 +186,12 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         
         let context = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
-        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Difficulty")
         
         do {
             let result = try context.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
-                //print(data.value(forKey: "planname") as!
+                print(data.value(forKey: "levelDifficulty") as! String)
             }
                     
         } catch {

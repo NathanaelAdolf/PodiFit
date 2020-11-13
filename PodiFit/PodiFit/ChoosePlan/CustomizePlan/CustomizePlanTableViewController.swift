@@ -14,6 +14,8 @@ protocol UnwindDelegator {
 
 class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
 
+    var allExercise = [ExerciseModel]()
+    
     var model = [MovementModel]()
     var selectedExercise = 0
     
@@ -35,32 +37,16 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         self.tableView.backgroundColor = UIColor.clear
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //notifHelper.configureUserNotificationCenter()
+        
+        allExercise = CustomizePlanHelper.fetchExerciseByIdDifficulty(idDifficulty: 1)!
+        print("allex = \(allExercise.count)")
 
-        model.append(MovementModel(movementName: "Donkey Kicks", movementImage: "donkeykicks", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Glute Bridge", movementImage: "glutebridgecalfraise", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Plies", movementImage: "3", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Frog Hold", movementImage: "1", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Frog Hold 2", movementImage: "2", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Frog Hold 3", movementImage: "1", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Frog Hold 4", movementImage: "3", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Step Up 1", movementImage: "3", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Glute Bridge 2", movementImage: "1", movementDetail: "20x"))
-        
-        model.append(MovementModel(movementName: "Kneeling Squat 4", movementImage: "3", movementDetail: "20x"))
+
         
         tableView.register(CustomizePlanTableViewCell.nib(), forCellReuseIdentifier: CustomizePlanTableViewCell.identifier)
         
         tableView.register(FinishButtonTableViewCell.nib(), forCellReuseIdentifier: FinishButtonTableViewCell.identifier)
-        
-        //print(model)
+
     }
 
     // MARK: - Table view data source
@@ -109,7 +95,8 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
             // Configure the cell...
             cell.colView = self
             cell.backgroundColor = UIColor.clear
-            cell.configure(with: model)
+            //cell.configure(with: model)
+            cell.parseData(data: allExercise)
             
             return cell
         }

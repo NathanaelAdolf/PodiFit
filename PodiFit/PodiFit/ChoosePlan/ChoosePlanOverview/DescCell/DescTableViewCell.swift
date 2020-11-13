@@ -31,4 +31,8 @@ class DescTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func parseData(data: PlansModel) {
+        planDesc.text = data.desc
+    }
+    
 }

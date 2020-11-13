@@ -16,6 +16,9 @@ class PlanInfoCell: UITableViewCell {
         return UINib(nibName: "PlanInfoCell", bundle: nil)
     }
     
+    var difficulty = String()
+    
+    
     @IBOutlet weak var levelInfo: UILabel!
     
     @IBOutlet weak var durationInfo: UILabel!
@@ -33,4 +36,14 @@ class PlanInfoCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func parseData(data: PlansModel) {
+        durationInfo.text = "\((data.chosenExercise!.count) * 30) secs"
+        exerciseInfo.text = "\(data.chosenExercise!.count) exercises"
+        
+        print("id plan \(data.idPlan), id diff \(data.idDifficulty)")
+        
+        difficulty = difficultyHelper.checkDifficultyNameById(idDifficulty: Int(data.idDifficulty))
+        levelInfo.text = difficulty
+        
+    }
 }

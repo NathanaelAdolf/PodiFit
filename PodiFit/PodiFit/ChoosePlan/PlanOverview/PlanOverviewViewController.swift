@@ -28,21 +28,12 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         
-        if someEntityExists() == false{
-            //createData()
-            print("entity kosong")
-            
-            //retrieveData()
-            tableView.reloadData()
-        }
-        else{
             fetchRealData()
             tableView.reloadData()
             print("retrieve")
             //retrieveData()
             //print("fetched \(plan2.count)")
-        }
-        
+
     }
  
     
@@ -115,8 +106,10 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
     */
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndexPlan = Int(plans[indexPath.row].idPlan)
+        print("kirim indexPlan: \(selectedIndexPlan)")
         performSegue(withIdentifier: "viewPlanSegue", sender: self)
-        selectedIndexPlan = indexPath.row
+        
     }
     
 
@@ -192,7 +185,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
                 plans.append(contentsOf: result)
             }
             
-            print(plans)
+            //print(plans)
         }
         catch let error as NSError{
             print("Fetching error, \(error), \(error.userInfo)")

@@ -27,13 +27,17 @@ class ExerciseTableViewCell: UITableViewCell {
         // Initialization code
         exerciseImage.image = UIImage.init(named: "glutebridgecalfraise")
         exerciseImage.layer.cornerRadius = 5.0
-        exerciseDuration.text = "30 sec"
+        exerciseDuration.text = "00:30"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func parseData(data: ExerciseModel) {
+        exerciseName.text = data.namaExercise
     }
     
 }

@@ -26,14 +26,18 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     @IBOutlet weak var movementCollection: UICollectionView!
     
     
+
     
-    func configure (with model: [MovementModel]){
-        self.model = model
+    // // //
+    
+    var data = [ExerciseModel]()
+    
+    func parseData(data: [ExerciseModel]){
+        self.data = data
         movementCollection.reloadData()
     }
     
-    var model = [MovementModel]()
-    
+    // // //
     
     static func nib() -> UINib{
         return UINib(nibName: "CustomizePlanTableViewCell", bundle: nil)
@@ -61,7 +65,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -89,7 +93,8 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
-        cell.configure(with: model[indexPath.row])
+        //cell.configure(with: model[indexPath.row])
+        cell.parseData(data: data[indexPath.row])
         cell.delegate = colView //kirim dleegate
         cell.backgroundColor = UIColor.white
         cell.layer.cornerRadius = 10
