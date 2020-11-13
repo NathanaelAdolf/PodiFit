@@ -14,12 +14,8 @@ class PlanModel: UIViewController {
     //reference to moc
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
 
@@ -46,32 +42,31 @@ class PlanModel: UIViewController {
         
     }
     
-    func fetchExerciseById() -> [ExerciseModel] {
-        var tempExerciseData = [ExerciseModel]()
+    //
+    func fetchExerciseByIdPlan(idPlan : Int) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         
-        // reference to moc with return
-        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return tempExerciseData}
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
         
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
+        let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
+        fetchRequest.predicate = NSPredicate(format: "idPlan == %@", "\(idPlan)")
         
         do {
-            let result = try context.fetch(fetch)
-            for data in result as! [NSManagedObject]{
-                
-                
-//                tempExerciseData.append(ExerciseModel(idDifficulty: data.value(forKey: "idDifficulty") as! Int, idExercise: data.value(forKey: "idExercise") as! Int, listIdSteps: data.value(forKey: "listIdSteps")as! [Int], namaExercise: data.value(forKey: "namaExercise")as! String, videoUrl: data.value(forKey: "videoUrl")as! String, warningData: data.value(forKey: "warningData")as! Int))
-            }
-        } catch {
-            
-        }
-        
-        
-        
-        return tempExerciseData
-    }
+            let plans = try managedObjectContext.fetch(fetchRequest)
+            for plan in plans {
+                let tempExercise : Set<Exercise> = plan.exercise as! Set<Exercise>
+                let arrTempExercise = Array(tempExercise)
+                for arrTemp in arrTempExercise {
+                    print(arrTemp.namaExercise)
+                }
 
+            }
+        } catch  {
+            print("error")
+        }
+    }
     
-    func fetchIdSteps(){
+    func fetchIdSteps(idExercise: [Int]){
         print(",masuk")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         
@@ -88,34 +83,48 @@ class PlanModel: UIViewController {
                 
                 print("//masuk")
 //                print(exercise.steps?. ?? "No Data Found")
-                let bebas : Set<ExerciseSteps> = exercise.steps as! Set<ExerciseSteps>
-                let arrBebas = Array(bebas)
+                let tempStep : Set<ExerciseSteps> = exercise.steps as! Set<ExerciseSteps>
+                let arrTempStep = Array(tempStep)
 //                print(bebas)
                 
-                for beb in arrBebas {
-                    print(beb.steps)
-                    
-                    
+                for arrTemp in arrTempStep {
+                    print(arrTemp.steps)
                 }
             }
-            
-            
- 
         } catch  {
             print("error")
         }
-        
-        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func fetchIdWarning(warningData : [Int]) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
+        
+        fetchRequest.predicate = NSPredicate(format: "warningData == %@", "1")
+        
+        do {
+            let exercises = try managedObjectContext.fetch(fetchRequest)
+//            print(exercises.count)
+            for exercise in exercises {
+                
+                print("//masuk")
+//                print(exercise.steps?. ?? "No Data Found")
+                let tempWarning : Set<Warning> = exercise.warning as! Set<Warning>
+                let arrTempWarning = Array(tempWarning)
+//                print(bebas)
+                
+                for arrTemp in arrTempWarning {
+                    print(arrTemp.warningText)
+                }
+            }
+        } catch  {
+            print("error")
+        }
     }
-    */
+    
+    
 
 }

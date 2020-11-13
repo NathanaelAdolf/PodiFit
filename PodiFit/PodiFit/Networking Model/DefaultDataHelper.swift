@@ -294,7 +294,7 @@ class DefaultDataHelper: UIViewController {
         newExercise11.idExercise = 11
         newExercise11.listIdSteps = [37,38,39,40,8]
         newExercise11.namaExercise = "Single Leg Hip Raises"
-        newExercise11.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise11.videoUrl = "https://www.youtube.com/embed/OTRmchnEkV0?playsinline=1"
         newExercise11.warningData = [1]
         
         
@@ -322,26 +322,26 @@ class DefaultDataHelper: UIViewController {
         newExercise12.idDifficulty = 2
         newExercise12.idExercise = 12
         newExercise12.listIdSteps = [41,42,43,44,8]
-        newExercise12.namaExercise = "Standing Side Leg Raises"
-        newExercise12.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise12.namaExercise = "Side Leg Raises"
+        newExercise12.videoUrl = "https://www.youtube.com/embed/gYpwEr0cLO8?playsinline=1"
         newExercise12.warningData = [1]
         
         
         let step41 = ExerciseSteps(context: self.context)
         step41.idStep = 41
-        step41.steps = "Start with your hands out in front of you or resting on your hips. Stand upright with your toes facing forward."
+        step41.steps = "Lie down on a mat or floor, your body should be in a straight line with your leg extended and feet stacked at top of each other"
         
         let step42 = ExerciseSteps(context: self.context)
         step42.idStep = 42
-        step42.steps = "As you lift your right leg up off the floor with the foot flexed, inhale and shift the weight into your left foot."
+        step42.steps = "Place your arm straight on the floor under your head or bend your elbow and cradle your head for support. Place your left hand out front for extra support or let it rest on your leg or hip."
         
         let step43 = ExerciseSteps(context: self.context)
         step43.idStep = 43
-        step43.steps = "As you exhale, bring the leg back down to meet the left."
+        step43.steps = "s you exhale, gently raise your left leg off the lower leg. Stop raising your leg when you feel the muscles flex in your lower back or obliques."
         
         let step44 = ExerciseSteps(context: self.context)
         step44.idStep = 44
-        step44.steps = "Repeat for around 15 seconds"
+        step44.steps = "Inhale and lower the leg back down to meet the right leg. Stack your feet again."
         
         newExercise12.steps = NSSet.init(array: [step41, step42, step43, step44])
         
@@ -351,7 +351,7 @@ class DefaultDataHelper: UIViewController {
         newExercise13.idExercise = 13
         newExercise13.listIdSteps = [45,46,26]
         newExercise13.namaExercise = "Pulse squat"
-        newExercise13.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise13.videoUrl = "https://www.youtube.com/embed/0ry2D5wVYLQ?playsinline=1"
         newExercise13.warningData = [1]
         
         
@@ -371,7 +371,7 @@ class DefaultDataHelper: UIViewController {
         newExercise14.idExercise = 14
         newExercise14.listIdSteps = [47,48,49,26]
         newExercise14.namaExercise = "Plié squat calf raise"
-        newExercise14.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise14.videoUrl = "https://www.youtube.com/embed/gvRi_uBWXIU?playsinline=1"
         newExercise14.warningData = [1]
         
         
@@ -395,7 +395,7 @@ class DefaultDataHelper: UIViewController {
         newExercise15.idExercise = 15
         newExercise15.listIdSteps = [34,50,51,26]
         newExercise15.namaExercise = "Glute bridge calf raise"
-        newExercise15.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise15.videoUrl = "https://www.youtube.com/embed/6w7Dgt1Jeec?playsinline=1"
         newExercise15.warningData = [1]
         
         
@@ -415,7 +415,7 @@ class DefaultDataHelper: UIViewController {
         newExercise16.idExercise = 16
         newExercise16.listIdSteps = [4,5,52,53,19]
         newExercise16.namaExercise = "Split squat"
-        newExercise16.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise16.videoUrl = "https://www.youtube.com/embed/is8GZ7Lspuc?playsinline=1"
         newExercise16.warningData = [1]
         
         
@@ -435,7 +435,7 @@ class DefaultDataHelper: UIViewController {
         newExercise17.idExercise = 17
         newExercise17.listIdSteps = [16,54,55,56,8]
         newExercise17.namaExercise = "Walking lunge"
-        newExercise17.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise17.videoUrl = "https://www.youtube.com/embed/czzWZhOD12c?playsinline=1"
         newExercise17.warningData = [1]
         
         
@@ -459,7 +459,7 @@ class DefaultDataHelper: UIViewController {
         newExercise18.idExercise = 18
         newExercise18.listIdSteps = [57,58,59,60,8]
         newExercise18.namaExercise = "Reverse lunge"
-        newExercise18.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise18.videoUrl = "https://www.youtube.com/embed/BeW7XYwPzkY?playsinline=1"
         newExercise18.warningData = [1]
         
         
@@ -519,7 +519,7 @@ class DefaultDataHelper: UIViewController {
         newExercise20.idExercise = 20
         newExercise20.listIdSteps = [66,67,68,69,8]
         newExercise20.namaExercise = "Donkey kicks"
-        newExercise20.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
+        newExercise20.videoUrl = "https://www.youtube.com/embed/0tId0Sia_CQ?playsinline=1"
         newExercise20.warningData = [1]
         
         

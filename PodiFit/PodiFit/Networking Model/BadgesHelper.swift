@@ -344,6 +344,11 @@ class BadgesHelper: UIViewController {
         let userIdPlan: [Int] = userHelper.retrieveUserBasicData()[0].userIdPlan!
         var customIdPlan = [Int]()
         
+        if userIdPlan.count == 0 {
+            print("check user id plan empty")
+            return
+        }
+        
         for i in 0...userIdPlan.count - 1 {
             if userIdPlan[i] > 2 {
                 customIdPlan.append(userIdPlan[i])
