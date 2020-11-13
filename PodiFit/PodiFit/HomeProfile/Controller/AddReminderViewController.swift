@@ -97,6 +97,13 @@ class AddReminderViewController: UIViewController {
         
     }
     
+    func showAlert(messageToDisplay: String) {
+          let alert = UIAlertController(title: "Message", message: messageToDisplay, preferredStyle: .alert)
+          let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+          alert.addAction(action)
+          self.present(alert, animated: true, completion: nil)
+      }
+    
     func setDataToUserChoose()
     {
         //only if user choose edit
@@ -363,25 +370,35 @@ class AddReminderViewController: UIViewController {
                 
             }
             
-            userChoosenDayArray.removeAll()
-            checkuserChoosenDay()
-            checkDayState()
-            tempReminderName = reminderNameTextField.text!
-            
-            //save ke core data notifnya
-            for i in 0...userChoosenDayArray.count - 1 {
-                notifHelper.scheduleNotification(reminderName:"\(tempReminderName)\(i)", dateToPush:checkUserChoosenDate(arrayIndex: i) )
+            notifHelper.triggerNotification { (isSuccess) in
+                self.userChoosenDayArray.removeAll()
+                self.checkuserChoosenDay()
+                self.checkDayState()
+               
+                
+                DispatchQueue.main.async {
+                    self.tempReminderName = self.reminderNameTextField.text!
+                    
+                    //save ke core data notifnya
+                    for i in 0...self.userChoosenDayArray.count - 1 {
+                        notifHelper.scheduleNotification(reminderName:"\(self.tempReminderName)\(i)", dateToPush:self.checkUserChoosenDate(arrayIndex: i) )
+                    }
+                    
+                    notifHelper.updateDataInReminder(reminderNameToUpdate: self.tempDataEdit[0].reminderName,newName:self.tempReminderName, hour: self.userChoosenHour, minute: self.userChoosenMinute, monday: self.monState, tuesday: self.tueState, wednesday: self.wedState, thursday: self.thuState, friday: self.friState, saturday: self.satState, sunday: self.sunState, isReminderActive: true)
+                    
+                    self.delegate?.nextDidTap()
+                    self.dismiss(animated: true) {
+                    }
+                    print("edit state")
+                }
             }
-            
-            notifHelper.updateDataInReminder(reminderNameToUpdate: tempDataEdit[0].reminderName,newName:tempReminderName, hour: userChoosenHour, minute: userChoosenMinute, monday: monState, tuesday: tueState, wednesday: wedState, thursday: thuState, friday: friState, saturday: satState, sunday: sunState, isReminderActive: true)
-            
             
         }
         else
         {
             if reminderNameTextField.text == ""
             {
-                //kasih pesan error
+                showAlert(messageToDisplay: "textfield can't be empty")
             }
             else
             {
