@@ -10,6 +10,12 @@ import UIKit
 import WebKit
 import CoreData
 
+
+struct ExerciseSteps1 {
+    var idStep = Int()
+    var steps = String()
+}
+
 class ExerciseViewController: UIViewController {
 
     @IBOutlet weak var exerciseView : ExerciseView!
@@ -22,6 +28,10 @@ class ExerciseViewController: UIViewController {
     var countChosenExercise = 3
     var finishExercise = 1
     
+    var tempPlan = [Plan]()
+    
+    var idPlanActive : Int!
+    
     //reference to moc
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -32,8 +42,15 @@ class ExerciseViewController: UIViewController {
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
         exerciseView.videoView()
         
+        
         // get exercise from core data
 //        fetchPlan()
+    }
+    
+    func setupInit(idPlan : Int) {
+//        PlanModel.fetchExerciseByIdPlan(idPlan)
+        
+        
     }
     
     @IBAction func didTap(_ sender: Any) {
@@ -71,19 +88,6 @@ class ExerciseViewController: UIViewController {
             
             newPlan.steps = NSSet.init(array: [step, step1, step2])
             
-            
-//
-            
-            
-//            newPlan.chosenExercise = [1,3,5,6]
-//            newPlan.durasiPlan = 60
-//            newPlan.durasiSession = 30
-//            newPlan.idDifficulty = 3
-//            newPlan.idPlan = 2
-//            newPlan.namaPlan = textfield.text
-//
-            
-            // save the data
             do {
                 try self.context.save()
                 
@@ -107,12 +111,19 @@ class ExerciseViewController: UIViewController {
     
     @IBAction func informationExercise(_ sender: Any) {
         self.performSegue(withIdentifier: "toInformationExercise", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInformationExercise" {
+            let destination = segue.destination as! UINavigationController
+            
+            
+        }
     }
     
     @IBAction func previous(_ sender: Any) {
-        var countProgress = Double((Double(finishExercise) / Double(countChosenExercise)))
-        print("ini \(countProgress)")
-        print("angka dari \(finishExercise), \(countChosenExercise)")
+        
 
         if finishExercise == countChosenExercise {
             exerciseView.lastExercise()
@@ -132,17 +143,20 @@ class ExerciseViewController: UIViewController {
                 isVideo += 1
             }
             finishExercise -= 1
+            var countProgress = Double((Double(finishExercise) / Double(countChosenExercise)))
+            print("ini \(countProgress)")
+            print("angka dari \(finishExercise), \(countChosenExercise)")
         }
     }
     
     @IBAction func next(_ sender: Any) {
+        print("ini awal next \(finishExercise)")
         var countProgress = Float((Float(finishExercise) / Float(countChosenExercise)))
         circularProgressView.setProgressWithAnimation(duration: 1.0, value: countProgress)
         exerciseView.setProgressNumber(number: finishExercise, totalExercise: countChosenExercise)
         if finishExercise == countChosenExercise {
             exerciseView.lastExercise()
         } else {
-//            print("harusnya masuk\(finishExercise), \(isVideo)")
             if ((isVideo % 2) != 1) {
                 exerciseView.restView()
                 self.navigationController?.navigationBar.isHidden = true
@@ -151,6 +165,7 @@ class ExerciseViewController: UIViewController {
             }
 //            self.navigationController?.navigationBar.isHidden = false
             finishExercise += 1
+            print("ini next \(isVideo)")
         }
     }
     

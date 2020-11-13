@@ -28,10 +28,10 @@ class ActivePlanCell: UICollectionViewCell {
     func parseData(data: PlansModel) {
         namePlanLabel.text = data.namaPlan
         planImage.image = UIImage(named: "2")
-        weekPlanLabel.text = "\(data.jumlahHari) weeks"
-        exercisePlanLabel.text = "\(data.durasiPlan) exercises"
+        weekPlanLabel.text = "\(data.durasiPlan) weeks"
+        exercisePlanLabel.text = "\(data.chosenExercise!.count) exercises"
         equipmentPlanLabel.text = "No Equipment"
-        progressPlan.progress = Float(Float(data.totalSessionDone)/Float(data.durasiPlan))
+        progressPlan.progress = Float(Float(data.totalSessionDone)/(Float(data.durasiPlan)*Float(data.jumlahHari)))
         progressPlanLabel.text = "\(data.totalSessionDone/data.durasiPlan*100)%"
     }
 
