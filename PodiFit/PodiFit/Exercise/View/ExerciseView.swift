@@ -37,6 +37,11 @@ class ExerciseView: UIView {
     
     
     var tempExercise = [ExerciseModel]()
+    var links = "https://www.youtube.com/embed/xXRU28mfIJQ"
+    
+    func setupInitial() {
+        
+    }
     
     public func videoView() {
         //for show webkit(video)
@@ -56,7 +61,7 @@ class ExerciseView: UIView {
         loadWebsite()
         warningExercise()
         
-        planModelHelper.fetchIdSteps()
+        planModelHelper.fetchIdSteps(idExercise: [1]) //idExercise: [1]
 //        print("ini di view \(planModelHelper.fetchPlanUsingEntity())")
         
 //        self.tempExercise = planModelHelper.fetchExerciseById()
@@ -116,7 +121,7 @@ class ExerciseView: UIView {
     }
     
     func loadWebsite() {
-        let url = URL(string: "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1")
+        let url = URL(string: "\(links)?playsinline=1")
         let request = URLRequest(url: url!)
         webKitView.load(request)
     }
