@@ -18,13 +18,14 @@ class NumberExercisesCell: UITableViewCell {
     
     var delegate : ShowPlanVC?
     
+    var day: [Int]? = []
+    
     @IBOutlet weak var buttonCollection: UICollectionView!
     @IBOutlet weak var weekLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupUI()
         setupDelegate()
         setupRegisterNib()
     }
@@ -37,15 +38,6 @@ class NumberExercisesCell: UITableViewCell {
     func setupRegisterNib() {
         buttonCollection.register(ButtonExerciseCell.nib(), forCellWithReuseIdentifier: ButtonExerciseCell.identifier)
     }
-    
-    func setupUI() {
-    }
-    
-    func parseData(data: [Int]) {
-        data.forEach { (i) in
-            weekLabel.text = "Week \(i) Exercise"
-        }
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -56,7 +48,7 @@ class NumberExercisesCell: UITableViewCell {
 
 extension NumberExercisesCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return day!.count
     }
     
     
@@ -64,6 +56,7 @@ extension NumberExercisesCell: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonExerciseCell.identifier, for: indexPath) as! ButtonExerciseCell
         
         cell.delegate = delegate
+        cell.numberDayLabel.text = "\(day![indexPath.row])"
         
         return cell
     }

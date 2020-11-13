@@ -203,4 +203,31 @@ class ActivePlanModel: UIViewController {
         
         return weekPlan
     }
+    
+    func countDayPlan(idPlan: Int) -> [Int]? {
+        // for temporary data
+        var dayPlan: [Int] = []
+        var sumDay: Int = 0
+        
+        let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
+        fetchRequest.predicate = NSPredicate(format: "idPlan == %@", "\(idPlan)") // select Plan where idPlan like in User
+        
+        do {
+            let result = try context.fetch(fetchRequest) as [NSManagedObject]
+            
+            // Loop data Plan into PlansModel
+            result.forEach { (plan) in
+                sumDay = plan.value(forKey: "durasiPlan") as! Int
+            }
+            
+            for i in 1...sumDay {
+                dayPlan.append(i)
+            }
+        }
+        catch let err {
+            print(err)
+        }
+        
+        return dayPlan
+    }
 }

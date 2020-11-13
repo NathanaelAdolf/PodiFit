@@ -18,6 +18,9 @@ class HomePlanVC: UIViewController {
     
     var namaPlan: String!
     
+    var titlePlan: String = ""
+    var idPlan: Int!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -62,34 +65,32 @@ class HomePlanVC: UIViewController {
             destVC.checkSender = 1
         }
         
-        var title: String = ""
-        let data = activePlanHelper.fetchActivePlan()
-        data.forEach { (active) in
-            title = active.namaPlan.unsafelyUnwrapped
-        }
-        
-        if let target = segue.destination as? ShowPlanVC {
-            target.titlePlan = title
-        }
-    }
-    
-    
-    
-    extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return activePlanCount
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlanCell", for: indexPath) as! ActivePlanCell
-            cell.parseData(data: plansModel[indexPath.row])
+        if segue.identifier == "viewExercisesSegue" {
+            let dest = segue.destination as! ShowPlanVC
             
-            return cell
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            //if let cell = collectionView.cellForItem(at: indexPath) as? MovementCollectionViewCell{}
-            //print(collectionView.cellForItem(at: indexPath))
-            performSegue(withIdentifier: "viewExercisesSegue", sender: self)
+            dest.titlePlan = self.titlePlan
+            dest.idPlan = self.idPlan
         }
     }
+}
+
+
+extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return activePlanCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlanCell", for: indexPath) as! ActivePlanCell
+        cell.parseData(data: plansModel[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        titlePlan = plansModel[indexPath.row].namaPlan!
+        idPlan = Int(plansModel[indexPath.row].idPlan)
+        
+        performSegue(withIdentifier: "viewExercisesSegue", sender: self)
+    }
+}
