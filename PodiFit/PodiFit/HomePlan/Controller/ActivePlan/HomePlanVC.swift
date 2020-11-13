@@ -22,7 +22,7 @@ class HomePlanVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
         setupDelegate()
         setupRegisterNib()
@@ -53,6 +53,15 @@ class HomePlanVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "addNewPlan" {
+            let dest = segue.destination as! UINavigationController
+            
+            let destVC = dest.topViewController as! PlanOverviewViewController
+            
+            destVC.checkSender = 1
+        }
+        
         var title: String = ""
         let data = activePlanHelper.fetchActivePlan()
         data.forEach { (active) in
@@ -63,24 +72,24 @@ class HomePlanVC: UIViewController {
             target.titlePlan = title
         }
     }
-
-}
-
-extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return activePlanCount
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlanCell", for: indexPath) as! ActivePlanCell
-        cell.parseData(data: plansModel[indexPath.row])
+    
+    
+    extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return activePlanCount
+        }
         
-        return cell
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlanCell", for: indexPath) as! ActivePlanCell
+            cell.parseData(data: plansModel[indexPath.row])
+            
+            return cell
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            //if let cell = collectionView.cellForItem(at: indexPath) as? MovementCollectionViewCell{}
+            //print(collectionView.cellForItem(at: indexPath))
+            performSegue(withIdentifier: "viewExercisesSegue", sender: self)
+        }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //if let cell = collectionView.cellForItem(at: indexPath) as? MovementCollectionViewCell{}
-        //print(collectionView.cellForItem(at: indexPath))
-        performSegue(withIdentifier: "viewExercisesSegue", sender: self)
-    }
-}

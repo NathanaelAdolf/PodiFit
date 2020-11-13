@@ -44,7 +44,7 @@
                                     <color key="titleColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PAB-zF-Ci9" kind="show" id="4Jp-g1-tJ7"/>
+                                    <segue destination="PAB-zF-Ci9" kind="show" identifier="addNewPlan" id="4Jp-g1-tJ7"/>
                                 </connections>
                             </button>
                         </subviews>
