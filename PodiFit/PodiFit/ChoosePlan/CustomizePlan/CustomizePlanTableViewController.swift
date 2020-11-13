@@ -36,11 +36,11 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //notifHelper.configureUserNotificationCenter()
 
-        model.append(MovementModel(movementName: "Step Up", movementImage: "1", movementDetail: "20x"))
+        model.append(MovementModel(movementName: "Donkey Kicks", movementImage: "donkeykicks", movementDetail: "20x"))
         
-        model.append(MovementModel(movementName: "Glute Bridge", movementImage: "2", movementDetail: "20x"))
+        model.append(MovementModel(movementName: "Glute Bridge", movementImage: "glutebridgecalfraise", movementDetail: "20x"))
         
-        model.append(MovementModel(movementName: "Kneeling Squat", movementImage: "3", movementDetail: "20x"))
+        model.append(MovementModel(movementName: "Plies", movementImage: "3", movementDetail: "20x"))
         
         model.append(MovementModel(movementName: "Frog Hold", movementImage: "1", movementDetail: "20x"))
         

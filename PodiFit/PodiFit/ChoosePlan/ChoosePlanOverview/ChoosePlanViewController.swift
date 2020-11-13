@@ -22,6 +22,7 @@ protocol ButtonCellDelegator {
 class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
 
     var expandableData = [testCellData]()
+    var selectedIndexPlan = 0
     var selectedExercise = 0
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -156,35 +157,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
             return 125
         }
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print("sct=\(indexPath.section) ,idx =\(indexPath.row)")
-        
-        //performSegue(withIdentifier: "customPlanSegue", sender: self)
-        
-        
-        if (indexPath.section > 1 && indexPath.section < (expandableData.count + 2) && indexPath.row == 0){
-            if expandableData[indexPath.section-2].opened == true{
-                expandableData[indexPath.section-2].opened = false
-                //print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk if")
-            }else{
-                expandableData[indexPath.section-2].opened = true
-                
-                //print("sct=\(indexPath.section) ,idx =\(indexPath.row), masuk else")
-            }
-            
-            let sections = IndexSet.init(integer: indexPath.section)
-            tableView.reloadSections(sections, with: .none)
-            //tableView.reloadData()
-        }else if (indexPath.section == (expandableData.count + 2)){
-            //performSegue(withIdentifier: "customPlanSegue", sender: self)
-        }else if (indexPath.section != 1){
-            
-        }
-        
-    }
- */
+
     
     func retrieveData(){
         
