@@ -29,18 +29,18 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         
         if someEntityExists() == false{
-            createData()
-            print("create")
+            //createData()
+            print("entity kosong")
             
-            retrieveData()
+            //retrieveData()
             tableView.reloadData()
         }
         else{
-            retrieveData()
+            fetchRealData()
             tableView.reloadData()
             print("retrieve")
-            fetchRealData()
-            print("fetched \(plan2.count)")
+            //retrieveData()
+            //print("fetched \(plan2.count)")
         }
         
     }
@@ -99,7 +99,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
 
         let plan = plans[indexPath.row]
         cell.planName.text = plan.namaPlan
-        cell.planSubtitle.text = "\(plan.durasiPlan) weeks - \(plan.chosenExercise!.count) - No Equipment"
+        cell.planSubtitle.text = "\(plan.durasiPlan) weeks - \(plan.chosenExercise!.count) exercises - No Equipment"
         cell.planImage.image = UIImage(named: "1")
         cell.backgroundColor = UIColor.clear
         
