@@ -40,13 +40,12 @@ class MovementCollectionViewCell: UICollectionViewCell {
         
     }
     
-    public func configure(with model: MovementModel){
+    
+    func parseData(data: ExerciseModel){
         
-        self.movementName.text = model.movementName
-        self.movementDetails.text = model.movementDetail
-        self.movementCollectionImage.image = UIImage(named: model.movementImage)
-        
-        
+        movementName.text = data.namaExercise
+        movementDetails.text = "00:30"
+        movementCollectionImage.image = UIImage(named: "donkeykicks")
     }
     
     
