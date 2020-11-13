@@ -19,6 +19,8 @@ class InformationExerciseController: UIViewController {
         informationExerciseView.setupView()
     }
     
+    
+    
 
     /*
     // MARK: - Navigation

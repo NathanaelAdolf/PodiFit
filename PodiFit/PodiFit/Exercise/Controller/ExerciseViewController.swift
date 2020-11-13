@@ -10,6 +10,12 @@ import UIKit
 import WebKit
 import CoreData
 
+
+struct ExerciseSteps1 {
+    var idStep = Int()
+    var steps = String()
+}
+
 class ExerciseViewController: UIViewController {
 
     @IBOutlet weak var exerciseView : ExerciseView!
@@ -105,6 +111,15 @@ class ExerciseViewController: UIViewController {
     
     @IBAction func informationExercise(_ sender: Any) {
         self.performSegue(withIdentifier: "toInformationExercise", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInformationExercise" {
+            let destination = segue.destination as! UINavigationController
+            
+            
+        }
     }
     
     @IBAction func previous(_ sender: Any) {
