@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-var planModelHelper = PlanModel()
+
 
 class ExerciseView: UIView {
 
@@ -61,7 +61,7 @@ class ExerciseView: UIView {
         loadWebsite()
         warningExercise()
         
-        planModelHelper.fetchIdSteps(idExercise: [1]) //idExercise: [1]
+        planModelHelpers.fetchIdSteps(idExercise: [1]) //idExercise: [1]
 //        print("ini di view \(planModelHelper.fetchPlanUsingEntity())")
         
 //        self.tempExercise = planModelHelper.fetchExerciseById()

@@ -16,6 +16,8 @@ struct ExerciseSteps1 {
     var steps = String()
 }
 
+var planModelHelpers = PlanModel()
+
 class ExerciseViewController: UIViewController {
 
     @IBOutlet weak var exerciseView : ExerciseView!
@@ -31,6 +33,8 @@ class ExerciseViewController: UIViewController {
     var tempPlan = [Plan]()
     
     var idPlanActive : Int!
+    var idExercise: [Int]!
+    
     
     //reference to moc
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -42,13 +46,14 @@ class ExerciseViewController: UIViewController {
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
         exerciseView.videoView()
         
-        
+        setupInit()
         // get exercise from core data
 //        fetchPlan()
     }
     
-    func setupInit(idPlan : Int) {
-//        PlanModel.fetchExerciseByIdPlan(idPlan)
+    func setupInit() {
+        
+        self.idExercise = planModelHelpers.fetchExerciseByIdPlan(idPlan: idPlanActive)
         
         
     }
@@ -116,8 +121,9 @@ class ExerciseViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInformationExercise" {
-            let destination = segue.destination as! UINavigationController
+            let destination = segue.destination as! InformationExerciseController
             
+//            destination.idExercise = self.idExercise
             
         }
     }

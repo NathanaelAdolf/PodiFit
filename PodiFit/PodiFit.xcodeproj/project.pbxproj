@@ -25,6 +25,7 @@
 		2FEA2598255D6F27000EB282 /* PlansModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEA2597255D6F27000EB282 /* PlansModel.swift */; };
 		2FF2277D2554CA9300D494C4 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
 		2FF227822554CABC00D494C4 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF227812554CABC00D494C4 /* NotificationHelper.swift */; };
+		48436778255E5A3C0063EB21 /* StepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48436777255E5A3C0063EB21 /* StepModel.swift */; };
 		484A07B9255B84D3006A88CC /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A07B8255B84D3006A88CC /* EmoticonTableViewCell.swift */; };
 		487B519725548C0700091ABB /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487B519625548C0700091ABB /* SummaryTableViewCell.swift */; };
 		487E1F62254F467500F58265 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E1F61254F467500F58265 /* ReviewService.swift */; };
@@ -162,6 +163,7 @@
 		2FEA2584255D5EE9000EB282 /* ActivePlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePlanModel.swift; sourceTree = "<group>"; };
 		2FEA2597255D6F27000EB282 /* PlansModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansModel.swift; sourceTree = "<group>"; };
 		2FF227812554CABC00D494C4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		48436777255E5A3C0063EB21 /* StepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepModel.swift; sourceTree = "<group>"; };
 		484A07B8255B84D3006A88CC /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
 		487B519625548C0700091ABB /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		487E1F61254F467500F58265 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				48E2D9952551D21600F2EF03 /* PlanModel.swift */,
+				48436777255E5A3C0063EB21 /* StepModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -947,6 +950,7 @@
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				2F9C0F14255626D900D87F01 /* ShowPlanVC.swift in Sources */,
 				ABFB99FE254FFBD400B5E96A /* PlanListOverviewTableViewCell.swift in Sources */,
+				48436778255E5A3C0063EB21 /* StepModel.swift in Sources */,
 				487E1F7C254F553100F58265 /* ExerciseSummaryView.swift in Sources */,
 				AB46E8F7255CDE3A0028A983 /* Plan+CoreDataClass.swift in Sources */,
 				2F9C0F2D2558621F00D87F01 /* ListPlanVC.swift in Sources */,

@@ -43,41 +43,53 @@ class PlanModel: UIViewController {
     }
     
     //
-    func fetchExerciseByIdPlan(idPlan : Int) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+    func fetchExerciseByIdPlan(idPlan : Int) -> [Int]? {
         
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        var idExercieses : [Int]? = []
+        
+//        let managedObjectContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
         fetchRequest.predicate = NSPredicate(format: "idPlan == %@", "\(idPlan)")
         
         do {
-            let plans = try managedObjectContext.fetch(fetchRequest)
-            for plan in plans {
-                let tempExercise : Set<Exercise> = plan.exercise as! Set<Exercise>
-                let arrTempExercise = Array(tempExercise)
-                for arrTemp in arrTempExercise {
-                    print(arrTemp.namaExercise)
-                }
 
+            let result = try context.fetch(fetchRequest) as [NSManagedObject]
+            
+            result.forEach { (plan) in
+                let getIdExercise = plan.value(forKey: "chosenExercise") as? [Int]?
+                idExercieses = getIdExercise?.unsafelyUnwrapped
             }
+            
+//            for plan in plans {
+//                let tempExercise : Set<Exercise> = plan.exercise as! Set<Exercise>
+//                let arrTempExercise = Array(tempExercise)
+//                for arrTemp in arrTempExercise {
+//                    print(arrTemp.namaExercise)
+//
+//
+//                }
+//
+//            }
         } catch  {
             print("error")
         }
+        
+        return idExercieses
     }
     
-    func fetchIdSteps(idExercise: [Int]){
-        print(",masuk")
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+    func fetchIdSteps(idExercise: [Int]) -> [StepModel]{
+        var stepExercises = [StepModel]()
         
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+//
+//        let managedObjectContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
         fetchRequest.predicate = NSPredicate(format: "idExercise == %@", "1")
         
-        print(".masukkk")
         do {
-            let exercises = try managedObjectContext.fetch(fetchRequest)
+            let exercises = try context.fetch(fetchRequest)
 //            print(exercises.count)
             for exercise in exercises {
                 
@@ -87,13 +99,21 @@ class PlanModel: UIViewController {
                 let arrTempStep = Array(tempStep)
 //                print(bebas)
                 
-                for arrTemp in arrTempStep {
-                    print(arrTemp.steps)
+//                for arrTemp in arrTempStep {
+//                    print(arrTemp.steps)
+//                }
+                arrTempStep.forEach { (arr) in
+                    stepExercises.append(
+                        StepModel(idStep: value(forKey: "idStep") as! Int,
+                                  steps: value(forKey: "steps") as! String)
+                    )
                 }
             }
         } catch  {
             print("error")
         }
+        
+        return stepExercises
     }
     
     func fetchIdWarning(warningData : [Int]) {
