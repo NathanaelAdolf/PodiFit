@@ -59,7 +59,7 @@ class PlanModel: UIViewController {
             for data in result as! [NSManagedObject]{
                 
                 
-                tempExerciseData.append(ExerciseModel(idDifficulty: data.value(forKey: "idDifficulty") as! Int, idExercise: data.value(forKey: "idExercise") as! Int, listIdSteps: data.value(forKey: "listIdSteps")as! [Int], namaExercise: data.value(forKey: "namaExercise")as! String, videoUrl: data.value(forKey: "videoUrl")as! String, warningData: data.value(forKey: "warningData")as! Int))
+                tempExerciseData.append(ExerciseModel(idDifficulty: data.value(forKey: "idDifficulty") as! Int, idExercise: data.value(forKey: "idExercise") as! Int, listIdSteps: data.value(forKey: "listIdSteps")as! [Int], namaExercise: data.value(forKey: "namaExercise")as! String, videoUrl: data.value(forKey: "videoUrl")as! String, warningData: data.value(forKey: "warningData")as! [Int]?))
             }
         } catch {
             
