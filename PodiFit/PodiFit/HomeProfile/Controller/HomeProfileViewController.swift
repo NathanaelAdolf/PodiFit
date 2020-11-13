@@ -452,16 +452,16 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
         }
      
-       /* badgesHelper.checkUserEarnBadge()
+        badgesHelper.checkUserEarnBadge()
         badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
-        badgesHelper.retreiveDataFromBadges()*/
+        badgesHelper.retreiveDataFromBadges()
         
         if userHelper.isUserTableEmpty() == false {
             userData = userHelper.retrieveUserBasicData()
         }
         
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
-           // completedData = planHelper.retrieveCompletedPlanData().tempModel
+            completedData = planHelper.retrieveCompletedPlanData().tempModel
         }
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -535,8 +535,8 @@ extension HomeProfileViewController: HomeProfileDelegate {
     func nextDidTap() {
         print("next did tap")
         self.reminderData = notifHelper.retrieveNotificationFromCoreData()
-        /*badgesHelper.checkUserEarnBadge()
-        self.badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData*/
+        badgesHelper.checkUserEarnBadge()
+        self.badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
         self.completeRemindBadgeTableView.reloadData()
     }
 }

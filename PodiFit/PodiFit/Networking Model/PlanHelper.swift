@@ -112,6 +112,11 @@ class PlanHelper: UIViewController {
         var isFinishedOneExercise: Bool = false
         var totalAllSessionDone: Int = 0
         
+        if userIdPlan.count == 0 {
+            print("check user id plan empty")
+            return (tempCompletedPlanData,isFinishedOneExercise,totalAllSessionDone)
+        }
+        
         guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempCompletedPlanData,isFinishedOneExercise,totalAllSessionDone)}
                  let context = appDel.persistentContainer.viewContext
                  let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
