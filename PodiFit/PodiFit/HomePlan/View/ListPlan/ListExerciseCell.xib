@@ -33,10 +33,10 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUMO SQUATS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2s-lN-BXi">
-                                <rect key="frame" x="128" y="25" width="157" height="22"/>
+                                <rect key="frame" x="128" y="25" width="230" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="157" id="aSL-3C-6HV"/>
-                                    <constraint firstAttribute="height" constant="22" id="zlx-iH-Aky"/>
+                                    <constraint firstAttribute="width" constant="230" id="uov-Mt-gYI"/>
+                                    <constraint firstAttribute="height" constant="22" id="w05-ff-CjE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -55,13 +55,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="t2s-lN-BXi" secondAttribute="bottom" constant="47" id="2qL-hw-KNe"/>
                             <constraint firstItem="6KZ-5z-XuG" firstAttribute="leading" secondItem="qtN-s1-cnq" secondAttribute="trailing" constant="16" id="2zn-FA-aEH"/>
-                            <constraint firstItem="t2s-lN-BXi" firstAttribute="leading" secondItem="qtN-s1-cnq" secondAttribute="trailing" constant="16" id="8AV-D1-Bb9"/>
                             <constraint firstItem="qtN-s1-cnq" firstAttribute="top" secondItem="neT-o1-PJ3" secondAttribute="top" constant="15" id="9Pe-3Q-N0p"/>
                             <constraint firstItem="6KZ-5z-XuG" firstAttribute="top" secondItem="neT-o1-PJ3" secondAttribute="top" constant="45" id="9kk-ty-M50"/>
-                            <constraint firstItem="t2s-lN-BXi" firstAttribute="top" secondItem="neT-o1-PJ3" secondAttribute="top" constant="25" id="BYY-EY-naj"/>
+                            <constraint firstAttribute="trailing" secondItem="t2s-lN-BXi" secondAttribute="trailing" constant="16" id="MYb-EQ-EOD"/>
+                            <constraint firstItem="t2s-lN-BXi" firstAttribute="leading" secondItem="qtN-s1-cnq" secondAttribute="trailing" constant="16" id="Nrr-Ug-WHT"/>
                             <constraint firstAttribute="bottom" secondItem="qtN-s1-cnq" secondAttribute="bottom" constant="16" id="Oi2-VI-3l8"/>
+                            <constraint firstItem="t2s-lN-BXi" firstAttribute="top" secondItem="neT-o1-PJ3" secondAttribute="top" constant="25" id="YL7-l8-Gyl"/>
+                            <constraint firstAttribute="bottom" secondItem="t2s-lN-BXi" secondAttribute="bottom" constant="47" id="cQF-ds-VXS"/>
                             <constraint firstItem="qtN-s1-cnq" firstAttribute="leading" secondItem="neT-o1-PJ3" secondAttribute="leading" id="iJt-4h-ynx"/>
                             <constraint firstAttribute="bottom" secondItem="6KZ-5z-XuG" secondAttribute="bottom" constant="29" id="tf3-f5-7CO"/>
                         </constraints>
@@ -77,6 +78,11 @@
                 <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="neT-o1-PJ3" secondAttribute="trailing" id="Tvu-Lo-vPu"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="neT-o1-PJ3" secondAttribute="bottom" id="o0R-gz-sAx"/>
             </constraints>
+            <connections>
+                <outlet property="exerciseImage" destination="qtN-s1-cnq" id="AJT-GF-1sx"/>
+                <outlet property="exerciseNameLabel" destination="t2s-lN-BXi" id="gNz-bF-Miw"/>
+                <outlet property="exerciseTimeLabel" destination="6KZ-5z-XuG" id="u50-Bv-tYn"/>
+            </connections>
             <point key="canvasLocation" x="168.11594202898553" y="145.3125"/>
         </tableViewCell>
     </objects>

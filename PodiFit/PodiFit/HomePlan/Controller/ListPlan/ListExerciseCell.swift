@@ -10,9 +10,16 @@ import UIKit
 
 class ListExerciseCell: UITableViewCell {
 
+    @IBOutlet weak var exerciseImage: UIImageView!
+    @IBOutlet weak var exerciseNameLabel: UILabel!
+    @IBOutlet weak var exerciseTimeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func parseData(data: ExerciseModel) {
+        exerciseNameLabel.text = data.namaExercise
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

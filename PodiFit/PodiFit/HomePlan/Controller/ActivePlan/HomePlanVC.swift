@@ -8,7 +8,15 @@
 
 import UIKit
 
+let activePlanHelper = ActivePlanModel()
+
 class HomePlanVC: UIViewController {
+    
+    var plansModel = [PlansModel]()
+    
+    let activePlanCount = activePlanHelper.fetchActivePlan().count
+    
+    var namaPlan: String!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -18,6 +26,7 @@ class HomePlanVC: UIViewController {
         setupUI()
         setupDelegate()
         setupRegisterNib()
+        setupData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +34,10 @@ class HomePlanVC: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func setupData() {
+        self.plansModel = activePlanHelper.fetchActivePlan()
     }
     
     private func setupDelegate() {
@@ -40,23 +53,34 @@ class HomePlanVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        var title: String = ""
+        let data = activePlanHelper.fetchActivePlan()
+        data.forEach { (active) in
+            title = active.namaPlan.unsafelyUnwrapped
+        }
+        
+        if let target = segue.destination as? ShowPlanVC {
+            target.titlePlan = title
+        }
     }
 
 }
 
 extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return activePlanCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlanCell", for: indexPath) as! ActivePlanCell
+        cell.parseData(data: plansModel[indexPath.row])
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //if let cell = collectionView.cellForItem(at: indexPath) as? MovementCollectionViewCell{}
+        //print(collectionView.cellForItem(at: indexPath))
         performSegue(withIdentifier: "viewExercisesSegue", sender: self)
     }
 }

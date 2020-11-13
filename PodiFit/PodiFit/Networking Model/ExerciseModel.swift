@@ -15,10 +15,10 @@ class ExerciseModel {
     var listIdSteps: [Int]?
     var namaExercise: String
     var videoUrl: String
-    var warningData: Int
+    var warningData: [Int]?
     
     
-    init(idDifficulty: Int, idExercise : Int, listIdSteps: [Int]?, namaExercise: String, videoUrl: String, warningData: Int){
+    init(idDifficulty: Int, idExercise : Int, listIdSteps: [Int]?, namaExercise: String, videoUrl: String, warningData: [Int]?){
         self.idDifficulty = idDifficulty
         self.idExercise = idExercise
         self.listIdSteps = listIdSteps

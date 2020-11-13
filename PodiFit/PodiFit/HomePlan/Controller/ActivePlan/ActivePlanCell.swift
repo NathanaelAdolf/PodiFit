@@ -25,8 +25,14 @@ class ActivePlanCell: UICollectionViewCell {
         progressPlan.progress = 1
     }
     
-    func parseData() {
-        
+    func parseData(data: PlansModel) {
+        namePlanLabel.text = data.namaPlan
+        planImage.image = UIImage(named: "2")
+        weekPlanLabel.text = "\(data.jumlahHari) weeks"
+        exercisePlanLabel.text = "\(data.durasiPlan) exercises"
+        equipmentPlanLabel.text = "No Equipment"
+        progressPlan.progress = Float(Float(data.totalSessionDone)/Float(data.durasiPlan))
+        progressPlanLabel.text = "\(data.totalSessionDone/data.durasiPlan*100)%"
     }
 
 }

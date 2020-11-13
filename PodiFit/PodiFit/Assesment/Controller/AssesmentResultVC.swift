@@ -8,6 +8,8 @@
 
 import UIKit
 
+let insertData = DefaultDataHelper()
+
 class AssesmentResultVC: UIViewController {
     
     var gender: String = ""
@@ -36,7 +38,11 @@ class AssesmentResultVC: UIViewController {
         UserDefaults.standard.set(true, forKey: "first")
         UserDefaults.standard.synchronize()
         
-        userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!)
+        insertData.storeDefaultPlanData()
+        insertData.storeDefaultDifficulty()
+        insertData.storeDefaultExerciseAndExerciseStepsData()
+        
+        userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [1,2], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!)
         
         self.performSegue(withIdentifier: "SeeMyPlanSegue", sender: self)
     }

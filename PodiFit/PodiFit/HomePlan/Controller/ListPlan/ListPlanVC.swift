@@ -9,16 +9,27 @@
 import UIKit
 
 class ListPlanVC: UIViewController {
+    
+    var exercisesModel = [ExerciseModel]()
+    
+    let exerciseCount = activePlanHelper.fetchSelectedExercise(idPlan: 1).count
 
    
     @IBOutlet weak var tableViewUI: UITableView!
+    
+    var titlePlan: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        setupData()
         setupDelegate()
         setupRegisterNib()
+    }
+    
+    private func setupData() {
+        self.exercisesModel = activePlanHelper.fetchSelectedExercise(idPlan: 1)
     }
     
     private func setupDelegate() {
@@ -30,10 +41,9 @@ class ListPlanVC: UIViewController {
         tableViewUI.register(UINib(nibName: "ListExerciseCell", bundle: nil), forCellReuseIdentifier: "ListExerciseCell")
     }
     
-    func setupUI() {
-        self.navigationItem.title = "Leg yeaahhh"
-        
-       // tableViewUI.rowHeight = 80
+    private func setupUI() {
+        self.navigationItem.title = titlePlan
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
     }
 
     /*
@@ -50,11 +60,13 @@ class ListPlanVC: UIViewController {
 
 extension ListPlanVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return exerciseCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewUI.dequeueReusableCell(withIdentifier: "ListExerciseCell", for: indexPath) as! ListExerciseCell
+        cell.parseData(data: exercisesModel[indexPath.row])
+        
         return cell
     }
     
