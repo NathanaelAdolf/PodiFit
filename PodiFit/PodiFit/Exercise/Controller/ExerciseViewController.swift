@@ -24,6 +24,7 @@ class ExerciseViewController: UIViewController {
     
     var tempPlan = [Plan]()
     
+    var idPlanActive : Int!
     
     //reference to moc
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -34,6 +35,7 @@ class ExerciseViewController: UIViewController {
         circularProgressView.trackClr = UIColor(red: 95/255, green: 104/255, blue: 71/255, alpha: 100)
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
         exerciseView.videoView()
+        
         
         // get exercise from core data
 //        fetchPlan()
