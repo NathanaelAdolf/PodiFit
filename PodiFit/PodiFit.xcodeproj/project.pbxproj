@@ -21,6 +21,8 @@
 		2FC917002558E1E60047F26E /* NumberExercisesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC916FE2558E1E60047F26E /* NumberExercisesCell.xib */; };
 		2FCBFC4D2559798D000F163E /* ButtonExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCBFC4B2559798D000F163E /* ButtonExerciseCell.swift */; };
 		2FCBFC4E2559798D000F163E /* ButtonExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCBFC4C2559798D000F163E /* ButtonExerciseCell.xib */; };
+		2FEA2585255D5EE9000EB282 /* ActivePlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEA2584255D5EE9000EB282 /* ActivePlanModel.swift */; };
+		2FEA2598255D6F27000EB282 /* PlansModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEA2597255D6F27000EB282 /* PlansModel.swift */; };
 		2FF2277D2554CA9300D494C4 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
 		2FF227822554CABC00D494C4 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF227812554CABC00D494C4 /* NotificationHelper.swift */; };
 		484A07B9255B84D3006A88CC /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A07B8255B84D3006A88CC /* EmoticonTableViewCell.swift */; };
@@ -100,6 +102,8 @@
 		AB46E8FA255CDE3A0028A983 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8EA255CDE3A0028A983 /* User+CoreDataProperties.swift */; };
 		AB46E8FB255CDE3A0028A983 /* Warning+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8EB255CDE3A0028A983 /* Warning+CoreDataClass.swift */; };
 		AB46E8FC255CDE3A0028A983 /* Warning+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8EC255CDE3A0028A983 /* Warning+CoreDataProperties.swift */; };
+		AB46E91A255D2D080028A983 /* FinishButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E918255D2D080028A983 /* FinishButtonTableViewCell.swift */; };
+		AB46E91B255D2D080028A983 /* FinishButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB46E919255D2D080028A983 /* FinishButtonTableViewCell.xib */; };
 		AB6E780725593ACD00262039 /* PlanInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E780525593ACD00262039 /* PlanInfoCell.swift */; };
 		AB6E780825593ACD00262039 /* PlanInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6E780625593ACD00262039 /* PlanInfoCell.xib */; };
 		AB88B9532551486400AFF3BA /* ModalPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88B9522551486400AFF3BA /* ModalPlanViewController.swift */; };
@@ -155,6 +159,8 @@
 		2FC916FE2558E1E60047F26E /* NumberExercisesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberExercisesCell.xib; sourceTree = "<group>"; };
 		2FCBFC4B2559798D000F163E /* ButtonExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExerciseCell.swift; sourceTree = "<group>"; };
 		2FCBFC4C2559798D000F163E /* ButtonExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonExerciseCell.xib; sourceTree = "<group>"; };
+		2FEA2584255D5EE9000EB282 /* ActivePlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePlanModel.swift; sourceTree = "<group>"; };
+		2FEA2597255D6F27000EB282 /* PlansModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansModel.swift; sourceTree = "<group>"; };
 		2FF227812554CABC00D494C4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		484A07B8255B84D3006A88CC /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
 		487B519625548C0700091ABB /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -241,6 +247,8 @@
 		AB46E8EA255CDE3A0028A983 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB46E8EB255CDE3A0028A983 /* Warning+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Warning+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB46E8EC255CDE3A0028A983 /* Warning+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Warning+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB46E918255D2D080028A983 /* FinishButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishButtonTableViewCell.swift; sourceTree = "<group>"; };
+		AB46E919255D2D080028A983 /* FinishButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishButtonTableViewCell.xib; sourceTree = "<group>"; };
 		AB5F46442553EDDD005DE0D0 /* PodiFit 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PodiFit 2.xcdatamodel"; sourceTree = "<group>"; };
 		AB6E780525593ACD00262039 /* PlanInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInfoCell.swift; sourceTree = "<group>"; };
 		AB6E780625593ACD00262039 /* PlanInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanInfoCell.xib; sourceTree = "<group>"; };
@@ -372,6 +380,14 @@
 				2F9C0F35255864E300D87F01 /* ListExerciseCell.xib */,
 			);
 			path = ListPlan;
+			sourceTree = "<group>";
+		};
+		2FEA2583255D5EC2000EB282 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FEA2584255D5EE9000EB282 /* ActivePlanModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2FF2276C2554C8DC00D494C4 /* Recovered References */ = {
@@ -524,6 +540,7 @@
 		8D13C0F125402BFE002195C9 /* HomePlan */ = {
 			isa = PBXGroup;
 			children = (
+				2FEA2583255D5EC2000EB282 /* Model */,
 				2F57CE2F2551A30600EB914E /* Controller */,
 				2F57CE562551CD0800EB914E /* View */,
 			);
@@ -587,6 +604,7 @@
 				8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */,
 				8D7825D825579ED700501AEA /* BadgesHelper.swift */,
 				8D4BE0C6255CE58F009F4C23 /* DefaultDataHelper.swift */,
+				2FEA2597255D6F27000EB282 /* PlansModel.swift */,
 			);
 			path = "Networking Model";
 			sourceTree = "<group>";
@@ -677,6 +695,15 @@
 			path = DescCell;
 			sourceTree = "<group>";
 		};
+		AB46E91F255D2D160028A983 /* FinishButtonTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB46E919255D2D080028A983 /* FinishButtonTableViewCell.xib */,
+				AB46E918255D2D080028A983 /* FinishButtonTableViewCell.swift */,
+			);
+			path = FinishButtonTableViewCell;
+			sourceTree = "<group>";
+		};
 		AB6E780C25593DD500262039 /* PlanInfoCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,7 +746,7 @@
 		ABFB9A332550011A00B5E96A /* CustomizePlan */ = {
 			isa = PBXGroup;
 			children = (
-				ABFB9A342550011A00B5E96A /* MovementCollectionView */,
+				AB46E91F255D2D160028A983 /* FinishButtonTableViewCell */,
 				ABFB9A392550011A00B5E96A /* CustomizePlanTableViewCell */,
 				ABFB9A372550011A00B5E96A /* CustomizePlanTableViewController.swift */,
 				ABFB9A382550011A00B5E96A /* MovementCollectionModel.swift */,
@@ -739,6 +766,7 @@
 		ABFB9A392550011A00B5E96A /* CustomizePlanTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				ABFB9A342550011A00B5E96A /* MovementCollectionView */,
 				ABFB9A3A2550011A00B5E96A /* CustomizePlanTableViewCell.xib */,
 				ABFB9A3B2550011A00B5E96A /* CustomizePlanTableViewCell.swift */,
 			);
@@ -855,6 +883,7 @@
 				8D13C0FF25402F2B002195C9 /* Survey.storyboard in Resources */,
 				2F9C0F37255864E300D87F01 /* ListExerciseCell.xib in Resources */,
 				8D13C0C225402998002195C9 /* Assets.xcassets in Resources */,
+				AB46E91B255D2D080028A983 /* FinishButtonTableViewCell.xib in Resources */,
 				ABFB9A11254FFC1A00B5E96A /* ExerciseHeaderTableViewCell.xib in Resources */,
 				8D13C0F725402D84002195C9 /* Exercise.storyboard in Resources */,
 				2FC917002558E1E60047F26E /* NumberExercisesCell.xib in Resources */,
@@ -894,6 +923,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB46E91A255D2D080028A983 /* FinishButtonTableViewCell.swift in Sources */,
 				2FF2277D2554CA9300D494C4 /* HomeProfileViewController.swift in Sources */,
 				48A12B99254BC45E00A02F60 /* InformationExercisionView.swift in Sources */,
 				8D73E2BA2547DDD2006338FF /* EditProfileViewController.swift in Sources */,
@@ -938,6 +968,7 @@
 				8DC60F972552504E006A4047 /* NoDataTableViewCell.swift in Sources */,
 				AB46E8EF255CDE3A0028A983 /* ExerciseSteps+CoreDataClass.swift in Sources */,
 				AB46E8EE255CDE3A0028A983 /* Reminder+CoreDataProperties.swift in Sources */,
+				2FEA2585255D5EE9000EB282 /* ActivePlanModel.swift in Sources */,
 				AB46E8F2255CDE3A0028A983 /* Difficulty+CoreDataProperties.swift in Sources */,
 				8D0996712542EA80000363BE /* ReminderModel.swift in Sources */,
 				ABFB9A13254FFC1A00B5E96A /* DescTableViewCell.swift in Sources */,
@@ -955,6 +986,7 @@
 				489A2B582552540400713AD4 /* ExerciseModel.swift in Sources */,
 				8DB64621254BABF80072AC5C /* CompletedPlanDetailModel.swift in Sources */,
 				AB33864E25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift in Sources */,
+				2FEA2598255D6F27000EB282 /* PlansModel.swift in Sources */,
 				48E8EFAB2542754400783427 /* ExerciseViewController.swift in Sources */,
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
@@ -1164,7 +1196,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5Z8NF8RRMK;
+				DEVELOPMENT_TEAM = 6X2P3HV7HT;
 				INFOPLIST_FILE = PodiFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1182,7 +1214,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5Z8NF8RRMK;
+				DEVELOPMENT_TEAM = 6X2P3HV7HT;
 				INFOPLIST_FILE = PodiFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

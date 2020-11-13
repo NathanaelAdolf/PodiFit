@@ -18,7 +18,7 @@ class MovementCollectionViewCell: UICollectionViewCell {
     
     @IBAction func buttonInfo(_ sender: Any) {
         if (self.delegate != nil) {
-            self.delegate.callSegueFromColViewCell()
+            self.delegate.presentFromButton()
         }
         
         print("button colview clicked")

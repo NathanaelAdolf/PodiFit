@@ -8,8 +8,7 @@
 
 import UIKit
 
-class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+class NumberExercisesCell: UITableViewCell {
     
     static let identifier = "NumberExercisesCell"
     
@@ -18,7 +17,9 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     }
     
     var delegate : ShowPlanVC?
+    
     @IBOutlet weak var buttonCollection: UICollectionView!
+    @IBOutlet weak var weekLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,7 +39,12 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     }
     
     func setupUI() {
-        
+    }
+    
+    func parseData(data: [Int]) {
+        data.forEach { (i) in
+            weekLabel.text = "Week \(i) Exercise"
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,9 +52,11 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
 
         // Configure the view for the selected state
     }
-    
+}
+
+extension NumberExercisesCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     
@@ -58,9 +66,5 @@ class NumberExercisesCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         cell.delegate = delegate
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("colview clicked")
     }
 }

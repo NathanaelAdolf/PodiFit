@@ -59,6 +59,7 @@ class PlanModel: UIViewController {
                 for arrTemp in arrTempExercise {
                     print(arrTemp.namaExercise)
                 }
+
             }
         } catch  {
             print("error")

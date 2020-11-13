@@ -22,6 +22,8 @@ protocol ButtonCellDelegator {
 class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
 
     var expandableData = [testCellData]()
+    var selectedExercise = 0
+
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -42,8 +44,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         expandableData = [testCellData(title: "Week 1", sectionData: ["Mountain Climber", "Push Up 1", "Push Up 2", "Glute Bridge", "Frog Hold", "One Leg Frog Hold"])]
         
         super.viewDidLoad()
-        
-
+        print("selected exercise = \(selectedExercise)")
         //notifHelper.configureUserNotificationCenter()
         
         tableView.register(DescTableViewCell.nib(), forCellReuseIdentifier: DescTableViewCell.identifier)
@@ -219,6 +220,15 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         }
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func unwindToCustomizePlan(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as! CustomizePlanTableViewController
+        // Use data from the view controller which initiated the unwind segue
+        selectedExercise = sourceViewController.selectedExercise
+        
+        print("selected exercise unwind = \(selectedExercise)")
     }
     
     /*

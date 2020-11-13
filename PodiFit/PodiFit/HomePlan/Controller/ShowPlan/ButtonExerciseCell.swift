@@ -18,6 +18,7 @@ class ButtonExerciseCell: UICollectionViewCell {
     var delegate: ShowPlanDelegator!
 
     @IBOutlet weak var btnExercise: UIButton!
+    @IBOutlet weak var numberDayLabel: UILabel!
     
     @IBAction func tapExerciseBtn(_ sender: Any) {
         if (self.delegate != nil) {

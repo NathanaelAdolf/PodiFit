@@ -9,14 +9,20 @@
 import UIKit
 
 protocol CollectionCellDelegator {
-    func callSegueFromColViewCell()
+    func presentFromButton()
+    
 }
+
+var checkSelected = 0
 
 class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 
     static let identifier = "CustomizePlanTableViewCell"
     var colView: CollectionCellDelegator?
+    
+    
+    
     @IBOutlet weak var movementCollection: UICollectionView!
     
     
@@ -55,7 +61,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -63,11 +69,13 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         if let cell = collectionView.cellForItem(at: indexPath) as? MovementCollectionViewCell{
             
             if cell.layer.borderWidth == 0 {
-                cell.layer.borderWidth = 2
+                checkSelected += 1
+                cell.layer.borderWidth = 3.5
                 cell.layer.borderColor = Colors.yellowColor.cgColor
                 print("indexpath = \(indexPath), status = selected")
             }
             else {
+                checkSelected -= 1
                 cell.layer.borderWidth = 0
                 cell.layer.borderColor = UIColor.clear.cgColor
                 print("indexpath = \(indexPath), status = not selected")
