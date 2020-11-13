@@ -18,6 +18,7 @@ class ListPlanVC: UIViewController {
     @IBOutlet weak var tableViewUI: UITableView!
     
     var titlePlan: String!
+    var idPlan: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class ListPlanVC: UIViewController {
     }
     
     private func setupData() {
-        self.exercisesModel = activePlanHelper.fetchSelectedExercise(idPlan: 1)
+        self.exercisesModel = activePlanHelper.fetchSelectedExercise(idPlan: idPlan)
     }
     
     private func setupDelegate() {
@@ -46,15 +47,12 @@ class ListPlanVC: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let target = segue.destination as? ExerciseViewController {
+            target.idPlanActive = self.idPlan
+        }
     }
-    */
 
 }
 

@@ -15,8 +15,9 @@ protocol ShowPlanDelegator {
 class ShowPlanVC: UIViewController {
     
     var titlePlan: String = ""
-    
-    let countWeek = activePlanHelper.countWeekPlan(idPlan: 1)
+    var idPlan: Int!
+    var day: [Int]!
+    var weekArr = [1, 2, 3, 4]
     
     @IBOutlet weak var tableViewUI: UITableView!
     @IBOutlet weak var progressExercise: UIProgressView!
@@ -41,6 +42,7 @@ class ShowPlanVC: UIViewController {
     }
     
     func setupData() {
+        self.day = activePlanHelper.countDayPlan(idPlan: idPlan)
     }
     
     func setupUI() {
@@ -54,26 +56,27 @@ class ShowPlanVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var title: String = ""
-        let data = activePlanHelper.fetchActivePlan()
-        data.forEach { (active) in
-            title = active.namaPlan.unsafelyUnwrapped
-        }
-        
         if let target = segue.destination as? ListPlanVC {
-            target.titlePlan = titlePlan
+            target.titlePlan = self.titlePlan
+            target.idPlan = self.idPlan
+        }
+        if let target = segue.destination as? ExerciseViewController {
+            target.idPlanActive = self.idPlan
         }
     }
 }
 
 extension ShowPlanVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countWeek
+        return activePlanHelper.countWeekPlan(idPlan: idPlan)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewUI.dequeueReusableCell(withIdentifier: NumberExercisesCell.identifier, for: indexPath) as! NumberExercisesCell
         cell.delegate = self
+        
+        cell.day = self.day
+        cell.weekLabel.text = "Week \(weekArr[indexPath.row]) Exercise"
         
         return cell
     }
