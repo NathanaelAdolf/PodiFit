@@ -495,9 +495,9 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         notifHelper.configureUserNotificationCenter()
         
-        //data dummy buat badges
+        /*data dummy buat badges
         badgesImageArray =
-            ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]
+            ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]*/
         
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

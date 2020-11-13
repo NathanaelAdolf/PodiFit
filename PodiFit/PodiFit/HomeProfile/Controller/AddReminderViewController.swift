@@ -327,69 +327,81 @@ class AddReminderViewController: UIViewController {
     @IBAction func nextDidTap() {
         if pageState == "Edit"
         {
-            self.counter = 0
+            if reminderNameTextField.text == ""
+            {
+                showAlert(messageToDisplay: "textfield can't be empty")
+            }
+            else if monFlag == 0 && tueFlag == 0 && wedFlag == 0 && thuFlag == 0 && friFlag == 0 && satFlag == 0 && sunFlag == 0
+            {
+                showAlert(messageToDisplay: "must at least choose 1 day")
+            }
+            else
+            {
             
-            if self.tempDataEdit[0].isMon == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isTue == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isWed == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isThu == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isFri == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isSat == true
-            {
-                self.counter += 1
-            }
-            if self.tempDataEdit[0].isSun == true
-            {
-                self.counter += 1
-            }
-            
-            for i in 0...self.counter - 1
-            {
-                self.reminderNameArray.append("\(self.tempDataEdit[0].reminderName!)\(i)")
-            }
-            
-            for _ in 0...self.reminderNameArray.count - 1
-            {
-                notifHelper.notificationCenter.removeDeliveredNotifications(withIdentifiers: self.reminderNameArray)
-                notifHelper.notificationCenter.removePendingNotificationRequests(withIdentifiers: self.reminderNameArray)
+                self.counter = 0
                 
-            }
-            
-            notifHelper.triggerNotification { (isSuccess) in
-                self.userChoosenDayArray.removeAll()
-                self.checkuserChoosenDay()
-                self.checkDayState()
-               
+                if self.tempDataEdit[0].isMon == true
+                {
+                    self.counter += 1
+                }
+                if self.tempDataEdit[0].isTue == true
+                {
+                    self.counter += 1
+                }
+                if self.tempDataEdit[0].isWed == true
+                {
+                    self.counter += 1
+                }
+                if self.tempDataEdit[0].isThu == true
+                {
+                    self.counter += 1
+                }
+                if self.tempDataEdit[0].isFri == true
+                {
+                    self.counter += 1
+                }
+                if self.tempDataEdit[0].isSat == true
+                {
+                    self.counter += 1
+                }
+                if self.tempDataEdit[0].isSun == true
+                {
+                    self.counter += 1
+                }
                 
-                DispatchQueue.main.async {
-                    self.tempReminderName = self.reminderNameTextField.text!
+                for i in 0...self.counter - 1
+                {
+                    self.reminderNameArray.append("\(self.tempDataEdit[0].reminderName!)\(i)")
+                }
+                
+                for _ in 0...self.reminderNameArray.count - 1
+                {
+                    notifHelper.notificationCenter.removeDeliveredNotifications(withIdentifiers: self.reminderNameArray)
+                    notifHelper.notificationCenter.removePendingNotificationRequests(withIdentifiers: self.reminderNameArray)
                     
-                    //save ke core data notifnya
-                    for i in 0...self.userChoosenDayArray.count - 1 {
-                        notifHelper.scheduleNotification(reminderName:"\(self.tempReminderName)\(i)", dateToPush:self.checkUserChoosenDate(arrayIndex: i) )
+                }
+                
+                notifHelper.triggerNotification { (isSuccess) in
+                    self.userChoosenDayArray.removeAll()
+                    self.checkuserChoosenDay()
+                    self.checkDayState()
+                   
+                    
+                    DispatchQueue.main.async {
+                        self.tempReminderName = self.reminderNameTextField.text!
+                        
+                        //save ke core data notifnya
+                        for i in 0...self.userChoosenDayArray.count - 1 {
+                            notifHelper.scheduleNotification(reminderName:"\(self.tempReminderName)\(i)", dateToPush:self.checkUserChoosenDate(arrayIndex: i) )
+                        }
+                        
+                        notifHelper.updateDataInReminder(reminderNameToUpdate: self.tempDataEdit[0].reminderName,newName:self.tempReminderName, hour: self.userChoosenHour, minute: self.userChoosenMinute, monday: self.monState, tuesday: self.tueState, wednesday: self.wedState, thursday: self.thuState, friday: self.friState, saturday: self.satState, sunday: self.sunState, isReminderActive: true)
+                        
+                        self.delegate?.nextDidTap()
+                        self.dismiss(animated: true) {
+                        }
+                        print("edit state")
                     }
-                    
-                    notifHelper.updateDataInReminder(reminderNameToUpdate: self.tempDataEdit[0].reminderName,newName:self.tempReminderName, hour: self.userChoosenHour, minute: self.userChoosenMinute, monday: self.monState, tuesday: self.tueState, wednesday: self.wedState, thursday: self.thuState, friday: self.friState, saturday: self.satState, sunday: self.sunState, isReminderActive: true)
-                    
-                    self.delegate?.nextDidTap()
-                    self.dismiss(animated: true) {
-                    }
-                    print("edit state")
                 }
             }
             
@@ -399,6 +411,10 @@ class AddReminderViewController: UIViewController {
             if reminderNameTextField.text == ""
             {
                 showAlert(messageToDisplay: "textfield can't be empty")
+            }
+            else if monFlag == 0 && tueFlag == 0 && wedFlag == 0 && thuFlag == 0 && friFlag == 0 && satFlag == 0 && sunFlag == 0
+            {
+                showAlert(messageToDisplay: "must at least choose 1 day")
             }
             else
             {

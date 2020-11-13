@@ -19,26 +19,30 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
     
     var jumlahHari: Int = 0
     var checkSender = 0
+    var selectedIndexPlan = 0
     
-    var plans = [PlanTypes1]()
+    var plans = [Plan]()
     var plan2 = [PlanTypes1]()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
+        
         if someEntityExists() == false{
-            createData()
-            print("create")
+            //createData()
+            print("entity kosong")
             
-            retrieveData()
+            //retrieveData()
             tableView.reloadData()
         }
         else{
-            retrieveData()
+            fetchRealData()
             tableView.reloadData()
             print("retrieve")
-            print("fetched \(plan2.count)")
+            //retrieveData()
+            //print("fetched \(plan2.count)")
         }
+        
     }
  
     
@@ -66,11 +70,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         
         //notifHelper.configureUserNotificationCenter()
         
-        
-        plans = [PlanTypes1(title: "Easy Plan", subtitle: "2 weeks", image: "1"),
-                 PlanTypes1(title: "Intermediate Plan", subtitle: "4 weeks", image: "2"),
-                 PlanTypes1(title: "Advanced Plan", subtitle: "6 weeks", image: "3")]
-        
+
         tableView.rowHeight = 220.0
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -90,17 +90,17 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return plan2.count
+        return plans.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "planCell", for: indexPath) as! PlanListOverviewTableViewCell
 
-        let plan = plan2[indexPath.row]
-        cell.planName.text = plan.title
-        cell.planSubtitle.text = plan.subtitle
-        cell.planImage.image = UIImage(named: plan.image)
+        let plan = plans[indexPath.row]
+        cell.planName.text = plan.namaPlan
+        cell.planSubtitle.text = "\(plan.durasiPlan) weeks - \(plan.chosenExercise!.count) exercises - No Equipment"
+        cell.planImage.image = UIImage(named: "1")
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -116,19 +116,22 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "viewPlanSegue", sender: self)
-        
+        selectedIndexPlan = indexPath.row
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "viewPlanSegue"{
+            let dest = segue.destination as! ChoosePlanViewController
+            
+            dest.selectedIndexPlan = self.selectedIndexPlan
+        }
     }
-    */
+    
 
     func createData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -175,6 +178,27 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         
     }
     
+    func fetchRealData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
+        
+        do{
+            
+            let result = try context.fetch(fetchRequest)
+            if plans.count != result.count{
+                plans.append(contentsOf: result)
+            }
+            
+            print(plans)
+        }
+        catch let error as NSError{
+            print("Fetching error, \(error), \(error.userInfo)")
+        }
+    }
+    
     func deleteAllDummy(entity: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
@@ -212,7 +236,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
 
         return entitiesCount > 0
     }
-    
+    /*
     func createRealData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
@@ -277,24 +301,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
             print("Error: \(error), \(error.userInfo)")
         }
     }
- 
-    func fetchRealData(){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
-        
-        do{
-            let tasks = try context.fetch(fetchRequest)
-            
-            for task in tasks {
-                print("\(task.ofUser?.userName ?? "Nama error")")
-            }
-        }
-        catch let error as NSError{
-            print("Fetching error, \(error), \(error.userInfo)")
-        }
-    }
+     */
+    
     
 }
