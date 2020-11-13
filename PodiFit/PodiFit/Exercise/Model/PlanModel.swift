@@ -42,6 +42,7 @@ class PlanModel: UIViewController {
         
     }
     
+    //
     func fetchExerciseByIdPlan(idPlan : Int) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         
