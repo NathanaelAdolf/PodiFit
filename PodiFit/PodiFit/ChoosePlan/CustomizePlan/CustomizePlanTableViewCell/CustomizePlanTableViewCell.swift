@@ -20,13 +20,10 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
 
     static let identifier = "CustomizePlanTableViewCell"
     var colView: CollectionCellDelegator?
-    
-    
-    
-    @IBOutlet weak var movementCollection: UICollectionView!
-    
-    
+    var arraySelectedExercise = [Int]()
+    var selectedIndexPlan: Int!
 
+    @IBOutlet weak var movementCollection: UICollectionView!
     
     // // //
     
@@ -92,12 +89,24 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovementCollectionViewCell.identifier, for: indexPath) as! MovementCollectionViewCell
         //cell.configure(with: model[indexPath.row])
         cell.parseData(data: data[indexPath.row])
-        cell.delegate = colView //kirim dleegate
+        cell.delegate = colView //kirim delegate
+        
+        print("cellid = \(cell.idMovement)")
+        
         cell.backgroundColor = UIColor.white
         cell.layer.cornerRadius = 10
+        
+        if (arraySelectedExercise.contains(cell.idMovement)) {
+            print("masuk")
+            checkSelected += 1
+            cell.layer.borderWidth = 3.5
+            cell.layer.borderColor = Colors.yellowColor.cgColor
+            print("indexpath = \(indexPath), status = alr selected")
+        }
         
         //cell.backgroundColor = UIColor.black
         return cell

@@ -11,6 +11,7 @@ import UIKit
 class MovementCollectionViewCell: UICollectionViewCell {
 
     var delegate: CollectionCellDelegator!
+    var idMovement = Int()
     
     @IBOutlet weak var movementDetails: UILabel!
     @IBOutlet weak var movementName: UILabel!
@@ -46,6 +47,7 @@ class MovementCollectionViewCell: UICollectionViewCell {
         movementName.text = data.namaExercise
         movementDetails.text = "00:30"
         movementCollectionImage.image = UIImage(named: "donkeykicks")
+        idMovement = data.idExercise
     }
     
     

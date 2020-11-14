@@ -15,6 +15,9 @@ protocol UnwindDelegator {
 class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
 
     var allExercise = [ExerciseModel]()
+    var arrSelectedExercise = [Int]()
+    var selectedDifficulty = Int()
+    var selectedIndexPlan: Int!
     
     var model = [MovementModel]()
     var selectedExercise = 0
@@ -38,9 +41,9 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //notifHelper.configureUserNotificationCenter()
         
-        allExercise = CustomizePlanHelper.fetchExerciseByIdDifficulty(idDifficulty: 1)!
+        allExercise = CustomizePlanHelper.fetchExerciseByIdDifficulty(idDifficulty: selectedDifficulty)!
         print("allex = \(allExercise.count)")
-
+        print("arrSE = \(arrSelectedExercise)")
 
         
         tableView.register(CustomizePlanTableViewCell.nib(), forCellReuseIdentifier: CustomizePlanTableViewCell.identifier)
@@ -95,6 +98,8 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
             // Configure the cell...
             cell.colView = self
             cell.backgroundColor = UIColor.clear
+            cell.selectedIndexPlan = selectedIndexPlan
+            cell.arraySelectedExercise = arrSelectedExercise
             //cell.configure(with: model)
             cell.parseData(data: allExercise)
             

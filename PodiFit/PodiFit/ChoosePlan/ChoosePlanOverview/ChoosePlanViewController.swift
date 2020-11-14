@@ -29,6 +29,8 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     var planData = [PlansModel]()
     
     var selectedIndexPlan: Int!
+    var arrSelectedExercise = [Int]()
+    var difficulty = Int()
     var selectedExercise = 0
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -51,7 +53,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         
         self.exerciseData = CustomizePlanHelper.fetchSelectedExercise(idPlan: selectedIndexPlan!)
         self.planData = CustomizePlanHelper.fetchActivePlan()
-        
+        self.difficulty = exerciseData[selectedIndexPlan].idDifficulty
         
         //expandableData = [testCellData(title: "Week 1", sectionData: ["Mountain Climber", "Push Up 1", "Push Up 2", "Glute Bridge", "Frog Hold", "One Leg Frog Hold"])]
         
@@ -200,9 +202,20 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "customPlanSegue"{
+            let dest = segue.destination as! CustomizePlanTableViewController
+            
+            dest.selectedIndexPlan = self.selectedIndexPlan
+            arrSelectedExercise = planData[selectedIndexPlan-1].chosenExercise!
+            dest.arrSelectedExercise = self.arrSelectedExercise
+            dest.selectedDifficulty = self.difficulty
+        }
+    }
+    
     func callSegueFromCell() {
         self.performSegue(withIdentifier: "customPlanSegue", sender: self )
-
+            
      }
     
     func callSegueFromCellToMain() {
