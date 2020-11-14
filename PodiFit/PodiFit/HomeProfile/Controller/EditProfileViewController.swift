@@ -109,6 +109,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         sender.layer.borderColor = Colors.yellowColor.cgColor
         sender.layer.borderWidth = 1
         sender.layer.cornerRadius = 5
+        
+        if sender == heightTextField || sender == weightTextField
+        {
+            sender.keyboardType = .numberPad
+        }
     }
     
     func showAlert(messageToDisplay: String) {

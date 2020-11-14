@@ -133,8 +133,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             if completedData.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
-                print("No Completed data")
-                
                 cell.emptyMessageLabel.text = "You have no completed plan"
                 
                 return cell
@@ -153,7 +151,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         {
             if reminderData.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "noDataCell", for: indexPath) as! NoDataTableViewCell
-                print("No Reminder Data......")
                 cell.emptyMessageLabel.text = "No Reminder"
                 
                 return cell
@@ -494,18 +491,14 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.completeRemindBadgeTableView.backgroundColor = .none
         
         notifHelper.configureUserNotificationCenter()
-        
-        /*data dummy buat badges
-        badgesImageArray =
-            ["completed one plan badge.png","custom exercise badge.png","exercise master badge.png"]*/
-        
+            
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         hideKeyboardWhenTappedAround()
     }
-    
+        
 }
 
 extension HomeProfileViewController: editButtonProtocol
@@ -533,7 +526,6 @@ extension UIViewController
 
 extension HomeProfileViewController: HomeProfileDelegate {
     func nextDidTap() {
-        print("next did tap")
         self.reminderData = notifHelper.retrieveNotificationFromCoreData()
         badgesHelper.checkUserEarnBadge()
         self.badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
