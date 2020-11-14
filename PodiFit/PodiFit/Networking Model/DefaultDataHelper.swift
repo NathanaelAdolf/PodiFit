@@ -55,7 +55,11 @@ class DefaultDataHelper: UIViewController {
         step2.idStep = 3
         step2.steps = "Lower slowly back"
         
-        newExercise1.steps = NSSet.init(array: [step, step1, step2])
+        let warning1 = Warning(context: self.context)
+        warning1.idWarning = 1
+        warning1.warningText = "Push evenly through the entire width of your foot."
+        
+        newExercise1.steps = NSSet.init(array: [step, step1, step2, warning1])
         
         //2
         let newExercise2 = Exercise(context: self.context)
@@ -86,7 +90,11 @@ class DefaultDataHelper: UIViewController {
         step8.idStep = 8
         step8.steps = "Repeat or you can swap leg"
         
-        newExercise2.steps = NSSet.init(array: [step4, step5,step6, step7, step8])
+        let warning2 = Warning(context: self.context)
+        warning2.idWarning = 2
+        warning2.warningText = "Take smaller steps as you lunge to prevents injury."
+        
+        newExercise2.steps = NSSet.init(array: [step4, step5, step6, step7, step8, warning2])
         
         //3
         let newExercise3 = Exercise(context: self.context)
@@ -113,7 +121,11 @@ class DefaultDataHelper: UIViewController {
         step12.idStep = 12
         step12.steps = "Jump out of the squat and land back in the starting position, bringing your feet together on."
         
-        newExercise3.steps = NSSet.init(array: [step9, step10,step11, step12])
+        let warning3 = Warning(context: self.context)
+        warning3.idWarning = 3
+        warning3.warningText = "Do not let your knees cave inward when jumping from the wider stance."
+        
+        newExercise3.steps = NSSet.init(array: [step9, step10, step11, step12, warning3])
         
         //4
         let newExercise4 = Exercise(context: self.context)
@@ -136,7 +148,11 @@ class DefaultDataHelper: UIViewController {
         step15.idStep = 15
         step15.steps = "As you straighten your legs,step your right foot back in."
         
-        newExercise4.steps = NSSet.init(array: [step13, step14,step15])
+        let warning4 = Warning(context: self.context)
+        warning4.idWarning = 4
+        warning4.warningText = "Perform an equal number of reps stepping to the right and left."
+        
+        newExercise4.steps = NSSet.init(array: [step13, step14, step15, warning4])
         
         //5
         let newExercise5 = Exercise(context: self.context)
@@ -163,7 +179,11 @@ class DefaultDataHelper: UIViewController {
         step19.idStep = 19
         step19.steps = "Push back up and return to the starting position"
         
-        newExercise5.steps = NSSet.init(array: [step16, step17,step18,step19])
+        let warning5 = Warning(context: self.context)
+        warning5.idWarning = 5
+        warning5.warningText = "Make sure to keep the heels of both feet on the floor as you lower."
+        
+        newExercise5.steps = NSSet.init(array: [step16, step17, step18, step19, warning5])
         
         //6
         let newExercise6 = Exercise(context: self.context)
@@ -182,7 +202,11 @@ class DefaultDataHelper: UIViewController {
         step21.idStep = 21
         step21.steps = "Slowly lower down your body until it touch your feet"
         
-        newExercise6.steps = NSSet.init(array: [step20, step21])
+        let warning6 = Warning(context: self.context)
+        warning6.idWarning = 6
+        warning6.warningText = "Keep your body straight while kneeling."
+        
+        newExercise6.steps = NSSet.init(array: [step20, step21, warning6])
         
         //7
         let newExercise7 = Exercise(context: self.context)
@@ -213,7 +237,11 @@ class DefaultDataHelper: UIViewController {
         step26.idStep = 26
         step26.steps = "Repeat"
         
-        newExercise7.steps = NSSet.init(array: [step22,step23,step24,step25,step26])
+        let warning7 = Warning(context: self.context)
+        warning7.idWarning = 7
+        warning7.warningText = "While doing, you have to inhale in the starting position and exhale while spreading your legs."
+    
+        newExercise7.steps = NSSet.init(array: [step22, step23, step24, step25, step26, warning7])
         
         //8
         let newExercise8 = Exercise(context: self.context)
@@ -240,7 +268,11 @@ class DefaultDataHelper: UIViewController {
         step30.idStep = 30
         step30.steps = "Switch your legs back and forth twice, such that your right leg is again close to your right hand."
         
-        newExercise8.steps = NSSet.init(array: [step27,step28,step29,step30])
+        let warning8 = Warning(context: self.context)
+        warning8.idWarning = 8
+        warning8.warningText = "When you're focused on the move, you might find yourself holding your breath. Remember to breathe."
+        
+        newExercise8.steps = NSSet.init(array: [step27, step28, step29, step30, warning8])
         
         //9
         let newExercise9 = Exercise(context: self.context)
@@ -263,7 +295,11 @@ class DefaultDataHelper: UIViewController {
         step33.idStep = 33
         step33.steps = "Then get up by raising your leg thighs"
         
-        newExercise9.steps = NSSet.init(array: [step31,step32,step33])
+        let warning9 = Warning(context: self.context)
+        warning9.idWarning = 9
+        warning9.warningText = "The whole time your core is tight, your back is flat and shoulders are back."
+        
+        newExercise9.steps = NSSet.init(array: [step31, step32, step33, warning9])
         
         //10
         let newExercise10 = Exercise(context: self.context)
@@ -286,7 +322,11 @@ class DefaultDataHelper: UIViewController {
         step36.idStep = 36
         step36.steps = "Hold your bridged position for a couple of seconds before easing back down"
         
-        newExercise10.steps = NSSet.init(array: [step34,step35,step36])
+        let warning10 = Warning(context: self.context)
+        warning10.idWarning = 10
+        warning10.warningText = "Squeeze those glutes hard and keep your abs drawn in so you don’t overextend your back during the exercise."
+        
+        newExercise10.steps = NSSet.init(array: [step34, step35, step36, warning10])
         
         //11
         let newExercise11 = Exercise(context: self.context)
@@ -295,7 +335,7 @@ class DefaultDataHelper: UIViewController {
         newExercise11.listIdSteps = [37,38,39,40,8]
         newExercise11.namaExercise = "Single Leg Hip Raises"
         newExercise11.videoUrl = "https://www.youtube.com/embed/OTRmchnEkV0?playsinline=1"
-        newExercise11.warningData = [1]
+        newExercise11.warningData = [11]
         
         
         let step37 = ExerciseSteps(context: self.context)
@@ -314,7 +354,11 @@ class DefaultDataHelper: UIViewController {
         step40.idStep = 40
         step40.steps = "Pause and slowly return to the starting position"
         
-        newExercise11.steps = NSSet.init(array: [step37, step38, step39, step40])
+        let warning11 = Warning(context: self.context)
+        warning11.idWarning = 11
+        warning11.warningText = "Keep your foot underneath your knee throughout the exercise. Avoid having it too far in front of you."
+        
+        newExercise11.steps = NSSet.init(array: [step37, step38, step39, step40, warning11])
         
         
         //12
@@ -324,7 +368,7 @@ class DefaultDataHelper: UIViewController {
         newExercise12.listIdSteps = [41,42,43,44,8]
         newExercise12.namaExercise = "Side Leg Raises"
         newExercise12.videoUrl = "https://www.youtube.com/embed/gYpwEr0cLO8?playsinline=1"
-        newExercise12.warningData = [1]
+        newExercise12.warningData = [12]
         
         
         let step41 = ExerciseSteps(context: self.context)
@@ -343,7 +387,11 @@ class DefaultDataHelper: UIViewController {
         step44.idStep = 44
         step44.steps = "Inhale and lower the leg back down to meet the right leg. Stack your feet again."
         
-        newExercise12.steps = NSSet.init(array: [step41, step42, step43, step44])
+        let warning12 = Warning(context: self.context)
+        warning12.idWarning = 12
+        warning12.warningText = "Avoid raising your leg too high throughout the exercise. Lower it when you start to feel pressure in the lower back or obliques."
+        
+        newExercise12.steps = NSSet.init(array: [step41, step42, step43, step44, warning12])
         
         //13
         let newExercise13 = Exercise(context: self.context)
@@ -352,7 +400,7 @@ class DefaultDataHelper: UIViewController {
         newExercise13.listIdSteps = [45,46,26]
         newExercise13.namaExercise = "Pulse squat"
         newExercise13.videoUrl = "https://www.youtube.com/embed/0ry2D5wVYLQ?playsinline=1"
-        newExercise13.warningData = [1]
+        newExercise13.warningData = [13]
         
         
         let step45 = ExerciseSteps(context: self.context)
@@ -363,7 +411,11 @@ class DefaultDataHelper: UIViewController {
         step46.idStep = 46
         step46.steps = "Perform a squat and hold it at the bottoms as you pulse a few inches up and down"
         
-        newExercise13.steps = NSSet.init(array: [step45, step46])
+        let warning13 = Warning(context: self.context)
+        warning13.idWarning = 13
+        warning13.warningText = "While in the bottom of a squat and doing pulses, you want to keep your form the entire time."
+        
+        newExercise13.steps = NSSet.init(array: [step45, step46, warning13])
         
         //14
         let newExercise14 = Exercise(context: self.context)
@@ -372,7 +424,7 @@ class DefaultDataHelper: UIViewController {
         newExercise14.listIdSteps = [47,48,49,26]
         newExercise14.namaExercise = "Plié squat calf raise"
         newExercise14.videoUrl = "https://www.youtube.com/embed/gvRi_uBWXIU?playsinline=1"
-        newExercise14.warningData = [1]
+        newExercise14.warningData = [14]
         
         
         let step47 = ExerciseSteps(context: self.context)
@@ -387,7 +439,11 @@ class DefaultDataHelper: UIViewController {
         step49.idStep = 49
         step49.steps = "Lower your heels and return to the starting position."
         
-        newExercise14.steps = NSSet.init(array: [step47, step48, step49])
+        let warning14 = Warning(context: self.context)
+        warning14.idWarning = 14
+        warning14.warningText = "Breathe out as you raise your heels and squeeze your calves then slowly lower your feet to the starting position."
+        
+        newExercise14.steps = NSSet.init(array: [step47, step48, step49, warning14])
         
         //15
         let newExercise15 = Exercise(context: self.context)
