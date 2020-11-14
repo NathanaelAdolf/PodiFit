@@ -16,6 +16,7 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
 
     var allExercise = [ExerciseModel]()
     var arrSelectedExercise = [Int]()
+    var tempSelectedExercise: [Int] = []
     var selectedDifficulty = Int()
     var selectedIndexPlan: Int!
     
@@ -44,7 +45,7 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         allExercise = CustomizePlanHelper.fetchExerciseByIdDifficulty(idDifficulty: selectedDifficulty)!
         print("allex = \(allExercise.count)")
         print("arrSE = \(arrSelectedExercise)")
-
+        tempSelectedExercise = arrSelectedExercise
         
         tableView.register(CustomizePlanTableViewCell.nib(), forCellReuseIdentifier: CustomizePlanTableViewCell.identifier)
         
@@ -100,6 +101,7 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
             cell.backgroundColor = UIColor.clear
             cell.selectedIndexPlan = selectedIndexPlan
             cell.arraySelectedExercise = arrSelectedExercise
+            cell.tempSelectedExercise = tempSelectedExercise
             //cell.configure(with: model)
             cell.parseData(data: allExercise)
             
@@ -130,11 +132,11 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         if segue.identifier == "modalPlanSegue" {
             
             var storyboard = UIStoryboard(name: "ChoosePlan", bundle: nil)
-            var pvc = storyboard.instantiateViewController(withIdentifier: "ModalPlanViewController") as UIViewController
+            let pvc = storyboard.instantiateViewController(withIdentifier: "ModalPlanViewController") as! ModalPlanViewController
 
             pvc.modalPresentationStyle = UIModalPresentationStyle.popover
             pvc.transitioningDelegate = self
-
+            
             self.present(pvc, animated: true, completion: nil)
         }
         else if segue.identifier == "unwindToOverview" {
@@ -166,12 +168,13 @@ extension CustomizePlanTableViewController: UIViewControllerTransitioningDelegat
 }
 
 extension CustomizePlanTableViewController: CollectionCellDelegator{
-    func presentFromButton() {
+    func presentFromButton(id: Int) {
         var storyboard = UIStoryboard(name: "ChoosePlan", bundle: nil)
-        let pvc = storyboard.instantiateViewController(withIdentifier: "ModalPlanViewController") as UIViewController
+        let pvc = storyboard.instantiateViewController(withIdentifier: "ModalPlanViewController") as! ModalPlanViewController
 
         pvc.modalPresentationStyle = UIModalPresentationStyle.popover
         pvc.transitioningDelegate = self
+        pvc.idMovement = id
 
         self.present(pvc, animated: true, completion: nil)
     }

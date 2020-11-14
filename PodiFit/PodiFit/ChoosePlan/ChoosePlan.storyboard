@@ -193,6 +193,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="exerciseName" destination="6vr-55-EKg" id="9wJ-cW-UFo"/>
+                        <outlet property="exerciseSteps" destination="nAK-vV-frh" id="AbC-a3-Rp0"/>
                         <outlet property="infoVideo" destination="rP1-Ct-jM0" id="hOd-Mv-WuM"/>
                     </connections>
                 </viewController>

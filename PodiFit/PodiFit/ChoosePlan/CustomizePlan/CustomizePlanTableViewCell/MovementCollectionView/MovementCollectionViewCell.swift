@@ -19,7 +19,7 @@ class MovementCollectionViewCell: UICollectionViewCell {
     
     @IBAction func buttonInfo(_ sender: Any) {
         if (self.delegate != nil) {
-            self.delegate.presentFromButton()
+            self.delegate.presentFromButton(id: idMovement)
         }
         
         print("button colview clicked")

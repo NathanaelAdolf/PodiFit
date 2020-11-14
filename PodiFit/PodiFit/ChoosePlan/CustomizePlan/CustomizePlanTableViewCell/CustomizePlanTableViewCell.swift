@@ -9,11 +9,12 @@
 import UIKit
 
 protocol CollectionCellDelegator {
-    func presentFromButton()
+    func presentFromButton(id: Int)
     
 }
 
 var checkSelected = 0
+var newSelectedExercise = [Int]()
 
 class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -21,6 +22,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     static let identifier = "CustomizePlanTableViewCell"
     var colView: CollectionCellDelegator?
     var arraySelectedExercise = [Int]()
+    var tempSelectedExercise = [Int]()
     var selectedIndexPlan: Int!
 
     @IBOutlet weak var movementCollection: UICollectionView!
@@ -74,12 +76,22 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
                 cell.layer.borderWidth = 3.5
                 cell.layer.borderColor = Colors.yellowColor.cgColor
                 print("indexpath = \(indexPath), status = selected")
+                
+                tempSelectedExercise.append(cell.idMovement)
+                print("temp = \(tempSelectedExercise)")
+                newSelectedExercise = tempSelectedExercise
             }
             else {
                 checkSelected -= 1
                 cell.layer.borderWidth = 0
                 cell.layer.borderColor = UIColor.clear.cgColor
                 print("indexpath = \(indexPath), status = not selected")
+                
+                if let index = tempSelectedExercise.firstIndex(of: cell.idMovement) {
+                    tempSelectedExercise.remove(at: index)
+                }
+                print("temp = \(tempSelectedExercise)")
+                newSelectedExercise = tempSelectedExercise
             }
             
         }

@@ -203,6 +203,27 @@ class CustomizePlanModel: UIViewController {
         return tempExercise
     }
     
+    func getExercise(idExercise: Int) -> ExerciseModel?{
+        var exerciseData: ExerciseModel!
+        
+        let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
+        fetchRequest.predicate = NSPredicate(format: "idExercise == %@", "\(idExercise)")
+        
+        do{
+            let result = try context.fetch(fetchRequest) as [NSManagedObject]
+            
+            for exercise in result{
+                exerciseData = ExerciseModel(idDifficulty: exercise.value(forKey: "idDifficulty") as! Int, idExercise: exercise.value(forKey: "idExercise") as! Int, listIdSteps: exercise.value(forKey: "listIdSteps") as? [Int], namaExercise: exercise.value(forKey: "namaExercise") as! String, videoUrl: exercise.value(forKey: "videoUrl") as! String, warningData: exercise.value(forKey: "warningData") as? [Int])
+            }
+                
+        }
+        catch let err {
+            print(err)
+        }
+        
+        return exerciseData
+    }
+    
     func countWeekPlan(idPlan: Int) -> Int {
         // for temporary data
         var weekPlan: Int!

@@ -8,22 +8,27 @@
 
 import UIKit
 import WebKit
+import CoreData
 
 class ModalPlanViewController: UIViewController {
     
     @IBOutlet weak var infoVideo: WKWebView!
     @IBOutlet weak var exerciseName: UILabel!
+    @IBOutlet weak var exerciseSteps: UILabel!
     
-    var exerciseTemp: String = ""
+    let CustomizePlanHelper = CustomizePlanModel()
+    var idMovement = Int()
+    var exerciseInfo = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("et = \(exerciseTemp)")
+        exerciseName.text = CustomizePlanHelper.getExercise(idExercise: idMovement)!.namaExercise
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
-        //exerciseName.text = exerciseTemp
         
-        infoVideo.loadHTMLString("<iframe width=\"100%%\" height=\"100%%\" src=\"https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1?&rel=0\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: URL(string: "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"))
+        
+        
+        infoVideo.loadHTMLString("<iframe width=\"100%%\" height=\"100%%\" src=\"\(CustomizePlanHelper.getExercise(idExercise: idMovement)!.videoUrl)?&rel=0\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: URL(string: "\(CustomizePlanHelper.getExercise(idExercise: idMovement)!.videoUrl)"))
         
         // Do any additional setup after loading the view.
     }
