@@ -245,4 +245,63 @@ class CustomizePlanModel: UIViewController {
         
         return weekPlan
     }
+    
+    func checkPlanIndex()->Int
+    {
+        var counter: Int = 0
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return 0}
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                    {
+                        counter += 1
+                    }
+              }
+             catch
+             {
+                 print("Error counting data")
+             }
+        
+        
+        return counter
+    }
+    
+    func storeCustomPlanData(idPlan: Int,namaPlan: String,idDifficulty: Int,durasiPlan: Int,durasiSessionDay: Int,jumlahHari: Int, totalSessionDone: Int, choosenExercise: [Int]?,isPlanDone: Bool,description: String)
+    {
+      
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
+
+          let context = appDelegate.persistentContainer.viewContext
+
+          let dataOfEntity = NSEntityDescription.entity(forEntityName: "Plan", in: context)!
+          let listOfEntity = NSManagedObject(entity: dataOfEntity, insertInto: context)
+
+         listOfEntity.setValue(idPlan, forKey: "idPlan")
+        listOfEntity.setValue(namaPlan, forKey: "namaPlan")
+        listOfEntity.setValue(idDifficulty, forKey: "idDifficulty")
+        listOfEntity.setValue(durasiPlan, forKey: "durasiPlan")
+        listOfEntity.setValue(durasiSessionDay, forKey: "durasiSessionDay")
+        listOfEntity.setValue(jumlahHari, forKey: "jumlahHari")
+        listOfEntity.setValue(totalSessionDone, forKey: "totalSessionDone")
+        listOfEntity.setValue(choosenExercise, forKey: "chosenExercise")
+        listOfEntity.setValue(isPlanDone, forKey: "isPlanDone")
+        listOfEntity.setValue(description, forKey: "desc")
+  
+          do {
+              
+             try context.save()
+             
+          } catch let error as NSError {
+             
+              print("Gagal save context \(error), \(error.userInfo)")
+             
+          }
+        
+    }
+    
 }

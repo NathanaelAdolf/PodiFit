@@ -10,9 +10,11 @@ import UIKit
 
 protocol UnwindDelegator {
     func unwindSegueFromCell()
+    func showAlert()
 }
 
 class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
+    
 
     var allExercise = [ExerciseModel]()
     var arrSelectedExercise = [Int]()
@@ -181,8 +183,15 @@ extension CustomizePlanTableViewController: CollectionCellDelegator{
     
     func unwindSegueFromCell() {
         self.performSegue(withIdentifier: "unwindToOverview", sender: self )
-        print("ijo = \(checkSelected)")
+        
      }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Error", message: "Please select at least 5 exercises for your plan", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 class HalfSizePresentationController : UIPresentationController {

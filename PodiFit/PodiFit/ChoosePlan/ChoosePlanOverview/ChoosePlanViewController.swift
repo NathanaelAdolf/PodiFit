@@ -34,7 +34,6 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     var selectedIndexPlan: Int!
     var arrSelectedExercise = [Int]()
     var difficulty = Int()
-    var selectedExercise = 0
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -63,7 +62,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         super.viewDidLoad()
         
         print("selected index Plan = \(selectedIndexPlan!)")
-        print("selected exercise = \(selectedExercise)")
+        
         //notifHelper.configureUserNotificationCenter()
         
         tableView.register(DescTableViewCell.nib(), forCellReuseIdentifier: DescTableViewCell.identifier)
@@ -231,15 +230,36 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         self.present(viewController, animated: true, completion: nil)
     }
     
+    func insertNewPlan() {
+        var index = (CustomizePlanHelper.checkPlanIndex() + 1)
+        
+        let iddiff: Int = Int(planData[selectedIndexPlan-1].idDifficulty)
+        let durasiplan: Int = Int(planData[selectedIndexPlan-1].durasiPlan)
+        let sessionday: Int = Int(planData[selectedIndexPlan-1].durasiSessionDay)
+        let jumlahhari: Int = Int(planData[selectedIndexPlan-1].jumlahHari)
+        
+        CustomizePlanHelper.storeCustomPlanData(idPlan: index, namaPlan: planData[selectedIndexPlan-1].namaPlan!, idDifficulty: iddiff, durasiPlan: durasiplan, durasiSessionDay: sessionday, jumlahHari: jumlahhari, totalSessionDone: 0, choosenExercise: newExerciseArray, isPlanDone: false, description: planData[selectedIndexPlan-1].desc!)
+    }
     
     @IBAction func unwindToCustomizePlan(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as! CustomizePlanTableViewController
         // Use data from the view controller which initiated the unwind segue
-        selectedExercise = sourceViewController.selectedExercise
         newExerciseArray = sourceViewController.tempSelectedExercise
         
-        print("selected exercise unwind = \(selectedExercise)")
         print("new exercise array = \(newExerciseArray)")
+        
+        for i in 0...(newExerciseArray.count - 1){
+            //print("exerciseArray: \(i)")
+            let tempExercise = CustomizePlanHelper.getExercise(idExercise: newExerciseArray[i])!
+            
+            newExerciseData.append(tempExercise)
+        }
+        print("new exercise array = \(newExerciseData.count)")
+        print("id diff = \(planData[selectedIndexPlan-1].idDifficulty)")
+        
+        exerciseData = newExerciseData
+        //insertNewPlan()
+        tableView.reloadData()
     }
     
     /*

@@ -118,6 +118,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
             cell.layer.borderWidth = 3.5
             cell.layer.borderColor = Colors.yellowColor.cgColor
             print("indexpath = \(indexPath), status = alr selected")
+            newSelectedExercise = tempSelectedExercise
         }
         
         //cell.backgroundColor = UIColor.black
