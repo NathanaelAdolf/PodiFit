@@ -119,7 +119,9 @@
                         <viewLayoutGuide key="safeArea" id="ilu-g3-Lcq"/>
                         <connections>
                             <outlet property="dropdown" destination="1JB-8S-IAr" id="ujr-a6-hVm"/>
+                            <outlet property="exerciseLabel" destination="eet-DP-RjV" id="bJI-D3-9bQ"/>
                             <outlet property="modalView" destination="6MT-CL-eKm" id="YKC-wg-3wU"/>
+                            <outlet property="stepsLabel" destination="EIq-d5-gN8" id="Jpb-Zh-adg"/>
                         </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -497,9 +499,6 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="tintColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" backgroundImage="button:xdQ-jb-XbW:backgroundImage"/>
-                                                        <connections>
-                                                            <action selector="didTap:" destination="zsz-kc-T8g" eventType="touchUpInside" id="dZS-g8-HQo"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEXT MOVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsj-lt-6Lo">
                                                         <rect key="frame" x="18" y="361" width="376" height="21"/>
