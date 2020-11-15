@@ -245,4 +245,30 @@ class CustomizePlanModel: UIViewController {
         
         return weekPlan
     }
+    
+    func fetchIdSteps(idExercise: Int) -> [StepModel]{
+        var stepExercises = [StepModel]()
+        let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
+        print("ini \(idExercise)")
+        fetchRequest.predicate = NSPredicate(format: "idExercise == %@", "\(idExercise)")
+        
+        do {
+            let exercises = try context.fetch(fetchRequest)
+            for exercise in exercises {
+                let tempStep : Set<ExerciseSteps> = exercise.steps as! Set<ExerciseSteps>
+                let arrTempStep = Array(tempStep)
+
+                arrTempStep.forEach { (arr) in
+                    stepExercises.append(
+                        StepModel(idStep: arr.value(forKey: "idStep") as! Int,
+                                  steps: arr.value(forKey: "steps") as! String)
+                    )
+                }
+            }
+        } catch  {
+            print("error")
+        }
+        print("ini step \(stepExercises)")
+        return stepExercises
+    }
 }

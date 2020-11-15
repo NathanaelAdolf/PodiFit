@@ -137,6 +137,12 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
             pvc.modalPresentationStyle = UIModalPresentationStyle.popover
             pvc.transitioningDelegate = self
             
+            
+            
+//
+//            destination.tempStep = planModelHelpers.fetchIdSteps(idExercise: tempExerciseDetail[0].idExercise)
+//            destination.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: tempExerciseDetail[0].idExercise)
+            
             self.present(pvc, animated: true, completion: nil)
         }
         else if segue.identifier == "unwindToOverview" {

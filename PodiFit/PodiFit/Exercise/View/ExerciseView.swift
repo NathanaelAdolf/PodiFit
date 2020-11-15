@@ -103,6 +103,7 @@ class ExerciseView: UIView {
     }
     
     func loadWebsite(dataExercise : [ExerciseModel]) {
+        print(dataExercise[0].videoUrl)
         let url = URL(string: "\(dataExercise[0].videoUrl)")
         let request = URLRequest(url: url!)
         webKitView.load(request)

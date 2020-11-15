@@ -60,7 +60,9 @@ class DefaultDataHelper: UIViewController {
         warning1.idWarning = 1
         warning1.warningText = "Push evenly through the entire width of your foot."
         
-        newExercise1.steps = NSSet.init(array: [step, step1, step2, warning1])
+        newExercise1.steps = NSSet.init(array: [step, step1, step2])
+        
+        newExercise1.warning = NSSet.init(array: [warning1])
 
         
         //2
