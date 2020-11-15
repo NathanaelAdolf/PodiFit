@@ -55,11 +55,13 @@ class DefaultDataHelper: UIViewController {
         step2.idStep = 3
         step2.steps = "Lower slowly back"
         
+
         let warning1 = Warning(context: self.context)
         warning1.idWarning = 1
         warning1.warningText = "Push evenly through the entire width of your foot."
         
         newExercise1.steps = NSSet.init(array: [step, step1, step2, warning1])
+
         
         //2
         let newExercise2 = Exercise(context: self.context)

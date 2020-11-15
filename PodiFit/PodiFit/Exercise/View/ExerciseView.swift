@@ -36,14 +36,14 @@ class ExerciseView: UIView {
     @IBOutlet weak var nextView: UIButton!
     
     
-    var tempExercise = [ExerciseModel]()
+    
     var links = "https://www.youtube.com/embed/xXRU28mfIJQ"
     
     func setupInitial() {
         
     }
     
-    public func videoView() {
+    public func videoView(dataExercise : [ExerciseModel], tempWarningData : String) {
         //for show webkit(video)
         webKitView.isHidden = false
         restPageView.isHidden = true
@@ -57,30 +57,16 @@ class ExerciseView: UIView {
             self.webKitView.alpha = 1.0
         })
         
-        nameExerciseLabel?.text = "STRAIGHT LEG AND CALF RAISE"
-        loadWebsite()
-        warningExercise()
+        nameExerciseLabel?.text = dataExercise[0].namaExercise
+        loadWebsite(dataExercise : dataExercise)
+        warningExercise(tempWarningData : tempWarningData)
         
-        planModelHelpers.fetchIdSteps(idExercise: [1]) //idExercise: [1]
-//        print("ini di view \(planModelHelper.fetchPlanUsingEntity())")
-        
-//        self.tempExercise = planModelHelper.fetchExerciseById()
-        print(tempExercise.count)
-//        if tempExercise.count == 0 {
-//            print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
-//
-//        }else {
-//            print(" bener nol\(String(describing: tempExercise[0].namaExercise))")
-//        }
-        
-        
-//
         
     }
     
-    public func restView() {
+    public func restView(dataExercise : [ExerciseModel], number : Int, totalExercise : Int) {
         // stop video in webkit
-        loadWebsite()
+        loadWebsite(dataExercise: dataExercise)
         
         // fadein fadeout effect
         self.restPageView.alpha = 0.0
@@ -100,28 +86,24 @@ class ExerciseView: UIView {
         addRestTimeBtn.layer.borderColor = UIColor.black.cgColor
         addRestTimeBtn.layer.cornerRadius = 5
         
-        infoNextExerciseLabel?.text = "NEXT 3/4"
-        nextExerciseLabel?.text = "Beginners - Lunge"
+        infoNextExerciseLabel?.text = "Next Move"
+        nextExerciseLabel?.text = "\(dataExercise[0].namaExercise)"
         nameExerciseLabel?.text = "Thumbnail"
 
         
     }
     
-    public func informationView() {
-        
-    }
-    
-    public func warningExercise() {
+    public func warningExercise(tempWarningData : String) {
         warningView.layer.cornerRadius = 10
-        contentWarningLabel?.text = "This exercise requires heavy rotation"
+        contentWarningLabel?.text = tempWarningData
     }
     
     public func countDownView(count : String) {
         timeRest?.text = "00 : \(count)"
     }
     
-    func loadWebsite() {
-        let url = URL(string: "\(links)?playsinline=1")
+    func loadWebsite(dataExercise : [ExerciseModel]) {
+        let url = URL(string: "\(dataExercise[0].videoUrl)")
         let request = URLRequest(url: url!)
         webKitView.load(request)
     }
@@ -132,8 +114,6 @@ class ExerciseView: UIView {
         previousView.isHidden = true
         nextView.isHidden = true
         progressNumber.isHidden = true
-        
-        
         
     }
     

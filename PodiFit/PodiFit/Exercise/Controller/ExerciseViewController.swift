@@ -11,14 +11,13 @@ import WebKit
 import CoreData
 
 
-struct ExerciseSteps1 {
-    var idStep = Int()
-    var steps = String()
-}
+
 
 var planModelHelpers = PlanModel()
 
 class ExerciseViewController: UIViewController {
+    
+    
 
     @IBOutlet weak var exerciseView : ExerciseView!
     @IBOutlet weak var circularProgressView : CircularProgressView!
@@ -28,12 +27,17 @@ class ExerciseViewController: UIViewController {
     var timer: Timer?
     var isVideo: Int = 2
     var countChosenExercise = 3
-    var finishExercise = 1
+    var finishExercise = 0
     
     var tempPlan = [Plan]()
-    
+    var tempExerciseDetail = [ExerciseModel]()
+    var tempExerciseDetailNext = [ExerciseModel]()
+    var tempExerciseDetailPrevious = [ExerciseModel]()
     var idPlanActive : Int!
-    var idExercise: [Int]!
+    var idExercises: [Int]!
+    var warningDatas : [String]!
+    
+    
     
     
     //reference to moc
@@ -44,75 +48,44 @@ class ExerciseViewController: UIViewController {
         
         circularProgressView.trackClr = UIColor(red: 95/255, green: 104/255, blue: 71/255, alpha: 100)
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
-        exerciseView.videoView()
+//        exerciseView.videoView()
         
-        setupInit()
-        // get exercise from core data
-//        fetchPlan()
+        setupInit(data: finishExercise)
+       
     }
     
-    func setupInit() {
+    public func setupInit(data : Int) {
+        var tempWarningData : String = ""
+        // ambil plan active
+        self.idExercises = planModelHelpers.fetchExerciseIdByIdPlan(idPlan: idPlanActive)
         
-        self.idExercise = planModelHelpers.fetchExerciseByIdPlan(idPlan: idPlanActive)
+        // ambil exercise detail array [0]
+        self.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data])
         
-        
-    }
-    
-    @IBAction func didTap(_ sender: Any) {
-
-        //create alert
-        let alert = UIAlertController(title: "Add Exercise", message: "What do you want to choose", preferredStyle: .alert)
-        alert.addTextField()
-        
-        // configure button handler
-        let submitButton = UIAlertAction(title: "Add", style: .default) { (action) in
-            //get the textfield for the alert
-            let textfield = alert.textFields![0]
-            
-            //create a exercise object
-            let newPlan = Exercise(context: self.context)
-            newPlan.idDifficulty = 1
-            newPlan.idExercise = 1
-            newPlan.listIdSteps = [2,3,4]
-            newPlan.namaExercise = textfield.text
-            newPlan.videoUrl = "https://www.youtube.com/embed/xXRU28mfIJQ?playsinline=1"
-            newPlan.warningData = [2,3]
-            
-            
-            let step = ExerciseSteps(context: self.context)
-            step.idStep = 2
-            step.steps = "bangun bro"
-            
-            let step1 = ExerciseSteps(context: self.context)
-            step1.idStep = 3
-            step1.steps = "jongkok lagi bro"
-            
-            let step2 = ExerciseSteps(context: self.context)
-            step2.idStep = 4
-            step2.steps = "baru tidur"
-            
-            newPlan.steps = NSSet.init(array: [step, step1, step2])
-            
-            do {
-                try self.context.save()
-                
-            }
-            catch {
-                
-            }
-            
-            // re-fetch
-//            self.fetchPlan()
+        self.tempExerciseDetailNext = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data+1])
+        if data != 0 {
+            self.tempExerciseDetailPrevious = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data-1])
         }
         
-        // add button
-        alert.addAction(submitButton)
+        print("Nama exercise : \(tempExerciseDetail[0].idExercise)")
+        // ambil warning datanya
+        self.warningDatas = planModelHelpers.fetchIdWarning(idExercise: [idExercises![data]])
         
-        // show alert
-        self.present(alert, animated: true, completion: nil)
+//        print("ini warnind data \(warningDatas.count)")
+        warningDatas = ["sorry","to say"]
+        for i in 0...(warningDatas.count - 1) {
+            tempWarningData.append("\(warningDatas[i])\n")
+        }
         
+        countChosenExercise = idExercises.count
+        var countProgress = Float((Float(finishExercise + 1) / Float(countChosenExercise)))
+        circularProgressView.setProgressWithAnimation(duration: 1.0, value: (countProgress))
+        exerciseView.setProgressNumber(number: (finishExercise + 1), totalExercise: countChosenExercise )
+        exerciseView.videoView(dataExercise : tempExerciseDetail, tempWarningData : tempWarningData)
         
     }
+    
+    
     
     @IBAction func informationExercise(_ sender: Any) {
         self.performSegue(withIdentifier: "toInformationExercise", sender: nil)
@@ -123,7 +96,9 @@ class ExerciseViewController: UIViewController {
         if segue.identifier == "toInformationExercise" {
             let destination = segue.destination as! InformationExerciseController
             
-//            destination.idExercise = self.idExercise
+            
+            destination.tempStep = planModelHelpers.fetchIdSteps(idExercise: tempExerciseDetail[0].idExercise)
+            destination.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: tempExerciseDetail[0].idExercise)
             
         }
     }
@@ -131,47 +106,34 @@ class ExerciseViewController: UIViewController {
     @IBAction func previous(_ sender: Any) {
         
 
-        if finishExercise == countChosenExercise {
+        print("ini awal next \(finishExercise)")
+        if finishExercise == (countChosenExercise - 1) {
             exerciseView.lastExercise()
         } else {
-            if ((isVideo % 2) != 0) {
-                timer?.invalidate()
-                exerciseView.countDownView(count: "30")
-                circularProgressView.setProgressWithAnimation(duration: 1.0, value: 0.50)
-                exerciseView.videoView()
-                isVideo += 1
-                self.navigationController?.navigationBar.isHidden = false
-
-            } else {
-                exerciseView.restView()
+            if ((isVideo % 2) != 1) {
+                exerciseView.restView(dataExercise : tempExerciseDetailPrevious, number: (finishExercise + 1), totalExercise: countChosenExercise)
                 self.navigationController?.navigationBar.isHidden = true
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
                 isVideo += 1
             }
             finishExercise -= 1
-            var countProgress = Double((Double(finishExercise) / Double(countChosenExercise)))
-            print("ini \(countProgress)")
-            print("angka dari \(finishExercise), \(countChosenExercise)")
+            print("ini next \(finishExercise)")
         }
     }
     
     @IBAction func next(_ sender: Any) {
         print("ini awal next \(finishExercise)")
-        var countProgress = Float((Float(finishExercise) / Float(countChosenExercise)))
-        circularProgressView.setProgressWithAnimation(duration: 1.0, value: countProgress)
-        exerciseView.setProgressNumber(number: finishExercise, totalExercise: countChosenExercise)
-        if finishExercise == countChosenExercise {
+        if finishExercise == (countChosenExercise - 1) {
             exerciseView.lastExercise()
         } else {
             if ((isVideo % 2) != 1) {
-                exerciseView.restView()
+                exerciseView.restView(dataExercise : tempExerciseDetailNext, number: (finishExercise + 1), totalExercise: countChosenExercise)
                 self.navigationController?.navigationBar.isHidden = true
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
                 isVideo += 1
             }
-//            self.navigationController?.navigationBar.isHidden = false
             finishExercise += 1
-            print("ini next \(isVideo)")
+            print("ini next \(finishExercise)")
         }
     }
     
@@ -180,11 +142,17 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func Skip(_ sender: Any) {
-        
         timer?.invalidate()
         exerciseView.countDownView(count: "30")
-        exerciseView.videoView()
-        isVideo += 1
+        print("skip \(finishExercise)")
+        if finishExercise == countChosenExercise {
+            exerciseView.lastExercise()
+            
+        } else {
+            setupInit(data: finishExercise)
+            isVideo += 1
+        }
+        
     }
     
     @IBAction func addTimeRest(_ sender: Any) {
