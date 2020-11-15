@@ -142,7 +142,7 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         else if segue.identifier == "unwindToOverview" {
             print("prepare dlu")
             selectedExercise = checkSelected
-            
+            tempSelectedExercise = newSelectedExercise
         }
         
     }

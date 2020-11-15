@@ -28,6 +28,9 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     var exerciseData = [ExerciseModel]()
     var planData = [PlansModel]()
     
+    var newExerciseArray = [Int]()
+    var newExerciseData = [ExerciseModel]()
+    
     var selectedIndexPlan: Int!
     var arrSelectedExercise = [Int]()
     var difficulty = Int()
@@ -233,8 +236,10 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         let sourceViewController = unwindSegue.source as! CustomizePlanTableViewController
         // Use data from the view controller which initiated the unwind segue
         selectedExercise = sourceViewController.selectedExercise
+        newExerciseArray = sourceViewController.tempSelectedExercise
         
         print("selected exercise unwind = \(selectedExercise)")
+        print("new exercise array = \(newExerciseArray)")
     }
     
     /*
