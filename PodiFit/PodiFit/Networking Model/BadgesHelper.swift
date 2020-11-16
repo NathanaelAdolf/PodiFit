@@ -93,11 +93,12 @@ class BadgesHelper: UIViewController {
                             
                             
                             if data.value(forKey: "completePlanBadge")as! Bool == true {
+                                print("abcdef")
                                 tempDetailData.append(DetailBadgesModel(imageName: "completed one plan badge.png", title: "Complete One Plan", description: "You have complete one exercise plan",progressNum: 1,labelIndicator: "1/1"))
                             }
                             else
                             {
-                                tempDetailData.append(DetailBadgesModel(imageName: "completed one plan badge.png", title: "Complete One Plan", description: "You have complete one exercise plan",progressNum: 1,labelIndicator: "1/1"))
+                                tempDetailData.append(DetailBadgesModel(imageName: "completed one plan badge.png", title: "Complete One Plan", description: "You have complete one exercise plan",progressNum: 0,labelIndicator: "0/1"))
                             }
                             
                             
@@ -363,7 +364,7 @@ class BadgesHelper: UIViewController {
         }
         if tempCompletedData.count != 0 {
             badgesHelper.updateCompletePlanIntoTrue(isBadgesDone: true)
-           // print("finish one plan")
+            print("finish one plan")
         }
         
         if tempCompletedData.count >= 5 {

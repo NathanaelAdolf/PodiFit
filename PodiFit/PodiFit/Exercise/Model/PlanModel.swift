@@ -60,9 +60,9 @@ class PlanModel: UIViewController {
         return exerciseData
     }
     
-    func fetchIdWarning(idExercise : [Int]) -> [String] {
+    func fetchIdWarning(idExercise : Int) -> [WarningModel] {
         print("masuk\(idExercise)")
-        var warningDatas : [String] = []
+        var warningDatas : [WarningModel] = []
         
         let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
         
@@ -78,14 +78,15 @@ class PlanModel: UIViewController {
                 let arrTempWarning = Array(tempWarning)
                 
                 for warning in arrTempWarning {
-                    print("ini warning \(warning.warningText)")
-//                    let getWarningData = warning.value(forKey: <#T##String#>)
-                    warningDatas = warning.value(forKey: "warningText") as! [String]
+                    print("ini \(warning.warningText)")
+                    
+                    warningDatas.append(WarningModel(idWarning: warning.value(forKey: "idWarning") as! Int, warningText: warning.value(forKey: "warningText") as! String))
                 }
             }
         } catch  {
             print("error")
         }
+        print("ini di function warning \(warningDatas)")
         return warningDatas
     }
     

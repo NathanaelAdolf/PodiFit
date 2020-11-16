@@ -57,6 +57,7 @@
                                         <state key="normal" backgroundImage="Quit"/>
                                         <connections>
                                             <action selector="quitExercise:" destination="4zZ-ig-g9l" eventType="touchUpInside" id="G3W-Dn-4O9"/>
+                                            <segue destination="Hty-gD-bBZ" kind="show" id="wDu-uC-y1W"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -246,7 +247,7 @@
                                 <color key="backgroundColor" red="0.2355744243" green="0.27056741709999999" blue="0.27058902379999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.2355744243" green="0.27056741709999999" blue="0.27058902379999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="summaryTime" rowHeight="330" id="LtF-ye-hCl" customClass="SummaryTableViewCell" customModule="PodiFit" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="summaryTime" rowHeight="330" id="LtF-ye-hCl" customClass="summaryTime" customModule="PodiFit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="330"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LtF-ye-hCl" id="vjF-MI-gfP">
@@ -326,11 +327,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.73885941509999997" green="0.82239037749999999" blue="0.13292640450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="minuteLabel" destination="xza-m1-PXY" id="wyN-ws-uxE"/>
-                                            <outlet property="secondLabel" destination="LfY-eC-nAJ" id="t2w-QJ-OPi"/>
-                                            <outlet property="viewMinute" destination="2sa-c7-gE3" id="6Lb-f8-g9p"/>
-                                            <outlet property="viewSecond" destination="dgC-Ka-coU" id="Fup-ac-oGQ"/>
-                                            <outlet property="viewSummaryMinute" destination="ArO-py-oCI" id="7zN-Bt-7LA"/>
+                                            <outlet property="minutesSummaryLbl" destination="xza-m1-PXY" id="Xcl-Vo-U0j"/>
+                                            <outlet property="secondsSummaryLbl" destination="LfY-eC-nAJ" id="EoV-Ak-UEs"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emoticonCell" rowHeight="219" id="s1x-dh-rzv" customClass="EmoticonTableViewCell" customModule="PodiFit" customModuleProvider="target">
@@ -702,6 +700,9 @@
             <point key="canvasLocation" x="1245" y="33"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wDu-uC-y1W"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Badge1" width="150" height="150"/>
         <image name="Quit" width="314" height="44"/>
