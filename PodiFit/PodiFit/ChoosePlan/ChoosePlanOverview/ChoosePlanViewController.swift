@@ -216,6 +216,16 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     }
     
     func callSegueFromCell() {
+        insertNewPlan()
+        
+        let lastIndex = CustomizePlanHelper.checkPlanIndex()
+        
+        var currentPlanIndex = CustomizePlanHelper.fetchIdPlan()
+        currentPlanIndex?.append(lastIndex)
+        
+        CustomizePlanHelper.updateUserPlan(userId: 0, plan: currentPlanIndex!)
+        print("data inserted, index \(lastIndex)")
+        
         self.performSegue(withIdentifier: "customPlanSegue", sender: self )
             
      }
@@ -258,7 +268,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         print("id diff = \(planData[selectedIndexPlan-1].idDifficulty)")
         
         exerciseData = newExerciseData
-        //insertNewPlan()
+        
         tableView.reloadData()
     }
     
