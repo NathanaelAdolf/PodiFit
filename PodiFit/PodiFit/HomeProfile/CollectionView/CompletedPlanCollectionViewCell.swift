@@ -15,9 +15,10 @@ class CompletedPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var periodLabel: UILabel!
     @IBOutlet var movesLabel: UILabel!
     
+    @IBOutlet var completedPlanBackgroundView: UIView!
     
     override func awakeFromNib() {
-        self.backgroundColor = Colors.cellColor
-        self.layer.cornerRadius = 5
+        completedPlanBackgroundView.backgroundColor = Colors.cellColor
+        completedPlanBackgroundView.layer.cornerRadius = 5
     }
 }
