@@ -23,8 +23,10 @@ class ExerciseViewController: UIViewController {
     @IBOutlet weak var circularProgressView : CircularProgressView!
 
     var count = 30
+    var countTimeForSummary = 1
     var countTimeAddition = 5
     var timer: Timer?
+    var timerSummary : Timer?
     var isVideo: Int = 2
     var countChosenExercise = 3
     var finishExercise = 0
@@ -52,6 +54,7 @@ class ExerciseViewController: UIViewController {
         
         setupInit(data: finishExercise)
         totalWaktuExercise = countChosenExercise * 60
+//        self.timerSummary = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(allSummaryTime), userInfo: nil, repeats: true)
        
     }
     
@@ -108,7 +111,7 @@ class ExerciseViewController: UIViewController {
         } else if segue.identifier == "toSummary" {
             let destination = segue.destination as! ExerciseSummaryViewController
             
-            destination.totalWaktuExercise = totalWaktuExercise
+            destination.totalWaktuExercise = countTimeForSummary
         }
     }
     
@@ -181,6 +184,14 @@ class ExerciseViewController: UIViewController {
         self.performSegue(withIdentifier: "tocoba", sender: nil)
         
     
+    }
+    
+    @objc func allSummaryTime() {
+        var countString = String(countTimeForSummary)
+        countTimeForSummary += 1
+        
+        
+
     }
     
     @objc func countDownTimer(){

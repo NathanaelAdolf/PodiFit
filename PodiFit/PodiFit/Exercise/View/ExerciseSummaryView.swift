@@ -24,6 +24,12 @@ class summaryTime: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    func setView(menitExercise : Int, detikExercise : Int) {
+        print(menitExercise)
+        minutesSummaryLbl.text = "\(menitExercise)"
+        secondsSummaryLbl.text = "\(detikExercise)"
+    }
 }
 
 class ExerciseSummaryView: UIView {
@@ -39,16 +45,14 @@ class ExerciseSummaryView: UIView {
     
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setInitialView()
         
     }
 
-    func setview(menitExercise : Int, detikExercise : Int) {
-        print(menitExercise)
-        minutesSummaryLbl.text = "\(menitExercise)"
-    }
+    
     
     func setInitialView(){
         tableView.estimatedRowHeight = 293
