@@ -448,7 +448,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         if badgesHelper.isBadgesTableEmpty() == true {
             badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
         }
-     
+       // planHelper.updatePlanIntoDone(planNameToUpdate: "Beginner Leg", isPlanDone: true)
+        
         badgesHelper.checkUserEarnBadge()
         badgesImageArray = badgesHelper.retreiveDataFromBadges().imageData
         badgesHelper.retreiveDataFromBadges()
@@ -459,6 +460,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
             completedData = planHelper.retrieveCompletedPlanData().tempModel
+            completedData.append(CompletedPlanModel(titleMovement: "Intermediate", level: "Medium", period: 3, movement: 6))
         }
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
