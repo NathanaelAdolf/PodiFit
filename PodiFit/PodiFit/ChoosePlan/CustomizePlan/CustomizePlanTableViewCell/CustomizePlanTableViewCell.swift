@@ -75,7 +75,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
                 checkSelected += 1
                 cell.layer.borderWidth = 3.5
                 cell.layer.borderColor = Colors.yellowColor.cgColor
-                print("indexpath = \(indexPath), status = selected")
+                //print("indexpath = \(indexPath), status = selected")
                 
                 tempSelectedExercise.append(cell.idMovement)
                 print("temp = \(tempSelectedExercise)")
@@ -85,7 +85,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
                 checkSelected -= 1
                 cell.layer.borderWidth = 0
                 cell.layer.borderColor = UIColor.clear.cgColor
-                print("indexpath = \(indexPath), status = not selected")
+                //print("indexpath = \(indexPath), status = not selected")
                 
                 if let index = tempSelectedExercise.firstIndex(of: cell.idMovement) {
                     tempSelectedExercise.remove(at: index)
@@ -107,7 +107,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         cell.parseData(data: data[indexPath.row])
         cell.delegate = colView //kirim delegate
         
-        print("cellid = \(cell.idMovement)")
+        //print("cellid = \(cell.idMovement)")
         
         cell.backgroundColor = UIColor.white
         cell.layer.cornerRadius = 10
@@ -117,7 +117,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
             checkSelected += 1
             cell.layer.borderWidth = 3.5
             cell.layer.borderColor = Colors.yellowColor.cgColor
-            print("indexpath = \(indexPath), status = alr selected")
+            //print("indexpath = \(indexPath), status = alr selected")
             newSelectedExercise = tempSelectedExercise
         }
         

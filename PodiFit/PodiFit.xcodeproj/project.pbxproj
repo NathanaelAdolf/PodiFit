@@ -256,6 +256,7 @@
 		AB46E918255D2D080028A983 /* FinishButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishButtonTableViewCell.swift; sourceTree = "<group>"; };
 		AB46E919255D2D080028A983 /* FinishButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishButtonTableViewCell.xib; sourceTree = "<group>"; };
 		AB5F46442553EDDD005DE0D0 /* PodiFit 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PodiFit 2.xcdatamodel"; sourceTree = "<group>"; };
+		AB6B646125624F9D0086078B /* PodiFit4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodiFit4.xcdatamodel; sourceTree = "<group>"; };
 		AB6E780525593ACD00262039 /* PlanInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInfoCell.swift; sourceTree = "<group>"; };
 		AB6E780625593ACD00262039 /* PlanInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanInfoCell.xib; sourceTree = "<group>"; };
 		AB88B9522551486400AFF3BA /* ModalPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPlanViewController.swift; sourceTree = "<group>"; };
@@ -1368,11 +1369,12 @@
 		8D13C0BE25402997002195C9 /* PodiFit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AB6B646125624F9D0086078B /* PodiFit4.xcdatamodel */,
 				ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */,
 				AB5F46442553EDDD005DE0D0 /* PodiFit 2.xcdatamodel */,
 				8D13C0BF25402997002195C9 /* PodiFit.xcdatamodel */,
 			);
-			currentVersion = ABA6B22F2555012B00FC9D83 /* PodiFit3.xcdatamodel */;
+			currentVersion = AB6B646125624F9D0086078B /* PodiFit4.xcdatamodel */;
 			path = PodiFit.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

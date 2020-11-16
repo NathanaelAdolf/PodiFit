@@ -22,6 +22,7 @@ extension Exercise {
     @NSManaged public var listIdSteps: [Int]?
     @NSManaged public var namaExercise: String?
     @NSManaged public var videoUrl: String?
+    @NSManaged public var image: String?
     @NSManaged public var warningData: [Int]?
     @NSManaged public var ofPlan: NSSet?
     @NSManaged public var steps: NSSet?

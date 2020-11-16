@@ -80,10 +80,6 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         // Do any additional setup after loading the view.
     }
     
-    func fetchData(){
-        
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
@@ -216,6 +212,13 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     }
     
     func callSegueFromCell() {
+        
+        self.performSegue(withIdentifier: "customPlanSegue", sender: self )
+            
+     }
+    
+    func callSegueFromCellToMain() {
+//        self.preSegue(withIdentifier: "mainSegue", sender: self )
         insertNewPlan()
         
         let lastIndex = CustomizePlanHelper.checkPlanIndex()
@@ -226,12 +229,6 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         CustomizePlanHelper.updateUserPlan(userId: 0, plan: currentPlanIndex!)
         print("data inserted, index \(lastIndex)")
         
-        self.performSegue(withIdentifier: "customPlanSegue", sender: self )
-            
-     }
-    
-    func callSegueFromCellToMain() {
-//        self.preSegue(withIdentifier: "mainSegue", sender: self )
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() else {
             return
