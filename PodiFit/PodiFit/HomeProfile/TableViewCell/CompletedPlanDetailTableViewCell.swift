@@ -22,6 +22,7 @@ class CompletedPlanDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         completedDetailView.layer.cornerRadius = 5
+        //planImage.layer.cornerRadius = 5
         contentView.backgroundColor = .none
         self.backgroundColor = .none
     }
