@@ -304,10 +304,33 @@ class CustomizePlanModel: UIViewController {
         
     }
     
+    func updateUserPlan(userId: Int, plan: [Int])
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return}
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<User>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "idUser = %d", userId)
+        
+        do{
+            let fetch = try managedContext.fetch(fetchRequest)
+            let dataToUpdate = fetch[0] as! NSManagedObject
+        
+            dataToUpdate.setValue(plan, forKey: "userIdPlan")
+         
+          
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
+
+    }
+    
     func fetchIdSteps(idExercise: Int) -> [StepModel]{
         var stepExercises = [StepModel]()
         let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
-        print("ini \(idExercise)")
+        
         fetchRequest.predicate = NSPredicate(format: "idExercise == %@", "\(idExercise)")
         
         do {

@@ -87,6 +87,8 @@ class ActivePlanModel: UIViewController {
                             exercise: (plan.value(forKey: "exercise") as! NSSet)
                         )
                     )
+                    
+                    print("plans.count = \(plans.count)")
                 }
             }
             catch let err {

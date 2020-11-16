@@ -42,7 +42,7 @@ class AssesmentResultVC: UIViewController {
         insertData.storeDefaultDifficulty()
         insertData.storeDefaultExerciseAndExerciseStepsData()
         
-        userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [1], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!) // Nanti Dihapus array idPlan
+        userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!) // Nanti Dihapus array idPlan
         
         self.performSegue(withIdentifier: "SeeMyPlanSegue", sender: self)
     }
