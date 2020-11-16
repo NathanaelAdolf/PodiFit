@@ -20,8 +20,15 @@ class FinishButtonTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnDone(_ sender: Any) {
-        if (self.delegate != nil) {
-            self.delegate.unwindSegueFromCell()
+        if newSelectedExercise.count >= 5{
+            if (self.delegate != nil) {
+                self.delegate.unwindSegueFromCell()
+            }
+        }
+        else{
+            if (self.delegate != nil) {
+                self.delegate.showAlert()
+            }
         }
         print("pencet done buat unwind")
     }

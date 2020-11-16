@@ -66,7 +66,7 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
             
             for i in 0...tempPlanData.count - 1
             {
-                planDetailsData.append(CompletedPlanDetailModel(titleMovement: tempPlanData[i].titleMovement, numberWeeks: tempPlanData[i].period, numberExercise: 10, imagePlan: "LegPlanImage.png"))
+                planDetailsData.append(CompletedPlanDetailModel(titleMovement: tempPlanData[i].titleMovement, numberWeeks: tempPlanData[i].period, numberExercise: tempPlanData[i].movement, imagePlan: "LegPlanImage.png"))
             }
         }
        

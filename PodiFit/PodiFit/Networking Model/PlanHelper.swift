@@ -131,7 +131,9 @@ class PlanHelper: UIViewController {
                                 {
                                     if data.value(forKey: "isPlanDone")as! Bool == true
                                     {
-                                    tempCompletedPlanData.append(CompletedPlanModel(titleMovement: data.value(forKey: "namaPlan")as! String, level: difficultyHelper.checkDifficultyNameById(idDifficulty: data.value(forKey: "idDifficulty")as! Int), period: data.value(forKey: "durasiPlan")as! Int, movement: 10))
+                                        let tempChoosenExercise: [Int] = (data.value(forKey: "chosenExercise") as? [Int])!
+                                        
+                                        tempCompletedPlanData.append(CompletedPlanModel(titleMovement: data.value(forKey: "namaPlan")as! String, level: difficultyHelper.checkDifficultyNameById(idDifficulty: data.value(forKey: "idDifficulty")as! Int), period: data.value(forKey: "durasiPlan")as! Int, movement: tempChoosenExercise.count ))
                                     }
                                     
                                     if data.value(forKey: "totalSessionDone")as! Int != 0 {
