@@ -9,7 +9,10 @@
 import UIKit
 
 
+
 class ExerciseSummaryViewController: UIViewController {
+    var totalWaktuExercise : Int = 0
+    
 
     @IBOutlet weak var  exerciseSummaryView : ExerciseSummaryView!
     
@@ -20,6 +23,17 @@ class ExerciseSummaryViewController: UIViewController {
 //        exerciseSummaryView.setInitialView()
         exerciseSummaryView.tableView.delegate = self
         exerciseSummaryView.tableView.dataSource = self
+//        print("ini total di exeSummaryview\(totalWaktuExercise)")
+        calculateSummary(totalWaktuExercise : totalWaktuExercise)
+        
+    }
+    
+    func calculateSummary(totalWaktuExercise : Int) {
+        var detikExercise = totalWaktuExercise % 60
+        var menitExercise = totalWaktuExercise / 60
+        print("ini summary nya \(menitExercise) : \(detikExercise)")
+        
+//        exerciseSummaryView.setview(menitExercise : menitExercise, detikExercise : detikExercise)
     }
     
     @IBAction func finishSummary(_ sender: Any) {
@@ -47,7 +61,7 @@ extension ExerciseSummaryViewController : UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "summaryTime") as! SummaryTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "summaryTime") as! summaryTime
             return cell
         } else {
             let cellEmot = tableView.dequeueReusableCell(withIdentifier: "emoticonCell") as! EmoticonTableViewCell

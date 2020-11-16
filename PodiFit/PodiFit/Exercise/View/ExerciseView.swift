@@ -110,6 +110,7 @@ class ExerciseView: UIView {
     }
     
     public func lastExercise() {
+        print("masuk ke last")
         doneView.isHidden = false
         circularBarView.isHidden = false
         previousView.isHidden = true

@@ -10,12 +10,12 @@ import UIKit
 
 class SummaryTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var viewSummaryMinute: UIView!
-    
-    @IBOutlet weak var viewMinute: UIView!
-    @IBOutlet weak var viewSecond: UIView!
-    @IBOutlet weak var minuteLabel: UILabel!
-    @IBOutlet weak var secondLabel: UILabel!
+//    @IBOutlet weak var viewSummaryMinute: UIView!
+//    
+//    @IBOutlet weak var viewMinute: UIView!
+//    @IBOutlet weak var viewSecond: UIView!
+//    @IBOutlet weak var minuteLabel: UILabel!
+//    @IBOutlet weak var secondLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

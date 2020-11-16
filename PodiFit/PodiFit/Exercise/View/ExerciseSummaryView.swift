@@ -8,26 +8,52 @@
 
 import UIKit
 
+class summaryTime: UITableViewCell {
+    @IBOutlet weak var minutesSummaryLbl: UILabel!
+    @IBOutlet weak var secondsSummaryLbl: UILabel!
+    
+
+    
+    func setSummaryView(menitExercise : Int, detikExercise : Int) {
+//        minutesSummaryLbl.text =
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}
+
 class ExerciseSummaryView: UIView {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var viewTimeSummary: UIView!
+    
+    @IBOutlet weak var gambarSuram: UIButton!
     @IBOutlet weak var viewMinute: UIView!
     @IBOutlet weak var viewSecond: UIView!
     
-    @IBOutlet weak var minuteLabel: UILabel!
-
+    @IBOutlet weak var minutesSummaryLbl: UILabel!
+    @IBOutlet weak var secondsSummaryLbl: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setInitialView()
+        
     }
 
-    func setview() {
-        print("")
+    func setview(menitExercise : Int, detikExercise : Int) {
+        print(menitExercise)
+        minutesSummaryLbl.text = "\(menitExercise)"
     }
     
     func setInitialView(){
         tableView.estimatedRowHeight = 293
     }
+    
+    
     
 }
