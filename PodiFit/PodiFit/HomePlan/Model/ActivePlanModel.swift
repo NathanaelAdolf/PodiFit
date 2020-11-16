@@ -128,6 +128,7 @@ class ActivePlanModel: UIViewController {
                             listIdSteps: exercise.value(forKey: "listIdSteps") as? [Int],
                             namaExercise: exercise.value(forKey: "namaExercise") as! String,
                             videoUrl: exercise.value(forKey: "videoUrl") as! String,
+                            image: exercise.value(forKey: "image") as! String,
                             warningData: exercise.value(forKey: "warningData") as? [Int]
                         )
                     )

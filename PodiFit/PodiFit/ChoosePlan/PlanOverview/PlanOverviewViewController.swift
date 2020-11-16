@@ -181,6 +181,8 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         do{
             
             let result = try context.fetch(fetchRequest)
+            print("plans = \(plans.count), result = \(result.count)")
+            
             if plans.count != result.count{
                 plans.append(contentsOf: result)
             }

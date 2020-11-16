@@ -118,6 +118,7 @@ class CustomizePlanModel: UIViewController {
                             listIdSteps: exercise.value(forKey: "listIdSteps") as? [Int],
                             namaExercise: exercise.value(forKey: "namaExercise") as! String,
                             videoUrl: exercise.value(forKey: "videoUrl") as! String,
+                            image: exercise.value(forKey: "image") as! String,
                             warningData: exercise.value(forKey: "warningData") as? [Int]
                         )
                     )
@@ -191,6 +192,7 @@ class CustomizePlanModel: UIViewController {
                         listIdSteps: exercise.value(forKey: "listIdSteps") as? [Int],
                         namaExercise: exercise.value(forKey: "namaExercise") as! String,
                         videoUrl: exercise.value(forKey: "videoUrl") as! String,
+                        image: exercise.value(forKey: "image") as! String,
                         warningData: exercise.value(forKey: "warningData") as? [Int]
                     )
                 )
@@ -213,7 +215,7 @@ class CustomizePlanModel: UIViewController {
             let result = try context.fetch(fetchRequest) as [NSManagedObject]
             
             for exercise in result{
-                exerciseData = ExerciseModel(idDifficulty: exercise.value(forKey: "idDifficulty") as! Int, idExercise: exercise.value(forKey: "idExercise") as! Int, listIdSteps: exercise.value(forKey: "listIdSteps") as? [Int], namaExercise: exercise.value(forKey: "namaExercise") as! String, videoUrl: exercise.value(forKey: "videoUrl") as! String, warningData: exercise.value(forKey: "warningData") as? [Int])
+                exerciseData = ExerciseModel(idDifficulty: exercise.value(forKey: "idDifficulty") as! Int, idExercise: exercise.value(forKey: "idExercise") as! Int, listIdSteps: exercise.value(forKey: "listIdSteps") as? [Int], namaExercise: exercise.value(forKey: "namaExercise") as! String, videoUrl: exercise.value(forKey: "videoUrl") as! String, image: exercise.value(forKey: "image") as! String, warningData: exercise.value(forKey: "warningData") as? [Int])
             }
                 
         }

@@ -50,7 +50,7 @@ class PlanModel: UIViewController {
             
             for exercise in exercises {
                 
-                exerciseData.append(ExerciseModel(idDifficulty: exercise.value(forKey: "idDifficulty") as! Int, idExercise: exercise.value(forKey: "idExercise") as! Int, listIdSteps: exercise.value(forKey: "listIdSteps") as! [Int], namaExercise: exercise.value(forKey: "namaExercise") as! String, videoUrl: exercise.value(forKey: "videoUrl") as! String, warningData: exercise.value(forKey: "warningData") as! [Int]))
+                exerciseData.append(ExerciseModel(idDifficulty: exercise.value(forKey: "idDifficulty") as! Int, idExercise: exercise.value(forKey: "idExercise") as! Int, listIdSteps: exercise.value(forKey: "listIdSteps") as! [Int], namaExercise: exercise.value(forKey: "namaExercise") as! String, videoUrl: exercise.value(forKey: "videoUrl") as! String, image: exercise.value(forKey: "image") as! String, warningData: exercise.value(forKey: "warningData") as! [Int]))
 //                print("ijin \(exerciseData.count)")
             }
         } catch {

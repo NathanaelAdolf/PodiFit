@@ -46,7 +46,7 @@ class MovementCollectionViewCell: UICollectionViewCell {
         
         movementName.text = data.namaExercise
         movementDetails.text = "00:30"
-        movementCollectionImage.image = UIImage(named: "donkeykicks")
+        movementCollectionImage.image = UIImage(named: data.image)
         idMovement = data.idExercise
     }
     

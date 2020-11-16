@@ -25,7 +25,7 @@ class ExerciseTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        exerciseImage.image = UIImage.init(named: "glutebridgecalfraise")
+        //exerciseImage.image = UIImage.init(named: "glutebridgecalfraise")
         exerciseImage.layer.cornerRadius = 5.0
         exerciseDuration.text = "00:30"
     }
@@ -38,6 +38,7 @@ class ExerciseTableViewCell: UITableViewCell {
     
     func parseData(data: ExerciseModel) {
         exerciseName.text = data.namaExercise
+        exerciseImage.image = UIImage.init(named: data.image)
     }
     
 }
