@@ -14,6 +14,8 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
         
     var collectionViewData = [CompletedPlanModel]()
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return (collectionViewData.count >= 2) ? 2 : collectionViewData.count
@@ -34,7 +36,7 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
         
         return cell
     }
-        
+    
     func loadCollectionView(data: [CompletedPlanModel])
     {
         self.collectionViewData = data
@@ -51,7 +53,7 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
         
         self.backgroundColor = .none
         backgroundView?.backgroundColor = .none
-                    
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -60,4 +62,11 @@ class CompletedPlanTableViewCell: UITableViewCell,UICollectionViewDataSource,UIC
         // Configure the view for the selected state
     }
 
+}
+
+extension CompletedPlanTableViewCell: UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width/2 - 5, height: 184)
+    }
 }

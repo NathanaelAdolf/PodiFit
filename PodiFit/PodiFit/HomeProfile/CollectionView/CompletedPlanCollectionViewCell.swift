@@ -20,5 +20,8 @@ class CompletedPlanCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         completedPlanBackgroundView.backgroundColor = Colors.cellColor
         completedPlanBackgroundView.layer.cornerRadius = 5
+        
+
+        
     }
 }
