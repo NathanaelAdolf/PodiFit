@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "side to side plie.png",
+      "filename" : "Oval Copy.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Oval Copy@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Oval Copy@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -219,15 +219,32 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     
     func callSegueFromCellToMain() {
 //        self.preSegue(withIdentifier: "mainSegue", sender: self )
-        insertNewPlan()
         
-        let lastIndex = CustomizePlanHelper.checkPlanIndex()
-        
-        var currentPlanIndex = CustomizePlanHelper.fetchIdPlan()
-        currentPlanIndex?.append(lastIndex)
-        
-        CustomizePlanHelper.updateUserPlan(userId: 0, plan: currentPlanIndex!)
-        print("data inserted, index \(lastIndex)")
+        if (newExerciseArray.isEmpty && planData[selectedIndexPlan-1].idDifficulty == 1) {
+            var planindex = CustomizePlanHelper.fetchIdPlan()
+            planindex?.append(1)
+            CustomizePlanHelper.updateUserPlan(userId: 0, plan: planindex!)
+            
+            print("inserted plan id = 1")
+        }
+        else if (newExerciseArray.isEmpty && planData[selectedIndexPlan-1].idDifficulty == 2){
+            var planindex = CustomizePlanHelper.fetchIdPlan()
+            planindex?.append(2)
+            CustomizePlanHelper.updateUserPlan(userId: 0, plan: planindex!)
+            
+            print("inserted plan id = 2")
+        }
+        else{
+            insertNewPlan()
+            
+            let lastIndex = CustomizePlanHelper.checkPlanIndex()
+            
+            var currentPlanIndex = CustomizePlanHelper.fetchIdPlan()
+            currentPlanIndex?.append(lastIndex)
+            
+            CustomizePlanHelper.updateUserPlan(userId: 0, plan: currentPlanIndex!)
+            print("data inserted, index \(lastIndex)")
+        }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() else {

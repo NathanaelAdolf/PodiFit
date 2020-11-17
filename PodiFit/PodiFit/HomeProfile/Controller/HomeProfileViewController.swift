@@ -460,7 +460,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         if userHelper.isUserTableEmpty() == false && planHelper.isPlanTableEmpty() == false && difficultyHelper.isDifficultyTableEmpty() == false {
             completedData = planHelper.retrieveCompletedPlanData().tempModel
-            //completedData.append(CompletedPlanModel(titleMovement: "Intermediate", level: "Medium", period: 3, movement: 6))
+            completedData.append(CompletedPlanModel(titleMovement: "Intermediate", level: "Medium", period: 3, movement: 6))
         }
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)

@@ -89,8 +89,9 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "planCell", for: indexPath) as! PlanListOverviewTableViewCell
 
         let plan = plans[indexPath.row]
+        let bulletPoint: String = "\u{2022}"
         cell.planName.text = plan.namaPlan
-        cell.planSubtitle.text = "\(plan.durasiPlan) weeks - \(plan.chosenExercise!.count) exercises - No Equipment"
+        cell.planSubtitle.text = "\(plan.durasiPlan) weeks \(bulletPoint) \(plan.chosenExercise!.count) exercises \(bulletPoint) No Equipment"
         cell.planImage.image = UIImage(named: "1")
         cell.backgroundColor = UIColor.clear
         
@@ -162,7 +163,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
                 if plan2.count != result.count {
                     plan2.append(PlanTypes1(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
                 }
-                //plan2.append(PlanTypes1(title: data.value(forKey: "planname") as! String, subtitle: data.value(forKey: "duration") as! String, image: data.value(forKey: "image") as! String))
+                
             }
                     
         } catch {
@@ -177,15 +178,17 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         let context = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
-        
+        fetchRequest.fetchLimit = 2
         do{
             
             let result = try context.fetch(fetchRequest)
             print("plans = \(plans.count), result = \(result.count)")
             
-            if plans.count != result.count{
+            if plans.count < 2 {
                 plans.append(contentsOf: result)
             }
+            //plans.append(contentsOf: result)
+            
             
             //print(plans)
         }
