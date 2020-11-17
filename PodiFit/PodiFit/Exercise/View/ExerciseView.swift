@@ -26,6 +26,7 @@ class ExerciseView: UIView {
     @IBOutlet weak var warningView: UIView!
     @IBOutlet weak var contentWarningLabel: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var imageThumbnail: UIImageView!
     
     @IBOutlet weak var nextExerciseView: UIView!
     @IBOutlet weak var timeRestView: UIView!
@@ -67,6 +68,7 @@ class ExerciseView: UIView {
     
     public func restView(dataExercise : [ExerciseModel], number : Int, totalExercise : Int) {
         // stop video in webkit
+        
         loadWebsite(dataExercise: dataExercise)
         
         // fadein fadeout effect
@@ -81,6 +83,8 @@ class ExerciseView: UIView {
         warningView.isHidden = true
         timeRestView.isHidden = false
         nextExerciseView.isHidden = true
+//        nextExerciseLabel.isHidden = false
+        
         
         // border button
         addRestTimeBtn.layer.borderWidth = 1
