@@ -83,6 +83,93 @@ class PlanHelper: UIViewController {
         
     }
     
+    func retrieveSessionDayDurationData(idPlan: Int)->(totalSession: Int,Day: Int,Duration: Int)
+    {
+        var tempTotalSession: Int = 0
+        var tempDay: Int = 0
+        var tempDuration: Int = 0
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempTotalSession,tempDay,tempDuration)}
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Plan")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        if idPlan == data.value(forKey: "idPlan")as! Int {
+                            tempTotalSession = data.value(forKey: "totalSessionDone")as! Int
+                            tempDay = data.value(forKey: "jumlahHari")as! Int
+                            tempDuration = data.value(forKey: "durasiPlan")as! Int
+                        }
+                        
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
+        
+        return (tempTotalSession,tempDay,tempDuration)
+        
+    }
+    
+    func updateTotalSessionDone(idPlan: Int)
+    {
+        let totalSessionUpdate: Int = retrieveSessionDayDurationData(idPlan: idPlan).totalSession + 1
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Plan")
+        fetchRequest.predicate = NSPredicate(format: "idPlan = %@", idPlan)
+        
+        do{
+            let fetch = try managedContext.fetch(fetchRequest)
+            let dataToUpdate = fetch[0] as! NSManagedObject
+        
+            dataToUpdate.setValue(totalSessionUpdate, forKey: "totalSessionDone")
+            print("update total session")
+          
+            try managedContext.save()
+        }catch let err{
+            print(err)
+        }
+        
+    }
+    
+    func checkPlanIsFinished(idPlan: Int)
+    {
+        let day: Int = retrieveSessionDayDurationData(idPlan: idPlan).Day
+        let duration: Int = retrieveSessionDayDurationData(idPlan: idPlan).Duration
+        let sesion: Int = retrieveSessionDayDurationData(idPlan: idPlan).totalSession
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Plan")
+        fetchRequest.predicate = NSPredicate(format: "idPlan = %@", idPlan)
+        
+        if day*duration == sesion
+        {
+            do{
+                let fetch = try managedContext.fetch(fetchRequest)
+                let dataToUpdate = fetch[0] as! NSManagedObject
+            
+                dataToUpdate.setValue(true, forKey: "isPlanDone")
+                print("plan finished")
+              
+                try managedContext.save()
+            }catch let err{
+                print(err)
+            }
+        }
+      
+    }
+    
     func updatePlanIntoDone(planNameToUpdate: String,isPlanDone: Bool){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
