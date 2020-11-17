@@ -27,7 +27,7 @@ class ActivePlanCell: UICollectionViewCell {
     
     func parseData(data: PlansModel) {
         namePlanLabel.text = data.namaPlan
-        planImage.image = UIImage(named: "2")
+        planImage.image = UIImage(named: "1")
         weekPlanLabel.text = "\(data.durasiPlan) weeks"
         exercisePlanLabel.text = "\(data.chosenExercise!.count) exercises"
         equipmentPlanLabel.text = "No Equipment"

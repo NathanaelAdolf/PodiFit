@@ -26,6 +26,9 @@ class ModalPlanViewController: UIViewController {
         super.viewDidLoad()
 
         exerciseName.text = CustomizePlanHelper.getExercise(idExercise: idMovement)!.namaExercise
+        exerciseStep = CustomizePlanHelper.fetchIdSteps(idExercise: idMovement)
+        parseData()
+        
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         
         

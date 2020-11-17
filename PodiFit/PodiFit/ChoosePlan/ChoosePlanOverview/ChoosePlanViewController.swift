@@ -117,7 +117,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescTableViewCell.identifier, for: indexPath) as! DescTableViewCell
-            cell.parseData(data: planData[selectedIndexPlan-1])
+                cell.parseData(data: planData[selectedIndexPlan-1])
             
             cell.backgroundColor = UIColor.clear
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
@@ -126,7 +126,15 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         else if (indexPath.section == 1){
             
             let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCell.identifier, for: indexPath) as! PlanInfoCell
-            cell.parseData(data: planData[selectedIndexPlan-1])
+            
+            if newExerciseData.isEmpty == true {
+                cell.parseData(data: planData[selectedIndexPlan-1])
+            }
+            else{
+                cell.tempNewArray = newExerciseArray
+                    
+                cell.parseData(data: planData[selectedIndexPlan-1])
+            }
             
             cell.backgroundColor = UIColor.clear
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)

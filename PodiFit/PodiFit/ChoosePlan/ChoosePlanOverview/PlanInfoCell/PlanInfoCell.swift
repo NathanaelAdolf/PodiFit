@@ -17,6 +17,7 @@ class PlanInfoCell: UITableViewCell {
     }
     
     var difficulty = String()
+    var tempNewArray = [Int]()
     
     
     @IBOutlet weak var levelInfo: UILabel!
@@ -37,8 +38,16 @@ class PlanInfoCell: UITableViewCell {
     }
     
     func parseData(data: PlansModel) {
-        durationInfo.text = "\((data.chosenExercise!.count) * 30) secs"
-        exerciseInfo.text = "\(data.chosenExercise!.count) exercises"
+        
+        if tempNewArray.isEmpty {
+            durationInfo.text = "\((data.chosenExercise!.count) * 30) secs"
+            exerciseInfo.text = "\(data.chosenExercise!.count) exercises"
+        }
+        else{
+            durationInfo.text = "\((tempNewArray.count) * 30) secs"
+            exerciseInfo.text = "\(tempNewArray.count) exercises"
+        }
+        
         
         print("id plan \(data.idPlan), id diff \(data.idDifficulty)")
         
