@@ -25,6 +25,7 @@ class ExerciseView: UIView {
     @IBOutlet weak var progressNumber: UILabel!
     @IBOutlet weak var warningView: UIView!
     @IBOutlet weak var contentWarningLabel: UILabel!
+    @IBOutlet weak var checkImage: UIImageView!
     
     @IBOutlet weak var nextExerciseView: UIView!
     @IBOutlet weak var timeRestView: UIView!
@@ -88,6 +89,7 @@ class ExerciseView: UIView {
         
         infoNextExerciseLabel?.text = "Next Move"
         nextExerciseLabel?.text = "\(dataExercise[0].namaExercise)"
+        print("ini masuk labelnya \(dataExercise[0].namaExercise)")
         nameExerciseLabel?.text = "Thumbnail"
 
         
@@ -116,7 +118,8 @@ class ExerciseView: UIView {
         previousView.isHidden = true
         nextView.isHidden = true
         progressNumber.isHidden = true
-        
+        checkImage.isHidden = false
+        warningView.isHidden = true
     }
     
     func setProgressNumber (number : Int, totalExercise : Int) {

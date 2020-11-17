@@ -25,10 +25,10 @@ class summaryTime: UITableViewCell {
     }
     
     
-    func setView(menitExercise : Int, detikExercise : Int) {
+    func setView(menitExercise : String, detikExercise : String) {
         print(menitExercise)
-        minutesSummaryLbl.text = "\(menitExercise)"
-        secondsSummaryLbl.text = "\(detikExercise)"
+        minutesSummaryLbl.text = menitExercise
+        secondsSummaryLbl.text = detikExercise
     }
 }
 
