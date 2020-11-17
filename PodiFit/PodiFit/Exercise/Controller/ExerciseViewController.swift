@@ -55,9 +55,12 @@ class ExerciseViewController: UIViewController {
     public func setupInit(data : Int) {
         var warningDatas : String = ""
         // ambil plan active
+//        planHelper.retrievePlanData()
+        print("ini idplan \(idPlanActive)")
         self.idExercises = planModelHelpers.fetchExerciseIdByIdPlan(idPlan: idPlanActive)
         
         // ambil exercise detail array [0]
+        print("ini kenapa? \(idExercises![data])")
         self.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data])
         
         if data < (countChosenExercise-1) {
@@ -145,6 +148,8 @@ class ExerciseViewController: UIViewController {
     @IBAction func doneExercise(_ sender: Any) {
         timer?.invalidate()
         self.performSegue(withIdentifier: "toSummary", sender: nil)
+        planHelper.updateTotalSessionDone(idPlan: idPlanActive)
+        planHelper.checkPlanIsFinished(idPlan: idPlanActive)
     }
     
     @IBAction func Skip(_ sender: Any) {
