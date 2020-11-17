@@ -51,8 +51,22 @@ extension ExerciseSummaryViewController : UITableViewDelegate, UITableViewDataSo
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "summaryTime") as! summaryTime
-            let detikExercise = totalWaktuExercise % 60
-            let menitExercise = totalWaktuExercise / 60
+            var detikExercise : String = ""
+            var menitExercise : String = ""
+            let tempDetikExercise = totalWaktuExercise % 60
+            let tempMenitExercise = totalWaktuExercise / 60
+            if tempDetikExercise < 10 {
+                detikExercise = "0\(tempDetikExercise)"
+                print("ini detik di sum \(detikExercise)")
+            }else {
+                detikExercise = "\(tempDetikExercise)"
+            }
+            
+            if tempMenitExercise < 10 {
+                menitExercise = "0\(tempMenitExercise)"
+            } else {
+                menitExercise = "\(tempDetikExercise)"
+            }
             cell.setView(menitExercise: menitExercise, detikExercise: detikExercise)
             return cell
         } else {

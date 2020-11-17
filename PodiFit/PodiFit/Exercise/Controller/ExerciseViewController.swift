@@ -26,7 +26,6 @@ class ExerciseViewController: UIViewController {
     var countTimeForSummary = 1
     var countTimeAddition = 5
     var timer: Timer?
-    var timerSummary : Timer?
     var isVideo: Int = 2
     var countChosenExercise = 3
     var finishExercise = 0
@@ -42,10 +41,6 @@ class ExerciseViewController: UIViewController {
     
     
     
-    
-    //reference to moc
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,8 +48,7 @@ class ExerciseViewController: UIViewController {
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
         
         setupInit(data: finishExercise)
-        totalWaktuExercise = countChosenExercise * 60
-//        self.timerSummary = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(allSummaryTime), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(allSummaryTime), userInfo: nil, repeats: true)
        
     }
     
@@ -116,7 +110,6 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func previous(_ sender: Any) {
-        totalWaktuExercise += 60
         if finishExercise == (countChosenExercise - 1) {
             exerciseView.lastExercise()
         } else {
@@ -132,7 +125,6 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: Any) {
-        totalWaktuExercise += 60
         print("ini awal next \(finishExercise)")
         if finishExercise == (countChosenExercise - 1) {
             exerciseView.lastExercise()
@@ -151,12 +143,14 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func doneExercise(_ sender: Any) {
+        timer?.invalidate()
         self.performSegue(withIdentifier: "toSummary", sender: nil)
     }
     
     @IBAction func Skip(_ sender: Any) {
-        totalWaktuExercise -= 30
+        
         timer?.invalidate()
+        count = 30
         exerciseView.countDownView(count: "30")
         
         if finishExercise == countChosenExercise {
@@ -197,8 +191,16 @@ class ExerciseViewController: UIViewController {
     @objc func countDownTimer(){
         var countString = String(count)
         if (count == 0 ) {
+            timer?.invalidate()
+            count = 30
+            countString = "3\(countString)"
+            exerciseView.countDownView(count: countString)
+//            exerciseView.countDownView(count: countString)
             setupInit(data: finishExercise)
+            isVideo += 1
         }
+        
+
         
         if (count >= 0) {
             if count >= 10 {
@@ -216,8 +218,17 @@ class ExerciseViewController: UIViewController {
     
     @objc func additionTime(){
         var countStringAdd = String(countTimeAddition)
+        if (countTimeAddition == 0 ) {
+            timer?.invalidate()
+            count = 5
+            countStringAdd = "0\(countStringAdd)"
+            exerciseView.countDownView(count: countStringAdd)
+//            exerciseView.countDownView(count: countString)
+            setupInit(data: finishExercise)
+            isVideo += 1
+        }
         
-        if (count == 0 ) {
+        if (countTimeAddition == 0 ) {
             setupInit(data: finishExercise)
         }
         
