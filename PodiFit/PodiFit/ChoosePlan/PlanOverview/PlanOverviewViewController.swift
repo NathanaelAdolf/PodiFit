@@ -184,7 +184,10 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
             let result = try context.fetch(fetchRequest)
             print("plans = \(plans.count), result = \(result.count)")
             
-            plans.append(contentsOf: result)
+            if plans.count < 2 {
+                plans.append(contentsOf: result)
+            }
+            //plans.append(contentsOf: result)
             
             
             //print(plans)
