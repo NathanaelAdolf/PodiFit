@@ -28,6 +28,8 @@ class ExerciseSummaryViewController: UIViewController {
     
     @IBAction func finishSummary(_ sender: Any) {
         self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
+        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
