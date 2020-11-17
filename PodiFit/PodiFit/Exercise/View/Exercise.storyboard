@@ -135,21 +135,6 @@
             </objects>
             <point key="canvasLocation" x="2207.2463768115945" y="32.8125"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="wSo-KT-e3v">
-            <objects>
-                <viewController id="2Jl-8d-dzJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jvu-xl-wcQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="oPe-hO-J3g"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bad-gi-BO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="401" y="863"/>
-        </scene>
         <!--Badge View Controller-->
         <scene sceneID="h5w-bk-ZcH">
             <objects>
