@@ -93,6 +93,7 @@ class ExerciseView: UIView {
         
         infoNextExerciseLabel?.text = "Next Move"
         nextExerciseLabel?.text = "\(dataExercise[0].namaExercise)"
+        imageThumbnail.image = UIImage(named: dataExercise[0].image)
         print("ini masuk labelnya \(dataExercise[0].namaExercise)")
         nameExerciseLabel?.text = "Thumbnail"
 

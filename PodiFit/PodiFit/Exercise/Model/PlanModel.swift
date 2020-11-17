@@ -18,9 +18,6 @@ class PlanModel: UIViewController {
         super.viewDidLoad()
     }
     
-
-    
-    //
     func fetchExerciseIdByIdPlan(idPlan : Int) -> [Int]? {
         
         var idExercises : [Int]? = []
@@ -116,9 +113,4 @@ class PlanModel: UIViewController {
         return stepExercises
     }
     
-
-    
-    
-    
-
 }

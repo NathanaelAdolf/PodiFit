@@ -124,7 +124,7 @@ class PlanHelper: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Plan")
-        fetchRequest.predicate = NSPredicate(format: "idPlan = %@", idPlan)
+        fetchRequest.predicate = NSPredicate(format: "idPlan = %d", idPlan)
         
         do{
             let fetch = try managedContext.fetch(fetchRequest)
@@ -151,7 +151,7 @@ class PlanHelper: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Plan")
-        fetchRequest.predicate = NSPredicate(format: "idPlan = %@", idPlan)
+        fetchRequest.predicate = NSPredicate(format: "idPlan = %d", idPlan)
         
         if day*duration == sesion
         {

@@ -11,13 +11,9 @@ import WebKit
 import CoreData
 
 
-
-
 var planModelHelpers = PlanModel()
 
 class ExerciseViewController: UIViewController {
-    
-    
 
     @IBOutlet weak var exerciseView : ExerciseView!
     @IBOutlet weak var circularProgressView : CircularProgressView!
@@ -55,24 +51,19 @@ class ExerciseViewController: UIViewController {
     public func setupInit(data : Int) {
         var warningDatas : String = ""
         // ambil plan active
-//        planHelper.retrievePlanData()
-        print("ini idplan \(idPlanActive)")
         self.idExercises = planModelHelpers.fetchExerciseIdByIdPlan(idPlan: idPlanActive)
         
         // ambil exercise detail array [0]
-        print("ini kenapa? \(idExercises![data])")
         self.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data])
         
         if data < (countChosenExercise-1) {
             self.tempExerciseDetailNext = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data+1])
         }
             
-            
         if data != 0 {
             self.tempExerciseDetailPrevious = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data-1])
         }
         
-        print("Nama exercise : \(tempExerciseDetail[0].idExercise)")
         // ambil warning datanya
         self.tempWarningData = planModelHelpers.fetchIdWarning(idExercise: idExercises![data])
         
@@ -100,8 +91,6 @@ class ExerciseViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInformationExercise" {
             let destination = segue.destination as! InformationExerciseController
-            
-            
             destination.tempStep = planModelHelpers.fetchIdSteps(idExercise: tempExerciseDetail[0].idExercise)
             destination.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: tempExerciseDetail[0].idExercise)
             
@@ -142,7 +131,6 @@ class ExerciseViewController: UIViewController {
             print("ini next \(finishExercise)")
         }
         print(totalWaktuExercise)
-        
     }
     
     @IBAction func doneExercise(_ sender: Any) {
@@ -153,28 +141,23 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func Skip(_ sender: Any) {
-        
         timer?.invalidate()
         count = 30
         exerciseView.countDownView(count: "30")
         
         if finishExercise == countChosenExercise {
             exerciseView.lastExercise()
-            
         } else {
             print("ini skip ya \(finishExercise)")
             setupInit(data: finishExercise)
             isVideo += 1
         }
-        
-        
     }
     
     @IBAction func addTimeRest(_ sender: Any) {
-        totalWaktuExercise += 5
+        count += 6
         timer?.invalidate()
-        exerciseView.countDownView(count: "05")
-        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(additionTime), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
         countTimeAddition = 5
     }
     
@@ -188,9 +171,6 @@ class ExerciseViewController: UIViewController {
     @objc func allSummaryTime() {
         var countString = String(countTimeForSummary)
         countTimeForSummary += 1
-        
-        
-
     }
     
     @objc func countDownTimer(){
@@ -200,13 +180,9 @@ class ExerciseViewController: UIViewController {
             count = 30
             countString = "3\(countString)"
             exerciseView.countDownView(count: countString)
-//            exerciseView.countDownView(count: countString)
             setupInit(data: finishExercise)
             isVideo += 1
         }
-        
-
-        
         if (count >= 0) {
             if count >= 10 {
                 exerciseView.countDownView(count: countString)
@@ -221,36 +197,5 @@ class ExerciseViewController: UIViewController {
         }
     }
     
-    @objc func additionTime(){
-        var countStringAdd = String(countTimeAddition)
-        if (countTimeAddition == 0 ) {
-            timer?.invalidate()
-            count = 5
-            countStringAdd = "0\(countStringAdd)"
-            exerciseView.countDownView(count: countStringAdd)
-//            exerciseView.countDownView(count: countString)
-            setupInit(data: finishExercise)
-            isVideo += 1
-        }
-        
-        if (countTimeAddition == 0 ) {
-            setupInit(data: finishExercise)
-        }
-        
-        if (countTimeAddition >= 0) {
-            if countTimeAddition >= 10 {
-                exerciseView.countDownView(count: countStringAdd)
-                
-                countTimeAddition -= 1
-                print(countStringAdd)
-            } else {
-                countStringAdd = "0\(countStringAdd)"
-                exerciseView.countDownView(count: countStringAdd)
-                countTimeAddition -= 1
-            }
-        }
-
-        
-    }
     
 }
