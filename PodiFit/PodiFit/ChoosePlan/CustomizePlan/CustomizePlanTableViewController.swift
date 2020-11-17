@@ -15,7 +15,6 @@ protocol UnwindDelegator {
 
 class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
     
-
     var allExercise = [ExerciseModel]()
     var arrSelectedExercise = [Int]()
     var tempSelectedExercise: [Int] = []
