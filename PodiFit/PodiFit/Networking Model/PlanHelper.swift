@@ -134,8 +134,8 @@ class PlanHelper: UIViewController {
             print("update total session")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
     }
@@ -163,8 +163,8 @@ class PlanHelper: UIViewController {
                 print("plan finished")
               
                 try managedContext.save()
-            }catch let err{
-                print(err)
+            }catch {
+                print("failed")
             }
         }
       
@@ -185,8 +185,8 @@ class PlanHelper: UIViewController {
             dataToUpdate.setValue(isPlanDone, forKey: "isPlanDone")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
     }

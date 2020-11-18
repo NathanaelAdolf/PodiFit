@@ -61,9 +61,9 @@ class DifficultyHelper: UIViewController {
               
              try context.save()
              
-          } catch let error as NSError {
+          } catch let _ as NSError {
              
-              print("Gagal save context \(error), \(error.userInfo)")
+              print("Gagal save context")
           }
         
         return

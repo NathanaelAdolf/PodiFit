@@ -136,9 +136,9 @@ class NotificationHelper: UIViewController {
             
             try context.save()
             message = "00"
-        } catch let error as NSError {
+        } catch let _ as NSError {
             
-            print("Gagal save context \(error), \(error.userInfo)")
+            print("Gagal save context")
             message = "01"
         }
         
@@ -197,8 +197,8 @@ class NotificationHelper: UIViewController {
             managedContext.delete(dataToDelete)
             
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
     }
     
@@ -227,8 +227,8 @@ class NotificationHelper: UIViewController {
             dataToUpdate.setValue(isReminderActive, forKey: "isActive")
             
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
         return "00"

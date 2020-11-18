@@ -53,7 +53,7 @@ class BadgesHelper: UIViewController {
         var tempImageData = [String]()
         var tempListCompletedPlan = [CompletedPlanModel]()
         tempListCompletedPlan = planHelper.retrieveCompletedPlanData().tempModel
-        var totalAllSessionDone = planHelper.retrieveCompletedPlanData().totalSession
+        let totalAllSessionDone = planHelper.retrieveCompletedPlanData().totalSession
         
             guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return (tempDetailData,tempImageData)}
                      let context = appDel.persistentContainer.viewContext
@@ -220,8 +220,8 @@ class BadgesHelper: UIViewController {
             dataToUpdate.setValue(isBadgesDone, forKey: "completePlanBadge")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
     }
@@ -241,8 +241,8 @@ class BadgesHelper: UIViewController {
             dataToUpdate.setValue(isBadgesDone, forKey: "customExerciseBadge")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
     }
@@ -262,8 +262,8 @@ class BadgesHelper: UIViewController {
             dataToUpdate.setValue(isBadgesDone, forKey: "exerciseAddictBadge")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
     }
@@ -283,8 +283,8 @@ class BadgesHelper: UIViewController {
             dataToUpdate.setValue(isBadgesDone, forKey: "exerciseMasterBadge")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
     }
@@ -304,11 +304,42 @@ class BadgesHelper: UIViewController {
             dataToUpdate.setValue(isBadgesDone, forKey: "firstTimeBadge")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
         }
-        
     }
+    
+    func checkFirstTimeExercise()->Bool
+    {
+        var isFirstTime: Bool = false
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return isFirstTime }
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Badges")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        if data.value(forKey: "firstTimeBadge")as! Bool == true {
+                            isFirstTime = true
+                        }
+                        else
+                        {
+                            isFirstTime = false
+                        }
+                        
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
+        
+        return isFirstTime
+    }
+    
+    
     
     func updateReminderBadgeIntoTrue(isBadgesDone: Bool){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -325,8 +356,8 @@ class BadgesHelper: UIViewController {
             dataToUpdate.setValue(isBadgesDone, forKey: "reminderBadge")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("Failed")
         }
         
     }
@@ -407,8 +438,8 @@ class BadgesHelper: UIViewController {
             managedContext.delete(dataToDelete)
             
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
     }
 }
