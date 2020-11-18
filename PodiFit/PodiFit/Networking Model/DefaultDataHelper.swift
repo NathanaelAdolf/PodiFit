@@ -152,7 +152,7 @@ class DefaultDataHelper: UIViewController {
         
         let step13 = ExerciseSteps(context: self.context)
         step13.idStep = 13
-        step13.steps = "With your right food take a wide step out to the right"
+        step13.steps = "With your right foot take a wide step out to the right"
         
         let step14 = ExerciseSteps(context: self.context)
         step14.idStep = 14
