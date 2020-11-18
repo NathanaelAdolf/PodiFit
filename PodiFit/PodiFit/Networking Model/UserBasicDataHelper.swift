@@ -38,9 +38,9 @@ class UserBasicDataHelper: UIViewController {
               
              try context.save()
             
-          } catch let error as NSError {
+          } catch let _ as NSError {
              
-              print("Gagal save context \(error), \(error.userInfo)")
+              print("Gagal save context")
           }
     
     }
@@ -129,8 +129,8 @@ class UserBasicDataHelper: UIViewController {
             dataToUpdate.setValue(weight, forKey: "weight")
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
         
         return "00"
@@ -153,8 +153,8 @@ class UserBasicDataHelper: UIViewController {
          
           
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch{
+            print("failed")
         }
 
     }
@@ -172,8 +172,8 @@ class UserBasicDataHelper: UIViewController {
             managedContext.delete(dataToDelete)
             
             try managedContext.save()
-        }catch let err{
-            print(err)
+        }catch {
+            print("failed")
         }
     }
 
