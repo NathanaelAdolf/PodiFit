@@ -14,8 +14,16 @@ class ListPlanVC: UIViewController {
     
     let exerciseCount = activePlanHelper.fetchSelectedExercise(idPlan: 1).count
 
+    var desc: String!
+    var level: String!
+    var duration: String!
+    var exercise: String!
    
     @IBOutlet weak var tableViewUI: UITableView!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var exerciseLabel: UILabel!
     
     var titlePlan: String!
     var idPlan: Int!
@@ -45,6 +53,11 @@ class ListPlanVC: UIViewController {
     private func setupUI() {
         self.navigationItem.title = titlePlan
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        
+        descLabel.text = desc
+        levelLabel.text = level
+        durationLabel.text = "\(duration!) second"
+        exerciseLabel.text = "\(exercise!) moves"
     }
 
     

@@ -37,7 +37,7 @@ class ExerciseTableViewCell: UITableViewCell {
     }
     
     func parseData(data: ExerciseModel) {
-        exerciseName.text = data.namaExercise
+        exerciseName.text = data.namaExercise.uppercased()
         exerciseImage.image = UIImage.init(named: data.image)
     }
     

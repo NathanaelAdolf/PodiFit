@@ -230,6 +230,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="descLabel" destination="zG5-ip-mOZ" id="yfT-th-xic"/>
+                        <outlet property="durationLabel" destination="YOh-E9-3U0" id="Cxi-l3-DWf"/>
+                        <outlet property="exerciseLabel" destination="Dii-lH-fGW" id="Ln2-If-xIG"/>
+                        <outlet property="levelLabel" destination="30y-BD-FHJ" id="xPj-07-Ch0"/>
                         <outlet property="progressExercise" destination="LKI-bo-DaC" id="xmM-k8-s7g"/>
                         <outlet property="progressExerciseLabel" destination="SJv-NU-3cp" id="nF3-Hg-YrL"/>
                         <outlet property="tableViewUI" destination="YEY-vx-igb" id="tmF-4Z-9p0"/>
@@ -428,6 +432,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="descLabel" destination="9vV-2i-E00" id="Ju0-9j-9va"/>
+                        <outlet property="durationLabel" destination="CM9-dt-2Xq" id="7gm-VI-doB"/>
+                        <outlet property="exerciseLabel" destination="NIw-f2-gGv" id="DTH-oe-wWW"/>
+                        <outlet property="levelLabel" destination="yvg-wA-dD2" id="DYH-wn-kiK"/>
                         <outlet property="tableViewUI" destination="Hur-3X-a2i" id="75l-kO-4bN"/>
                     </connections>
                 </viewController>
@@ -464,7 +472,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ccz-h4-hOk"/>
+        <segue reference="tsF-8O-Av0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.plaintext.fill" catalog="system" width="115" height="128"/>

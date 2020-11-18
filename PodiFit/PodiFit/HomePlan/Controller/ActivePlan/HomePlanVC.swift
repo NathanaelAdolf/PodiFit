@@ -20,6 +20,10 @@ class HomePlanVC: UIViewController {
     
     var titlePlan: String = ""
     var idPlan: Int!
+    var desc: String!
+    var level: String!
+    var duration: String!
+    var exercise: String!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -59,11 +63,11 @@ class HomePlanVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "addNewPlan" {
-            let dest = segue.destination as! UINavigationController
+            let dest = segue.destination as! PlanOverviewViewController
             
-            let destVC = dest.topViewController as! PlanOverviewViewController
+            //let destVC = dest.topViewController as! PlanOverviewViewController
             
-            destVC.checkSender = 1
+            dest.checkSender = 1
         }
         
         if segue.identifier == "viewExercisesSegue" {
@@ -71,6 +75,11 @@ class HomePlanVC: UIViewController {
             
             dest.titlePlan = self.titlePlan
             dest.idPlan = self.idPlan
+            
+            dest.desc = self.desc
+            dest.level = self.level
+            dest.duration = self.duration
+            dest.exercise = self.exercise
         }
     }
 }
@@ -91,6 +100,10 @@ extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         titlePlan = plansModel[indexPath.row].namaPlan!
         idPlan = Int(plansModel[indexPath.row].idPlan)
+        desc = plansModel[indexPath.row].desc.unsafelyUnwrapped
+        level = difficultyHelper.checkDifficultyNameById(idDifficulty: Int(plansModel[indexPath.row].idDifficulty))
+        duration = "\(plansModel[indexPath.row].chosenExercise!.count*30)"
+        exercise = "\(plansModel[indexPath.row].chosenExercise!.count)"
         
         performSegue(withIdentifier: "viewExercisesSegue", sender: self)
     }

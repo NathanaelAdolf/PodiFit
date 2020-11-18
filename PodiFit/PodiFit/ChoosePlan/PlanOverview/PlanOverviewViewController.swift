@@ -57,7 +57,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //deleteAllDummy(entity: "TestEntity")
         
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
         
         //notifHelper.configureUserNotificationCenter()
         
@@ -122,6 +122,9 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         if segue.identifier == "viewPlanSegue"{
             let dest = segue.destination as! ChoosePlanViewController
             
+            print("jumlah hari assessment = \(jumlahHari)")
+            
+            dest.selectedJumlahHari = self.jumlahHari
             dest.selectedIndexPlan = self.selectedIndexPlan
         }
     }
