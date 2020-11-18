@@ -122,6 +122,9 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         if segue.identifier == "viewPlanSegue"{
             let dest = segue.destination as! ChoosePlanViewController
             
+            print("jumlah hari assessment = \(jumlahHari)")
+            
+            dest.selectedJumlahHari = self.jumlahHari
             dest.selectedIndexPlan = self.selectedIndexPlan
         }
     }
