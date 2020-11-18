@@ -19,10 +19,10 @@ class DefaultDataHelper: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func storeDefaultPlanData()
+    func storeDefaultPlanData(jumlahHari: Int)
     {
-        planHelper.storeToPlanData(idPlan: 1, namaPlan: "Beginner Leg", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [1,2,3,4,5], isPlanDone: false, description: "This plan intended for beginners who want to begin their leg workout")
-        planHelper.storeToPlanData(idPlan: 2, namaPlan: "Intermediate Leg", idDifficulty: 2, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: 4, totalSessionDone: 0, choosenExercise: [11,12,13,14,15], isPlanDone: false, description: "This plan intended for intermediate person that already have experience in leg workout before")
+        planHelper.storeToPlanData(idPlan: 1, namaPlan: "Beginner Leg", idDifficulty: 1, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: jumlahHari, totalSessionDone: 0, choosenExercise: [1,2,3,4,5], isPlanDone: false, description: "This plan intended for beginners who want to begin their leg workout")
+        planHelper.storeToPlanData(idPlan: 2, namaPlan: "Intermediate Leg", idDifficulty: 2, durasiPlan: 4, durasiSessionDay: 30, jumlahHari: jumlahHari, totalSessionDone: 0, choosenExercise: [11,12,13,14,15], isPlanDone: false, description: "This plan intended for intermediate person that already have experience in leg workout before")
     }
     
     func storeDefaultDifficulty()

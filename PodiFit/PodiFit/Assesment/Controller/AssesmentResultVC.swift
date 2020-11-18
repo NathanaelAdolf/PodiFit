@@ -38,7 +38,7 @@ class AssesmentResultVC: UIViewController {
         UserDefaults.standard.set(true, forKey: "first")
         UserDefaults.standard.synchronize()
         
-        insertData.storeDefaultPlanData()
+        insertData.storeDefaultPlanData(jumlahHari: myTimes)
         insertData.storeDefaultDifficulty()
         insertData.storeDefaultExerciseAndExerciseStepsData()
         
