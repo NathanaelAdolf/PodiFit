@@ -34,6 +34,8 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     var selectedIndexPlan: Int!
     var arrSelectedExercise = [Int]()
     var difficulty = Int()
+    
+    var selectedJumlahHari = 0
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -214,8 +216,15 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
             
             dest.selectedIndexPlan = self.selectedIndexPlan
             arrSelectedExercise = planData[selectedIndexPlan-1].chosenExercise!
-            dest.arrSelectedExercise = self.arrSelectedExercise
+            
             dest.selectedDifficulty = self.difficulty
+            
+            if newExerciseArray.isEmpty{
+                dest.arrSelectedExercise = self.arrSelectedExercise
+            }
+            else{
+                dest.arrSelectedExercise = newExerciseArray
+            }
         }
     }
     
@@ -279,6 +288,10 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         newExerciseArray = sourceViewController.tempSelectedExercise
         
         print("new exercise array = \(newExerciseArray)")
+        
+        if newExerciseData.isEmpty == false{
+            newExerciseData = []
+        }
         
         for i in 0...(newExerciseArray.count - 1){
             //print("exerciseArray: \(i)")

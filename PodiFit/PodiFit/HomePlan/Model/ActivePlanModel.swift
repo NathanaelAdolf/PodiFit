@@ -220,7 +220,7 @@ class ActivePlanModel: UIViewController {
             
             // Loop data Plan into PlansModel
             result.forEach { (plan) in
-                sumDay = plan.value(forKey: "durasiPlan") as! Int
+                sumDay = plan.value(forKey: "jumlahHari") as! Int
             }
             
             for i in 1...sumDay {
