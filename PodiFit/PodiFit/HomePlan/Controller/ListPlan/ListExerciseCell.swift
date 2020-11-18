@@ -19,6 +19,7 @@ class ListExerciseCell: UITableViewCell {
     }
     
     func parseData(data: ExerciseModel) {
+        exerciseImage.image = UIImage(named: "\(data.image)")
         exerciseNameLabel.text = data.namaExercise
     }
 
