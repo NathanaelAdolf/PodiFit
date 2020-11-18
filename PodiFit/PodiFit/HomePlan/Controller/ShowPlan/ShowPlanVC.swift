@@ -18,10 +18,18 @@ class ShowPlanVC: UIViewController {
     var idPlan: Int!
     var day: [Int]!
     var weekArr = [1, 2, 3, 4]
+    var desc: String!
+    var level: String!
+    var duration: String!
+    var exercise: String!
     
     @IBOutlet weak var tableViewUI: UITableView!
     @IBOutlet weak var progressExercise: UIProgressView!
     @IBOutlet weak var progressExerciseLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var exerciseLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +61,22 @@ class ShowPlanVC: UIViewController {
         self.navigationItem.title = titlePlan
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.tabBarController?.tabBar.isHidden = true
+        
+        descLabel.text = desc
+        levelLabel.text = level
+        durationLabel.text = "\(duration!) second"
+        exerciseLabel.text = "\(exercise!) moves"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let target = segue.destination as? ListPlanVC {
             target.titlePlan = self.titlePlan
             target.idPlan = self.idPlan
+            
+            target.desc = self.desc
+            target.level = self.level
+            target.duration = self.duration
+            target.exercise = self.exercise
         }
         if let target = segue.destination as? ExerciseViewController {
             target.idPlanActive = self.idPlan
