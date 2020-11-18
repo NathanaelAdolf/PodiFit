@@ -12,7 +12,7 @@ class ListPlanVC: UIViewController {
     
     var exercisesModel = [ExerciseModel]()
     
-    let exerciseCount = activePlanHelper.fetchSelectedExercise(idPlan: 1).count
+    var exerciseCount: Int!
 
     var desc: String!
     var level: String!
@@ -39,6 +39,7 @@ class ListPlanVC: UIViewController {
     
     private func setupData() {
         self.exercisesModel = activePlanHelper.fetchSelectedExercise(idPlan: idPlan)
+        self.exerciseCount = activePlanHelper.fetchSelectedExercise(idPlan: idPlan).count
     }
     
     private func setupDelegate() {
