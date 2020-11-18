@@ -97,21 +97,22 @@ class PlanModel: UIViewController {
             for exercise in exercises {
                 let tempStep : Set<ExerciseSteps> = exercise.steps as! Set<ExerciseSteps>
                 let sequence = exercise.sequence
-                let sequenceArr = sequence?.split(separator: "|")
-                                let arrTempStep = Array(tempStep)
+                guard let sequenceArr = sequence?.components(separatedBy: "|") else {return [StepModel]()}
+                let arrTempStep = Array(tempStep)
                 
                 var dictionaryStep = [Int : String]()
                 
                 arrTempStep.forEach { (arr) in
                     dictionaryStep[arr.value(forKey: "idStep") as! Int] = arr.value(forKey: "steps") as! String
                     
-                    
+            
                 }
+                print(sequence)
                 print("ini ya \(sequenceArr) \(dictionaryStep.count)")
                 
-//                sequenceArr.forEach { (idStep) in
-//                    stepExercises.append(StepModel(idStep: idStep, steps: dictionaryStep[idStep]))
-//                }
+                for idStep in sequenceArr {
+                    stepExercises.append(StepModel(idStep: Int(idStep)!, steps: dictionaryStep[Int(idStep)!]!))
+                }
                 
 
                 
