@@ -90,25 +90,37 @@ class PlanModel: UIViewController {
     func fetchIdSteps(idExercise: Int) -> [StepModel]{
         var stepExercises = [StepModel]()
         let fetchRequest = NSFetchRequest<Exercise>(entityName: "Exercise")
-        print("ini \(idExercise)")
         fetchRequest.predicate = NSPredicate(format: "idExercise == %@", "\(idExercise)")
         
         do {
             let exercises = try context.fetch(fetchRequest)
             for exercise in exercises {
                 let tempStep : Set<ExerciseSteps> = exercise.steps as! Set<ExerciseSteps>
+                let sequence = exercise.sequence
+                guard let sequenceArr = sequence?.components(separatedBy: "|") else {return [StepModel]()}
                 let arrTempStep = Array(tempStep)
-
+                
+                var dictionaryStep = [Int : String]()
+                
                 arrTempStep.forEach { (arr) in
-                    stepExercises.append(
-                        StepModel(idStep: arr.value(forKey: "idStep") as! Int,
-                                  steps: arr.value(forKey: "steps") as! String)
-                    )
+                    dictionaryStep[arr.value(forKey: "idStep") as! Int] = arr.value(forKey: "steps") as! String
+                    
+            
                 }
+                print(sequence)
+                print("ini ya \(sequenceArr) \(dictionaryStep.count)")
+                
+                for idStep in sequenceArr {
+                    stepExercises.append(StepModel(idStep: Int(idStep)!, steps: dictionaryStep[Int(idStep)!]!))
+                }
+                
+
+                
             }
         } catch  {
             print("error")
         }
+        
         print("ini step \(stepExercises)")
         return stepExercises
     }
