@@ -57,7 +57,13 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //deleteAllDummy(entity: "TestEntity")
         
-        self.navigationController?.navigationBar.isHidden = false
+        if checkSender == 0{
+            self.navigationController?.navigationBar.isHidden = true
+        }
+        else{
+            self.navigationController?.navigationBar.isHidden = false
+        }
+        
         
         //notifHelper.configureUserNotificationCenter()
         

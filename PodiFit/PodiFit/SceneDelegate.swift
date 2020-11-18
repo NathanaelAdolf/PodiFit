@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let defaults: Bool = UserDefaults.standard.bool(forKey: "first")
         print(defaults)
         if !defaults {
-            let vc1 = assesmentStoryboard.instantiateInitialViewController() as? AssesmentStep1VC
+            let vc1 = assesmentStoryboard.instantiateInitialViewController() as? UINavigationController
             window?.rootViewController = vc1
             
         }

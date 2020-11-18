@@ -49,7 +49,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         //        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "plan_bg"), for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "plan_bg"), for: .default)
         self.tableView.backgroundColor = UIColor.clear
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         self.navigationController?.navigationBar.isHidden = false

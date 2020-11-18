@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fa7-85-uUA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fa7-85-uUA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,9 +12,9 @@
         <!--Plan Details-->
         <scene sceneID="oei-L1-DQ9">
             <objects>
-                <tableViewController id="g25-Qo-Lb3" customClass="ChoosePlanViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="g25-Qo-Lb3" customClass="ChoosePlanViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EFO-PC-jlp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <connections>
@@ -23,6 +23,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Plan Details" id="d1H-W0-MeH"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="awM-t3-TVk" kind="show" identifier="customPlanSegue" id="dw1-qk-Dbb"/>
                         <segue destination="K6g-nN-z8j" kind="show" identifier="mainSegue" id="msd-XJ-idn"/>
@@ -120,6 +121,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="mdS-jn-rrR"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="GTO-mo-89o" id="OPE-nN-VFQ"/>
                         <segue destination="g25-Qo-Lb3" kind="show" identifier="viewPlanSegue" id="uob-yW-XLh"/>
@@ -132,9 +134,9 @@
         <!--Customize Exercise-->
         <scene sceneID="VNn-86-U54">
             <objects>
-                <tableViewController id="awM-t3-TVk" customClass="CustomizePlanTableViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="awM-t3-TVk" customClass="CustomizePlanTableViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Vk-8U-N65">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <connections>
@@ -143,6 +145,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Customize Exercise" id="vGT-hZ-MC8"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="paD-IO-2xN" kind="presentation" identifier="modalPlanSegue" id="5I7-Kh-Cw7"/>
                         <segue destination="Bqr-qe-mMS" kind="unwind" identifier="unwindToOverview" unwindAction="unwindToCustomizePlan:" id="xaM-05-4Hz"/>

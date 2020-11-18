@@ -22,6 +22,8 @@ class AssesmentStep1VC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         setupUI()
         setupTextFields()
     }
@@ -113,6 +115,8 @@ class AssesmentStep1VC: UIViewController{
         heightTextField.layer.borderColor = Colors.yellowColor.cgColor
         heightTextField.layer.cornerRadius = 10
         heightTextField.keyboardType = UIKeyboardType.numberPad
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func showAlert(messageToDisplay: String) {
