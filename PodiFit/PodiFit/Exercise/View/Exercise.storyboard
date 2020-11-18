@@ -332,6 +332,9 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                             <state key="normal" title="😫"/>
+                                                            <connections>
+                                                                <action selector="tiredBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="nw8-5q-B40"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vy-un-5LW">
                                                             <rect key="frame" x="126" y="69" width="122" height="118"/>
