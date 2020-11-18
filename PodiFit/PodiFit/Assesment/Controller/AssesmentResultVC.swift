@@ -48,9 +48,11 @@ class AssesmentResultVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let target = segue.destination as? PlanOverviewViewController {
-            target.jumlahHari = myTimes
-        }
+//        if segue.identifier == "SeeMyPlanSegue"{
+//            let target = segue.destination as! PlanOverviewViewController
+//            target.jumlahHari = myTimes
+//
+//        }
     }
     
     func setupData() {
