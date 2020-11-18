@@ -59,11 +59,11 @@ class HomePlanVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "addNewPlan" {
-            let dest = segue.destination as! UINavigationController
+            let dest = segue.destination as! PlanOverviewViewController
             
-            let destVC = dest.topViewController as! PlanOverviewViewController
+            //let destVC = dest.topViewController as! PlanOverviewViewController
             
-            destVC.checkSender = 1
+            dest.checkSender = 1
         }
         
         if segue.identifier == "viewExercisesSegue" {
