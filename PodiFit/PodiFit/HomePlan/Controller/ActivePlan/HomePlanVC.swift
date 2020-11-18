@@ -24,6 +24,7 @@ class HomePlanVC: UIViewController {
     var level: String!
     var duration: String!
     var exercise: String!
+    var progress: Float!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -80,6 +81,7 @@ class HomePlanVC: UIViewController {
             dest.level = self.level
             dest.duration = self.duration
             dest.exercise = self.exercise
+            dest.progress = self.progress
         }
     }
 }
@@ -104,6 +106,7 @@ extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         level = difficultyHelper.checkDifficultyNameById(idDifficulty: Int(plansModel[indexPath.row].idDifficulty))
         duration = "\(plansModel[indexPath.row].chosenExercise!.count*30)"
         exercise = "\(plansModel[indexPath.row].chosenExercise!.count)"
+        progress = Float(Float(plansModel[indexPath.row].totalSessionDone)/(Float(plansModel[indexPath.row].durasiPlan)*Float(plansModel[indexPath.row].jumlahHari)))
         
         performSegue(withIdentifier: "viewExercisesSegue", sender: self)
     }

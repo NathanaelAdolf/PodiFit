@@ -68,7 +68,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         //notifHelper.configureUserNotificationCenter()
         
 
-        tableView.rowHeight = 220.0
+        tableView.rowHeight = 200.0
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

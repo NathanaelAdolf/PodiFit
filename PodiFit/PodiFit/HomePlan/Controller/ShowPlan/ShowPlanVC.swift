@@ -22,6 +22,7 @@ class ShowPlanVC: UIViewController {
     var level: String!
     var duration: String!
     var exercise: String!
+    var progress: Float!
     
     @IBOutlet weak var tableViewUI: UITableView!
     @IBOutlet weak var progressExercise: UIProgressView!
@@ -66,6 +67,8 @@ class ShowPlanVC: UIViewController {
         levelLabel.text = level
         durationLabel.text = "\(duration!) second"
         exerciseLabel.text = "\(exercise!) moves"
+        progressExercise.progress = progress
+        progressExerciseLabel.text = "\(progress*100)%"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

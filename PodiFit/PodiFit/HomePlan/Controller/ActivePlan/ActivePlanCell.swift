@@ -21,8 +21,6 @@ class ActivePlanCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        progressPlan.progress = 1
     }
     
     func parseData(data: PlansModel) {
@@ -32,7 +30,7 @@ class ActivePlanCell: UICollectionViewCell {
         exercisePlanLabel.text = "\(data.chosenExercise!.count) exercises"
         equipmentPlanLabel.text = "No Equipment"
         progressPlan.progress = Float(Float(data.totalSessionDone)/(Float(data.durasiPlan)*Float(data.jumlahHari)))
-        progressPlanLabel.text = "\(data.totalSessionDone/data.durasiPlan*100)%"
+        progressPlanLabel.text = "\(Float(Float(data.totalSessionDone)/(Float(data.durasiPlan)*Float(data.jumlahHari)))*100)%"
     }
 
 }
