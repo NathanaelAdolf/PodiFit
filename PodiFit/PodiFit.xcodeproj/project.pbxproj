@@ -26,6 +26,8 @@
 		2FF2277D2554CA9300D494C4 /* HomeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D148C8C254140CF00571419 /* HomeProfileViewController.swift */; };
 		2FF227822554CABC00D494C4 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF227812554CABC00D494C4 /* NotificationHelper.swift */; };
 		4801DAE92562000E00C5F42D /* WarningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4801DAE82562000E00C5F42D /* WarningModel.swift */; };
+		48300FFF25650A6100AEF06E /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48300FFD25650A6100AEF06E /* Exercise+CoreDataClass.swift */; };
+		4830100025650A6100AEF06E /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48300FFE25650A6100AEF06E /* Exercise+CoreDataProperties.swift */; };
 		48436778255E5A3C0063EB21 /* StepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48436777255E5A3C0063EB21 /* StepModel.swift */; };
 		484A07B9255B84D3006A88CC /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A07B8255B84D3006A88CC /* EmoticonTableViewCell.swift */; };
 		487B519725548C0700091ABB /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487B519625548C0700091ABB /* SummaryTableViewCell.swift */; };
@@ -97,8 +99,6 @@
 		AB46E8F2255CDE3A0028A983 /* Difficulty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E2255CDE3A0028A983 /* Difficulty+CoreDataProperties.swift */; };
 		AB46E8F3255CDE3A0028A983 /* Badges+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E3255CDE3A0028A983 /* Badges+CoreDataClass.swift */; };
 		AB46E8F4255CDE3A0028A983 /* Badges+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E4255CDE3A0028A983 /* Badges+CoreDataProperties.swift */; };
-		AB46E8F5255CDE3A0028A983 /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E5255CDE3A0028A983 /* Exercise+CoreDataClass.swift */; };
-		AB46E8F6255CDE3A0028A983 /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E6255CDE3A0028A983 /* Exercise+CoreDataProperties.swift */; };
 		AB46E8F7255CDE3A0028A983 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E7255CDE3A0028A983 /* Plan+CoreDataClass.swift */; };
 		AB46E8F8255CDE3A0028A983 /* Plan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E8255CDE3A0028A983 /* Plan+CoreDataProperties.swift */; };
 		AB46E8F9255CDE3A0028A983 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB46E8E9255CDE3A0028A983 /* User+CoreDataClass.swift */; };
@@ -166,6 +166,8 @@
 		2FEA2597255D6F27000EB282 /* PlansModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansModel.swift; sourceTree = "<group>"; };
 		2FF227812554CABC00D494C4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		4801DAE82562000E00C5F42D /* WarningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningModel.swift; sourceTree = "<group>"; };
+		48300FFD25650A6100AEF06E /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
+		48300FFE25650A6100AEF06E /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		48436777255E5A3C0063EB21 /* StepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepModel.swift; sourceTree = "<group>"; };
 		484A07B8255B84D3006A88CC /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
 		487B519625548C0700091ABB /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,8 +247,6 @@
 		AB46E8E2255CDE3A0028A983 /* Difficulty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Difficulty+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB46E8E3255CDE3A0028A983 /* Badges+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badges+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB46E8E4255CDE3A0028A983 /* Badges+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badges+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		AB46E8E5255CDE3A0028A983 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AB46E8E6255CDE3A0028A983 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB46E8E7255CDE3A0028A983 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB46E8E8255CDE3A0028A983 /* Plan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB46E8E9255CDE3A0028A983 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -587,6 +587,8 @@
 		8D13C101254035D8002195C9 /* Networking Model */ = {
 			isa = PBXGroup;
 			children = (
+				48300FFD25650A6100AEF06E /* Exercise+CoreDataClass.swift */,
+				48300FFE25650A6100AEF06E /* Exercise+CoreDataProperties.swift */,
 				AB46E8DD255CDE3A0028A983 /* Reminder+CoreDataClass.swift */,
 				AB46E8DE255CDE3A0028A983 /* Reminder+CoreDataProperties.swift */,
 				AB46E8DF255CDE3A0028A983 /* ExerciseSteps+CoreDataClass.swift */,
@@ -595,8 +597,6 @@
 				AB46E8E2255CDE3A0028A983 /* Difficulty+CoreDataProperties.swift */,
 				AB46E8E3255CDE3A0028A983 /* Badges+CoreDataClass.swift */,
 				AB46E8E4255CDE3A0028A983 /* Badges+CoreDataProperties.swift */,
-				AB46E8E5255CDE3A0028A983 /* Exercise+CoreDataClass.swift */,
-				AB46E8E6255CDE3A0028A983 /* Exercise+CoreDataProperties.swift */,
 				AB46E8E7255CDE3A0028A983 /* Plan+CoreDataClass.swift */,
 				AB46E8E8255CDE3A0028A983 /* Plan+CoreDataProperties.swift */,
 				AB46E8E9255CDE3A0028A983 /* User+CoreDataClass.swift */,
@@ -953,7 +953,6 @@
 				48E2D9962551D21600F2EF03 /* PlanModel.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				2F57CE312551A32000EB914E /* HomePlanVC.swift in Sources */,
-				AB46E8F6255CDE3A0028A983 /* Exercise+CoreDataProperties.swift in Sources */,
 				AB46E8F1255CDE3A0028A983 /* Difficulty+CoreDataClass.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				2F9C0F14255626D900D87F01 /* ShowPlanVC.swift in Sources */,
@@ -1009,7 +1008,6 @@
 				8D13C0BA25402997002195C9 /* ViewController.swift in Sources */,
 				8D13C0B625402997002195C9 /* AppDelegate.swift in Sources */,
 				AB46E8F0255CDE3A0028A983 /* ExerciseSteps+CoreDataProperties.swift in Sources */,
-				AB46E8F5255CDE3A0028A983 /* Exercise+CoreDataClass.swift in Sources */,
 				8DB64609254BA6F40072AC5C /* CompletedPlanDetailsViewController.swift in Sources */,
 				8D13C0B825402997002195C9 /* SceneDelegate.swift in Sources */,
 				48E8EFCF254277D800783427 /* ExerciseView.swift in Sources */,
@@ -1018,6 +1016,7 @@
 				2F0BEF0A255178540017103D /* AssesmentResultVC.swift in Sources */,
 				8DC71C4B254D078600AD6C2B /* Colors.swift in Sources */,
 				ABFB9A412550011A00B5E96A /* CustomizePlanTableViewCell.swift in Sources */,
+				48300FFF25650A6100AEF06E /* Exercise+CoreDataClass.swift in Sources */,
 				8DC063ED2542699B00D7F8AD /* CompletedPlanTableViewCell.swift in Sources */,
 				2F57CE4E2551B57B00EB914E /* ActivePlanCell.swift in Sources */,
 				48E854FA254C2DD3002DAC0B /* InformationExerciseController.swift in Sources */,
@@ -1027,6 +1026,7 @@
 				AB88B9532551486400AFF3BA /* ModalPlanViewController.swift in Sources */,
 				8DBF07FA254E655100AACB19 /* DetailBadgesModel.swift in Sources */,
 				8DBF07F5254E64AA00AACB19 /* DetailBadgeTableViewCell.swift in Sources */,
+				4830100025650A6100AEF06E /* Exercise+CoreDataProperties.swift in Sources */,
 				8D4BE0C7255CE58F009F4C23 /* DefaultDataHelper.swift in Sources */,
 				ABFB9A3D2550011A00B5E96A /* MovementCollectionViewCell.swift in Sources */,
 				AB46E8FB255CDE3A0028A983 /* Warning+CoreDataClass.swift in Sources */,

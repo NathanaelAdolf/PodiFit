@@ -43,6 +43,7 @@ class DefaultDataHelper: UIViewController {
         newExercise1.videoUrl = "https://www.youtube.com/embed/TPa6gvdpi_A?playsinline=1"
         newExercise1.image = "standing calf raise"
         newExercise1.warningData = [1]
+        newExercise1.sequence = "1|2|3"
         
         let step = ExerciseSteps(context: self.context)
         step.idStep = 1
@@ -74,6 +75,7 @@ class DefaultDataHelper: UIViewController {
         newExercise2.image = "lunge"
         newExercise2.videoUrl = "https://www.youtube.com/embed/sIy8c-172-M?playsinline=1"
         newExercise2.warningData = [2]
+        newExercise2.sequence = "4|5|6|7|8"
         
         let step4 = ExerciseSteps(context: self.context)
         step4.idStep = 4
@@ -111,6 +113,8 @@ class DefaultDataHelper: UIViewController {
         newExercise3.image = "in and out squat jumps"
         newExercise3.videoUrl = "https://www.youtube.com/embed/FAgNMPeA6Pw?playsinline=1"
         newExercise3.warningData = [3]
+        newExercise3.sequence = "9|10|11|12"
+        
         
         let step9 = ExerciseSteps(context: self.context)
         step9.idStep = 9
@@ -144,6 +148,7 @@ class DefaultDataHelper: UIViewController {
         newExercise4.image = "side step squat"
         newExercise4.videoUrl = "https://www.youtube.com/embed/VHnHsB8Cyhs?playsinline=1"
         newExercise4.warningData = [4]
+        newExercise4.sequence = "1|13|14|15|8"
         
         let step13 = ExerciseSteps(context: self.context)
         step13.idStep = 13
@@ -173,6 +178,7 @@ class DefaultDataHelper: UIViewController {
         newExercise5.image = "lateral lunge"
         newExercise5.videoUrl = "https://www.youtube.com/embed/Vd8lrUvoujE?playsinline=1"
         newExercise5.warningData = [5]
+        newExercise5.sequence = "16|17|18|19"
         
         let step16 = ExerciseSteps(context: self.context)
         step16.idStep = 16
@@ -206,6 +212,7 @@ class DefaultDataHelper: UIViewController {
         newExercise6.image = "kneeling squat"
         newExercise6.videoUrl = "https://www.youtube.com/embed/Si5X-u_v05U?playsinline=1"
         newExercise6.warningData = [6]
+        newExercise6.sequence = "20|21|19"
         
         let step20 = ExerciseSteps(context: self.context)
         step20.idStep = 20
@@ -231,6 +238,7 @@ class DefaultDataHelper: UIViewController {
         newExercise7.image = "jumping jack"
         newExercise7.videoUrl = "https://www.youtube.com/embed/oNJIIxWaW2M?playsinline=1"
         newExercise7.warningData = [7]
+        newExercise7.sequence = "22|23|24|25|26"
         
         let step22 = ExerciseSteps(context: self.context)
         step22.idStep = 22
@@ -268,6 +276,7 @@ class DefaultDataHelper: UIViewController {
         newExercise8.image = "mountain climber"
         newExercise8.videoUrl = "https://www.youtube.com/embed/hML7yNgS5JU?playsinline=1"
         newExercise8.warningData = [8]
+        newExercise8.sequence = "27|28|29|30"
         
         let step27 = ExerciseSteps(context: self.context)
         step27.idStep = 27
@@ -301,6 +310,7 @@ class DefaultDataHelper: UIViewController {
         newExercise9.image = "side to side plie"
         newExercise9.videoUrl = "https://www.youtube.com/embed/QfS2x4VOZuE?playsinline=1"
         newExercise9.warningData = [9]
+        newExercise9.sequence = "31|32|33|8"
         
         let step31 = ExerciseSteps(context: self.context)
         step31.idStep = 31
@@ -330,6 +340,7 @@ class DefaultDataHelper: UIViewController {
         newExercise10.image = "glute bridge"
         newExercise10.videoUrl = "https://www.youtube.com/embed/q0wiGivpVQc?playsinline=1"
         newExercise10.warningData = [10]
+        newExercise10.sequence = "34|35|36"
         
         let step34 = ExerciseSteps(context: self.context)
         step34.idStep = 34
@@ -359,6 +370,7 @@ class DefaultDataHelper: UIViewController {
         newExercise11.image = "single leg hip raises"
         newExercise11.videoUrl = "https://www.youtube.com/embed/OTRmchnEkV0?playsinline=1"
         newExercise11.warningData = [11]
+        newExercise11.sequence = "37|38|39|40|8"
         
         
         let step37 = ExerciseSteps(context: self.context)
@@ -394,6 +406,7 @@ class DefaultDataHelper: UIViewController {
         newExercise12.image = "side leg raises"
         newExercise12.videoUrl = "https://www.youtube.com/embed/gYpwEr0cLO8?playsinline=1"
         newExercise12.warningData = [12]
+        newExercise12.sequence = "41|42|43|44|8"
         
         
         let step41 = ExerciseSteps(context: self.context)
@@ -406,7 +419,7 @@ class DefaultDataHelper: UIViewController {
         
         let step43 = ExerciseSteps(context: self.context)
         step43.idStep = 43
-        step43.steps = "s you exhale, gently raise your left leg off the lower leg. Stop raising your leg when you feel the muscles flex in your lower back or obliques."
+        step43.steps = "as you exhale, gently raise your left leg off the lower leg. Stop raising your leg when you feel the muscles flex in your lower back or obliques."
         
         let step44 = ExerciseSteps(context: self.context)
         step44.idStep = 44
@@ -428,6 +441,7 @@ class DefaultDataHelper: UIViewController {
         newExercise13.image = "pulse squat"
         newExercise13.videoUrl = "https://www.youtube.com/embed/0ry2D5wVYLQ?playsinline=1"
         newExercise13.warningData = [13]
+        newExercise13.sequence = "45|46|26"
         
         
         let step45 = ExerciseSteps(context: self.context)
@@ -442,7 +456,7 @@ class DefaultDataHelper: UIViewController {
         warning13.idWarning = 13
         warning13.warningText = "While in the bottom of a squat and doing pulses, you want to keep your form the entire time."
         
-        newExercise13.steps = NSSet.init(array: [step45, step46])
+        newExercise13.steps = NSSet.init(array: [step45, step46, step26])
         newExercise13.warning = NSSet.init(array: [warning13])
         
         //14
@@ -454,6 +468,7 @@ class DefaultDataHelper: UIViewController {
         newExercise14.image = "plie squat calf raise"
         newExercise14.videoUrl = "https://www.youtube.com/embed/gvRi_uBWXIU?playsinline=1"
         newExercise14.warningData = [14]
+        newExercise14.sequence = "47|48|49|26"
         
         
         let step47 = ExerciseSteps(context: self.context)
@@ -484,6 +499,7 @@ class DefaultDataHelper: UIViewController {
         newExercise15.image = "glute bridge calf raise"
         newExercise15.videoUrl = "https://www.youtube.com/embed/6w7Dgt1Jeec?playsinline=1"
         newExercise15.warningData = [15]
+        newExercise15.sequence = "34|50|51|26"
         
         
         let step50 = ExerciseSteps(context: self.context)
@@ -510,6 +526,7 @@ class DefaultDataHelper: UIViewController {
         newExercise16.image = "split squat"
         newExercise16.videoUrl = "https://www.youtube.com/embed/is8GZ7Lspuc?playsinline=1"
         newExercise16.warningData = [16]
+        newExercise16.sequence = "4|5|52|53|19"
         
         
         let step52 = ExerciseSteps(context: self.context)
@@ -536,6 +553,7 @@ class DefaultDataHelper: UIViewController {
         newExercise17.image = "walking lunge"
         newExercise17.videoUrl = "https://www.youtube.com/embed/czzWZhOD12c?playsinline=1"
         newExercise17.warningData = [17]
+        newExercise17.sequence = "16|54|55|56|8"
         
         
         let step54 = ExerciseSteps(context: self.context)
@@ -566,6 +584,7 @@ class DefaultDataHelper: UIViewController {
         newExercise18.image = "reverse lunge"
         newExercise18.videoUrl = "https://www.youtube.com/embed/BeW7XYwPzkY?playsinline=1"
         newExercise18.warningData = [18]
+        newExercise18.sequence = "57|58|59|60|8"
         
         
         let step57 = ExerciseSteps(context: self.context)
@@ -600,6 +619,7 @@ class DefaultDataHelper: UIViewController {
         newExercise19.image = "inchworm"
         newExercise19.videoUrl = " https://www.youtube.com/embed/nqwl8qnSpPA?playsinline=1"
         newExercise19.warningData = [19]
+        newExercise19.sequence = "61|62|63|64|65|26"
         
         
         let step61 = ExerciseSteps(context: self.context)
@@ -626,7 +646,7 @@ class DefaultDataHelper: UIViewController {
         warning19.idWarning = 19
         warning19.warningText = "Breathe deeply and lift the heels as you walk out, keeping the toes in the same spot."
         
-        newExercise19.steps = NSSet.init(array: [step61, step62, step63, step64, step65])
+        newExercise19.steps = NSSet.init(array: [step61, step62, step63, step64, step65, step26])
         newExercise19.warning = NSSet.init(array: [warning19])
         
         //20
@@ -638,6 +658,7 @@ class DefaultDataHelper: UIViewController {
         newExercise20.image = "donkey kicks"
         newExercise20.videoUrl = "https://www.youtube.com/embed/0tId0Sia_CQ?playsinline=1"
         newExercise20.warningData = [20]
+        newExercise20.sequence = "66|67|68|69|8"
         
         
         let step66 = ExerciseSteps(context: self.context)
@@ -660,7 +681,7 @@ class DefaultDataHelper: UIViewController {
         warning20.idWarning = 20
         warning20.warningText = "Don't let your lower back arch as your leg lifts."
         
-        newExercise20.steps = NSSet.init(array: [step66, step67, step68, step69])
+        newExercise20.steps = NSSet.init(array: [step66, step67, step68, step69, step8])
         newExercise20.warning = NSSet.init(array: [warning20])
         
     }

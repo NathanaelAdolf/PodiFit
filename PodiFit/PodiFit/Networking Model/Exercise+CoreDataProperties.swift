@@ -2,7 +2,7 @@
 //  Exercise+CoreDataProperties.swift
 //  PodiFit
 //
-//  Created by Griffin on 12/11/20.
+//  Created by Muhamad Vicky on 18/11/20.
 //  Copyright © 2020 Nathanael Adolf Sukiman. All rights reserved.
 //
 //
@@ -19,11 +19,12 @@ extension Exercise {
 
     @NSManaged public var idDifficulty: Int32
     @NSManaged public var idExercise: Int32
+    @NSManaged public var image: String?
     @NSManaged public var listIdSteps: [Int]?
     @NSManaged public var namaExercise: String?
     @NSManaged public var videoUrl: String?
-    @NSManaged public var image: String?
     @NSManaged public var warningData: [Int]?
+    @NSManaged public var sequence: String?
     @NSManaged public var ofPlan: NSSet?
     @NSManaged public var steps: NSSet?
     @NSManaged public var warning: NSSet?
