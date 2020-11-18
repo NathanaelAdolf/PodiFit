@@ -12,7 +12,7 @@ import UIKit
 class ExerciseSummaryViewController: UIViewController {
     var totalWaktuExercise : Int = 0
     
-
+    
     @IBOutlet weak var  exerciseSummaryView : ExerciseSummaryView!
     
     let reviewService = ReviewService.shared
@@ -25,6 +25,10 @@ class ExerciseSummaryViewController: UIViewController {
     }
     
     
+    @IBAction func tiredBtn(_ sender: Any) {
+    
+//        tiredLabel.isSelected = true
+    }
     
     @IBAction func finishSummary(_ sender: Any) {
         
