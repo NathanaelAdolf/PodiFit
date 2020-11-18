@@ -27,9 +27,24 @@ class ExerciseSummaryViewController: UIViewController {
     
     
     @IBAction func finishSummary(_ sender: Any) {
-        self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
         
+        if badgesHelper.isBadgesTableEmpty()  == true {
+            badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
+            
+        }
+        
+        
+        if badgesHelper.checkFirstTimeExercise() == false {
+            print("Masuk")
+            badgesHelper.updateFirstTimeIntoTrue(isBadgesDone: true)
+            self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
+        }
+        else {
+            print("Masuk ngga?")
+            self.performSegue(withIdentifier: "toMainFromSummary", sender: nil)
+        }
 
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -11,7 +11,7 @@ import WebKit
 
 
 
-class ExerciseView: UIView {
+class ExerciseView: UIView, WKNavigationDelegate {
 
     @IBOutlet weak var webKitView: WKWebView!
     @IBOutlet weak var restPageView: UIView!
@@ -37,6 +37,7 @@ class ExerciseView: UIView {
     @IBOutlet weak var previousView: UIButton!
     @IBOutlet weak var nextView: UIButton!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     var links = "https://www.youtube.com/embed/xXRU28mfIJQ"
@@ -114,6 +115,13 @@ class ExerciseView: UIView {
         let url = URL(string: "\(dataExercise[0].videoUrl)")
         let request = URLRequest(url: url!)
         webKitView.load(request)
+        
+        
+        webKitView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        webKitView.navigationDelegate = self
+        activityIndicator.hidesWhenStopped = true
     }
     
     public func lastExercise() {
@@ -133,5 +141,16 @@ class ExerciseView: UIView {
         progressNumber?.text = "\(number)/\(totalExercise)"
     }
     
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+    }
     
 }
