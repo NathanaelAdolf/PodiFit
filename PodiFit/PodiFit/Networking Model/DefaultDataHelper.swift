@@ -365,12 +365,12 @@ class DefaultDataHelper: UIViewController {
         let newExercise11 = Exercise(context: self.context)
         newExercise11.idDifficulty = 2
         newExercise11.idExercise = 11
-        newExercise11.listIdSteps = [37,38,39,40,8]
+        newExercise11.listIdSteps = [37,38,39,40,90]
         newExercise11.namaExercise = "Single leg hip raises"
         newExercise11.image = "single leg hip raises"
         newExercise11.videoUrl = "https://www.youtube.com/embed/OTRmchnEkV0?playsinline=1"
         newExercise11.warningData = [11]
-        newExercise11.sequence = "37|38|39|40|8"
+        newExercise11.sequence = "37|38|39|40|90"
         
         
         let step37 = ExerciseSteps(context: self.context)
@@ -389,11 +389,15 @@ class DefaultDataHelper: UIViewController {
         step40.idStep = 40
         step40.steps = "Pause and slowly return to the starting position"
         
+        let step90 = ExerciseSteps(context: self.context)
+        step90.idStep = 90
+        step90.steps = "Repeat or you can swap leg"
+        
         let warning11 = Warning(context: self.context)
         warning11.idWarning = 11
         warning11.warningText = "Keep your foot underneath your knee throughout the exercise. Avoid having it too far in front of you."
         
-        newExercise11.steps = NSSet.init(array: [step37, step38, step39, step40, step8])
+        newExercise11.steps = NSSet.init(array: [step37, step38, step39, step40, step90])
         newExercise11.warning = NSSet.init(array: [warning11])
         
         
