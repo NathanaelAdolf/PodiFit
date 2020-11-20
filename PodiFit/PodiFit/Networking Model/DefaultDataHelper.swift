@@ -621,7 +621,7 @@ class DefaultDataHelper: UIViewController {
         newExercise19.listIdSteps = [61,62,63,64,65,26]
         newExercise19.namaExercise = "Inchworm"
         newExercise19.image = "inchworm"
-        newExercise19.videoUrl = " https://www.youtube.com/embed/nqwl8qnSpPA?playsinline=1"
+        newExercise19.videoUrl = "https://www.youtube.com/embed/nqwl8qnSpPA?playsinline=1"
         newExercise19.warningData = [19]
         newExercise19.sequence = "61|62|63|64|65|26"
         

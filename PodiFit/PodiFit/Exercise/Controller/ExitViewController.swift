@@ -35,6 +35,7 @@ class ExitViewController: UIViewController {
     
 
     @IBAction func restartExercise(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
         
     }
     
