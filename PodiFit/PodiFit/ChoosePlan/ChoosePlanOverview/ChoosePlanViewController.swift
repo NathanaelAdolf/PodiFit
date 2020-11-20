@@ -53,6 +53,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         self.tableView.backgroundColor = UIColor.clear
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
         
         
         self.exerciseData = CustomizePlanHelper.fetchSelectedExercise(idPlan: selectedIndexPlan!)
