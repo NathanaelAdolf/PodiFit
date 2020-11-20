@@ -104,9 +104,13 @@
                 </subviews>
                 <color key="backgroundColor" red="0.33725490196078434" green="0.37254901960784315" blue="0.37254901960784315" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="GaW-S2-ITO" secondAttribute="bottom" constant="1" id="0EA-1J-02b"/>
                     <constraint firstItem="GaW-S2-ITO" firstAttribute="top" secondItem="YhZ-fa-MaO" secondAttribute="top" id="HP3-rl-qDv"/>
                     <constraint firstAttribute="bottom" secondItem="GaW-S2-ITO" secondAttribute="bottom" constant="1" id="Tya-6U-zUg"/>
+                    <constraint firstItem="GaW-S2-ITO" firstAttribute="leading" secondItem="YhZ-fa-MaO" secondAttribute="leading" id="iaj-TD-4Pf"/>
+                    <constraint firstItem="GaW-S2-ITO" firstAttribute="top" secondItem="YhZ-fa-MaO" secondAttribute="top" id="lbi-i5-TvU"/>
                     <constraint firstAttribute="trailing" secondItem="GaW-S2-ITO" secondAttribute="trailing" id="q59-es-YBo"/>
+                    <constraint firstAttribute="trailing" secondItem="GaW-S2-ITO" secondAttribute="trailing" id="uzT-tI-1F0"/>
                     <constraint firstItem="GaW-S2-ITO" firstAttribute="leading" secondItem="YhZ-fa-MaO" secondAttribute="leading" id="wJb-wd-lgQ"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
