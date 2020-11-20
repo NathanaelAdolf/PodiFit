@@ -22,6 +22,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     var tempDataToEdit = [UserDataModel]()
     
+    var backButton = UIBarButtonItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         hideKeyboardWhenTappedAround()
         
         notifHelper.configureUserNotificationCenter()
+        
+        backButton.title = ""
+        backButton.image = UIImage(named: "chevron.left")
+        backButton.tintColor = Colors.yellowColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
     }
     
@@ -126,7 +133,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         heightTextField.text = "\(tempDataToEdit[0].height!)"
         weightTextField.text = "\(tempDataToEdit[0].weight!)"
         profileView.image = UIImage(data: tempDataToEdit[0].img)
+        
+        AppUtility.lockOrientation(.portrait)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       // AppUtility.lockOrientation(.all)
+    }
+    
     
 
 }
