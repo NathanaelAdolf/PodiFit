@@ -18,19 +18,24 @@ class ActivePlanCell: UICollectionViewCell {
     @IBOutlet weak var progressPlan: UIProgressView!
     @IBOutlet weak var progressPlanLabel: UILabel!
     
+    @IBOutlet var activePlanBackground: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        activePlanBackground.layer.masksToBounds = true
     }
     
     func parseData(data: PlansModel) {
+        
+       
         namePlanLabel.text = data.namaPlan
         planImage.image = UIImage(named: "1")
         weekPlanLabel.text = "\(data.durasiPlan) weeks"
         exercisePlanLabel.text = "\(data.chosenExercise!.count) exercises"
         equipmentPlanLabel.text = "No Equipment"
         progressPlan.progress = Float(Float(data.totalSessionDone)/(Float(data.durasiPlan)*Float(data.jumlahHari)))
-        progressPlanLabel.text = "\(Float(Float(data.totalSessionDone)/(Float(data.durasiPlan)*Float(data.jumlahHari)))*100)%"
+        progressPlanLabel.text = "\(Int(Float(Float(data.totalSessionDone)/(Float(data.durasiPlan)*Float(data.jumlahHari)))*100))%"
     }
 
 }
