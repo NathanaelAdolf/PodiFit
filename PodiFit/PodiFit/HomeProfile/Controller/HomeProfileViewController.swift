@@ -18,6 +18,26 @@ protocol HomeProfileDelegate {
     func nextDidTap()
 }
 
+struct AppUtility {
+
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+    
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = orientation
+        }
+    }
+
+    /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
+   
+        self.lockOrientation(orientation)
+    
+        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+        UINavigationController.attemptRotationToDeviceOrientation()
+    }
+
+}
+
 class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var completedData = [CompletedPlanModel]()
@@ -94,7 +114,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var tempCell = UITableViewCell()
+    
         if indexPath.section == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imagePersonCell", for: indexPath) as! imagePersonTableViewCell
@@ -232,8 +252,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             
             return cell
         }
-        return tempCell
-        
+    
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -466,8 +485,13 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         self.swipeState = ""
+        
+        AppUtility.lockOrientation(.portrait)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        //AppUtility.lockOrientation(.all)
+    }
     @IBAction func unwindSegueFromAddReminder(sender: UIStoryboardSegue){
     
     }
@@ -477,7 +501,6 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         
         completeRemindBadgeTableView.reloadData()
     }
-    
     
     @IBOutlet weak var completeRemindBadgeTableView: UITableView!
     

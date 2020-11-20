@@ -52,6 +52,7 @@ class ExerciseViewController: UIViewController {
         var warningDatas : String = ""
         // ambil plan active
         self.idExercises = planModelHelpers.fetchExerciseIdByIdPlan(idPlan: idPlanActive)
+        print("ini exercise id \(idExercises)")
         
         // ambil exercise detail array [0]
         self.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: idExercises![data])

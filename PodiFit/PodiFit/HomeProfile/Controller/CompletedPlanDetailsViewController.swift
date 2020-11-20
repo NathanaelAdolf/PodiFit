@@ -14,6 +14,8 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
     
     var tempPlanData = [CompletedPlanModel]()
     
+    var backButton = UIBarButtonItem()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (planDetailsData.count == 0) ? 1 : planDetailsData.count
     }
@@ -59,6 +61,11 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
         
         notifHelper.configureUserNotificationCenter()
         
+        backButton.title = ""
+        backButton.image = UIImage(named: "chevron.left")
+        backButton.tintColor = Colors.yellowColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,10 +76,16 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
                 planDetailsData.append(CompletedPlanDetailModel(titleMovement: tempPlanData[i].titleMovement, numberWeeks: tempPlanData[i].period, numberExercise: tempPlanData[i].movement, imagePlan: "LegPlanImage.png"))
             }
         }
+        
+        AppUtility.lockOrientation(.portrait)
        
         
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+      //  AppUtility.lockOrientation(.all)
     }
     
    

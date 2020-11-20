@@ -97,6 +97,14 @@ class AddReminderViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        //AppUtility.lockOrientation(.all)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        AppUtility.lockOrientation(.portrait)
+    }
+    
     func showAlert(messageToDisplay: String) {
           let alert = UIAlertController(title: "Message", message: messageToDisplay, preferredStyle: .alert)
           let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)

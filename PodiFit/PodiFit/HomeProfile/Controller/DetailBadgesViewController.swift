@@ -14,6 +14,8 @@ class DetailBadgesViewController: UIViewController,UITableViewDataSource, UITabl
     
     @IBOutlet var detailBadgesTableView: UITableView!
     
+    var backButton = UIBarButtonItem()
+    
     var detailBadgeData = [DetailBadgesModel]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,11 +52,22 @@ class DetailBadgesViewController: UIViewController,UITableViewDataSource, UITabl
         
         detailBadgeData = badgesHelper.retreiveDataFromBadges().detailData
         
+        backButton.title = ""
+        backButton.image = UIImage(named: "chevron.left")
+        backButton.tintColor = Colors.yellowColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
+        
+        AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AppUtility.lockOrientation(.all)
     }
     
 }
