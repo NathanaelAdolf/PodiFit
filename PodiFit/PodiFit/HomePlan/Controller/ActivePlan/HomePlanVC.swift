@@ -100,7 +100,7 @@ extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width - 5, height: 197)
+        return CGSize(width: collectionView.frame.size.width, height: 198)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

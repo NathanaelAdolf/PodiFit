@@ -72,39 +72,45 @@
                                 <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F7a-SG-KIA">
-                                <rect key="frame" x="323" y="176" width="41" height="13"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="8Xk-Se-muP">
-                                <rect key="frame" x="8" y="180" width="311" height="4"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgb-lZ-Br1">
+                                <rect key="frame" x="0.0" y="173" width="374" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F7a-SG-KIA">
+                                        <rect key="frame" x="308" y="5" width="41" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="8Xk-Se-muP">
+                                        <rect key="frame" x="10" y="10" width="280" height="4"/>
+                                        <color key="progressTintColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="4" id="yOS-Jh-Ql5"/>
+                                    <constraint firstItem="F7a-SG-KIA" firstAttribute="leading" secondItem="8Xk-Se-muP" secondAttribute="trailing" constant="18" id="K79-Mu-ND2"/>
+                                    <constraint firstItem="8Xk-Se-muP" firstAttribute="top" secondItem="mgb-lZ-Br1" secondAttribute="top" constant="10" id="Q2l-cU-Juu"/>
+                                    <constraint firstItem="8Xk-Se-muP" firstAttribute="leading" secondItem="mgb-lZ-Br1" secondAttribute="leading" constant="10" id="UQG-3I-M12"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Xk-Se-muP" secondAttribute="bottom" constant="10" id="UdO-y0-yUP"/>
                                 </constraints>
-                                <color key="progressTintColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </progressView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8Xk-Se-muP" firstAttribute="top" secondItem="aME-7J-5V0" secondAttribute="bottom" constant="8" symbolic="YES" id="8ac-ME-eIS"/>
                             <constraint firstItem="T7R-0H-cwq" firstAttribute="top" secondItem="pEU-yz-jbL" secondAttribute="bottom" constant="8" symbolic="YES" id="HdG-gk-kgo"/>
-                            <constraint firstItem="8Xk-Se-muP" firstAttribute="top" secondItem="99L-be-v8g" secondAttribute="bottom" constant="9.5" id="SAv-n5-b06"/>
-                            <constraint firstItem="8Xk-Se-muP" firstAttribute="top" secondItem="fOI-cB-Wqd" secondAttribute="bottom" constant="8" symbolic="YES" id="SPD-tY-eDM"/>
-                            <constraint firstAttribute="trailing" secondItem="8Xk-Se-muP" secondAttribute="trailing" constant="55" id="U0V-9r-ReS"/>
+                            <constraint firstAttribute="trailing" secondItem="mgb-lZ-Br1" secondAttribute="trailing" id="Ldx-0N-bpv"/>
+                            <constraint firstAttribute="bottom" secondItem="mgb-lZ-Br1" secondAttribute="bottom" id="UMP-lC-3Gn"/>
                             <constraint firstItem="pEU-yz-jbL" firstAttribute="top" secondItem="GaW-S2-ITO" secondAttribute="top" id="ZUw-kZ-NwD"/>
                             <constraint firstItem="pEU-yz-jbL" firstAttribute="leading" secondItem="GaW-S2-ITO" secondAttribute="leading" id="c5I-B3-aHF"/>
-                            <constraint firstAttribute="bottom" secondItem="8Xk-Se-muP" secondAttribute="bottom" constant="13" id="cr2-fT-hDp"/>
                             <constraint firstItem="T7R-0H-cwq" firstAttribute="leading" secondItem="GaW-S2-ITO" secondAttribute="leading" constant="8" id="dCB-M7-rtJ"/>
                             <constraint firstItem="99L-be-v8g" firstAttribute="top" secondItem="T7R-0H-cwq" secondAttribute="bottom" constant="8" symbolic="YES" id="evA-7Q-hsP"/>
-                            <constraint firstItem="8Xk-Se-muP" firstAttribute="leading" secondItem="GaW-S2-ITO" secondAttribute="leading" constant="8" id="fQL-qU-4QA"/>
                             <constraint firstItem="aME-7J-5V0" firstAttribute="top" secondItem="T7R-0H-cwq" secondAttribute="bottom" constant="8" symbolic="YES" id="hEc-jg-qHx"/>
                             <constraint firstItem="fOI-cB-Wqd" firstAttribute="top" secondItem="T7R-0H-cwq" secondAttribute="bottom" constant="8" symbolic="YES" id="ieg-4V-wQv"/>
                             <constraint firstAttribute="trailing" secondItem="pEU-yz-jbL" secondAttribute="trailing" id="jmR-QZ-QdP"/>
-                            <constraint firstItem="8Xk-Se-muP" firstAttribute="top" secondItem="kvS-S0-iDa" secondAttribute="bottom" constant="9.5" id="uY9-OY-Vw1"/>
+                            <constraint firstItem="mgb-lZ-Br1" firstAttribute="top" secondItem="aME-7J-5V0" secondAttribute="bottom" constant="1" id="sl1-sG-K92"/>
+                            <constraint firstItem="mgb-lZ-Br1" firstAttribute="leading" secondItem="GaW-S2-ITO" secondAttribute="leading" id="waF-AB-9pw"/>
                             <constraint firstItem="IuY-yn-uMa" firstAttribute="top" secondItem="T7R-0H-cwq" secondAttribute="bottom" constant="8" symbolic="YES" id="xJn-Nx-1ym"/>
                             <constraint firstAttribute="height" constant="197" id="xYA-xL-KaB"/>
                             <constraint firstItem="kvS-S0-iDa" firstAttribute="top" secondItem="T7R-0H-cwq" secondAttribute="bottom" constant="8" symbolic="YES" id="zSS-We-83o"/>
