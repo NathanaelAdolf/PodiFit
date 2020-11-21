@@ -28,7 +28,8 @@ class ButtonTableViewCell: UITableViewCell {
     
     @IBAction func confirmationButton(_ sender: Any) {
             if (self.delegate != nil) {
-                self.delegate.callSegueFromCellToMain()
+                self.delegate.showAlert()
+                //self.delegate.callSegueFromCellToMain()
             }
             print("pencet confirm")
             

@@ -55,6 +55,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        self.tabBarController?.tabBar.isHidden = true
         //deleteAllDummy(entity: "TestEntity")
         
         if checkSender == 0{
