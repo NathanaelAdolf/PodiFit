@@ -12,7 +12,10 @@ class summaryTime: UITableViewCell {
     @IBOutlet weak var minutesSummaryLbl: UILabel!
     @IBOutlet weak var secondsSummaryLbl: UILabel!
     
-
+    @IBOutlet weak var minutesOrSecondLbl: UILabel!
+    
+    @IBOutlet weak var backgroundMinuteView: UIView!
+    @IBOutlet weak var backgroundSecondView: UIView!
     
     func setSummaryView(menitExercise : Int, detikExercise : Int) {
 //        minutesSummaryLbl.text =
@@ -25,10 +28,13 @@ class summaryTime: UITableViewCell {
     }
     
     
-    func setView(menitExercise : String, detikExercise : String) {
-        print(menitExercise)
+    func setView(menitExercise : String, detikExercise : String, label : String) {
+        backgroundMinuteView.layer.cornerRadius = 5
+        backgroundSecondView.layer.cornerRadius = 5
+        
         minutesSummaryLbl.text = menitExercise
         secondsSummaryLbl.text = detikExercise
+        minutesOrSecondLbl.text = label
     }
 }
 
@@ -36,12 +42,7 @@ class ExerciseSummaryView: UIView {
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var gambarSuram: UIButton!
-    @IBOutlet weak var viewMinute: UIView!
-    @IBOutlet weak var viewSecond: UIView!
-    
-    @IBOutlet weak var minutesSummaryLbl: UILabel!
-    @IBOutlet weak var secondsSummaryLbl: UILabel!
+
     
     
     

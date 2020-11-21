@@ -39,7 +39,7 @@ class ExerciseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        AppUtility.lockOrientation(.landscape)
         circularProgressView.trackClr = UIColor(red: 95/255, green: 104/255, blue: 71/255, alpha: 100)
         circularProgressView.progressClr = UIColor.init(red: 228/255, green: 246/255, blue: 80/255, alpha: 100)
         
@@ -85,6 +85,7 @@ class ExerciseViewController: UIViewController {
     
     
     @IBAction func informationExercise(_ sender: Any) {
+//        AppUtility.lockOrientation(.portrait)
         self.performSegue(withIdentifier: "toInformationExercise", sender: nil)
         
     }
