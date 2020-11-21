@@ -707,7 +707,7 @@
             <objects>
                 <viewController id="eD6-Vf-tNo" customClass="DetailBadgesViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3U2-WA-TTD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 13" translatesAutoresizingMaskIntoConstraints="NO" id="uKS-Dk-Xvk">
@@ -719,14 +719,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="IzL-rk-8SJ">
-                                <rect key="frame" x="0.0" y="100" width="414" height="740"/>
+                                <rect key="frame" x="44" y="56" width="808" height="302"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailBadgesCell" rowHeight="110" id="SG2-h9-ckH" customClass="DetailBadgeTableViewCell" customModule="PodiFit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="110"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="808" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SG2-h9-ckH" id="Mt2-lI-W8O">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="66S-On-zNK">
@@ -737,7 +737,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badges Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rs-jF-cmB">
-                                                    <rect key="frame" x="116" y="11" width="253" height="21"/>
+                                                    <rect key="frame" x="116" y="11" width="647" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="0FO-ng-0Nd"/>
                                                     </constraints>
@@ -746,7 +746,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badges Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1u-Ic-LNS">
-                                                    <rect key="frame" x="116" y="33" width="253" height="44"/>
+                                                    <rect key="frame" x="116" y="33" width="647" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="9eH-kC-1c3"/>
                                                     </constraints>
@@ -755,14 +755,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Sxj-7w-AnN">
-                                                    <rect key="frame" x="116" y="85" width="238" height="4"/>
+                                                    <rect key="frame" x="116" y="85" width="632" height="4"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="4" id="0pX-7a-Hsl"/>
                                                     </constraints>
                                                     <color key="progressTintColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.42745098040000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgT-AL-26R">
-                                                    <rect key="frame" x="357" y="76" width="46" height="24"/>
+                                                    <rect key="frame" x="751" y="76" width="46" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="46" id="TJm-fh-kwU"/>
                                                         <constraint firstAttribute="height" constant="24" id="gic-A7-2CD"/>
@@ -1233,7 +1233,7 @@
             <objects>
                 <viewController id="iZP-wN-m9c" customClass="CompletedPlanDetailsViewController" customModule="PodiFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lrv-SZ-zgO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group line above" translatesAutoresizingMaskIntoConstraints="NO" id="CGd-Nw-xhe">
@@ -1245,18 +1245,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-rz-QEg">
-                                <rect key="frame" x="0.0" y="121" width="414" height="692"/>
+                                <rect key="frame" x="44" y="77" width="808" height="267"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="completedPlanDetailCell" rowHeight="217" id="7wp-vV-1E4" customClass="CompletedPlanDetailTableViewCell" customModule="PodiFit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="217"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="808" height="217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7wp-vV-1E4" id="aw6-X1-Z5Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWZ-UN-HKo">
-                                                    <rect key="frame" x="20" y="10" width="374" height="197"/>
+                                                    <rect key="frame" x="20" y="10" width="768" height="197"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval Copy" translatesAutoresizingMaskIntoConstraints="NO" id="OQ4-fh-vDK">
                                                             <rect key="frame" x="190" y="152" width="7" height="15"/>
@@ -1326,14 +1326,14 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="oza-FH-Go3">
-                                                            <rect key="frame" x="13" y="178" width="305" height="4"/>
+                                                            <rect key="frame" x="13" y="178" width="699" height="4"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="4" id="Qk4-jx-kY2"/>
                                                             </constraints>
                                                             <color key="progressTintColor" red="0.74901960779999999" green="0.82352941180000006" blue="0.1333333333" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                         </progressView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDO-bp-GbS">
-                                                            <rect key="frame" x="323" y="168" width="40" height="21"/>
+                                                            <rect key="frame" x="717" y="168" width="40" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="Cby-M6-6qq"/>
                                                                 <constraint firstAttribute="height" constant="21" id="a2o-1K-dKG"/>
@@ -1343,7 +1343,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sc1-lo-CdV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="118"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="768" height="118"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="118" id="N9O-bY-lAl"/>
                                                             </constraints>
@@ -1404,10 +1404,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailPlanNoDataCell" rowHeight="405" id="TR7-T2-7sp" customClass="PlanDetailNoDataTableViewCell" customModule="PodiFit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="272.5" width="414" height="405"/>
+                                        <rect key="frame" x="0.0" y="272.5" width="808" height="405"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TR7-T2-7sp" id="oyz-K7-Fde">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="405"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="808" height="405"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no completed plan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PeJ-ug-IpU">
