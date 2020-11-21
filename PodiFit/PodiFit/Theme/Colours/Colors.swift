@@ -31,4 +31,12 @@ public class Colors
         
         return cellColor
     }
+    
+    static var alertCancelColor: UIColor
+    {
+        let cellColor = UIColor.init(red: 116/255, green: 116/255, blue: 116/255, alpha: 1)
+        
+        return cellColor
+    }
+    
 }

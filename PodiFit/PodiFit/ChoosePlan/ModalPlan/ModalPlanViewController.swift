@@ -41,7 +41,13 @@ class ModalPlanViewController: UIViewController {
         var tempData : String = ""
 
         for i in 0...(exerciseStep.count - 1) {
-            tempData.append("\(i+1). \(exerciseStep[i].steps!)\n")
+            if(i == (exerciseStep.count - 1)){
+                tempData.append("\(i+1). \(exerciseStep[i].steps!)")
+            }
+            else{
+                tempData.append("\(i+1). \(exerciseStep[i].steps!)\n\n")
+            }
+            
         }
         // send data to view
         exerciseSteps.text = tempData

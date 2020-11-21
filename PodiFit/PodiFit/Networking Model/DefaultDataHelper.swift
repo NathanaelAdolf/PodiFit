@@ -190,7 +190,7 @@ class DefaultDataHelper: UIViewController {
         
         let step18 = ExerciseSteps(context: self.context)
         step18.idStep = 18
-        step18.steps = "Lower until the knee of your leading leg is bent at around 90 degree, keeping your trailing leg straight."
+        step18.steps = "Lower until the knee of your leading leg is bent at around 90 degrees, keep your trailing leg straight."
         
         let step19 = ExerciseSteps(context: self.context)
         step19.idStep = 19
@@ -423,7 +423,7 @@ class DefaultDataHelper: UIViewController {
         
         let step43 = ExerciseSteps(context: self.context)
         step43.idStep = 43
-        step43.steps = "as you exhale, gently raise your left leg off the lower leg. Stop raising your leg when you feel the muscles flex in your lower back or obliques."
+        step43.steps = "As you exhale, gently raise your left leg off the lower leg."
         
         let step44 = ExerciseSteps(context: self.context)
         step44.idStep = 44
