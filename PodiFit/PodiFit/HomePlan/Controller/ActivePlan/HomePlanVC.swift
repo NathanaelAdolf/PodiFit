@@ -99,6 +99,10 @@ extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 198)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         titlePlan = plansModel[indexPath.row].namaPlan!
         idPlan = Int(plansModel[indexPath.row].idPlan)
@@ -106,7 +110,8 @@ extension HomePlanVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         level = difficultyHelper.checkDifficultyNameById(idDifficulty: Int(plansModel[indexPath.row].idDifficulty))
         duration = "\(plansModel[indexPath.row].chosenExercise!.count*30)"
         exercise = "\(plansModel[indexPath.row].chosenExercise!.count)"
-        progress = Float(Float(plansModel[indexPath.row].totalSessionDone)/(Float(plansModel[indexPath.row].durasiPlan)*Float(plansModel[indexPath.row].jumlahHari)))
+        progress =
+            Float(Float(plansModel[indexPath.row].totalSessionDone)/(Float(plansModel[indexPath.row].durasiPlan)*Float(plansModel[indexPath.row].jumlahHari)))
         
         performSegue(withIdentifier: "viewExercisesSegue", sender: self)
     }
