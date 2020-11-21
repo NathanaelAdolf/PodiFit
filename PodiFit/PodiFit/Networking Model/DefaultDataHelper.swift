@@ -39,7 +39,7 @@ class DefaultDataHelper: UIViewController {
         newExercise1.idDifficulty = 1
         newExercise1.idExercise = 1
         newExercise1.listIdSteps = [1,2,3]
-        newExercise1.namaExercise = "Standing Calf Raise"
+        newExercise1.namaExercise = "Standing calf raise"
         newExercise1.videoUrl = "https://www.youtube.com/embed/TPa6gvdpi_A?playsinline=1"
         newExercise1.image = "standing calf raise"
         newExercise1.warningData = [1]
@@ -47,15 +47,15 @@ class DefaultDataHelper: UIViewController {
         
         let step = ExerciseSteps(context: self.context)
         step.idStep = 1
-        step.steps = "Stand up straight."
+        step.steps = "Stand up straight"
         
         let step1 = ExerciseSteps(context: self.context)
         step1.idStep = 2
-        step1.steps = "Raise your heel until you are standing on your toes."
+        step1.steps = "Raise your heel until you are standing on your toes"
         
         let step2 = ExerciseSteps(context: self.context)
         step2.idStep = 3
-        step2.steps = "Lower slowly back."
+        step2.steps = "Lower slowly back"
         
 
         let warning1 = Warning(context: self.context)
@@ -79,27 +79,27 @@ class DefaultDataHelper: UIViewController {
         
         let step4 = ExerciseSteps(context: self.context)
         step4.idStep = 4
-        step4.steps = "Stand up straight, with feet hip width-apart."
+        step4.steps = "Stand up straight, with feet hip width-apart"
         
         let step5 = ExerciseSteps(context: self.context)
         step5.idStep = 5
-        step5.steps = "Take a big step forward with your right leg."
+        step5.steps = "Take a big step forward with your right leg"
         
         let step6 = ExerciseSteps(context: self.context)
         step6.idStep = 6
-        step6.steps = "Lower your body until your knee is at 90 degree angle."
+        step6.steps = "Lower your body until your knee is at 90 degree angle"
         
         let step7 = ExerciseSteps(context: self.context)
         step7.idStep = 7
-        step7.steps = "Push yourself upwards with your right foot."
+        step7.steps = "Push yourself upwards with your right foot"
         
         let step8 = ExerciseSteps(context: self.context)
         step8.idStep = 8
-        step8.steps = "Repeat or you can swap leg."
+        step8.steps = "Repeat or you can swap leg"
         
         let warning2 = Warning(context: self.context)
         warning2.idWarning = 2
-        warning2.warningText = "Take smaller steps as you lunge to prevent injury."
+        warning2.warningText = "Take smaller steps as you lunge to prevents injury."
         
         newExercise2.steps = NSSet.init(array: [step4, step5, step6, step7, step8])
         newExercise2.warning = NSSet.init(array: [warning2])
@@ -109,7 +109,7 @@ class DefaultDataHelper: UIViewController {
         newExercise3.idDifficulty = 1
         newExercise3.idExercise = 3
         newExercise3.listIdSteps = [9,10,11,12]
-        newExercise3.namaExercise = "In and Out Squat Jumps"
+        newExercise3.namaExercise = "In and out squat jumps"
         newExercise3.image = "in and out squat jumps"
         newExercise3.videoUrl = "https://www.youtube.com/embed/FAgNMPeA6Pw?playsinline=1"
         newExercise3.warningData = [3]
@@ -118,15 +118,15 @@ class DefaultDataHelper: UIViewController {
         
         let step9 = ExerciseSteps(context: self.context)
         step9.idStep = 9
-        step9.steps = "Stand with your feet together, placing your hands in front of your thighs."
+        step9.steps = "Stand with your feet together, placing your hands in front of your thighs"
         
         let step10 = ExerciseSteps(context: self.context)
         step10.idStep = 10
-        step10.steps = "Bend your legs, jump up and separate your feet in the air."
+        step10.steps = "Bend your legs, jump up and separate your feet in the air"
         
         let step11 = ExerciseSteps(context: self.context)
         step11.idStep = 11
-        step11.steps = "Land with your feet wider than shoulder-width apart, lowering into squat."
+        step11.steps = "Land with your feet wider than shoulder-width apart, lowering into squat"
         
         let step12 = ExerciseSteps(context: self.context)
         step12.idStep = 12
@@ -144,7 +144,7 @@ class DefaultDataHelper: UIViewController {
         newExercise4.idDifficulty = 1
         newExercise4.idExercise = 4
         newExercise4.listIdSteps = [1,13,14,15,8]
-        newExercise4.namaExercise = "Side Step Squat"
+        newExercise4.namaExercise = "Side step squat"
         newExercise4.image = "side step squat"
         newExercise4.videoUrl = "https://www.youtube.com/embed/VHnHsB8Cyhs?playsinline=1"
         newExercise4.warningData = [4]
@@ -152,15 +152,15 @@ class DefaultDataHelper: UIViewController {
         
         let step13 = ExerciseSteps(context: self.context)
         step13.idStep = 13
-        step13.steps = "With your right foot, take a wide step out to the right."
+        step13.steps = "With your right foot take a wide step out to the right"
         
         let step14 = ExerciseSteps(context: self.context)
         step14.idStep = 14
-        step14.steps = "Squat down."
+        step14.steps = "Squat down"
         
         let step15 = ExerciseSteps(context: self.context)
         step15.idStep = 15
-        step15.steps = "As you straighten your legs, step your right foot back in."
+        step15.steps = "As you straighten your legs,step your right foot back in."
         
         let warning4 = Warning(context: self.context)
         warning4.idWarning = 4
@@ -174,7 +174,7 @@ class DefaultDataHelper: UIViewController {
         newExercise5.idDifficulty = 1
         newExercise5.idExercise = 5
         newExercise5.listIdSteps = [16,17,18,19]
-        newExercise5.namaExercise = "Lateral Lunge"
+        newExercise5.namaExercise = "Lateral lunge"
         newExercise5.image = "lateral lunge"
         newExercise5.videoUrl = "https://www.youtube.com/embed/Vd8lrUvoujE?playsinline=1"
         newExercise5.warningData = [5]
@@ -182,19 +182,19 @@ class DefaultDataHelper: UIViewController {
         
         let step16 = ExerciseSteps(context: self.context)
         step16.idStep = 16
-        step16.steps = "Stand with your feet parallel and shoulder width apart, your back should be straight."
+        step16.steps = "Stand with your feet parallel and shoulder width apart, your back should be straight"
         
         let step17 = ExerciseSteps(context: self.context)
         step17.idStep = 17
-        step17.steps = "Take a big step to the side."
+        step17.steps = "Take a big step to the side"
         
         let step18 = ExerciseSteps(context: self.context)
         step18.idStep = 18
-        step18.steps = "Lower until the knee of your leading leg is bent at around 90 degrees, keep your trailing leg straight."
+        step18.steps = "Lower until the knee of your leading leg is bent at around 90 degree, keeping your trailing leg straight"
         
         let step19 = ExerciseSteps(context: self.context)
         step19.idStep = 19
-        step19.steps = "Push back up and return to the starting position."
+        step19.steps = "Push back up and return to the starting position"
         
         let warning5 = Warning(context: self.context)
         warning5.idWarning = 5
@@ -208,7 +208,7 @@ class DefaultDataHelper: UIViewController {
         newExercise6.idDifficulty = 1
         newExercise6.idExercise = 6
         newExercise6.listIdSteps = [20,21,19]
-        newExercise6.namaExercise = "Kneeling Squat"
+        newExercise6.namaExercise = "Kneeling squat"
         newExercise6.image = "kneeling squat"
         newExercise6.videoUrl = "https://www.youtube.com/embed/Si5X-u_v05U?playsinline=1"
         newExercise6.warningData = [6]
@@ -216,11 +216,11 @@ class DefaultDataHelper: UIViewController {
         
         let step20 = ExerciseSteps(context: self.context)
         step20.idStep = 20
-        step20.steps = "Start by kneeling on your knees, make sure your knees are opened as your shoulder width apart and your back is straight."
+        step20.steps = "Start by kneeling on your knee, make sure your knee opened as your shoulder width apart and your back is straight"
         
         let step21 = ExerciseSteps(context: self.context)
         step21.idStep = 21
-        step21.steps = "Slowly lower down your body until it touches your feet."
+        step21.steps = "Slowly lower down your body until it touch your feet"
         
         let warning6 = Warning(context: self.context)
         warning6.idWarning = 6
@@ -234,7 +234,7 @@ class DefaultDataHelper: UIViewController {
         newExercise7.idDifficulty = 1
         newExercise7.idExercise = 7
         newExercise7.listIdSteps = [22,23,24,25,26]
-        newExercise7.namaExercise = "Jumping Jacks"
+        newExercise7.namaExercise = "Jumping jack"
         newExercise7.image = "jumping jack"
         newExercise7.videoUrl = "https://www.youtube.com/embed/oNJIIxWaW2M?playsinline=1"
         newExercise7.warningData = [7]
@@ -242,27 +242,27 @@ class DefaultDataHelper: UIViewController {
         
         let step22 = ExerciseSteps(context: self.context)
         step22.idStep = 22
-        step22.steps = "Stand upright with your legs together and your arm at your sides."
+        step22.steps = "stand upright with your legs together and your arm at your sides"
         
         let step23 = ExerciseSteps(context: self.context)
         step23.idStep = 23
-        step23.steps = "Bend your knee slightly and jump into the air."
+        step23.steps = "bend your knee slightly and jump into the air"
         
         let step24 = ExerciseSteps(context: self.context)
         step24.idStep = 24
-        step24.steps = "As you jump, spread your legs to around shoulder width apart. Stretch your arm out and over your head."
+        step24.steps = "as you jump, spread your legs to be about shoulder width apart. Stretch your arm out and over your head"
         
         let step25 = ExerciseSteps(context: self.context)
         step25.idStep = 25
-        step25.steps = "Jump back to starting position."
+        step25.steps = "jump back to starting position"
         
         let step26 = ExerciseSteps(context: self.context)
         step26.idStep = 26
-        step26.steps = "Repeat."
+        step26.steps = "Repeat"
         
         let warning7 = Warning(context: self.context)
         warning7.idWarning = 7
-        warning7.warningText = "While doing this, you have to inhale in the starting position and exhale while spreading your legs."
+        warning7.warningText = "While doing, you have to inhale in the starting position and exhale while spreading your legs."
     
         newExercise7.steps = NSSet.init(array: [step22, step23, step24, step25, step26])
         newExercise7.warning = NSSet.init(array: [warning7])
@@ -272,7 +272,7 @@ class DefaultDataHelper: UIViewController {
         newExercise8.idDifficulty = 1
         newExercise8.idExercise = 8
         newExercise8.listIdSteps = [27,28,29,30]
-        newExercise8.namaExercise = "Mountain Climbers"
+        newExercise8.namaExercise = "Mountain climbers"
         newExercise8.image = "mountain climber"
         newExercise8.videoUrl = "https://www.youtube.com/embed/hML7yNgS5JU?playsinline=1"
         newExercise8.warningData = [8]
@@ -288,11 +288,11 @@ class DefaultDataHelper: UIViewController {
         
         let step29 = ExerciseSteps(context: self.context)
         step29.idStep = 29
-        step29.steps = "In one smooth motion, switch your legs, while keeping your arms in the same position."
+        step29.steps = "In one smooth motion, switch your legs, keeping your arms in the same position."
         
         let step30 = ExerciseSteps(context: self.context)
         step30.idStep = 30
-        step30.steps = "Switch your legs back and forth twice, so that your right leg is again close to your right hand."
+        step30.steps = "Switch your legs back and forth twice, such that your right leg is again close to your right hand."
         
         let warning8 = Warning(context: self.context)
         warning8.idWarning = 8
@@ -306,7 +306,7 @@ class DefaultDataHelper: UIViewController {
         newExercise9.idDifficulty = 1
         newExercise9.idExercise = 9
         newExercise9.listIdSteps = [31,32,33,8]
-        newExercise9.namaExercise = "Side to Side Plié"
+        newExercise9.namaExercise = "Side to side plié"
         newExercise9.image = "side to side plie"
         newExercise9.videoUrl = "https://www.youtube.com/embed/QfS2x4VOZuE?playsinline=1"
         newExercise9.warningData = [9]
@@ -314,19 +314,19 @@ class DefaultDataHelper: UIViewController {
         
         let step31 = ExerciseSteps(context: self.context)
         step31.idStep = 31
-        step31.steps = "Start by standing with feet wider than shoulder width."
+        step31.steps = "Start by standing with feet wider than shoulder width"
         
         let step32 = ExerciseSteps(context: self.context)
         step32.idStep = 32
-        step32.steps = "Slowly lean down."
+        step32.steps = "Slowly lean down"
         
         let step33 = ExerciseSteps(context: self.context)
         step33.idStep = 33
-        step33.steps = "Then get up by raising your leg thighs."
+        step33.steps = "Then get up by raising your leg thighs"
         
         let warning9 = Warning(context: self.context)
         warning9.idWarning = 9
-        warning9.warningText = "The whole time your core is tight, your back is flat and your shoulders are back."
+        warning9.warningText = "The whole time your core is tight, your back is flat and shoulders are back."
         
         newExercise9.steps = NSSet.init(array: [step31, step32, step33, step8])
         newExercise9.warning = NSSet.init(array: [warning9])
@@ -336,7 +336,7 @@ class DefaultDataHelper: UIViewController {
         newExercise10.idDifficulty = 1
         newExercise10.idExercise = 10
         newExercise10.listIdSteps = [34,35,36]
-        newExercise10.namaExercise = "Glute Bridge"
+        newExercise10.namaExercise = "Glute bridge"
         newExercise10.image = "glute bridge"
         newExercise10.videoUrl = "https://www.youtube.com/embed/q0wiGivpVQc?playsinline=1"
         newExercise10.warningData = [10]
@@ -344,15 +344,15 @@ class DefaultDataHelper: UIViewController {
         
         let step34 = ExerciseSteps(context: self.context)
         step34.idStep = 34
-        step34.steps = "Lie face up on the floor, with your knees bent and your arms at your side with palms down."
+        step34.steps = "Lie face up on the floor, with your knees bent and your arms at your side with palms down"
         
         let step35 = ExerciseSteps(context: self.context)
         step35.idStep = 35
-        step35.steps = "Lift your hips off the ground until your knees, hips and shoulder form a straight line."
+        step35.steps = "Lift your hips off the ground until your knees, hips and shoulder form a straight line"
         
         let step36 = ExerciseSteps(context: self.context)
         step36.idStep = 36
-        step36.steps = "Hold your bridged position for a couple of seconds before easing back down."
+        step36.steps = "Hold your bridged position for a couple of seconds before easing back down"
         
         let warning10 = Warning(context: self.context)
         warning10.idWarning = 10
@@ -366,7 +366,7 @@ class DefaultDataHelper: UIViewController {
         newExercise11.idDifficulty = 2
         newExercise11.idExercise = 11
         newExercise11.listIdSteps = [37,38,39,40,90]
-        newExercise11.namaExercise = "Single Leg Hip Raises"
+        newExercise11.namaExercise = "Single leg hip raises"
         newExercise11.image = "single leg hip raises"
         newExercise11.videoUrl = "https://www.youtube.com/embed/OTRmchnEkV0?playsinline=1"
         newExercise11.warningData = [11]
@@ -387,11 +387,11 @@ class DefaultDataHelper: UIViewController {
         
         let step40 = ExerciseSteps(context: self.context)
         step40.idStep = 40
-        step40.steps = "Pause and slowly return to the starting position."
+        step40.steps = "Pause and slowly return to the starting position"
         
         let step90 = ExerciseSteps(context: self.context)
         step90.idStep = 90
-        step90.steps = "Repeat or you can swap leg."
+        step90.steps = "Repeat or you can swap leg"
         
         let warning11 = Warning(context: self.context)
         warning11.idWarning = 11
@@ -406,7 +406,7 @@ class DefaultDataHelper: UIViewController {
         newExercise12.idDifficulty = 2
         newExercise12.idExercise = 12
         newExercise12.listIdSteps = [41,42,43,44,8]
-        newExercise12.namaExercise = "Side Leg Raises"
+        newExercise12.namaExercise = "Side leg raises"
         newExercise12.image = "side leg raises"
         newExercise12.videoUrl = "https://www.youtube.com/embed/gYpwEr0cLO8?playsinline=1"
         newExercise12.warningData = [12]
@@ -415,7 +415,7 @@ class DefaultDataHelper: UIViewController {
         
         let step41 = ExerciseSteps(context: self.context)
         step41.idStep = 41
-        step41.steps = "Lie down on a mat or floor, your body should be in a straight line with your leg extended and feet stacked at top of each other."
+        step41.steps = "Lie down on a mat or floor, your body should be in a straight line with your leg extended and feet stacked at top of each other"
         
         let step42 = ExerciseSteps(context: self.context)
         step42.idStep = 42
@@ -423,7 +423,7 @@ class DefaultDataHelper: UIViewController {
         
         let step43 = ExerciseSteps(context: self.context)
         step43.idStep = 43
-        step43.steps = "As you exhale, gently raise your left leg off the lower leg."
+        step43.steps = "as you exhale, gently raise your left leg off the lower leg. Stop raising your leg when you feel the muscles flex in your lower back or obliques."
         
         let step44 = ExerciseSteps(context: self.context)
         step44.idStep = 44
@@ -441,7 +441,7 @@ class DefaultDataHelper: UIViewController {
         newExercise13.idDifficulty = 2
         newExercise13.idExercise = 13
         newExercise13.listIdSteps = [45,46,26]
-        newExercise13.namaExercise = "Pulse Squat"
+        newExercise13.namaExercise = "Pulse squat"
         newExercise13.image = "pulse squat"
         newExercise13.videoUrl = "https://www.youtube.com/embed/0ry2D5wVYLQ?playsinline=1"
         newExercise13.warningData = [13]
@@ -450,11 +450,11 @@ class DefaultDataHelper: UIViewController {
         
         let step45 = ExerciseSteps(context: self.context)
         step45.idStep = 45
-        step45.steps = "Start standing with your feet hip-width apart and arms stretched out in front."
+        step45.steps = "Start standing with your feet hip-width apart and arms stretched out in front"
         
         let step46 = ExerciseSteps(context: self.context)
         step46.idStep = 46
-        step46.steps = "Perform a squat and hold it at the bottoms as you pulse a few inches up and down."
+        step46.steps = "Perform a squat and hold it at the bottoms as you pulse a few inches up and down"
         
         let warning13 = Warning(context: self.context)
         warning13.idWarning = 13
@@ -468,7 +468,7 @@ class DefaultDataHelper: UIViewController {
         newExercise14.idDifficulty = 2
         newExercise14.idExercise = 14
         newExercise14.listIdSteps = [47,48,49,26]
-        newExercise14.namaExercise = "Plié Squat Calf Raise"
+        newExercise14.namaExercise = "Plié squat calf raise"
         newExercise14.image = "plie squat calf raise"
         newExercise14.videoUrl = "https://www.youtube.com/embed/gvRi_uBWXIU?playsinline=1"
         newExercise14.warningData = [14]
@@ -477,7 +477,7 @@ class DefaultDataHelper: UIViewController {
         
         let step47 = ExerciseSteps(context: self.context)
         step47.idStep = 47
-        step47.steps = "Stand with your feet wide, toes slightly pointed out."
+        step47.steps = "Stand with your feet wide, toes slightly pointed out"
         
         let step48 = ExerciseSteps(context: self.context)
         step48.idStep = 48
@@ -499,7 +499,7 @@ class DefaultDataHelper: UIViewController {
         newExercise15.idDifficulty = 2
         newExercise15.idExercise = 15
         newExercise15.listIdSteps = [34,50,51,26]
-        newExercise15.namaExercise = "Glute Bridge Calf Raise"
+        newExercise15.namaExercise = "Glute bridge calf raise"
         newExercise15.image = "glute bridge calf raise"
         newExercise15.videoUrl = "https://www.youtube.com/embed/6w7Dgt1Jeec?playsinline=1"
         newExercise15.warningData = [15]
@@ -508,11 +508,11 @@ class DefaultDataHelper: UIViewController {
         
         let step50 = ExerciseSteps(context: self.context)
         step50.idStep = 50
-        step50.steps = "Then slowly lift of your heel and hold it for couple of seconds."
+        step50.steps = "Then slowly lift of your heel and hold it for couple of seconds"
         
         let step51 = ExerciseSteps(context: self.context)
         step51.idStep = 51
-        step51.steps = "Slowly lowering down your heel again."
+        step51.steps = "Slowly lowering down your heel again"
         
         let warning15 = Warning(context: self.context)
         warning15.idWarning = 15
@@ -526,7 +526,7 @@ class DefaultDataHelper: UIViewController {
         newExercise16.idDifficulty = 2
         newExercise16.idExercise = 16
         newExercise16.listIdSteps = [4,5,52,53,19]
-        newExercise16.namaExercise = "Split Squat"
+        newExercise16.namaExercise = "Split squat"
         newExercise16.image = "split squat"
         newExercise16.videoUrl = "https://www.youtube.com/embed/is8GZ7Lspuc?playsinline=1"
         newExercise16.warningData = [16]
@@ -535,11 +535,11 @@ class DefaultDataHelper: UIViewController {
         
         let step52 = ExerciseSteps(context: self.context)
         step52.idStep = 52
-        step52.steps = "Make sure the heel of your other leg is raised."
+        step52.steps = "Make sure the heel of your other leg is raised"
         
         let step53 = ExerciseSteps(context: self.context)
         step53.idStep = 53
-        step53.steps = "Keep your torso straight, lower slowly until your back knee almost touched the floor."
+        step53.steps = "Keep your torso straight, lower slowly until your back knee almost touched the floor"
         
         let warning16 = Warning(context: self.context)
         warning16.idWarning = 16
@@ -553,7 +553,7 @@ class DefaultDataHelper: UIViewController {
         newExercise17.idDifficulty = 2
         newExercise17.idExercise = 17
         newExercise17.listIdSteps = [16,54,55,56,8]
-        newExercise17.namaExercise = "Walking Lunge"
+        newExercise17.namaExercise = "Walking lunge"
         newExercise17.image = "walking lunge"
         newExercise17.videoUrl = "https://www.youtube.com/embed/czzWZhOD12c?playsinline=1"
         newExercise17.warningData = [17]
@@ -562,15 +562,15 @@ class DefaultDataHelper: UIViewController {
         
         let step54 = ExerciseSteps(context: self.context)
         step54.idStep = 54
-        step54.steps = "Step forward with your right leg, bend the right knee, lowering down so it's parallel to the floor in lunge position."
+        step54.steps = "Step forward with your right leg, bend the right knee, lowering down so it's parallel to the floor in lunge position"
         
         let step55 = ExerciseSteps(context: self.context)
         step55.idStep = 55
-        step55.steps = "Pause for a beat."
+        step55.steps = "Pause for a beat"
         
         let step56 = ExerciseSteps(context: self.context)
         step56.idStep = 56
-        step56.steps = "Without moving your right leg, move your left leg forward."
+        step56.steps = "Without moving your right leg, move your left leg forward"
         
         let warning17 = Warning(context: self.context)
         warning17.idWarning = 17
@@ -584,7 +584,7 @@ class DefaultDataHelper: UIViewController {
         newExercise18.idDifficulty = 2
         newExercise18.idExercise = 18
         newExercise18.listIdSteps = [57,58,59,60,8]
-        newExercise18.namaExercise = "Reverse Lunge"
+        newExercise18.namaExercise = "Reverse lunge"
         newExercise18.image = "reverse lunge"
         newExercise18.videoUrl = "https://www.youtube.com/embed/BeW7XYwPzkY?playsinline=1"
         newExercise18.warningData = [18]
@@ -593,19 +593,19 @@ class DefaultDataHelper: UIViewController {
         
         let step57 = ExerciseSteps(context: self.context)
         step57.idStep = 57
-        step57.steps = "Stand upright with your hands at your hips."
+        step57.steps = "Stand upright with your hands at your hips"
         
         let step58 = ExerciseSteps(context: self.context)
         step58.idStep = 58
-        step58.steps = "Take a large step back with your left foot."
+        step58.steps = "Take a large step back with your left foot"
         
         let step59 = ExerciseSteps(context: self.context)
         step59.idStep = 59
-        step59.steps = "Lower your hips so that your right thigh becomes parallel with your right knee positioned directly to your ankle."
+        step59.steps = "Lower your hips so that your right thigh becomes parallel with your right knee positioned directly to your ankle"
         
         let step60 = ExerciseSteps(context: self.context)
         step60.idStep = 60
-        step60.steps = "Return to standing by pressing your right heel into the floor."
+        step60.steps = "Return to standing by pressing your right heel into the floor"
         
         let warning18 = Warning(context: self.context)
         warning18.idWarning = 18
@@ -628,11 +628,11 @@ class DefaultDataHelper: UIViewController {
         
         let step61 = ExerciseSteps(context: self.context)
         step61.idStep = 61
-        step61.steps = "Begin standing in your back edge of the mat."
+        step61.steps = "Begin standing in your back edge of the mat"
         
         let step62 = ExerciseSteps(context: self.context)
         step62.idStep = 62
-        step62.steps = "Hinge your body forward and walk your hands out in front of you along the floor, keeping your feet in place."
+        step62.steps = "Hinge your body forward and walk your hands out in front of you along the floor, keeping your feet in place"
         
         let step63 = ExerciseSteps(context: self.context)
         step63.idStep = 63
@@ -640,11 +640,11 @@ class DefaultDataHelper: UIViewController {
         
         let step64 = ExerciseSteps(context: self.context)
         step64.idStep = 64
-        step64.steps = "Start walking your feet towards your hands in small steps."
+        step64.steps = "Start walking your feet towards your hands in small steps"
         
         let step65 = ExerciseSteps(context: self.context)
         step65.idStep = 65
-        step65.steps = "Continue inching your body up until your feet meet your palms."
+        step65.steps = "Continue inching your body up until your feet meet your palms"
         
         let warning19 = Warning(context: self.context)
         warning19.idWarning = 19
@@ -658,7 +658,7 @@ class DefaultDataHelper: UIViewController {
         newExercise20.idDifficulty = 2
         newExercise20.idExercise = 20
         newExercise20.listIdSteps = [66,67,68,69,8]
-        newExercise20.namaExercise = "Donkey Kicks"
+        newExercise20.namaExercise = "Donkey kicks"
         newExercise20.image = "donkey kicks"
         newExercise20.videoUrl = "https://www.youtube.com/embed/0tId0Sia_CQ?playsinline=1"
         newExercise20.warningData = [20]
@@ -667,19 +667,19 @@ class DefaultDataHelper: UIViewController {
         
         let step66 = ExerciseSteps(context: self.context)
         step66.idStep = 66
-        step66.steps = "Start by knees hip-width apart, hands under your shoulders, neck and spine neutral."
+        step66.steps = "Start by knees hip-width apart, hands under your shoulders, neck and spine neutral"
         
         let step67 = ExerciseSteps(context: self.context)
         step67.idStep = 67
-        step67.steps = "Begin to lift your right leg, knee staying bent, foot staying flat and hinging at the hip."
+        step67.steps = "Begin to lift your right leg, knee staying bent, foot staying flat and hinging at the hip"
         
         let step68 = ExerciseSteps(context: self.context)
         step68.idStep = 68
-        step68.steps = "Use your glute to press your foot directly toward the ceiling and squeeze at the top. Ensure your pelvis and working hip stay pointed toward to the ground."
+        step68.steps = "Use your glute to press your foot directly toward the ceiling and squeeze at the top. Ensure your pelvis and working hip stay pointed toward to the ground"
         
         let step69 = ExerciseSteps(context: self.context)
         step69.idStep = 69
-        step69.steps = "Return to the starting position."
+        step69.steps = "Return to the starting position"
         
         let warning20 = Warning(context: self.context)
         warning20.idWarning = 20

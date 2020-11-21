@@ -68,7 +68,7 @@ class ShowPlanVC: UIViewController {
         durationLabel.text = "\(duration!) second"
         exerciseLabel.text = "\(exercise!) moves"
         progressExercise.progress = progress
-        progressExerciseLabel.text = "\(Int(progress*100))%"
+        progressExerciseLabel.text = "\(progress*100)%"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

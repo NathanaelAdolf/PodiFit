@@ -36,8 +36,7 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "plan_bg"), for: .default)
-        
-        self.tabBarController?.tabBar.isHidden = true
+        //self.navigationController?.navigationBar.titleTextAttrib
         
         //self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         self.tableView.backgroundColor = UIColor.clear
