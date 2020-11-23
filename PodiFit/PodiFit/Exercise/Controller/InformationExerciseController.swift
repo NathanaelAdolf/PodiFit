@@ -20,9 +20,17 @@ class InformationExerciseController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppUtility.lockOrientation(.portrait)
+//        AppUtility.lockOrientation(.portrait)
         
         parseData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AppUtility.lockOrientation(.all)
     }
     
     func parseData() {
