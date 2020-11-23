@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,9 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="422" height="67"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfP-5B-blD">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfP-5B-blD">
                         <rect key="frame" x="24" y="12" width="374" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Done">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,6 +33,12 @@
                         </connections>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="zfP-5B-blD" secondAttribute="trailing" constant="24" id="6YJ-8X-fca"/>
+                    <constraint firstItem="zfP-5B-blD" firstAttribute="leading" secondItem="W4Z-0q-B0E" secondAttribute="leading" constant="24" id="RMQ-kv-tXQ"/>
+                    <constraint firstAttribute="bottom" secondItem="zfP-5B-blD" secondAttribute="bottom" constant="11" id="Wgd-ws-Wrg"/>
+                    <constraint firstItem="zfP-5B-blD" firstAttribute="top" secondItem="W4Z-0q-B0E" secondAttribute="top" constant="12" id="okH-9z-RKj"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="UHe-ff-1LQ"/>
             <point key="canvasLocation" x="211.59420289855075" y="110.82589285714285"/>

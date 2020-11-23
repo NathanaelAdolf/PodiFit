@@ -127,7 +127,7 @@ class CustomizePlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 180)
+        return CGSize(width: collectionView.frame.size.width/2 - 5, height: 180)
     }
     
     
