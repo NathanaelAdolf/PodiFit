@@ -51,11 +51,14 @@ class ExerciseViewController: UIViewController {
 
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         AppUtility.lockOrientation(.portrait)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         AppUtility.lockOrientation(.all)
+        
     }
     
     public func setupInit(data : Int) {

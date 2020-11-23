@@ -28,9 +28,6 @@ class ExerciseView: UIView, WKNavigationDelegate {
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var imageThumbnail: UIImageView!
     
-    @IBOutlet weak var nextExerciseView: UIView! // ini yg ngga di pake
-    @IBOutlet weak var timeRestView: UIView! // ini yg ngga di pake
-    
     @IBOutlet weak var doneView: UIButton!
     
     @IBOutlet weak var circularBarView: UIView!
@@ -48,15 +45,13 @@ class ExerciseView: UIView, WKNavigationDelegate {
         webKitView.isHidden = false
         restPageView.isHidden = true
         
-        nextExerciseView.isHidden = false // ini ngga di pake
-        timeRestView.isHidden = true // ini hapus
-        // ini pengganti timerestviewishidden (nutup rest)
+        // untuk menghide halaman rest
         restLabel.isHidden = true
         timeRest.isHidden = true
         skipTimeBtn.isHidden = true
         addRestTimeBtn.isHidden = true
         
-        // ini pengganti nextexercise view ishidden = false (munculin exercise)
+        // untuk menampilkan halaman exercise
         nameExerciseLabel.isHidden = false
         informationView.isHidden = false
         progressNumber.isHidden = false
@@ -88,7 +83,6 @@ class ExerciseView: UIView, WKNavigationDelegate {
         warningView.isHidden = true
         webKitView.isHidden = true
         restPageView.isHidden = false
-        
         
         // untuk menampilkan halaman rest
         restLabel.isHidden = false
@@ -129,22 +123,18 @@ class ExerciseView: UIView, WKNavigationDelegate {
     }
     
     func loadWebsite(dataExercise : [ExerciseModel]) {
-        print(dataExercise[0].videoUrl)
         let url = URL(string: "\(dataExercise[0].videoUrl)")
-        print("ini url \(url)")
         let request = URLRequest(url: url!)
         webKitView.load(request)
         
-        
+        // untuk menambahkan activity indicator pada webview
         webKitView.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        
         webKitView.navigationDelegate = self
         activityIndicator.hidesWhenStopped = true
     }
     
     public func lastExercise() {
-        print("masuk ke last")
         doneView.isHidden = false
         circularBarView.isHidden = false
         previousView.isHidden = true

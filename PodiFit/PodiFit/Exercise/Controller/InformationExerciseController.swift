@@ -11,26 +11,27 @@ import UIKit
 class InformationExerciseController: UIViewController {
     
     @IBOutlet weak var informationExerciseView : InformationExercisionView!
-//
-//    @IBOutlet weak var stepsLabel: UILabel!
-//    @IBOutlet weak var ExerciseNameLbl: UILabel!
+
     
     var tempStep = [StepModel]()
     var tempExerciseDetail = [ExerciseModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        AppUtility.lockOrientation(.portrait)
         
         parseData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         AppUtility.lockOrientation(.portrait)
+        print("ini potrait")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         AppUtility.lockOrientation(.all)
+        print("ini landscape")
     }
     
     func parseData() {
