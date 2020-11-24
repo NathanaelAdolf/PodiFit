@@ -45,7 +45,7 @@ class CompletedPlanDetailsViewController: UIViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
-        return (planDetailsData.count == 0) ? 405 : 220
+        return (planDetailsData.count == 0) ? view.frame.size.height : 220
     }
     
 

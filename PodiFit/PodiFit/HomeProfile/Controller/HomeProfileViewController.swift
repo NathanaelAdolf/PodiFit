@@ -93,7 +93,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 1
         {
-            return 110
+            return 100
         }
         else if indexPath.section == 2
         {
@@ -101,7 +101,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else if indexPath.section == 3
         {
-            return (reminderData.count == 0) ? 48 : 90
+            return (reminderData.count == 0) ? 48 : 110
         }
         else if indexPath.section == 4
         {
@@ -241,6 +241,8 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
                     cell.reminderSwitch.setOn(false, animated: false)
                 }
                 
+                cell.reminderSwitch.isHidden = true
+                
                 return cell
             }
         }
@@ -299,8 +301,10 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             sectionLabel.font = UIFont.boldSystemFont(ofSize: 20)
             sectionLabel.textColor = UIColor.white
             
-            addButton = UIButton(frame: CGRect(x: tableView.frame.size.width - 100, y: 6, width:
-                                                80, height: 33))
+            addButton = UIButton(frame: CGRect(x: tableView.frame.size.width - 180, y: 6, width:
+                                                150, height: 33))
+            addButton.contentHorizontalAlignment = .right
+            addButton.titleLabel?.font = UIFont(name: "Helvetica", size: 15)
             addButton.titleLabel?.textColor = .gray
             
             if section == 2 {
@@ -312,7 +316,7 @@ class HomeProfileViewController: UIViewController,UITableViewDataSource,UITableV
             }
             if section == 3
             {
-                addButton.setTitle("Add new", for: .normal)
+                addButton.setTitle("+ Add new", for: .normal)
                 addButton.setTitleColor(.lightGray, for: .normal)
                 swipeState = ""
                 addButton.addTarget(self, action: #selector(reminderButtonPressed), for: .touchUpInside)
