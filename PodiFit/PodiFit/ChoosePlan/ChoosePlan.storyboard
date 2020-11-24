@@ -164,34 +164,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vr-55-EKg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vr-55-EKg">
                                 <rect key="frame" x="45" y="39" width="324" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="wFl-rR-54r"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-Ct-jM0">
-                                <rect key="frame" x="45" y="118" width="324" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-Ct-jM0">
+                                <rect key="frame" x="45" y="94" width="324" height="178"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="G4b-a0-up9"/>
+                                </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-vV-frh">
-                                <rect key="frame" x="41" y="353" width="332" height="324"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-vV-frh">
+                                <rect key="frame" x="41" y="292" width="332" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="357-fu-zhf"/>
+                                </constraints>
                                 <string key="text">Steps:
 1. Put both hands and knees on the floor. 2. Place your right foot near your right hand and extend your left leg behind you. 3. In one smooth motion, switch your legs, keeping your arms in the same position. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fW1-XO-pqu">
+                                <rect key="frame" x="167.5" y="6" width="79" height="6"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="Jc9-9U-0Mz"/>
+                                    <constraint firstAttribute="height" constant="6" id="hkr-sW-mtp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Li-vO-Bul"/>
                         <color key="backgroundColor" red="0.33725490200000002" green="0.37254901959999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6vr-55-EKg" firstAttribute="top" secondItem="fW1-XO-pqu" secondAttribute="bottom" constant="27" id="0Eo-AQ-buD"/>
+                            <constraint firstItem="nAK-vV-frh" firstAttribute="top" secondItem="rP1-Ct-jM0" secondAttribute="bottom" constant="20" id="2ug-rL-a8c"/>
+                            <constraint firstItem="9Li-vO-Bul" firstAttribute="trailing" secondItem="nAK-vV-frh" secondAttribute="trailing" constant="41" id="3mD-Th-18g"/>
+                            <constraint firstItem="fW1-XO-pqu" firstAttribute="centerX" secondItem="WTR-zP-cWW" secondAttribute="centerX" id="4lJ-vD-bzU"/>
+                            <constraint firstItem="rP1-Ct-jM0" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="45" id="78N-R9-1um"/>
+                            <constraint firstItem="9Li-vO-Bul" firstAttribute="trailing" secondItem="6vr-55-EKg" secondAttribute="trailing" constant="45" id="7NL-NW-CYy"/>
+                            <constraint firstItem="6vr-55-EKg" firstAttribute="centerX" secondItem="WTR-zP-cWW" secondAttribute="centerX" id="PD3-fA-nBR"/>
+                            <constraint firstItem="nAK-vV-frh" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="41" id="RUI-UM-22k"/>
+                            <constraint firstItem="rP1-Ct-jM0" firstAttribute="top" secondItem="6vr-55-EKg" secondAttribute="bottom" constant="20" id="Xjh-D7-ON8"/>
+                            <constraint firstItem="9Li-vO-Bul" firstAttribute="trailing" secondItem="rP1-Ct-jM0" secondAttribute="trailing" constant="45" id="ZSN-73-OkV"/>
+                            <constraint firstItem="6vr-55-EKg" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="45" id="a9R-VP-Rqn"/>
+                            <constraint firstItem="fW1-XO-pqu" firstAttribute="top" secondItem="9Li-vO-Bul" secondAttribute="top" constant="6" id="fE1-DY-lf2"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>

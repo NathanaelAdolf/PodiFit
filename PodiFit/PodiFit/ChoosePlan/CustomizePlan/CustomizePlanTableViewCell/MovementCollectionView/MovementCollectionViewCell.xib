@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,20 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12B-Ul-HX5">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="12B-Ul-HX5">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="128" id="VvE-nJ-4L4"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7U-Xk-wWr">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7U-Xk-wWr">
                         <rect key="frame" x="5" y="130" width="136" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Qvd-nD-clF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtJ-mF-5Ji">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtJ-mF-5Ji">
                         <rect key="frame" x="5" y="154" width="136" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="gHs-kK-47Y"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -50,8 +56,17 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="x7U-Xk-wWr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Efo-0a-LPr"/>
+                <constraint firstItem="UtJ-mF-5Ji" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Tf4-99-rDd"/>
+                <constraint firstItem="12B-Ul-HX5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ux3-LW-X1y"/>
+                <constraint firstAttribute="trailing" secondItem="x7U-Xk-wWr" secondAttribute="trailing" constant="9" id="WqE-Qe-IAS"/>
                 <constraint firstItem="gUJ-ke-tML" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="a8B-44-Aw2"/>
                 <constraint firstAttribute="trailing" secondItem="gUJ-ke-tML" secondAttribute="trailing" constant="8" id="d66-Ai-iJA"/>
+                <constraint firstItem="UtJ-mF-5Ji" firstAttribute="top" secondItem="x7U-Xk-wWr" secondAttribute="bottom" constant="3" id="hDi-So-DbB"/>
+                <constraint firstItem="12B-Ul-HX5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hx4-69-dEQ"/>
+                <constraint firstItem="x7U-Xk-wWr" firstAttribute="top" secondItem="12B-Ul-HX5" secondAttribute="bottom" constant="2" id="jsp-iU-uLN"/>
+                <constraint firstAttribute="trailing" secondItem="UtJ-mF-5Ji" secondAttribute="trailing" constant="9" id="r0F-OS-3Ws"/>
+                <constraint firstAttribute="trailing" secondItem="12B-Ul-HX5" secondAttribute="trailing" id="s73-mH-mn1"/>
             </constraints>
             <size key="customSize" width="166" height="150"/>
             <connections>

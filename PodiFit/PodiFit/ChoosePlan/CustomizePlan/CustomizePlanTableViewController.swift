@@ -43,6 +43,11 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         //notifHelper.configureUserNotificationCenter()
         
+        backButton.title = ""
+        backButton.image = UIImage(named: "chevron.left")
+        backButton.tintColor = Colors.yellowColor
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         allExercise = CustomizePlanHelper.fetchExerciseByIdDifficulty(idDifficulty: selectedDifficulty)!
         print("allex = \(allExercise.count)")
         print("arrSE = \(arrSelectedExercise)")
@@ -121,7 +126,7 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 700
+            return tableView.frame.size.height - 170
         }
         else {
             return 70

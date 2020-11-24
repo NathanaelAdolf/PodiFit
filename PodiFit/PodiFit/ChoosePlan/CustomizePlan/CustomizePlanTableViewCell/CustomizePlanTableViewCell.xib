@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,6 +34,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="VzI-Iv-MZB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="PaF-65-o1w"/>
+                    <constraint firstAttribute="bottom" secondItem="VzI-Iv-MZB" secondAttribute="bottom" constant="20" symbolic="YES" id="bWg-gn-y1y"/>
                     <constraint firstItem="VzI-Iv-MZB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="dVg-tq-b97"/>
                     <constraint firstAttribute="trailing" secondItem="VzI-Iv-MZB" secondAttribute="trailing" constant="50" id="zue-01-Vjw"/>
                 </constraints>
