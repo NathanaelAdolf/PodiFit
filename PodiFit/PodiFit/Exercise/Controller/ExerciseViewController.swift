@@ -98,6 +98,10 @@ class ExerciseViewController: UIViewController {
         
     }
     
+    @IBAction func unwindSegueFromExit(_ sender: UIStoryboardSegue) {
+        
+    }
+    
     
     
     @IBAction func informationExercise(_ sender: Any) {
