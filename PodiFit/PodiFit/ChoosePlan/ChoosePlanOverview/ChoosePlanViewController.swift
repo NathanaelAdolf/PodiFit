@@ -16,7 +16,8 @@ struct testCellData{
 
 protocol ButtonCellDelegator {
     func callSegueFromCell()
-    func callSegueFromCellToMain()
+    //func callSegueFromCellToMain()
+    func showAlert()
 }
 
 let CustomizePlanHelper = CustomizePlanModel()
@@ -53,6 +54,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         self.tableView.backgroundColor = UIColor.clear
         self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
         
         self.exerciseData = CustomizePlanHelper.fetchSelectedExercise(idPlan: selectedIndexPlan!)
         self.planData = CustomizePlanHelper.fetchActivePlan()
@@ -233,7 +235,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
             
      }
     
-    func callSegueFromCellToMain() {
+    func callSegueFromCellToMain(alert: UIAlertAction!) {
 //        self.preSegue(withIdentifier: "mainSegue", sender: self )
         
         if (newExerciseArray.isEmpty && planData[selectedIndexPlan-1].idDifficulty == 1) {
@@ -268,6 +270,20 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         }
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Confirm", message: "Are you sure to choose this plan? You cannot make any changes later on.", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let action = UIAlertAction(title: "Yes", style: .default, handler: callSegueFromCellToMain(alert:))
+        
+        alert.addAction(cancel)
+        alert.addAction(action)
+        
+        cancel.setValue(Colors.alertCancelColor, forKey: "titleTextColor")
+        action.setValue(Colors.yellowColor, forKey: "titleTextColor")
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     func insertNewPlan() {
