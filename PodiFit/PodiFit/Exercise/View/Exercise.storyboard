@@ -183,34 +183,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lws-oI-EQV">
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="224.66666666666663" width="374" height="447"/>
+=======
+                                <rect key="frame" x="20" y="224" width="374" height="448"/>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiX-4a-YUO">
-                                        <rect key="frame" x="8" y="24" width="358" height="33"/>
+                                        <rect key="frame" x="8" y="24" width="358" height="34"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You just earned a new badge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VX-TX-L8A">
+<<<<<<< HEAD
                                         <rect key="frame" x="8" y="69.000000000000028" width="358" height="21"/>
+=======
+                                        <rect key="frame" x="8" y="70" width="358" height="21"/>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1st Time Eercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHU-Or-LiV">
-                                        <rect key="frame" x="8" y="281" width="358" height="24"/>
+                                        <rect key="frame" x="8" y="282" width="358" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish exercise for the first time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fI-ez-Izh">
-                                        <rect key="frame" x="8" y="313" width="358" height="21"/>
+                                        <rect key="frame" x="8" y="314" width="358" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXl-JX-HPe">
-                                        <rect key="frame" x="30" y="377" width="314" height="44"/>
+                                        <rect key="frame" x="30" y="378" width="314" height="44"/>
                                         <state key="normal" backgroundImage="claimBadge"/>
                                         <connections>
                                             <action selector="claimBadge:" destination="D2J-66-CHl" eventType="touchUpInside" id="s8l-vo-bMy"/>
@@ -218,7 +226,11 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first time badge" translatesAutoresizingMaskIntoConstraints="NO" id="DpV-DT-BbO">
+<<<<<<< HEAD
                                         <rect key="frame" x="112" y="114.00000000000003" width="150" height="149.99999999999997"/>
+=======
+                                        <rect key="frame" x="112" y="115" width="150" height="150"/>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="DKc-hD-rtE"/>
                                             <constraint firstAttribute="height" constant="150" id="Oot-HX-A1K"/>
@@ -616,13 +628,27 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOUNTAIN CLIMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8Z-Xz-oL2">
+<<<<<<< HEAD
                                                         <rect key="frame" x="18" y="390.66666666666669" width="388" height="26.333333333333314"/>
+=======
+                                                        <rect key="frame" x="18.5" y="389.5" width="377" height="26.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="377" id="xFp-1C-X2u"/>
+                                                        </constraints>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXT MOVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsj-lt-6Lo">
+<<<<<<< HEAD
                                                         <rect key="frame" x="18" y="362.33333333333331" width="370.66666666666669" height="20.333333333333314"/>
+=======
+                                                        <rect key="frame" x="18.5" y="361.5" width="377" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="377" id="JxY-cs-Nvj"/>
+                                                        </constraints>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -640,16 +666,17 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="rsj-lt-6Lo" secondAttribute="trailing" constant="25.329999999999998" id="1ye-Eh-Omm"/>
+                                                    <constraint firstItem="U8Z-Xz-oL2" firstAttribute="top" secondItem="rsj-lt-6Lo" secondAttribute="bottom" constant="7.5" id="7Zs-fa-NMc"/>
                                                     <constraint firstAttribute="trailing" secondItem="xQs-Zn-ydT" secondAttribute="trailing" id="9M9-SV-8wG"/>
-                                                    <constraint firstAttribute="bottom" secondItem="U8Z-Xz-oL2" secondAttribute="bottom" constant="31" id="EAW-Ep-oIz"/>
                                                     <constraint firstItem="xQs-Zn-ydT" firstAttribute="top" secondItem="Osp-g7-Fhe" secondAttribute="top" id="Ko0-Js-bqa"/>
-                                                    <constraint firstItem="U8Z-Xz-oL2" firstAttribute="trailing" secondItem="Osp-g7-Fhe" secondAttribute="trailingMargin" id="QIx-Lf-ibG"/>
+                                                    <constraint firstItem="U8Z-Xz-oL2" firstAttribute="leading" secondItem="Osp-g7-Fhe" secondAttribute="leading" constant="18.5" id="OSQ-P4-Ekf"/>
                                                     <constraint firstItem="xQs-Zn-ydT" firstAttribute="leading" secondItem="Osp-g7-Fhe" secondAttribute="leading" id="RM8-i9-ApO"/>
-                                                    <constraint firstItem="U8Z-Xz-oL2" firstAttribute="leading" secondItem="rsj-lt-6Lo" secondAttribute="leading" id="X46-1P-7LJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="U8Z-Xz-oL2" secondAttribute="bottom" constant="32" id="Sgi-DF-1ve"/>
+                                                    <constraint firstItem="rsj-lt-6Lo" firstAttribute="centerX" secondItem="Osp-g7-Fhe" secondAttribute="centerX" id="Zcx-ub-4P8"/>
                                                     <constraint firstAttribute="bottom" secondItem="xQs-Zn-ydT" secondAttribute="bottom" id="a1v-XO-sQc"/>
-                                                    <constraint firstItem="rsj-lt-6Lo" firstAttribute="leading" secondItem="Osp-g7-Fhe" secondAttribute="leading" constant="18" id="wCd-1M-egH"/>
-                                                    <constraint firstItem="U8Z-Xz-oL2" firstAttribute="top" secondItem="rsj-lt-6Lo" secondAttribute="bottom" constant="8" id="yde-au-OyF"/>
+                                                    <constraint firstItem="U8Z-Xz-oL2" firstAttribute="centerX" secondItem="Osp-g7-Fhe" secondAttribute="centerX" id="g3m-6r-cun"/>
+                                                    <constraint firstAttribute="trailing" secondItem="U8Z-Xz-oL2" secondAttribute="trailing" constant="18.5" id="lxY-04-lBU"/>
+                                                    <constraint firstItem="rsj-lt-6Lo" firstAttribute="leading" secondItem="Osp-g7-Fhe" secondAttribute="leading" constant="18.5" id="tul-pz-Qxw"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -670,10 +697,19 @@
                                             <constraint firstItem="Osp-g7-Fhe" firstAttribute="leading" secondItem="eMl-Z7-6tJ" secondAttribute="leading" id="xg7-SI-hTq"/>
                                             <constraint firstAttribute="bottom" secondItem="A42-tZ-ooY" secondAttribute="bottom" id="y5Y-te-3F0"/>
                                         </constraints>
+<<<<<<< HEAD
+=======
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="A42-tZ-ooY"/>
+                                            </mask>
+                                        </variation>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9K-bp-ne8">
                                         <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                                         <subviews>
+<<<<<<< HEAD
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcr-FD-1q3">
                                                 <rect key="frame" x="50" y="40" width="314" height="40.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
@@ -727,11 +763,67 @@
                                                         <rect key="frame" x="44" y="0.0" width="278" height="80"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <color key="textColor" red="0.68627450980392157" green="0.70196078431372544" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+=======
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A30-5k-7o4">
+                                                <rect key="frame" x="40" y="22" width="335" height="303"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wx9-qr-19A" customClass="CircularProgressView" customModule="PodiFit" customModuleProvider="target">
+                                                        <rect key="frame" x="112" y="147" width="110" height="110"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXv-jw-7kW">
+                                                                <rect key="frame" x="21" y="38" width="75" height="34"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checklist" translatesAutoresizingMaskIntoConstraints="NO" id="49g-Sr-l6c">
+                                                                <rect key="frame" x="23" y="17" width="65" height="76"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.37254901960784315" green="0.40784313725490196" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTW-TV-0cA">
+                                                        <rect key="frame" x="37" y="178" width="48" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" red="0.89411764705882346" green="0.96470588235294119" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <state key="normal" backgroundImage="backward.end.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="previous:" destination="zsz-kc-T8g" eventType="touchUpInside" id="vst-Ht-zMA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-A8-OLc">
+                                                        <rect key="frame" x="249" y="178" width="48" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" red="0.89411764705882346" green="0.96470588235294119" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <state key="normal" backgroundImage="forward.end.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="next:" destination="zsz-kc-T8g" eventType="touchUpInside" id="YYx-sS-T9F"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoN-tE-TNY">
+                                                        <rect key="frame" x="315" y="63.5" width="20" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" backgroundImage="info.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="informationExercise:" destination="zsz-kc-T8g" eventType="touchUpInside" id="tjY-7v-If1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STRAIGHT LEG AND CALF RAISE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkW-uN-COB">
+                                                        <rect key="frame" x="23" y="17" width="289" height="113"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.33725490196078434" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
+<<<<<<< HEAD
                                                     <constraint firstAttribute="height" constant="80" id="88c-gg-LCH"/>
                                                     <constraint firstItem="Tid-1j-Rv0" firstAttribute="leading" secondItem="zId-nf-dSM" secondAttribute="leading" constant="8" id="Ezv-cS-XIz"/>
                                                     <constraint firstAttribute="trailing" secondItem="CNJ-hq-8j3" secondAttribute="trailing" constant="8" id="NrK-uT-V73"/>
@@ -740,6 +832,9 @@
                                                     <constraint firstItem="Tid-1j-Rv0" firstAttribute="top" secondItem="zId-nf-dSM" secondAttribute="top" constant="25" id="mKb-Jm-IG9"/>
                                                     <constraint firstItem="CNJ-hq-8j3" firstAttribute="leading" secondItem="Tid-1j-Rv0" secondAttribute="trailing" constant="8" id="uAi-9o-qml"/>
                                                     <constraint firstAttribute="bottom" secondItem="CNJ-hq-8j3" secondAttribute="bottom" id="vFi-jX-YTS"/>
+=======
+                                                    <constraint firstAttribute="height" constant="303" id="zkY-YQ-BbA"/>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                                 </constraints>
                                             </view>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTW-TV-0cA">
@@ -801,6 +896,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.37254901960784315" green="0.40784313725490196" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
+<<<<<<< HEAD
                                                     <constraint firstAttribute="height" constant="110" id="MHR-wZ-wOn"/>
                                                     <constraint firstAttribute="width" constant="110" id="djo-qn-MJd"/>
                                                 </constraints>
@@ -815,6 +911,17 @@
                                                 <state key="normal" backgroundImage="+5secs">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+=======
+                                                    <constraint firstAttribute="height" constant="80" id="cS8-oB-Ziz"/>
+                                                </constraints>
+                                            </view>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olj-gI-Tl0">
+                                                <rect key="frame" x="35" y="360" width="344" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" backgroundImage="finishExe"/>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                                 <connections>
                                                     <action selector="addTimeRest:" destination="zsz-kc-T8g" eventType="touchUpInside" id="2oJ-db-LSo"/>
                                                 </connections>
@@ -822,6 +929,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.24313725490196078" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+<<<<<<< HEAD
                                             <constraint firstItem="KoN-tE-TNY" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="71" id="4gY-5D-EW7"/>
                                             <constraint firstItem="VYv-A8-OLc" firstAttribute="top" secondItem="qkW-uN-COB" secondAttribute="bottom" constant="71" id="5y3-Yj-73v"/>
                                             <constraint firstItem="qkW-uN-COB" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="45.5" id="9JP-GV-51g"/>
@@ -850,6 +958,18 @@
                                             <constraint firstItem="VYv-A8-OLc" firstAttribute="leading" secondItem="Wx9-qr-19A" secondAttribute="trailing" constant="30" id="vJQ-rU-3cJ"/>
                                             <constraint firstItem="Wx9-qr-19A" firstAttribute="centerX" secondItem="X9K-bp-ne8" secondAttribute="centerX" id="vf8-jg-Cxu"/>
                                             <constraint firstItem="lTW-TV-0cA" firstAttribute="top" secondItem="qkW-uN-COB" secondAttribute="bottom" constant="71" id="yGF-rI-Jo5"/>
+=======
+                                            <constraint firstItem="fme-u1-dS2" firstAttribute="leading" secondItem="X9K-bp-ne8" secondAttribute="leading" constant="15" id="0Nz-UQ-9hj"/>
+                                            <constraint firstItem="A30-5k-7o4" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="22" id="4ll-hR-23y"/>
+                                            <constraint firstAttribute="bottom" secondItem="zId-nf-dSM" secondAttribute="bottom" constant="35" id="9yk-Tw-m2c"/>
+                                            <constraint firstItem="fme-u1-dS2" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="56" id="Ty6-lJ-CtF"/>
+                                            <constraint firstItem="A30-5k-7o4" firstAttribute="leading" secondItem="X9K-bp-ne8" secondAttribute="leading" constant="40" id="cjc-e0-YHc"/>
+                                            <constraint firstItem="zId-nf-dSM" firstAttribute="leading" secondItem="X9K-bp-ne8" secondAttribute="leading" constant="42" id="hxS-3B-S0P"/>
+                                            <constraint firstAttribute="trailing" secondItem="fme-u1-dS2" secondAttribute="trailing" constant="8" id="iZC-gB-DoO"/>
+                                            <constraint firstAttribute="trailing" secondItem="zId-nf-dSM" secondAttribute="trailing" constant="42" id="jgs-nM-y8S"/>
+                                            <constraint firstAttribute="trailing" secondItem="A30-5k-7o4" secondAttribute="trailing" constant="39" id="qNa-Fe-y6m"/>
+                                            <constraint firstAttribute="bottom" secondItem="fme-u1-dS2" secondAttribute="bottom" constant="78" id="uQ8-73-6Wd"/>
+>>>>>>> parent of 1e03f92... coba layout divideo
                                         </constraints>
                                     </view>
                                 </subviews>
