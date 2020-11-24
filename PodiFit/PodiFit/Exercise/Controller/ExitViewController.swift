@@ -35,9 +35,30 @@ class ExitViewController: UIViewController {
     
 
     @IBAction func restartExercise(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        
+        self.performSegue(withIdentifier: "toExit", sender: nil)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! ExerciseViewController
+        destination.finishExercise = 0
+        
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toInformationExercise" {
+//            let destination = segue.destination as! InformationExerciseController
+//            destination.tempStep = planModelHelpers.fetchIdSteps(idExercise: tempExerciseDetail[0].idExercise)
+//            destination.tempExerciseDetail = planModelHelpers.fetchExerciseDetail(idExercise: tempExerciseDetail[0].idExercise)
+//
+//        } else if segue.identifier == "toSummary" {
+//            let destination = segue.destination as! ExerciseSummaryViewController
+//
+//            destination.totalWaktuExercise = countTimeForSummary
+//        }
+//    }
     
     @IBAction func quitExercise(_ sender: Any) {
         

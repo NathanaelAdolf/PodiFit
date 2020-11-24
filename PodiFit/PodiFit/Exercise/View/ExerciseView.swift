@@ -28,31 +28,36 @@ class ExerciseView: UIView, WKNavigationDelegate {
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var imageThumbnail: UIImageView!
     
-    @IBOutlet weak var nextExerciseView: UIView!
-    @IBOutlet weak var timeRestView: UIView!
-    
     @IBOutlet weak var doneView: UIButton!
     
     @IBOutlet weak var circularBarView: UIView!
     @IBOutlet weak var previousView: UIButton!
     @IBOutlet weak var nextView: UIButton!
+    @IBOutlet weak var informationView: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-    var links = "https://www.youtube.com/embed/xXRU28mfIJQ"
-    
-    func setupInitial() {
-        
-    }
-    
     public func videoView(dataExercise : [ExerciseModel], tempWarningData : String) {
-        //for show webkit(video)
+        
+        // setting halaman video dan thumbnail serta warning
+        warningView.isHidden = false
         webKitView.isHidden = false
         restPageView.isHidden = true
-        warningView.isHidden = false
-        nextExerciseView.isHidden = false
-        timeRestView.isHidden = true
+        
+        // untuk menghide halaman rest
+        restLabel.isHidden = true
+        timeRest.isHidden = true
+        skipTimeBtn.isHidden = true
+        addRestTimeBtn.isHidden = true
+        
+        // untuk menampilkan halaman exercise
+        nameExerciseLabel.isHidden = false
+        informationView.isHidden = false
+        progressNumber.isHidden = false
+        circularBarView.isHidden = false
+        nextView.isHidden = false
+        previousView.isHidden = false
         
         //fadein fadeout effect
         self.webKitView.alpha = 0.0
@@ -63,13 +68,9 @@ class ExerciseView: UIView, WKNavigationDelegate {
         nameExerciseLabel?.text = dataExercise[0].namaExercise
         loadWebsite(dataExercise : dataExercise)
         warningExercise(tempWarningData : tempWarningData)
-        
-        
     }
     
     public func restView(dataExercise : [ExerciseModel], number : Int, totalExercise : Int) {
-        // stop video in webkit
-        
         loadWebsite(dataExercise: dataExercise)
         
         // fadein fadeout effect
@@ -78,14 +79,25 @@ class ExerciseView: UIView, WKNavigationDelegate {
             self.restPageView.alpha = 1.0
         })
                 
-        // for hidden webkit view (video) and show page rest
+        // setting halaman video dan thumbnail serta warning
+        warningView.isHidden = true
         webKitView.isHidden = true
         restPageView.isHidden = false
-        warningView.isHidden = true
-        timeRestView.isHidden = false
-        nextExerciseView.isHidden = true
-//        nextExerciseLabel.isHidden = false
         
+        // untuk menampilkan halaman rest
+        restLabel.isHidden = false
+        timeRest.isHidden = false
+        skipTimeBtn.isHidden = false
+        addRestTimeBtn.isHidden = false
+        nextExerciseLabel.isHidden = false
+        
+        // untuk menghide halaman exercise
+        nameExerciseLabel.isHidden = true
+        informationView.isHidden = true
+        progressNumber.isHidden = true
+        circularBarView.isHidden = true
+        nextView.isHidden = true
+        previousView.isHidden = true
         
         // border button
         addRestTimeBtn.layer.borderWidth = 1
@@ -111,22 +123,18 @@ class ExerciseView: UIView, WKNavigationDelegate {
     }
     
     func loadWebsite(dataExercise : [ExerciseModel]) {
-        print(dataExercise[0].videoUrl)
         let url = URL(string: "\(dataExercise[0].videoUrl)")
-        print("ini url \(url)")
         let request = URLRequest(url: url!)
         webKitView.load(request)
         
-        
+        // untuk menambahkan activity indicator pada webview
         webKitView.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        
         webKitView.navigationDelegate = self
         activityIndicator.hidesWhenStopped = true
     }
     
     public func lastExercise() {
-        print("masuk ke last")
         doneView.isHidden = false
         circularBarView.isHidden = false
         previousView.isHidden = true

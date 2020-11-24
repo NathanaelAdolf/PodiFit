@@ -19,7 +19,9 @@ class ExerciseSummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        exerciseSummaryView.setInitialView()
+
+        AppUtility.lockOrientation(.portrait)
+
         exerciseSummaryView.tableView.delegate = self
         exerciseSummaryView.tableView.dataSource = self    
     }
@@ -74,8 +76,16 @@ extension ExerciseSummaryViewController : UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: "summaryTime") as! summaryTime
             var detikExercise : String = ""
             var menitExercise : String = ""
+            var label : String = ""
             let tempDetikExercise = totalWaktuExercise % 60
             let tempMenitExercise = totalWaktuExercise / 60
+            
+            if tempMenitExercise != 0 {
+                label = "Minutes"
+            } else if tempDetikExercise != 0 {
+                label = "Seconds"
+            }
+            
             if tempDetikExercise < 10 {
                 detikExercise = "0\(tempDetikExercise)"
                 print("ini detik di sum \(detikExercise)")
@@ -88,7 +98,11 @@ extension ExerciseSummaryViewController : UITableViewDelegate, UITableViewDataSo
             } else {
                 menitExercise = "\(tempDetikExercise)"
             }
-            cell.setView(menitExercise: menitExercise, detikExercise: detikExercise)
+            
+            
+            
+            
+            cell.setView(menitExercise: menitExercise, detikExercise: detikExercise, label : label)
             return cell
         } else {
             let cellEmot = tableView.dequeueReusableCell(withIdentifier: "emoticonCell") as! EmoticonTableViewCell

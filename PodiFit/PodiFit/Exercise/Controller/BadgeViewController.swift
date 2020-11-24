@@ -15,6 +15,7 @@ class BadgeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        AppUtility.lockOrientation(.portrait)
         badgeView.setupBadgeView()
         // Do any additional setup after loading the view.
     }
