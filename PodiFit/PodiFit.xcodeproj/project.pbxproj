@@ -87,6 +87,7 @@
 		8DC71C59254D0C2300AD6C2B /* BadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71C58254D0C2300AD6C2B /* BadgesCollectionViewCell.swift */; };
 		8DD69DFD2554E22A00E2DF21 /* PlanHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD69DFC2554E22A00E2DF21 /* PlanHelper.swift */; };
 		8DD69E052554FD7600E2DF21 /* DifficultyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */; };
+		8DE9094D256E5EB600BF0EB7 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9094C256E5EB600BF0EB7 /* SF-Pro.ttf */; };
 		AB143038255E4B77002AC656 /* CustomizePlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB143037255E4B77002AC656 /* CustomizePlanModel.swift */; };
 		AB33864D25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33864B25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift */; };
 		AB33864E25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33864C25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift */; };
@@ -235,6 +236,7 @@
 		8DD69DF42554E19500E2DF21 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		8DD69DFC2554E22A00E2DF21 /* PlanHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanHelper.swift; sourceTree = "<group>"; };
 		8DD69E042554FD7600E2DF21 /* DifficultyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyHelper.swift; sourceTree = "<group>"; };
+		8DE9094C256E5EB600BF0EB7 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		AB143037255E4B77002AC656 /* CustomizePlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizePlanModel.swift; sourceTree = "<group>"; };
 		AB33864B25511EFD00CE24C7 /* TestEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB33864C25511EFD00CE24C7 /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 		4898B4C9254928E800FBBC17 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				8DE9093E256E5E2600BF0EB7 /* Fonts */,
 				4898B4CB2549294900FBBC17 /* Colours */,
 			);
 			path = Theme;
@@ -668,6 +671,14 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		8DE9093E256E5E2600BF0EB7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8DE9094C256E5EB600BF0EB7 /* SF-Pro.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		AB36384B2552AE1E002A5E6B /* ExerciseHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -908,6 +919,7 @@
 				AB6E780825593ACD00262039 /* PlanInfoCell.xib in Resources */,
 				ABFB9A2C255000A700B5E96A /* ChoosePlan.storyboard in Resources */,
 				8D13C0F325402C27002195C9 /* HomePlan.storyboard in Resources */,
+				8DE9094D256E5EB600BF0EB7 /* SF-Pro.ttf in Resources */,
 				8D13C0BD25402997002195C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

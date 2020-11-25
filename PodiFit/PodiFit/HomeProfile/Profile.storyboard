@@ -9,6 +9,12 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+            <string>SFPro-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home Profile View Controller-->
         <scene sceneID="a8r-wr-u2K">
@@ -53,6 +59,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="dxy-Rf-HkR"/>
                                                         <constraint firstAttribute="width" constant="54" id="hb9-3Z-8K9"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                     <state key="normal" title="Edit">
                                                         <color key="titleColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.42745098040000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -65,7 +72,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="rET-Wv-IHW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -121,7 +128,7 @@
                                                         <constraint firstAttribute="height" constant="16" id="OKy-Np-Bxx"/>
                                                         <constraint firstAttribute="width" constant="74" id="hxF-wY-tZ8"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" white="0.58395923735344246" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -131,7 +138,7 @@
                                                         <constraint firstAttribute="width" constant="11" id="hr2-Dd-3CP"/>
                                                         <constraint firstAttribute="height" constant="22" id="nqp-dC-hx5"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -141,7 +148,7 @@
                                                         <constraint firstAttribute="width" constant="43" id="pWx-X2-LKm"/>
                                                         <constraint firstAttribute="height" constant="22" id="qj5-2C-Db3"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -151,7 +158,7 @@
                                                         <constraint firstAttribute="width" constant="43" id="1MG-jJ-Kbs"/>
                                                         <constraint firstAttribute="height" constant="16" id="Vyq-uw-qMY"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" white="0.5839592374" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -161,7 +168,7 @@
                                                         <constraint firstAttribute="width" constant="41" id="PLM-wS-Dt7"/>
                                                         <constraint firstAttribute="height" constant="16" id="djh-s7-q9r"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" white="0.5839592374" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -187,7 +194,7 @@
                                                         <constraint firstAttribute="width" constant="47" id="Bz4-XS-XjQ"/>
                                                         <constraint firstAttribute="height" constant="22" id="wry-EZ-q0W"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -281,7 +288,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="KY2-m1-RHE"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -291,7 +298,7 @@
                                                                             <constraint firstAttribute="height" constant="13" id="7MP-rW-ZWW"/>
                                                                             <constraint firstAttribute="width" constant="42" id="osF-X0-k5J"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="10"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                         <color key="highlightedColor" systemColor="secondaryLabelColor"/>
                                                                     </label>
@@ -301,7 +308,7 @@
                                                                             <constraint firstAttribute="height" constant="13" id="O4t-f2-xNQ"/>
                                                                             <constraint firstAttribute="width" constant="42" id="lHr-OV-KDA"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="10"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                         <color key="highlightedColor" systemColor="secondaryLabelColor"/>
                                                                     </label>
@@ -311,7 +318,7 @@
                                                                             <constraint firstAttribute="height" constant="13" id="KWy-Rm-fwy"/>
                                                                             <constraint firstAttribute="width" constant="48" id="P52-Tw-sxT"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="10"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                         <color key="highlightedColor" systemColor="secondaryLabelColor"/>
                                                                     </label>
@@ -321,26 +328,26 @@
                                                                             <constraint firstAttribute="height" constant="18" id="DRA-6y-vtm"/>
                                                                             <constraint firstAttribute="width" constant="10" id="lYv-XJ-Fma"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zq-nu-WY6">
-                                                                        <rect key="frame" x="74.5" y="138" width="20" height="18"/>
+                                                                        <rect key="frame" x="76" y="138" width="20" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="20" id="4Sj-ei-sed"/>
                                                                             <constraint firstAttribute="height" constant="18" id="veh-ji-YSC"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3I-LG-TR7">
-                                                                        <rect key="frame" x="107.5" y="136" width="46.5" height="21"/>
+                                                                        <rect key="frame" x="109" y="136" width="45" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="KtQ-Lx-k4D"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -349,7 +356,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="tol-fl-jKZ"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -359,7 +366,7 @@
                                                                             <constraint firstAttribute="height" constant="21" id="YtH-LV-nPO"/>
                                                                             <constraint firstAttribute="width" constant="59" id="oNV-rZ-4Y6"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -436,21 +443,21 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw8-iW-m1Y">
-                                                    <rect key="frame" x="30" y="15" width="200" height="25"/>
+                                                    <rect key="frame" x="30" y="15" width="200" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="YUF-FK-nLF"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReminderName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFp-lw-5vW">
-                                                    <rect key="frame" x="30" y="43" width="203" height="24"/>
+                                                    <rect key="frame" x="30" y="45" width="203" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="A1m-Bh-hdQ"/>
                                                         <constraint firstAttribute="width" constant="203" id="iSp-mf-W8H"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -460,7 +467,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="5pa-jJ-Ji0"/>
                                                         <constraint firstAttribute="width" constant="29" id="oGp-Ki-L6u"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -470,7 +477,7 @@
                                                         <constraint firstAttribute="width" constant="24" id="YRK-qz-mZB"/>
                                                         <constraint firstAttribute="height" constant="17" id="dTJ-r0-62W"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -480,7 +487,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="7Vl-RW-rTJ"/>
                                                         <constraint firstAttribute="width" constant="30" id="TDc-8E-FDf"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -490,7 +497,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="Fen-an-mR3"/>
                                                         <constraint firstAttribute="height" constant="17" id="rLC-qD-Emy"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -500,7 +507,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="9FA-Lo-o5Q"/>
                                                         <constraint firstAttribute="width" constant="17" id="wMH-Ac-8Of"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -510,7 +517,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="FPm-ls-Os5"/>
                                                         <constraint firstAttribute="width" constant="22" id="dN1-Aj-auj"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -520,7 +527,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="Yeb-fA-9ZC"/>
                                                         <constraint firstAttribute="height" constant="17" id="lbS-G0-w9b"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -535,7 +542,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="QQo-U3-MWP" secondAttribute="bottom" constant="12" id="3Rn-OW-dWe"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="kzb-vn-OlG" secondAttribute="bottom" constant="12" id="5IY-zR-dAY"/>
-                                                <constraint firstItem="JFp-lw-5vW" firstAttribute="top" secondItem="Aw8-iW-m1Y" secondAttribute="bottom" constant="3" id="EbL-Z6-Z34"/>
+                                                <constraint firstItem="JFp-lw-5vW" firstAttribute="top" secondItem="Aw8-iW-m1Y" secondAttribute="bottom" constant="1" id="EbL-Z6-Z34"/>
                                                 <constraint firstItem="eYd-A7-U1C" firstAttribute="leading" secondItem="PJg-Ef-7i6" secondAttribute="trailing" constant="10" id="Fm4-Sy-gcc"/>
                                                 <constraint firstItem="5su-zs-687" firstAttribute="top" secondItem="Q2s-lg-ev7" secondAttribute="top" constant="6" id="GCc-99-fCe"/>
                                                 <constraint firstItem="JrP-tw-Cmh" firstAttribute="leading" secondItem="OMz-VA-djQ" secondAttribute="trailing" constant="11" id="HfB-vM-8q0"/>
@@ -717,7 +724,7 @@
                                 <rect key="frame" x="-224" y="-163" width="753" height="529"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="IzL-rk-8SJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="IzL-rk-8SJ">
                                 <rect key="frame" x="0.0" y="100" width="414" height="740"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1243,7 +1250,7 @@
                                 <rect key="frame" x="100" y="570" width="414" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-rz-QEg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-rz-QEg">
                                 <rect key="frame" x="0.0" y="98" width="414" height="715"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1410,20 +1417,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no completed plan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxk-wV-w9v">
-                                                    <rect key="frame" x="40" y="160.5" width="334" height="84"/>
+                                                    <rect key="frame" x="40" y="131" width="334" height="84"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="84" id="vF3-nl-1Qc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="34"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="dxk-wV-w9v" firstAttribute="centerX" secondItem="oyz-K7-Fde" secondAttribute="centerX" id="AQE-8y-gof"/>
                                                 <constraint firstAttribute="trailing" secondItem="dxk-wV-w9v" secondAttribute="trailing" constant="40" id="MDG-pv-Nsv"/>
-                                                <constraint firstItem="dxk-wV-w9v" firstAttribute="centerX" secondItem="oyz-K7-Fde" secondAttribute="centerX" id="ZuN-D3-hNT"/>
+                                                <constraint firstItem="dxk-wV-w9v" firstAttribute="top" secondItem="oyz-K7-Fde" secondAttribute="topMargin" constant="120" id="coo-3h-pOU"/>
                                                 <constraint firstItem="dxk-wV-w9v" firstAttribute="leading" secondItem="oyz-K7-Fde" secondAttribute="leading" constant="40" id="maW-Bs-pnW"/>
-                                                <constraint firstItem="dxk-wV-w9v" firstAttribute="centerY" secondItem="oyz-K7-Fde" secondAttribute="centerY" id="zWs-Tz-y1B"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
