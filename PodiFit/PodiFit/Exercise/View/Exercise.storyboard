@@ -439,7 +439,7 @@
                                                                 <constraint firstAttribute="width" constant="80" id="WQF-Ha-h1R"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                                            <state key="normal" backgroundImage="tiredEmot"/>
+                                                            <state key="normal" backgroundImage="tired_face"/>
                                                             <connections>
                                                                 <action selector="tiredBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="nw8-5q-B40"/>
                                                             </connections>
@@ -451,7 +451,7 @@
                                                                 <constraint firstAttribute="width" constant="80" id="sha-z6-uN6"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                                            <state key="normal" backgroundImage="neutralEmot"/>
+                                                            <state key="normal" backgroundImage="neutral_face"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel after exercise?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyU-0F-6bo">
                                                             <rect key="frame" x="8" y="8" width="358" height="23"/>
@@ -474,7 +474,7 @@
                                                                 <constraint firstAttribute="width" constant="80" id="99R-NA-D3k"/>
                                                                 <constraint firstAttribute="height" constant="80" id="Ext-LY-doA"/>
                                                             </constraints>
-                                                            <state key="normal" backgroundImage="EnergizedEmot"/>
+                                                            <state key="normal" backgroundImage="energized_face"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5u-dl-8SE">
                                                             <rect key="frame" x="147" y="169" width="80" height="21"/>
@@ -942,21 +942,21 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="+5secs" width="314" height="44"/>
-        <image name="EnergizedEmot" width="100" height="100"/>
         <image name="Quit" width="314" height="44"/>
         <image name="Restart" width="314" height="44"/>
         <image name="Resume" width="314" height="44"/>
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="checklist" width="30" height="29"/>
         <image name="claimBadge" width="314" height="44"/>
+        <image name="energized_face" width="60" height="60"/>
         <image name="exclamationmark.triangle" catalog="system" width="128" height="112"/>
         <image name="first time badge" width="80" height="80"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="mountain_climber" width="414" height="232"/>
-        <image name="neutralEmot" width="100" height="100"/>
+        <image name="neutral_face" width="60" height="60"/>
         <image name="skipBtn" width="314" height="44"/>
-        <image name="tiredEmot" width="100" height="100"/>
+        <image name="tired_face" width="60" height="60"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
