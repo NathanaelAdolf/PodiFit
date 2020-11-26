@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Inchworm.png",
+      "filename" : "neutral_face.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "neutral_face@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "neutral_face@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

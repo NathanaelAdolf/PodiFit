@@ -23,7 +23,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="c7o-8M-jwc"/>
                         </constraints>
-                        <state key="normal" title="Customize this plan">
+                        <state key="normal" title="Customize This plan">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
@@ -40,7 +40,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="ADE-kK-opG"/>
                         </constraints>
-                        <state key="normal" title="Confirm this plan">
+                        <state key="normal" title="Confirm This plan">
                             <color key="titleColor" red="0.89411764709999997" green="0.96470588239999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                         </state>
                         <userDefinedRuntimeAttributes>
