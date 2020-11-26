@@ -142,6 +142,8 @@ class ExerciseView: UIView, WKNavigationDelegate {
         progressNumber.isHidden = true
         checkImage.isHidden = false
         warningView.isHidden = true
+        
+        doneView.layer.cornerRadius = 7
     }
     
     func setProgressNumber (number : Int, totalExercise : Int) {

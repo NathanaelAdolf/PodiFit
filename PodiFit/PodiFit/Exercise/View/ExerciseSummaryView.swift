@@ -41,6 +41,7 @@ class summaryTime: UITableViewCell {
 class ExerciseSummaryView: UIView {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var finishButton: UIButton!
     
 
     
@@ -50,6 +51,7 @@ class ExerciseSummaryView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setInitialView()
+        finishButton.layer.cornerRadius = 7
         
     }
 
