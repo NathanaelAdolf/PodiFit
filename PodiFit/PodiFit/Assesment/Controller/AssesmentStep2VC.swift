@@ -23,6 +23,7 @@ class AssesmentStep2VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppUtility.lockOrientation(.portrait)
 
         setupUI()
     }

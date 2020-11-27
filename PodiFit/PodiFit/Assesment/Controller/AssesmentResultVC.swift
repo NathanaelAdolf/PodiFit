@@ -30,6 +30,7 @@ class AssesmentResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppUtility.lockOrientation(.portrait)
         
         setupData()
     }
