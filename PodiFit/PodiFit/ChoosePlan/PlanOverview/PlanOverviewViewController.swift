@@ -58,7 +58,8 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        //self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        
         self.tabBarController?.tabBar.isHidden = true
         //deleteAllDummy(entity: "TestEntity")
         
