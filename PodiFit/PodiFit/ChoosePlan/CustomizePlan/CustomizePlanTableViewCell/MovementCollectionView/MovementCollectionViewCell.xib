@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUJ-ke-tML">
-                        <rect key="frame" x="122" y="12" width="20" height="22"/>
+                        <rect key="frame" x="120" y="10" width="20" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="tintColor" red="0.33725490200000002" green="0.37254901959999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" image="info.circle.fill" catalog="system">
@@ -60,8 +60,8 @@
                 <constraint firstItem="UtJ-mF-5Ji" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Tf4-99-rDd"/>
                 <constraint firstItem="12B-Ul-HX5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ux3-LW-X1y"/>
                 <constraint firstAttribute="trailing" secondItem="x7U-Xk-wWr" secondAttribute="trailing" constant="9" id="WqE-Qe-IAS"/>
-                <constraint firstItem="gUJ-ke-tML" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="a8B-44-Aw2"/>
-                <constraint firstAttribute="trailing" secondItem="gUJ-ke-tML" secondAttribute="trailing" constant="8" id="d66-Ai-iJA"/>
+                <constraint firstItem="gUJ-ke-tML" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="a8B-44-Aw2"/>
+                <constraint firstAttribute="trailing" secondItem="gUJ-ke-tML" secondAttribute="trailing" constant="10" id="d66-Ai-iJA"/>
                 <constraint firstItem="UtJ-mF-5Ji" firstAttribute="top" secondItem="x7U-Xk-wWr" secondAttribute="bottom" constant="3" id="hDi-So-DbB"/>
                 <constraint firstItem="12B-Ul-HX5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hx4-69-dEQ"/>
                 <constraint firstItem="x7U-Xk-wWr" firstAttribute="top" secondItem="12B-Ul-HX5" secondAttribute="bottom" constant="2" id="jsp-iU-uLN"/>

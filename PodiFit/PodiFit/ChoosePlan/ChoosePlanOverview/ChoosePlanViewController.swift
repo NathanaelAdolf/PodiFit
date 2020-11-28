@@ -59,7 +59,12 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         self.tabBarController?.tabBar.isHidden = true
         
         self.exerciseData = CustomizePlanHelper.fetchSelectedExercise(idPlan: selectedIndexPlan!)
-        self.planData = CustomizePlanHelper.fetchActivePlan()
+        
+        if self.planData.isEmpty == true {
+            self.planData = CustomizePlanHelper.fetchActivePlan()
+            print("fetched to array 1x")
+        }
+        
         self.difficulty = exerciseData[selectedIndexPlan].idDifficulty
         
         //expandableData = [testCellData(title: "Week 1", sectionData: ["Mountain Climber", "Push Up 1", "Push Up 2", "Glute Bridge", "Frog Hold", "One Leg Frog Hold"])]
@@ -207,7 +212,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
             return 60
         }
         else if(indexPath.section == 3){
-            return 110
+            return 98
         }
         else if(indexPath.section == 0){
             return 85

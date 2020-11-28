@@ -124,6 +124,7 @@ class AssesmentStep2VC: UIViewController {
             target.weight = weight
             target.height = height
             target.times = times
+            
         }
     }
     
