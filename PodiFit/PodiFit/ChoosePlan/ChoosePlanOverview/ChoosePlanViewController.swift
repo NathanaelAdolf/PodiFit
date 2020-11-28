@@ -37,10 +37,12 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     var difficulty = Int()
     
     var selectedJumlahHari = 0
-
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
+        
+        
         //retrieveData()
         let backButton = UIBarButtonItem()
         
@@ -52,7 +54,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         self.tableView.backgroundColor = UIColor.clear
-        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+    
         self.navigationController?.navigationBar.isHidden = false
         self.tabBarController?.tabBar.isHidden = true
         
@@ -81,6 +83,31 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         tableView.separatorColor = UIColor.white
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.addBackgroundToController()
+    }
+    
+    func addBackgroundToController()
+    {
+        self.tableView.translatesAutoresizingMaskIntoConstraints = true
+        
+        self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        self.tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        let imageViewBackground = UIImageView()
+        imageViewBackground.image = UIImage(named: "plan_bg")
+        imageViewBackground.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        imageViewBackground.contentMode = .scaleToFill
+        tableView.backgroundView = imageViewBackground
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -39,10 +39,11 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         
         self.tabBarController?.tabBar.isHidden = true
         
-        //self.tableView.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
         self.tableView.backgroundColor = UIColor.clear
-        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        
         //notifHelper.configureUserNotificationCenter()
+        
+        
         
         backButton.title = ""
         backButton.image = UIImage(named: "chevron.left")
@@ -58,6 +59,30 @@ class CustomizePlanTableViewController: UITableViewController, UnwindDelegator{
         
         tableView.register(FinishButtonTableViewCell.nib(), forCellReuseIdentifier: FinishButtonTableViewCell.identifier)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.addBackgroundToController()
+    }
+    
+    func addBackgroundToController()
+    {
+            self.tableView.translatesAutoresizingMaskIntoConstraints = true
+            
+            self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            self.tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+            self.tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+            self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            
+            let imageViewBackground = UIImageView()
+            imageViewBackground.image = UIImage(named: "plan_bg")
+            imageViewBackground.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            imageViewBackground.contentMode = .scaleToFill
+            tableView.backgroundView = imageViewBackground
     }
 
     // MARK: - Table view data source

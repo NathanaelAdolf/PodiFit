@@ -206,6 +206,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_bg" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-CA-VxP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vr-55-EKg">
                                 <rect key="frame" x="45" y="39" width="324" height="35"/>
                                 <constraints>
@@ -261,12 +264,16 @@
                             <constraint firstItem="fW1-XO-pqu" firstAttribute="centerX" secondItem="WTR-zP-cWW" secondAttribute="centerX" id="4lJ-vD-bzU"/>
                             <constraint firstItem="rP1-Ct-jM0" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="45" id="78N-R9-1um"/>
                             <constraint firstItem="9Li-vO-Bul" firstAttribute="trailing" secondItem="6vr-55-EKg" secondAttribute="trailing" constant="45" id="7NL-NW-CYy"/>
+                            <constraint firstItem="o3R-CA-VxP" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" id="7xy-UM-3qe"/>
                             <constraint firstItem="6vr-55-EKg" firstAttribute="centerX" secondItem="WTR-zP-cWW" secondAttribute="centerX" id="PD3-fA-nBR"/>
                             <constraint firstItem="nAK-vV-frh" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="41" id="RUI-UM-22k"/>
                             <constraint firstItem="rP1-Ct-jM0" firstAttribute="top" secondItem="6vr-55-EKg" secondAttribute="bottom" constant="20" id="Xjh-D7-ON8"/>
                             <constraint firstItem="9Li-vO-Bul" firstAttribute="trailing" secondItem="rP1-Ct-jM0" secondAttribute="trailing" constant="45" id="ZSN-73-OkV"/>
                             <constraint firstItem="6vr-55-EKg" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="45" id="a9R-VP-Rqn"/>
                             <constraint firstItem="fW1-XO-pqu" firstAttribute="top" secondItem="9Li-vO-Bul" secondAttribute="top" constant="6" id="fE1-DY-lf2"/>
+                            <constraint firstItem="o3R-CA-VxP" firstAttribute="top" secondItem="9Li-vO-Bul" secondAttribute="top" id="kX0-Jm-CZt"/>
+                            <constraint firstItem="o3R-CA-VxP" firstAttribute="trailing" secondItem="9Li-vO-Bul" secondAttribute="trailing" id="oVF-fr-mRi"/>
+                            <constraint firstAttribute="bottom" secondItem="o3R-CA-VxP" secondAttribute="bottom" id="tnj-AG-Df0"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
