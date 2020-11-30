@@ -11,6 +11,9 @@ import UIKit
 
 class ExerciseSummaryViewController: UIViewController {
     var totalWaktuExercise : Int = 0
+    var idPlanActive : Int!
+    var statusToBadgeViewController : Int!
+    
     
     
     @IBOutlet weak var  exerciseSummaryView : ExerciseSummaryView!
@@ -23,13 +26,20 @@ class ExerciseSummaryViewController: UIViewController {
         AppUtility.lockOrientation(.portrait)
 
         exerciseSummaryView.tableView.delegate = self
-        exerciseSummaryView.tableView.dataSource = self    
+        exerciseSummaryView.tableView.dataSource = self
+        print("ini data idplan \(idPlanActive)")
     }
     
     
-    @IBAction func tiredBtn(_ sender: Any) {
+    @IBAction func tiredBtn(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
     
-//        tiredLabel.isSelected = true
+    @IBAction func neutralBtn(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    @IBAction func energizedBtn(_ sender: UIButton) {
+        sender.isSelected.toggle()
     }
     
     @IBAction func finishSummary(_ sender: Any) {
@@ -38,18 +48,33 @@ class ExerciseSummaryViewController: UIViewController {
             badgesHelper.storeToBadgesData(id: 1, complete5Plan: false, completePlan: false, customExercise: false, exerciseAddict: false, exerciseMaster: false, firstTimeBadge: false, reminderBadge: false)
             
         }
-        
-        
+        // check apakah pertama kali olah raga
         if badgesHelper.checkFirstTimeExercise() == false {
-            print("Masuk")
+            statusToBadgeViewController = 1
             badgesHelper.updateFirstTimeIntoTrue(isBadgesDone: true)
             self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
         }
+        // check table badges completed plan sudah belum
+        else if badgesHelper.checkPlanIsDoneInTablePlan(idPlan: idPlanActive) == true && badgesHelper.checkCompletedPlanBadgeInTableBadges() == false {
+            statusToBadgeViewController = 2
+            badgesHelper.updateCompletePlanIntoTrue(isBadgesDone: true)
+            self.performSegue(withIdentifier: "toClaimBadge", sender: nil)
+        }
         else {
-            print("Masuk ngga?")
             self.performSegue(withIdentifier: "toMainFromSummary", sender: nil)
         }
 
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toClaimBadge"{
+            let destination = segue.destination as! BadgeViewController
+            destination.status = statusToBadgeViewController
+        }
+//        else if segue.identifier == "toMainFromSummary" {
+//            let destination = segue.destination as!
+//        }
         
     }
     
@@ -103,9 +128,13 @@ extension ExerciseSummaryViewController : UITableViewDelegate, UITableViewDataSo
             
             
             cell.setView(menitExercise: menitExercise, detikExercise: detikExercise, label : label)
+            
+            
             return cell
         } else {
             let cellEmot = tableView.dequeueReusableCell(withIdentifier: "emoticonCell") as! EmoticonTableViewCell
+            cellEmot.tiredDidTap()
+            
             return cellEmot
         }
    

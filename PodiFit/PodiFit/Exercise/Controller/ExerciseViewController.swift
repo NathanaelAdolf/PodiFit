@@ -98,9 +98,7 @@ class ExerciseViewController: UIViewController {
         
     }
     
-    @IBAction func unwindSegueFromExit(_ sender: UIStoryboardSegue) {
-        
-    }
+    @IBAction func unwindSegueFromExit(_ sender: UIStoryboardSegue) {}
     
     
     
@@ -120,6 +118,7 @@ class ExerciseViewController: UIViewController {
             let destination = segue.destination as! ExerciseSummaryViewController
             
             destination.totalWaktuExercise = countTimeForSummary
+            destination.idPlanActive = idPlanActive
         }
     }
     

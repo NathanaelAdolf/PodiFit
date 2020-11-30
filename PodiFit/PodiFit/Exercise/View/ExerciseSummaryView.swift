@@ -17,6 +17,9 @@ class summaryTime: UITableViewCell {
     @IBOutlet weak var backgroundMinuteView: UIView!
     @IBOutlet weak var backgroundSecondView: UIView!
     
+    
+    
+    
     func setSummaryView(menitExercise : Int, detikExercise : Int) {
 //        minutesSummaryLbl.text =
     }
@@ -43,7 +46,8 @@ class ExerciseSummaryView: UIView {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var finishButton: UIButton!
     
-
+    
+    
     
     
     

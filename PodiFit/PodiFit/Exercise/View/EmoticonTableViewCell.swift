@@ -10,8 +10,12 @@ import UIKit
 
 class EmoticonTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tiredViewBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         // Initialization code
     }
 
@@ -19,6 +23,11 @@ class EmoticonTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func tiredDidTap () {
+//        tiredViewBtn.setImage(UIImage(systemName: "tired_face"),
+//                          for: [.highlighted, .selected])
     }
 
 }

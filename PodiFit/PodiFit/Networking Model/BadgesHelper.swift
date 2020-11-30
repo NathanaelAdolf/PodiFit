@@ -157,22 +157,24 @@ class BadgesHelper: UIViewController {
         var isBadgesEmpty: Bool = false
         
         guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return isBadgesEmpty}
-                 let context = appDel.persistentContainer.viewContext
-            
-                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Badges")
-             
-             do {
-                    let result = try context.fetch(fetch)
-                for _ in result as! [NSManagedObject]
-                     {
-                        counter += 1
-                    }
-              }
-             catch
-             {
-                 print("Failed")
-             }
+        let context = appDel.persistentContainer.viewContext
         
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Badges")
+             
+        do {
+            let result = try context.fetch(fetch)
+            print("berhasil ngeprint\(result)")
+            for _ in result as! [NSManagedObject]
+            {
+                counter += 1
+                print("ini counter for \(counter)")
+            }
+        }
+        catch
+        {
+            print("Failed")
+        }
+        print("ini counter \(counter)")
         if counter == 0 {
             isBadgesEmpty = true
         }
@@ -322,10 +324,12 @@ class BadgesHelper: UIViewController {
                     for data in result as! [NSManagedObject]
                      {
                         if data.value(forKey: "firstTimeBadge")as! Bool == true {
+                            
                             isFirstTime = true
                         }
                         else
                         {
+                            print("ini false")
                             isFirstTime = false
                         }
                         
@@ -337,6 +341,71 @@ class BadgesHelper: UIViewController {
              }
         
         return isFirstTime
+    }
+    
+    func checkPlanIsDoneInTablePlan (idPlan : Int) -> Bool {
+        var isFirstTime: Bool = false
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        
+        let fetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
+        fetchRequest.predicate = NSPredicate(format: "idPlan == %@", "\(idPlan)")
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            for data in result as! [NSManagedObject]
+            {
+                if data.value(forKey: "isPlanDone")as! Bool == true {
+                    print("ini done")
+                    isFirstTime = true
+                }
+                else
+                {
+                    print("ini belum done")
+                    isFirstTime = false
+                }
+                
+            }
+        }
+        catch
+        {
+            print("Failed")
+        }
+        
+        return isFirstTime
+    }
+    
+    
+    func checkCompletedPlanBadgeInTableBadges() -> Bool{
+        var isBadgesWasTrue: Bool = false
+        
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return isBadgesWasTrue }
+                 let context = appDel.persistentContainer.viewContext
+            
+                 let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Badges")
+             
+             do {
+                    let result = try context.fetch(fetch)
+                    for data in result as! [NSManagedObject]
+                     {
+                        if data.value(forKey: "completePlanBadge")as! Bool == true {
+                            
+                            isBadgesWasTrue = true
+                        }
+                        else
+                        {
+                            print("ini false")
+                            isBadgesWasTrue = false
+                        }
+                        
+                    }
+              }
+             catch
+             {
+                 print("Failed")
+             }
+        
+        return isBadgesWasTrue
     }
     
     
