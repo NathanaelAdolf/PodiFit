@@ -35,16 +35,18 @@ class ExitViewController: UIViewController {
     
 
     @IBAction func restartExercise(_ sender: Any) {
-//        navigationController?.popViewController(animated: true)
         
         self.performSegue(withIdentifier: "toExit", sender: nil)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! ExerciseViewController
-        destination.finishExercise = 0
-        
+        if segue.identifier == "tocoba"{
+            let destination = segue.destination as! ExerciseViewController
+            destination.finishExercise = 0
+        } else if segue.identifier == "toMain" {
+            
+        }  
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,6 +63,6 @@ class ExitViewController: UIViewController {
 //    }
     
     @IBAction func quitExercise(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "toMain", sender: nil)
     }
 }

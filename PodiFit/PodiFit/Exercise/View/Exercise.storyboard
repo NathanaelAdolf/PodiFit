@@ -62,7 +62,6 @@
                                         <state key="normal" backgroundImage="Quit"/>
                                         <connections>
                                             <action selector="quitExercise:" destination="4zZ-ig-g9l" eventType="touchUpInside" id="G3W-Dn-4O9"/>
-                                            <segue destination="Hty-gD-bBZ" kind="show" identifier="toExit" id="wDu-uC-y1W"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -104,12 +103,13 @@
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="exitView" destination="LwP-Tv-Ftx" id="EQJ-Hs-gt6"/>
+                        <segue destination="Hty-gD-bBZ" kind="show" identifier="toMain" id="GK4-vK-IaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7x-dE-hHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="lFg-Uh-tCo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1244.9275362318842" y="-633.48214285714278"/>
+            <point key="canvasLocation" x="1346" y="-663"/>
         </scene>
         <!--Information Exercise Controller-->
         <scene sceneID="xS8-3L-aVg">
@@ -293,7 +293,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HrJ-jQ-jce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026" y="760"/>
+            <point key="canvasLocation" x="3294" y="-210"/>
         </scene>
         <!--Exercise Summary View Controller-->
         <scene sceneID="w9q-Rd-Dax">
@@ -441,17 +441,13 @@
                                                                 <constraint firstAttribute="height" constant="80" id="Bdc-R3-i4I"/>
                                                                 <constraint firstAttribute="width" constant="80" id="WQF-Ha-h1R"/>
                                                             </constraints>
-
+                                                            <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                             <color key="tintColor" red="0.89156097170000004" green="0.97206717730000003" blue="0.31350773570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <state key="normal" backgroundImage="tired_face"/>
                                                             <state key="selected" backgroundImage="tired">
                                                                 <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                             </state>
-
-                                                            <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                                            <state key="normal" backgroundImage="tired_face"/>
-
                                                             <connections>
                                                                 <action selector="tiredBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="nw8-5q-B40"/>
                                                             </connections>
@@ -464,12 +460,10 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                             <state key="normal" backgroundImage="neutral_face"/>
-
                                                             <state key="selected" backgroundImage="neutral"/>
                                                             <connections>
                                                                 <action selector="neutralBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="Syu-ve-bzI"/>
                                                             </connections>
-
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel after exercise?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyU-0F-6bo">
                                                             <rect key="frame" x="8" y="8" width="358" height="23"/>
@@ -493,12 +487,10 @@
                                                                 <constraint firstAttribute="height" constant="80" id="Ext-LY-doA"/>
                                                             </constraints>
                                                             <state key="normal" backgroundImage="energized_face"/>
-
                                                             <state key="selected" backgroundImage="energized"/>
                                                             <connections>
                                                                 <action selector="energizedBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="YDl-eI-1JX"/>
                                                             </connections>
-
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5u-dl-8SE">
                                                             <rect key="frame" x="147" y="169" width="80" height="21"/>
@@ -965,7 +957,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bcH-AI-gap"/>
+        <segue reference="GK4-vK-IaX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="+5secs" width="314" height="44"/>
@@ -975,24 +967,17 @@
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="checklist" width="30" height="29"/>
         <image name="claimBadge" width="314" height="44"/>
-
         <image name="energized" width="100" height="100"/>
-
         <image name="energized_face" width="60" height="60"/>
         <image name="exclamationmark.triangle" catalog="system" width="128" height="112"/>
         <image name="first time badge" width="80" height="80"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="mountain_climber" width="414" height="232"/>
-
         <image name="neutral" width="100" height="100"/>
         <image name="neutral_face" width="60" height="60"/>
         <image name="skipBtn" width="314" height="44"/>
         <image name="tired" width="100" height="100"/>
-
-        <image name="neutral_face" width="60" height="60"/>
-        <image name="skipBtn" width="314" height="44"/>
-
         <image name="tired_face" width="60" height="60"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
