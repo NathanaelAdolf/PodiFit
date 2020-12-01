@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fa7-85-uUA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fa7-85-uUA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,6 +51,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_bg" translatesAutoresizingMaskIntoConstraints="NO" id="x1L-tO-11T">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWN-Rb-0k4">
+                                <rect key="frame" x="20" y="98" width="309" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="1He-bZ-sbV"/>
+                                    <constraint firstAttribute="width" constant="309" id="AYA-HB-MrB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GTO-mo-89o">
                                 <rect key="frame" x="20" y="154" width="374" height="742"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,7 +81,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duJ-I4-9pb">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="182"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LyA-sA-aa0">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LyA-sA-aa0">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="116"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="116" id="3a5-MT-jKb"/>
@@ -133,21 +146,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWN-Rb-0k4">
-                                <rect key="frame" x="20" y="98" width="309" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="1He-bZ-sbV"/>
-                                    <constraint firstAttribute="width" constant="309" id="AYA-HB-MrB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p3Z-Pf-zvu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="x1L-tO-11T" firstAttribute="leading" secondItem="p3Z-Pf-zvu" secondAttribute="leading" id="5UW-d7-miH"/>
+                            <constraint firstItem="x1L-tO-11T" firstAttribute="trailing" secondItem="p3Z-Pf-zvu" secondAttribute="trailing" id="ID1-n8-GxS"/>
+                            <constraint firstAttribute="bottom" secondItem="x1L-tO-11T" secondAttribute="bottom" id="KVE-rs-QAg"/>
                             <constraint firstItem="MWN-Rb-0k4" firstAttribute="top" secondItem="p3Z-Pf-zvu" secondAttribute="top" constant="10" id="Rgh-bf-WmW"/>
+                            <constraint firstItem="x1L-tO-11T" firstAttribute="top" secondItem="AS8-De-xz0" secondAttribute="top" id="SO1-xq-aAa"/>
                             <constraint firstItem="GTO-mo-89o" firstAttribute="top" secondItem="MWN-Rb-0k4" secondAttribute="bottom" constant="8" symbolic="YES" id="UJ6-9t-5P1"/>
                             <constraint firstAttribute="bottom" secondItem="GTO-mo-89o" secondAttribute="bottom" id="V5V-RY-Qxo"/>
                             <constraint firstItem="MWN-Rb-0k4" firstAttribute="leading" secondItem="p3Z-Pf-zvu" secondAttribute="leading" constant="20" id="Z0s-8j-vIz"/>
@@ -199,6 +206,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_bg" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-CA-VxP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vr-55-EKg">
                                 <rect key="frame" x="45" y="39" width="324" height="35"/>
                                 <constraints>
@@ -219,7 +229,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-vV-frh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-vV-frh">
                                 <rect key="frame" x="41" y="292" width="332" height="420"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="420" id="357-fu-zhf"/>
@@ -246,7 +256,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Li-vO-Bul"/>
-                        <color key="backgroundColor" red="0.33725490200000002" green="0.37254901959999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6vr-55-EKg" firstAttribute="top" secondItem="fW1-XO-pqu" secondAttribute="bottom" constant="27" id="0Eo-AQ-buD"/>
                             <constraint firstItem="nAK-vV-frh" firstAttribute="top" secondItem="rP1-Ct-jM0" secondAttribute="bottom" constant="20" id="2ug-rL-a8c"/>
@@ -254,12 +264,16 @@
                             <constraint firstItem="fW1-XO-pqu" firstAttribute="centerX" secondItem="WTR-zP-cWW" secondAttribute="centerX" id="4lJ-vD-bzU"/>
                             <constraint firstItem="rP1-Ct-jM0" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="45" id="78N-R9-1um"/>
                             <constraint firstItem="9Li-vO-Bul" firstAttribute="trailing" secondItem="6vr-55-EKg" secondAttribute="trailing" constant="45" id="7NL-NW-CYy"/>
+                            <constraint firstItem="o3R-CA-VxP" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" id="7xy-UM-3qe"/>
                             <constraint firstItem="6vr-55-EKg" firstAttribute="centerX" secondItem="WTR-zP-cWW" secondAttribute="centerX" id="PD3-fA-nBR"/>
                             <constraint firstItem="nAK-vV-frh" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="41" id="RUI-UM-22k"/>
                             <constraint firstItem="rP1-Ct-jM0" firstAttribute="top" secondItem="6vr-55-EKg" secondAttribute="bottom" constant="20" id="Xjh-D7-ON8"/>
                             <constraint firstItem="9Li-vO-Bul" firstAttribute="trailing" secondItem="rP1-Ct-jM0" secondAttribute="trailing" constant="45" id="ZSN-73-OkV"/>
                             <constraint firstItem="6vr-55-EKg" firstAttribute="leading" secondItem="9Li-vO-Bul" secondAttribute="leading" constant="45" id="a9R-VP-Rqn"/>
                             <constraint firstItem="fW1-XO-pqu" firstAttribute="top" secondItem="9Li-vO-Bul" secondAttribute="top" constant="6" id="fE1-DY-lf2"/>
+                            <constraint firstItem="o3R-CA-VxP" firstAttribute="top" secondItem="9Li-vO-Bul" secondAttribute="top" id="kX0-Jm-CZt"/>
+                            <constraint firstItem="o3R-CA-VxP" firstAttribute="trailing" secondItem="9Li-vO-Bul" secondAttribute="trailing" id="oVF-fr-mRi"/>
+                            <constraint firstAttribute="bottom" secondItem="o3R-CA-VxP" secondAttribute="bottom" id="tnj-AG-Df0"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -275,6 +289,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plan_bg" width="414" height="896"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

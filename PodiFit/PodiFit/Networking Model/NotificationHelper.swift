@@ -71,7 +71,7 @@ class NotificationHelper: UIViewController {
         //step 2 : create the notification content
         let content = UNMutableNotificationContent()
         content.title = "Reminder"
-        content.body = "don't forget to workout today"
+        content.body = "Don't forget to workout today"
         
         // step 3 : create the notification trigger
         let date = dateFormatterGet.date(from: dateToPush)

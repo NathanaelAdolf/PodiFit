@@ -154,7 +154,6 @@
 		2F57CE302551A32000EB914E /* HomePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanVC.swift; sourceTree = "<group>"; };
 		2F57CE4C2551B57B00EB914E /* ActivePlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePlanCell.swift; sourceTree = "<group>"; };
 		2F57CE4D2551B57B00EB914E /* ActivePlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivePlanCell.xib; sourceTree = "<group>"; };
-		2F733406254FCA5C006E4775 /* HomePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanVC.swift; sourceTree = "<group>"; };
 		2F9C0F13255626D900D87F01 /* ShowPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPlanVC.swift; sourceTree = "<group>"; };
 		2F9C0F2C2558621F00D87F01 /* ListPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlanVC.swift; sourceTree = "<group>"; };
 		2F9C0F34255864E300D87F01 /* ListExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExerciseCell.swift; sourceTree = "<group>"; };
@@ -399,14 +398,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2FF2276C2554C8DC00D494C4 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				2F733406254FCA5C006E4775 /* HomePlanVC.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		4898B4C9254928E800FBBC17 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +423,6 @@
 				8D13C0CE25402999002195C9 /* PodiFitTests */,
 				8D13C0D925402999002195C9 /* PodiFitUITests */,
 				8D13C0B325402997002195C9 /* Products */,
-				2FF2276C2554C8DC00D494C4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1220,13 +1210,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5Z8NF8RRMK;
 				INFOPLIST_FILE = PodiFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = team14.PodiFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1239,13 +1230,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5Z8NF8RRMK;
 				INFOPLIST_FILE = PodiFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = team14.PodiFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

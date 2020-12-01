@@ -58,7 +58,8 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        //self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "plan_bg")!)
+        
         self.tabBarController?.tabBar.isHidden = true
         //deleteAllDummy(entity: "TestEntity")
         
@@ -103,7 +104,14 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         let bulletPoint: String = "\u{2022}"
         cell.planName.text = plan.namaPlan
         cell.planSubtitle.text = "\(plan.durasiPlan) weeks \(bulletPoint) \(plan.chosenExercise!.count) exercises \(bulletPoint) No Equipment"
-        cell.planImage.image = UIImage(named: "1")
+        
+        if plan.idDifficulty == 1{
+            cell.planImage.image = UIImage(named: "glute bridge")
+        }
+        else{
+            cell.planImage.image = UIImage(named: "donkey kicks")
+        }
+        
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -140,7 +148,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
-
+    /*
     func createData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
@@ -185,7 +193,7 @@ class PlanOverviewViewController: UIViewController, UITableViewDataSource, UITab
         }
         
     }
-    
+    */
     func fetchRealData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         

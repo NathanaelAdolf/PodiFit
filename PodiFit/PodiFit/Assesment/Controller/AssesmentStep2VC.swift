@@ -23,6 +23,7 @@ class AssesmentStep2VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppUtility.lockOrientation(.portrait)
 
         setupUI()
     }
@@ -123,6 +124,7 @@ class AssesmentStep2VC: UIViewController {
             target.weight = weight
             target.height = height
             target.times = times
+            
         }
     }
     

@@ -30,7 +30,14 @@ class ActivePlanCell: UICollectionViewCell {
         
        
         namePlanLabel.text = data.namaPlan
-        planImage.image = UIImage(named: "1")
+        
+        if data.idDifficulty == 1{
+            planImage.image = UIImage(named: "glute bridge")
+        }
+        else{
+            planImage.image = UIImage(named: "donkey kicks")
+        }
+        
         weekPlanLabel.text = "\(data.durasiPlan) weeks"
         exercisePlanLabel.text = "\(data.chosenExercise!.count) exercises"
         equipmentPlanLabel.text = "No Equipment"

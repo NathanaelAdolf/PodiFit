@@ -441,12 +441,17 @@
                                                                 <constraint firstAttribute="height" constant="80" id="Bdc-R3-i4I"/>
                                                                 <constraint firstAttribute="width" constant="80" id="WQF-Ha-h1R"/>
                                                             </constraints>
+
                                                             <color key="tintColor" red="0.89156097170000004" green="0.97206717730000003" blue="0.31350773570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <state key="normal" backgroundImage="tired_face"/>
                                                             <state key="selected" backgroundImage="tired">
                                                                 <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                             </state>
+
+                                                            <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                            <state key="normal" backgroundImage="tired_face"/>
+
                                                             <connections>
                                                                 <action selector="tiredBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="nw8-5q-B40"/>
                                                             </connections>
@@ -459,10 +464,12 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                             <state key="normal" backgroundImage="neutral_face"/>
+
                                                             <state key="selected" backgroundImage="neutral"/>
                                                             <connections>
                                                                 <action selector="neutralBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="Syu-ve-bzI"/>
                                                             </connections>
+
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel after exercise?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyU-0F-6bo">
                                                             <rect key="frame" x="8" y="8" width="358" height="23"/>
@@ -486,10 +493,12 @@
                                                                 <constraint firstAttribute="height" constant="80" id="Ext-LY-doA"/>
                                                             </constraints>
                                                             <state key="normal" backgroundImage="energized_face"/>
+
                                                             <state key="selected" backgroundImage="energized"/>
                                                             <connections>
                                                                 <action selector="energizedBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="YDl-eI-1JX"/>
                                                             </connections>
+
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5u-dl-8SE">
                                                             <rect key="frame" x="147" y="169" width="80" height="21"/>
@@ -820,13 +829,13 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STRAIGHT LEG AND CALF RAISE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkW-uN-COB">
-                                                <rect key="frame" x="62" y="45.5" width="290" height="81.5"/>
+                                                <rect key="frame" x="62" y="20" width="290" height="107"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoN-tE-TNY">
-                                                <rect key="frame" x="352" y="71.5" width="20" height="20"/>
+                                                <rect key="frame" x="352" y="60.5" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="1FX-lr-O6I"/>
                                                     <constraint firstAttribute="height" constant="21" id="gAS-Tj-h4d"/>
@@ -875,9 +884,9 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.24313725490196078" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="KoN-tE-TNY" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="71" id="4gY-5D-EW7"/>
+                                            <constraint firstItem="KoN-tE-TNY" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="60" id="4gY-5D-EW7"/>
                                             <constraint firstItem="VYv-A8-OLc" firstAttribute="top" secondItem="qkW-uN-COB" secondAttribute="bottom" constant="71" id="5y3-Yj-73v"/>
-                                            <constraint firstItem="qkW-uN-COB" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="45.5" id="9JP-GV-51g"/>
+                                            <constraint firstItem="qkW-uN-COB" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="20" id="9JP-GV-51g"/>
                                             <constraint firstItem="Wx9-qr-19A" firstAttribute="leading" secondItem="lTW-TV-0cA" secondAttribute="trailing" constant="30" id="9Ra-dm-cZB"/>
                                             <constraint firstItem="qkW-uN-COB" firstAttribute="leading" secondItem="X9K-bp-ne8" secondAttribute="leading" constant="62" id="F9P-hB-u3x"/>
                                             <constraint firstItem="C2P-Gj-AEB" firstAttribute="top" secondItem="Cbf-kh-kbn" secondAttribute="bottom" constant="40" id="HBb-vG-xff"/>
@@ -966,17 +975,24 @@
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="checklist" width="30" height="29"/>
         <image name="claimBadge" width="314" height="44"/>
+
         <image name="energized" width="100" height="100"/>
+
         <image name="energized_face" width="60" height="60"/>
         <image name="exclamationmark.triangle" catalog="system" width="128" height="112"/>
         <image name="first time badge" width="80" height="80"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="mountain_climber" width="414" height="232"/>
+
         <image name="neutral" width="100" height="100"/>
         <image name="neutral_face" width="60" height="60"/>
         <image name="skipBtn" width="314" height="44"/>
         <image name="tired" width="100" height="100"/>
+
+        <image name="neutral_face" width="60" height="60"/>
+        <image name="skipBtn" width="314" height="44"/>
+
         <image name="tired_face" width="60" height="60"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

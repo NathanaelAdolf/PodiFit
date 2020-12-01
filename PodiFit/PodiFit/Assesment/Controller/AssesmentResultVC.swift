@@ -20,6 +20,8 @@ class AssesmentResultVC: UIViewController {
     var myHeight: Int = 0
     var myWeight: Int = 0
     var myTimes: Int = 0
+    
+    var isDone: Int = 0
 
     @IBOutlet weak var genderImage: UIImageView!
     @IBOutlet weak var genderLabel: UILabel!
@@ -30,19 +32,26 @@ class AssesmentResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        AppUtility.lockOrientation(.portrait)
+        print("isdone = \(isDone)")
         setupData()
     }
     
     @IBAction func seeMyPlanBtn(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: "first")
         UserDefaults.standard.synchronize()
+        print("isdone button= \(isDone)")
         
-        insertData.storeDefaultPlanData(jumlahHari: myTimes)
-        insertData.storeDefaultDifficulty()
-        insertData.storeDefaultExerciseAndExerciseStepsData()
+        if isDone != 1 {
+            insertData.storeDefaultPlanData(jumlahHari: myTimes)
+            insertData.storeDefaultDifficulty()
+            insertData.storeDefaultExerciseAndExerciseStepsData()
+            
+            userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!) // Nanti Dihapus array idPlan
+            
+            isDone = 1
+        }
         
-        userHelper.storeToUserData(idUser: 0, userName: "User PodiFit", idPlan: [], height: myHeight, weight: myWeight, img: (UIImage(named: "person image.png")?.pngData())!) // Nanti Dihapus array idPlan
         
         self.performSegue(withIdentifier: "SeeMyPlanSegue", sender: self)
     }

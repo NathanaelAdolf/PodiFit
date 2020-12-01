@@ -65,7 +65,7 @@ class ExerciseView: UIView, WKNavigationDelegate {
             self.webKitView.alpha = 1.0
         })
         
-        nameExerciseLabel?.text = dataExercise[0].namaExercise
+        nameExerciseLabel?.text = String(dataExercise[0].namaExercise).uppercased()
         loadWebsite(dataExercise : dataExercise)
         warningExercise(tempWarningData : tempWarningData)
     }
