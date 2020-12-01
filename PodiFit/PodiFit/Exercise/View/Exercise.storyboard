@@ -443,8 +443,8 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                                             <color key="tintColor" red="0.89156097170000004" green="0.97206717730000003" blue="0.31350773570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <state key="normal" backgroundImage="tired_face"/>
-                                                            <state key="selected" backgroundImage="tired">
+                                                            <state key="normal" backgroundImage="tired"/>
+                                                            <state key="selected" backgroundImage="tired_face">
                                                                 <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                             </state>
@@ -459,8 +459,8 @@
                                                                 <constraint firstAttribute="width" constant="80" id="sha-z6-uN6"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                                            <state key="normal" backgroundImage="neutral_face"/>
-                                                            <state key="selected" backgroundImage="neutral"/>
+                                                            <state key="normal" backgroundImage="neutral"/>
+                                                            <state key="selected" backgroundImage="neutral_face"/>
                                                             <connections>
                                                                 <action selector="neutralBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="Syu-ve-bzI"/>
                                                             </connections>
@@ -486,8 +486,8 @@
                                                                 <constraint firstAttribute="width" constant="80" id="99R-NA-D3k"/>
                                                                 <constraint firstAttribute="height" constant="80" id="Ext-LY-doA"/>
                                                             </constraints>
-                                                            <state key="normal" backgroundImage="energized_face"/>
-                                                            <state key="selected" backgroundImage="energized"/>
+                                                            <state key="normal" backgroundImage="energized"/>
+                                                            <state key="selected" backgroundImage="energized_face"/>
                                                             <connections>
                                                                 <action selector="energizedBtn:" destination="IlU-RE-R14" eventType="touchUpInside" id="YDl-eI-1JX"/>
                                                             </connections>
@@ -957,7 +957,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GK4-vK-IaX"/>
+        <segue reference="VhG-rm-f75"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="+5secs" width="314" height="44"/>
