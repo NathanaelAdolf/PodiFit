@@ -206,7 +206,7 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
-            return 120
+            return 100
         }
         else if(indexPath.section == 2){
             return 60
@@ -306,11 +306,12 @@ class ChoosePlanViewController: UITableViewController, ButtonCellDelegator {
     
     func showAlert() {
         let alert = UIAlertController(title: "Confirm", message: "Are you sure to choose this plan? You cannot make any changes later on.", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let action = UIAlertAction(title: "Yes", style: .default, handler: callSegueFromCellToMain(alert:))
         
-        alert.addAction(cancel)
         alert.addAction(action)
+        alert.addAction(cancel)
+        
         
         cancel.setValue(Colors.alertCancelColor, forKey: "titleTextColor")
         action.setValue(Colors.yellowColor, forKey: "titleTextColor")
