@@ -802,13 +802,13 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STRAIGHT LEG AND CALF RAISE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkW-uN-COB">
-                                                <rect key="frame" x="62" y="45.5" width="290" height="81.5"/>
+                                                <rect key="frame" x="62" y="20" width="290" height="107"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoN-tE-TNY">
-                                                <rect key="frame" x="352" y="71.5" width="20" height="20"/>
+                                                <rect key="frame" x="352" y="60.5" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="1FX-lr-O6I"/>
                                                     <constraint firstAttribute="height" constant="21" id="gAS-Tj-h4d"/>
@@ -857,9 +857,9 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.24313725490196078" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="KoN-tE-TNY" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="71" id="4gY-5D-EW7"/>
+                                            <constraint firstItem="KoN-tE-TNY" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="60" id="4gY-5D-EW7"/>
                                             <constraint firstItem="VYv-A8-OLc" firstAttribute="top" secondItem="qkW-uN-COB" secondAttribute="bottom" constant="71" id="5y3-Yj-73v"/>
-                                            <constraint firstItem="qkW-uN-COB" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="45.5" id="9JP-GV-51g"/>
+                                            <constraint firstItem="qkW-uN-COB" firstAttribute="top" secondItem="X9K-bp-ne8" secondAttribute="top" constant="20" id="9JP-GV-51g"/>
                                             <constraint firstItem="Wx9-qr-19A" firstAttribute="leading" secondItem="lTW-TV-0cA" secondAttribute="trailing" constant="30" id="9Ra-dm-cZB"/>
                                             <constraint firstItem="qkW-uN-COB" firstAttribute="leading" secondItem="X9K-bp-ne8" secondAttribute="leading" constant="62" id="F9P-hB-u3x"/>
                                             <constraint firstItem="C2P-Gj-AEB" firstAttribute="top" secondItem="Cbf-kh-kbn" secondAttribute="bottom" constant="40" id="HBb-vG-xff"/>
